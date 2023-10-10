@@ -237,27 +237,25 @@ The underlying reason why we can perform induction and recursion on the natural 
 \begin{theorem}[Well-ordering principle]
 \label{thmWellOrderingPrinciple}
 \index{well-ordering principle}
-Let $X$ be a set of natural numbers. If $X$ is inhabited, then $X$ has a least element.
+Every inhabited set of natural numbers has a least element.
 \end{theorem}
 
-\begin{cidea}
-Under the assumption that $X$ is a set of natural numbers, the proposition we want to prove has the form $p \Rightarrow q$. Namely
-\[ X \text{ is inhabited} \quad \Rightarrow \quad X \text{ has a least element} \]
-Assuming $X$ is inhabited doesn't really give us much to work with, so let's try the contrapositive:
-\[ X \text{ has no least element} \quad \Rightarrow \quad X \text{ is empty} \]
-The assumption that $X$ has no least element \textit{does} give us something to work with. Under this assumption we need to deduce that $X$ is empty.
-
-We will do this by `forcing $X$ up' by strong induction. Certainly $0 \not \in X$, otherwise it would be the least element. If none of the numbers $0, 1, \dots, n$ are elements of $X$ then neither can $n+1$ be, since if it were then \textit{it} would be the least element of $X$. Let's make this argument formal.
-\end{cidea}
-
 \begin{cproof}
-Let $X$ be a set of natural numbers containing no least element. We prove by strong induction that $n \not \in X$ for all $n \in \mathbb{N}$.
+We will prove by strong induction that, for all $n \in \mathbb{N}$, every subset $X \subseteq \mathbb{N}$ with $n \in X$ has a least element.
 
 \begin{itemize}
-\item (\textbf{Base case}) $0 \not \in X$ since if $0 \in X$ then $0$ must be the least element of $X$, as it is the least natural number.
-\item (\textbf{Induction step}) Suppose $k \not \in X$ for all $0 \le k \le n$. If $n+1 \in X$ then $n+1$ is the least element of $X$; indeed, if $\ell < n+1$ then $0 \le \ell \le n$, so $\ell \not \in X$ by the induction hypothesis. This contradicts the assumption that $X$ has no least element, so $n+1 \not \in X$.
+\item (\textbf{Base case}) Let $X \subseteq \mathbb{N}$ and suppose that $0 \in X$. For all $n \in X$ we have $n \in \mathbb{N}$, since $X \subseteq \mathbb{N}$, and therefore $n \ge 0$. But then $0$ is the least element of $X$.
+\item (\textbf{Induction step}) Let $n \in \mathbb{N}$ and suppose that, for all $k \in \mathbb{N}$, every subset $X \subseteq \mathbb{N}$ with $k \in X$ has a least element.
+
+Let $X \subseteq \mathbb{N}$ and suppose that $n+1 \in X$. One of two cases must occur:
+\begin{itemize}
+\item Suppose that for all $k \le n$ we have $k \not\in X$. Then $n+1$ is the least element of $X$, since any smaller element of $X$ would need to be less than or equal to $n$.
+\item Suppose that there exists $k \le n$ such that $k \in X$. Then by the induction hypothesis, $X$ has a least element.
 \end{itemize}
-By strong induction, $n \not \in X$ for each $n \in \mathbb{N}$. Since $X$ is a set of natural numbers, and it contains no natural numbers, it follows that $X$ is empty.
+In both cases we see that $X$ has a least element, as required.
+\end{itemize}
+
+Finally, note that the fact that we proved by induction implies the statement in the theorem, since an inhabited set of natural numbers is precisely a subset $X \subseteq \mathbb{N}$ such that $n \in X$ for some $n \in \mathbb{N}$.
 \end{cproof}
 
 The following proof that $\sqrt{2}$ is irrational is a classic application of the well-ordering principle.

@@ -9,69 +9,61 @@ The following theorem, called the division theorem, is the crux of everything th
 \begin{theorem}[Division theorem]
 \label{thmDivisionTheorem}
 \index{division theorem}
-Let $a,b \in \mathbb{Z}$ with $b \ne 0$. There exist unique $q,r \in \mathbb{Z}$ such that
+Let $a,b \in \mathbb{Z}$ with $b \ne 0$. There exists a unique pair $(q,r) \in \mathbb{Z}^2$ such that
 \[ a = qb + r \quad \text{and} \quad 0 \le r < |b| \]
 \end{theorem}
 
 \begin{strategy*}
-Let's look at the simple case when $a \ge 0$ and $b > 0$. We can always find $q,r$ such that $a=qb+r$, for example $q=0$ and $r=a$. Moreover, by increasing $q$ we can reduce $r$, since
-\[ qb+r = (q+1)b + (r-b) \]
-We will keep doing this until the `remainder' is as small as it can be without being negative. As an example, consider the case when $a=14$ and $b=5$. This procedure gives
-\begin{align*}
-14 &= 0 \times 5 + 14 && \\
-&= 1 \times 5 + 9 && \\
-&= 2 \times 5 + 4 && \leftarrow \text{least nonnegative remainder}\\
-&= 3 \times 5 + (-1) && \\
-&= \cdots
-\end{align*}
-This procedure shows that in this case we should take $q=2$ and $r=4$, since $14 = 2 \times 5 + 4$ and $0 \le 4 < |5|$.
+Let's first consider the case when $a \ge 0$ and $b > 0$ (so that $|b|=b$). Dropping the requirement that $0 \le r < b$, it is easy to find $(q,r) \in \mathbb{Z}^2$ such that $a=qb+r$---indeed, $a = 0 \cdot b + a$, so we could take $(q,r) = (0,a)$. However, this isn't good enough, since if $a \ge b$ then setting $r=a$ would not satisfy the requirement that $0 \le r < b$.
 
-We can show that such a descending sequence of remainders terminates using the well-ordering principle, and then we must argue that the quotient and remainder that we obtain are unique.
+However, if $r \ge b$, then (intuitively) we can make $r$ smaller by making $q$ larger---to see this, note that
+\[ qb + r = (q+1)b + (r-b) \]
+so whenever we have a pair $(q,r) \in \mathbb{Z}^2$ such that $a=qb+r$, we can replace $(q,r)$ by $(q+1,r-b)$ to obtain another such pair with a smaller value of $r$.
+
+We want to make $r$ as small as possible without it becoming negative---in other words, we want $r$ to be the least \textit{natural number} such that $a=qb+r$ for some $q \in \mathbb{Z}$. This suggests that we should prove the division theorem using the well-ordering principle (\Cref{thmWellOrderingPrinciple}).
 \end{strategy*}
 
 \begin{cproof}
-%% BEGIN EXTRACT (xtrWlogExampleTwo) %%
-We may assume that $b>0$: if not, replace $b$ by $-b$ and $q$ by $-q$. We may also assume that $a \ge 0$. Otherwise, replace $a$ by $-a$, $q$ by $-(q+1)$ and $r$ by $b-r$.
-%% END EXTRACT %%
-
-Thus, what follows assumes that $a \ge 0$ and $b > 0$.
+We may assume that $b>0$: if not, replace $b$ by $-b$ and $q$ by $-q$ in the proof below.
 
 \begin{itemize}
-\item \textbf{Existence.} We prove that such integers $q,r$ exist by the well-ordering principle. Namely, we define a sequence $(r_n)_{n \in \mathbb{N}}$ such that $a=nb+r_n$ and $r_0 > r_1 > r_2 > \cdots$, and use this sequence to find the values of $q,r$.
+\item \textbf{Existence.} Define $X = \{ r \in \mathbb{N} \mid a = qb+r \text{ for some } q \in \mathbb{Z} \} \subseteq \mathbb{N}$.
 
+Note first that $X$ is inhabited. Indeed:
 \begin{itemize}
-\item Let $r_0=a$. Then $a=0b+r_0$, as required.
-\item Suppose $r_n$ has been defined, and let $r_{n+1} = r_n-b$. Then
-\begin{align*}
-(n+1)b+r_{n+1} &= (n+1)b+r_n-b \\
-&= nb + b + r_n - b \\
-&= nb + r = a
-\end{align*}
-Since $b>0$, we must have $r_{n+1} < r_n$ for all $n$.
+\item Suppose $a \ge 0$. Then $a \in X$, since $a = 0 \cdot b + a$.
+\item Suppose $a<0$. Since $b > 0$ we have $1-b \le 0$, so that $(1-b)a \ge 0$. But then $a = ab + (1-b)a$, and so $(1-b)a \in X$.
 \end{itemize}
 
-Let $R = \mathbb{N} \cap \{ r_n \mid n \in \mathbb{N} \}$. That is, $R$ is the set of terms of the sequence which are non-negative. Since $r_0 = a \ge 0$, we have that $r_0 \in R$ and hence $R$ is inhabited. By the well-ordering principle, $R$ has a least element $r_k$ for some $k \in \mathbb{N}$.
+By the well-ordering principle, $X$ has a least element. Let $r$ be the least element of $X$, and let $q \in \mathbb{Z}$ be such that $a=qb+r$---note that $q$ exists by definition of $X$.
 
-Define $q=k$ and $r=r_k$. By construction we have $a=qb+r$ and $r \ge 0$, so
+We have $r \ge 0$ since $r \in \mathbb{N}$, so it remains to prove that $r<b$. Well, %
 %% BEGIN EXTRACT (xtrContradictionOneLineExample) %%
-it remains to show that $r < b$. Well, if $r \ge b$ then $r-b \ge 0$, but $r-b=r_{k+1}$, so this would imply $r_{k+1} \in R$, contradicting minimality of $r$. Hence $r < b$%
+if $r \ge b$, then $r-b \in \mathbb{N}$ and $a = qb+r = (q+1)b + (r-b)$, which implies that $r-b \in X$; but $r-b<r$ since $b>0$, so this contradicts minimality of $r$. Therefore $r<b$
 %% END EXTRACT %%
-, so $q,r$ are as required.
+, as required.
 
-\item \textbf{Uniqueness.} Suppose $q',r'$ also satisfy $a=q'b+r'$ and $0 \le r' < b$. If we can show that $r'=r$ then this proves that $q=q'$: indeed, if $qb+r=q'b+r$ then we can subtract $r$ and then divide by $b$, since $b>0$.
+\item \textbf{Uniqueness.} Let $(q_0,r_0),(q_1,r_1) \in \mathbb{Z}^2$ and assume that $a=q_0b+r_0 = q_1b+r_1$ and that $0 \le r_0,r_1 < b$.
 
-First note that $q' \ge 0$. If $q'<0$ then $q' \le -1$, so
-\[ a = q'b+r' \le -b+r' \]
-and hence $r' \ge a+b \ge b$ since $a \ge 0$. This contradicts the assumption that $r<b$. So $q' \ge 0$.
+%% BEGIN EXTRACT (xtrWlogExampleTwo) %%
+We may assume that $r_0 \le r_1$---otherwise, swap the roles of $(q_0,r_0)$ and $(q_1,r_1)$ in what follows.
+%% END EXTRACT %%
 
-Since $q' \ge 0$, we also know that $a=q'b+r_{q'}$, and hence $r' = r_{q'} \in R$. By minimality of $r$ we have $r \le r'$. It remains to show that $r = r'$. If not then $r<r'$. Thus
-\[ qb+r = q'b+r' > q'b+r \quad \Rightarrow \quad qb > q'b \quad \Rightarrow \quad q > q' \]
-and hence $q = q'+t$ for some $t \ge 1$. But then
-\[ q'b+r' = a = qb+r = (q'+t)b+r = q'b+(tb+r) \]
-so $r' = tb + r \ge b$, contradicting $r'<b$. So $r=r'$ as desired, and hence $q=q'$.
+Note first that
+\[(q_1-q_0)b + (r_1-r_0) = (q_1b+r_1) - (q_0b+r_0) = a-a = 0 \]
+Since $r_0 \le r_1$ we have $r_1-r_0 \ge 0$, and since $r_1<b$ and $r_0 \ge 0$ we have $r_1-r_0 < b$.
+
+If $q_1-q_0<0$, then $q_1-q_0 \le -1$ since $q_1-q_0 \in \mathbb{Z}$, and so
+\[ 0 = (q_1-q_0) b + (r_1-r_0) \le -b + (r_1-r_0) < b - b = 0 \]
+If $q_1-q_0>0$, then $q_1-q_0 \ge 1$ since $q_1-q_0 \in \mathbb{Z}$, and so
+\[ 0 = (q_1-q_0) b + (r_1-r_0) \ge b + (r_1-r_0) \ge b > 0 \]
+Both of these are contradictions, so it must be the case that $q_1-q_0 = 0$, and so $q_0=q_1$.
+
+Therefore we have $0 = (q_1-q_0)b+(r_1-r_0) = r_1-r_0$, and so $r_0=r_1$.
+
+So $(q_0,r_0)=(q_1,r_1)$, as required.
 \end{itemize}
-
-At long last, we are done.
+\vspace{-20pt}
 \end{cproof}
 
 \begin{definition}

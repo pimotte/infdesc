@@ -301,7 +301,7 @@ Proofs by contradiction need not be long and drawn out---sometimes you just need
 
 \begin{extract}[\xtrsource{\Cref{thmDivisionTheorem}}]
 \label{xtrContradictionOneLineExample}
-\dots{} it remains to show that $r < b$. Well, \xtremph{if $r \ge b$ then} $r-b \ge 0$, but $r-b=r_{k+1}$, so \xtremph{this would imply $r_{k+1} \in R$, contradicting minimality of $r$}. \xtremph{Hence $r < b$} \dots{}
+\dots{} \xtremph{if $r \ge b$}, then $r-b \in \mathbb{N}$ and $a = qb+r = (q+1)b + (r-b)$, which implies that $r-b \in X$; but $r-b<r$ since $b>0$, so \xtremph{this contradicts minimality of $r$}. \xtremph{Therefore $r<b$} \dots{}
 \end{extract}
 
 \subsubsection*{Proving universally quantified statements: introducing variables}
@@ -441,11 +441,11 @@ We only used the phrase `without loss of generality' explicitly once in this boo
 Recall that $\varphi(-n) = \varphi(n)$ for all $n \in \mathbb{Z}$, so \xtremph{we may assume without loss of generality} \xtremph{that $n \ge 0$}---\xtremph{otherwise just replace $n$ by $-n$ throughout}.
 \end{extract}
 
-Nonetheless, we used the construction in \Cref{vcbWlog} at other times, as illustrated in the next extract, where we used it \textit{twice}!
+Nonetheless, we used the construction in \Cref{vcbWlog} at other times, as illustrated in the next extract:
 
 \begin{extract}[\xtrsource{\Cref{thmDivisionTheorem}}]
 \label{xtrWlogExampleTwo}
-\xtremph{We may assume that $b>0$}: \xtremph{if not, replace $b$ by $-b$ and $q$ by $-q$}. \xtremph{We may also assume} \xtremph{that $a \ge 0$}. \xtremph{Otherwise, replace $a$ by $-a$, $q$ by $-(q+1)$ and $r$ by $b-r$}.
+\xtremph{We may assume that $r_0 \le r_1$---otherwise, swap the roles of $(q_0,r_0)$ and $(q_1,r_1)$ in what follows.}
 \end{extract}
 
 \subsection*{Keeping track of everything}
