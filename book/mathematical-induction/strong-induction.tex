@@ -319,5 +319,21 @@ Prove first that if $a \in \mathbb{Z}$ and $a^2$ is divisible by $3$, then $a$ i
 \end{backhint}
 \end{exercise}
 
+The well-ordering principle gives rise to a useful strategy for deriving contradictions, by using the contradictory assumption to build a set of natural numbers with no least element.
+
+\begin{strategy}[Proof by infinite descent]
+\label{strInfiniteDescent}
+\index{infinite descent}
+\index{proof!by infinite descent}
+In order to derive a contradiction, it suffices to construct an inhabited subset $X \subseteq \mathbb{N}$ and prove that, for all $n \in X$, there exists $m \in X$ with $m<n$.
+\end{strategy}
+
+Before we use this strategy, it is worth elaborating on why it works and where it got its name.
+
+Certainly, constructing such a set $X$ gives a contradiction: indeed, if $X$ is an inhabited subset of $\mathbb{N}$ then it has a least element $n$, and then there cannot exist $m \in X$ with $m<n$ by minimality of $n$.
+
+The reason for the name has to do with the fact, if $X$ were such a set, then we could construct a decreasing sequence $n_0 > n_1 > n_2 > n_3 > \cdots$ of elements of $X$. Indeed, since $X$ is inhabited it has an element $n_0$. Then there exists an element $m \in X$ with $m < n_0$, so we define $n_1$ to be such an element. Then there exists an element $m \in X$ with $m<n_1$, so we define $n_2$ to be such an element. And so on. Thus we have an \textit{infinite descending} sequence of elements of $X$.
+
+\todo{Examples using proof by infinite descent---coming soon!}
 
 \index{induction!strong|)}
