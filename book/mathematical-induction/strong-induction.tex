@@ -351,21 +351,44 @@ Note that $X$ is inhabited. Indeed:
 \item Suppose $a \ge 0$. Then $a \in \mathbb{N}$ and $a = 0 \cdot b + a$, so that $a \in X$.
 \item Suppose $a < 0$. Since $b>0$ we have $b \ge 1$, so that $1-b \le 0$ and hence $a(1-b) \ge 0$. So $a(1-b) \in \mathbb{N}$, and moreover $a = ba + a(1-b)$, so setting $m=b$ and $n=a(1-b)$ in the definition of $X$, we see that $a(1-b) \in X$.
 \end{itemize}
-By the well-ordering principle, $X$ has a minimal element $r \in X$, and by definition of $X$ there exists $q \in \mathbb{Z}$ such that $a=qb+r$. Since $r \in X$, we have $r \in \mathbb{N}$, so that $r \ge 0$.
+By the well-ordering principle, $X$ has a minimal element $r \in X$, and by definition of $X$ there exists $q \in \mathbb{Z}$ such that $a=qb+r$. Since $r \in X$, we have $r \in \mathbb{N}$, so that $r \ge 0$. It remains to prove that $r<b$.
 
-It remains to prove that $r<b$.
-
-Towards a contradiction, assume that $r \ge b$. To obtain a contradiction, will proceed by infinite descent. Define
-\[ Y = \{ n \in X \mid n \ge b \} \]
-Note that $Y$ is inhabited since $r \in Y$, and $Y \subseteq \mathbb{N}$ since $Y \subseteq X$ and $X \subseteq \mathbb{N}$.
+Towards a contradiction, assume that $r \ge b$, and define $Y = \{ n \in X \mid n \ge b \}$. Note that $Y$ is inhabited since $r \in Y$, and $Y \subseteq \mathbb{N}$ since $Y \subseteq X$ and $X \subseteq \mathbb{N}$.
 
 Let $n \in Y$. Then $n \in X$, so $a=mb+n$ for some $m \in \mathbb{Z}$, and $n \ge b$ by definition of $Y$. But then $n-b \ge 0$ (so $n-b \in \mathbb{N}$) and
 \[ a = mb + n = (m+1)b + (n-b) \]
 so that $n-b \in X$. Since $r$ is the least element of $X$, we have $n-b \ge r \ge b$, so that $n-b \in Y$. Since $b > 0$, it follows that $n-b < n$.
 
-We have proved that, for all $n \in Y$, we have $n-b \in Y$ and $n-b < n$, and therefore we have infinite descent in $Y$. This is a contradiction.
-
-Therefore, our assumption that $r \ge b$ is false, and so it must in fact be the case that $r<b$, as required.
+We have proved that, for all $n \in Y$, we have $n-b \in Y$ and $n-b < n$, and therefore we have infinite descent in $Y$. This is a contradiction, so our assumption that $r \ge b$ is false, and so it must in fact be the case that $r<b$, as required.
 \end{example}
+
+A common application of proof by infinite descent is when proving a statement of the form $\forall n \ge n_0,\, p(n)$ (for some $n_0 \in \mathbb{N}$) by contradiction: if we can prove that the set of all counterexamples to $p(n)$ has no minimal element, then it must be empty---but then there are no counterexamples to $p(n)$, and so $p(n)$ is true for all $n \ge n_0$. This is the strategy we use in the next example.
+
+\begin{example}[Existence of prime factorisation]
+\label{exExistenceOfPrimeFactorisationbyInfiniteDescent}
+We will prove that every integer $n \ge 2$ can be expressed as a product of positive prime numbers.
+
+Towards a contradiction, assume that not every integer $\ge 2$ can be expressed as a product of positive prime numbers, and define
+\[ X = \{ n \ge 2 \mid n \text{ cannot be expressed as a product of positive prime numbers} \} \]
+Note that $X$ is inhabited by assumption.
+
+Let $n \in X$. Then $n$ is not prime, since if it were prime then `$n$' would be an expression of $n$ as a product of positive prime numbers (namely, of just one positive prime number).
+
+Since $n$ is not prime, we have $n=ab$ for some $a,b \in \mathbb{Z}$ with $1<a<n$ and $1<b<n$. But then $a$ and $b$ cannot both be expressible as products of positive prime numbers, since if $a = p_1 \times \cdots \times p_r$ and $b = q_1 \times \cdots \times q_s$ are two such expressions, then
+\[ n = ab = p_1 \times \cdots \times p_r \times q_1 \times \cdots \times q_s \]
+contradicting the assumption that $n \in X$.
+
+So at least one of $a$ or $b$ cannot be expressed as a product of positive prime numbers. Since $a > 1$ and $b > 1$ we have $a \ge 2$ and $b \ge 2$, and therefore $a \in X$ or $b \in X$. In either case, we have found an element of $X$ that is less than $n$. So we have infinite descent in $X$, which is a contradiction, as required.
+
+So it must indeed be the case that every integer $\ge 2$ can be expressed as a product of primes, as required.
+\end{example}
+
+The result of \Cref{exExistenceOfPrimeFactorisationbyInfiniteDescent} will form part of the \textit{fundamental theorem of arithmetic} (\Cref{thmFTA}), but we will give a different proof when we get there. The reason for this is that \Cref{exExistenceOfPrimeFactorisationbyInfiniteDescent} is non-constructive because it uses the indirect form of proof by contradiction (\Cref{strProofByContradictionIndirect}), whereas we can give a constructive proof using strong induction instead.
+
+\begin{exercise}
+Let $n \in \mathbb{N}$. By considering the expression $\sqrt{n} \times \dfrac{\sqrt{n} - \lfloor \sqrt{n} \rfloor}{\sqrt{n} - \lfloor \sqrt{n} \rfloor}$, prove by infinite descent that if $\sqrt{n}$ is not an integer, then $\sqrt{n}$ is irrational.
+\hintlabel{exSqrtOfNonSquareIsIrrational}{%
+Start by proving that if $\sqrt{n} = \dfrac{a}{b}$ for some $a,b \in \mathbb{Z}$ with $b \ne 0$, then $a(\sqrt{n} - \lfloor \sqrt{n} \rfloor) \in \mathbb{Z}$ and $b(\sqrt{n} - \lfloor \sqrt{n} \rfloor) \in \mathbb{Z}$. Then think about what this has to do with infinite descent.}
+\end{exercise}
 
 \index{induction!strong|)}
