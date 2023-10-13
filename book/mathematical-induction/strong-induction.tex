@@ -325,15 +325,47 @@ The well-ordering principle gives rise to a useful strategy for deriving contrad
 \label{strInfiniteDescent}
 \index{infinite descent}
 \index{proof!by infinite descent}
-In order to derive a contradiction, it suffices to construct an inhabited subset $X \subseteq \mathbb{N}$ and prove that, for all $n \in X$, there exists $m \in X$ with $m<n$.
+In order to derive a contradiction from an assumption $p$, it suffices use $p$ to construct an inhabited subset $X \subseteq \mathbb{N}$ such that, for all $n \in X$, there exists $n' \in X$ with $n'<n$.
 \end{strategy}
 
 Before we use this strategy, it is worth elaborating on why it works and where it got its name.
 
-Certainly, constructing such a set $X$ gives a contradiction: indeed, if $X$ is an inhabited subset of $\mathbb{N}$ then it has a least element $n$, and then there cannot exist $m \in X$ with $m<n$ by minimality of $n$.
+Certainly, constructing such a set $X$ gives a contradiction: indeed, if $X$ is an inhabited subset of $\mathbb{N}$ then it has a least element $n$, and then there cannot exist $n' \in X$ with $n'<n$ by minimality of $n$.
 
-The reason for the name has to do with the fact, if $X$ were such a set, then we could construct a decreasing sequence $n_0 > n_1 > n_2 > n_3 > \cdots$ of elements of $X$. Indeed, since $X$ is inhabited it has an element $n_0$. Then there exists an element $m \in X$ with $m < n_0$, so we define $n_1$ to be such an element. Then there exists an element $m \in X$ with $m<n_1$, so we define $n_2$ to be such an element. And so on. Thus we have an \textit{infinite descending} sequence of elements of $X$.
+The reason for the name has to do with the fact, if $X$ were such a set, then we could construct an \textit{infinite descending} sequence $n_0 > n_1 > n_2 > n_3 > \cdots$ of elements of $X$. Indeed, since $X$ is inhabited it has an element $n_0$; so there exists an element $n_1 \in X$ with $n_1 < n_0$; so there exists an element $n_2 \in X$ with $n_2 < n_1$; so there exists an element $n_3 \in X$ with $n_3 < n_2$; \dots{}and so on.
 
-\todo{Examples using proof by infinite descent---coming soon!}
+Our first example of proof by infinite descent will be used in the proof of the existence of \textit{quotients} and \textit{remainders}, which forms part of the division theorem---we stated the theorem without proof in \Cref{thmDivisionPreliminary} and will prove it fully in \Cref{thmDivisionTheorem}.
+
+\begin{example}[Existence of quotients and remainders]
+\label{exQuotientRemainderExistence}
+\index{quotient}
+\index{remainder}
+Let $a,b \in \mathbb{Z}$ with $b \ne 0$. We will prove that there exist $q,r \in \mathbb{Z}$ such that $a=qb+r$ and $0 \le r < |b|$.
+
+First, note that since $qb = (-q)(-b)$, we may assume that $b>0$ --- otherwise, replace $b$ by $-b$ and $q$ by $-q$ in what follows.
+
+Define
+\[ X = \{ n \in \mathbb{N} \mid a = mb + n \text{ for some } m \in \mathbb{Z} \} \subseteq \mathbb{N} \]
+Note that $X$ is inhabited. Indeed:
+\begin{itemize}
+\item Suppose $a \ge 0$. Then $a \in \mathbb{N}$ and $a = 0 \cdot b + a$, so that $a \in X$.
+\item Suppose $a < 0$. Since $b>0$ we have $b \ge 1$, so that $1-b \le 0$ and hence $a(1-b) \ge 0$. So $a(1-b) \in \mathbb{N}$, and moreover $a = ba + a(1-b)$, so setting $m=b$ and $n=a(1-b)$ in the definition of $X$, we see that $a(1-b) \in X$.
+\end{itemize}
+By the well-ordering principle, $X$ has a minimal element $r \in X$, and by definition of $X$ there exists $q \in \mathbb{Z}$ such that $a=qb+r$. Since $r \in X$, we have $r \in \mathbb{N}$, so that $r \ge 0$.
+
+It remains to prove that $r<b$.
+
+Towards a contradiction, assume that $r \ge b$. To obtain a contradiction, will proceed by infinite descent. Define
+\[ Y = \{ n \in X \mid n \ge b \} \]
+Note that $Y$ is inhabited since $r \in Y$, and $Y \subseteq \mathbb{N}$ since $Y \subseteq X$ and $X \subseteq \mathbb{N}$.
+
+Let $n \in Y$. Then $n \in X$, so $a=mb+n$ for some $m \in \mathbb{Z}$, and $n \ge b$ by definition of $Y$. But then $n-b \ge 0$ (so $n-b \in \mathbb{N}$) and
+\[ a = mb + n = (m+1)b + (n-b) \]
+so that $n-b \in X$. Since $r$ is the least element of $X$, we have $n-b \ge r \ge b$, so that $n-b \in Y$. Since $b > 0$, it follows that $n-b < n$.
+
+We have proved that, for all $n \in Y$, we have $n-b \in Y$ and $n-b < n$, and therefore we have infinite descent in $Y$. This is a contradiction.
+
+Therefore, our assumption that $r \ge b$ is false, and so it must in fact be the case that $r<b$, as required.
+\end{example}
 
 \index{induction!strong|)}
