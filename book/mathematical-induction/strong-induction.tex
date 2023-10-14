@@ -321,18 +321,30 @@ Prove first that if $a \in \mathbb{Z}$ and $a^2$ is divisible by $3$, then $a$ i
 
 The well-ordering principle gives rise to a useful strategy for deriving contradictions, by using the contradictory assumption to build a set of natural numbers with no least element.
 
+\begin{definition}
+\label{defInfiniteDescent}
+A set $X \subseteq \mathbb{R}$ has \textbf{infinite descent} if, for all $x \in X$, there exists $y \in X$ with $y < x$.
+\end{definition}
+
+The reason for the term `infinite descent' is that, if an inhabited set $X \subseteq \mathbb{R}$ has infinite descent, then we can construct an \textit{infinite}, \textit{descending} sequence of elements of $X$. To see this, note that since $X$ is inhabited, there is an element $x_0 \in X$; therefore there exists $x_1 \in X$ with $x_1 < x_0$; and so there exists an element $x_2 \in X$ with $x_2 < x_1$; and so on. In this way, we obtain a sequence $x_0,x_1,x_2,\dots{} \in X$ with
+\[ x_0 > x_1 > x_2 > \cdots \]
+
+\begin{example}
+There are many examples of subsets $X \subseteq \mathbb{R}$ with infinite descent. For example, $\mathbb{Z}$ has infinite descent, since for all $n \in \mathbb{Z}$ we have $n-1 \in \mathbb{Z}$ and $n-1 < n$. Starting with $0$, we obtain an infinite descending sequence of integers $0 > -1 > -2 > -3 > \cdots$.
+\end{example}
+
+\begin{exercise}
+Prove that the interval $(0,1)$ has infinite descent.
+\end{exercise}
+
+The well-ordering principle is equivalent to the assertion that no inhabited subset of $\mathbb{N}$ has infinite descent---so if we construct an inhabited subset of $\mathbb{N}$ with infinite descent, then we have a contradiction. This gives rise to the following proof strategy.
+
 \begin{strategy}[Proof by infinite descent]
 \label{strInfiniteDescent}
 \index{infinite descent}
 \index{proof!by infinite descent}
-In order to derive a contradiction from an assumption $p$, it suffices use $p$ to construct an inhabited subset $X \subseteq \mathbb{N}$ such that, for all $n \in X$, there exists $n' \in X$ with $n'<n$.
+In order to derive a contradiction from an assumption $p$, it suffices use $p$ to prove that there is an inhabited subset $X \subseteq \mathbb{N}$ with infinite descent.
 \end{strategy}
-
-Before we use this strategy, it is worth elaborating on why it works and where it got its name.
-
-Certainly, constructing such a set $X$ gives a contradiction: indeed, if $X$ is an inhabited subset of $\mathbb{N}$ then it has a least element $n$, and then there cannot exist $n' \in X$ with $n'<n$ by minimality of $n$.
-
-The reason for the name has to do with the fact, if $X$ were such a set, then we could construct an \textit{infinite descending} sequence $n_0 > n_1 > n_2 > n_3 > \cdots$ of elements of $X$. Indeed, since $X$ is inhabited it has an element $n_0$; so there exists an element $n_1 \in X$ with $n_1 < n_0$; so there exists an element $n_2 \in X$ with $n_2 < n_1$; so there exists an element $n_3 \in X$ with $n_3 < n_2$; \dots{}and so on.
 
 Our first example of proof by infinite descent will be used in the proof of the existence of \textit{quotients} and \textit{remainders}, which forms part of the division theorem---we stated the theorem without proof in \Cref{thmDivisionPreliminary} and will prove it fully in \Cref{thmDivisionTheorem}.
 
@@ -353,16 +365,14 @@ Note that $X$ is inhabited. Indeed:
 \end{itemize}
 By the well-ordering principle, $X$ has a minimal element $r \in X$, and by definition of $X$ there exists $q \in \mathbb{Z}$ such that $a=qb+r$. Since $r \in X$, we have $r \in \mathbb{N}$, so that $r \ge 0$. It remains to prove that $r<b$.
 
-Towards a contradiction, assume that $r \ge b$, and define $Y = \{ n \in X \mid n \ge b \}$. Note that $Y$ is inhabited since $r \in Y$, and $Y \subseteq \mathbb{N}$ since $Y \subseteq X$ and $X \subseteq \mathbb{N}$.
-
-Let $n \in Y$. Then $n \in X$, so $a=mb+n$ for some $m \in \mathbb{Z}$, and $n \ge b$ by definition of $Y$. But then $n-b \ge 0$ (so $n-b \in \mathbb{N}$) and
+Towards a contradiction, assume that $r \ge b$. Let $n \in X$, and let $m \in \mathbb{Z}$ be such that $a=mn+b$. Since $r \in X$ is minimal, we have $n \ge r \ge b$, and so $n-b \ge 0$. Therefore $n-b \in \mathbb{N}$, and furthermore
 \[ a = mb + n = (m+1)b + (n-b) \]
-so that $n-b \in X$. Since $r$ is the least element of $X$, we have $n-b \ge r \ge b$, so that $n-b \in Y$. Since $b > 0$, it follows that $n-b < n$.
+so that $n-b \in X$. Since $b>0$, we also have $n-b < n$.
 
-We have proved that, for all $n \in Y$, we have $n-b \in Y$ and $n-b < n$, and therefore we have infinite descent in $Y$. This is a contradiction, so our assumption that $r \ge b$ is false, and so it must in fact be the case that $r<b$, as required.
+Thus we have proved that, for all $n \in X$, we have $n-b \in X$ and $n-b < n$, and therefore $X$ has infinite descent. This is a contradiction, so our assumption that $r \ge b$ is false, and so it must in fact be the case that $r<b$, as required.
 \end{example}
 
-A common application of proof by infinite descent is when proving a statement of the form $\forall n \ge n_0,\, p(n)$ (for some $n_0 \in \mathbb{N}$) by contradiction: if we can prove that the set of all counterexamples to $p(n)$ has no minimal element, then it must be empty---but then there are no counterexamples to $p(n)$, and so $p(n)$ is true for all $n \ge n_0$. This is the strategy we use in the next example.
+A common application of proof by infinite descent is when proving a statement of the form $\forall n \ge n_0,\, p(n)$ (for some $n_0 \in \mathbb{N}$) by contradiction: if it is false, then there is a counterexample to $p(n)$, and so the set of all counterexamples is inhabited---we prove that the set of all counterexamples has infinite descent, leading to the desired contradiction. This is the strategy we use in the next example.
 
 \begin{example}[Existence of prime factorisation]
 \label{exExistenceOfPrimeFactorisationbyInfiniteDescent}
@@ -378,7 +388,7 @@ Since $n$ is not prime, we have $n=ab$ for some $a,b \in \mathbb{Z}$ with $1<a<n
 \[ n = ab = p_1 \times \cdots \times p_r \times q_1 \times \cdots \times q_s \]
 contradicting the assumption that $n \in X$.
 
-So at least one of $a$ or $b$ cannot be expressed as a product of positive prime numbers. Since $a > 1$ and $b > 1$ we have $a \ge 2$ and $b \ge 2$, and therefore $a \in X$ or $b \in X$. In either case, we have found an element of $X$ that is less than $n$. So we have infinite descent in $X$, which is a contradiction, as required.
+So at least one of $a$ or $b$ cannot be expressed as a product of positive prime numbers. Since $a > 1$ and $b > 1$ we have $a \ge 2$ and $b \ge 2$, and therefore $a \in X$ or $b \in X$. In either case, we have found an element of $X$ that is less than $n$. So $X$ has infinite descent, which is a contradiction.
 
 So it must indeed be the case that every integer $\ge 2$ can be expressed as a product of primes, as required.
 \end{example}
