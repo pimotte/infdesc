@@ -6,7 +6,7 @@ Let $n \in \mathbb{N}$ and let $f : [n] \to [n]$ be a function. Prove that $f$ i
 \end{chapex}
 
 \begin{chapex}
-Prove that $|\mathbb{Z}/n\mathbb{Z}|=n$ for all $n \ge 1$.
+Prove that $|\mathbb{Z}/n\mathbb{Z}|=n$ for all integers $n > 0$.
 \end{chapex}
 
 \begin{chapex}
@@ -39,7 +39,7 @@ Prove that $|X/{\sim}| \cdot k = n$ using the multiplication principle: find a t
 \end{chapex}
 
 \begin{chapex}
-Let $n,k \in \mathbb{N}$ with $k \le n$. Prove that the number of functions $f : [n] \to [n]$ that fix exactly $k$ elements of $[n]$ is equal to $\dbinom{n}{k}(n-1)^{n-k}$.
+Let $n,k \in \mathbb{N}$ with $n>0$ and $k \le n$. Prove that the number of functions $f : [n] \to [n]$ that fix exactly $k$ elements of $[n]$ is equal to $\dbinom{n}{k}(n-1)^{n-k}$.
 \end{chapex}
 
 \subsection*{Double counting}
@@ -82,7 +82,7 @@ Let $a_1,a_2,\dots,a_r \in \mathbb{N}$ and let $n = a_1 + a_2 + \cdots + a_r$. P
 \binom{n}{a_1,a_2,\dots,a_r} = \prod_{k=0}^{r-1} \binom{n - \sum_{i=1}^k a_i}{a_{k+1}}
 \]
 \end{chapex}
-where $\dbinom{n}{a_1,a_2,\dots,a_r}$ is the number of ordered $r$-tuples $(U_1, U_2, \dots, U_r)$ such that $U_1, U_2, \dots, U_r$ is a partition of $[n]$ and $|U_k| = a_k$ for all $k \in [r]$.
+where $\dbinom{n}{a_1,a_2,\dots,a_r}$ is the number of ordered $r$-tuples $(U_1, U_2, \dots, U_r)$ such that $U_1, U_2, \dots, U_r$ is a partition of $[n]$ and $|U_k| = a_k$ for all $1 \le k \le r$.
 
 \subsection*{Alternating sums}
 
@@ -130,7 +130,7 @@ There is a finite set with infinitely many subsets.
 
 \begin{chapex} % False
 \label{cqCombinatoricsTFEnd}
-For every partition $\mathcal{U} = \{ U_0, U_1, \dots, U_n \}$ of a finite set $X$, there is a function $f : X \to X$ that is a parity-swapping involution with respect to $\mathcal{U}$.
+For every partition $\mathcal{A}$ of a finite set $X$, there is a function $f : X \to X$ that is a parity-swapping involution with respect to $\mathcal{A}$.
 \end{chapex}
 
 \subsection*{Always--Sometimes--Never questions}

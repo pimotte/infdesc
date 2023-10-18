@@ -228,13 +228,13 @@ as required.
 \begin{example}
 We prove that $\kappa^2 = \kappa \cdot \kappa$ for all cardinal numbers $\kappa$.
 
-To see this, define $f : [\kappa]^{\{0,1\}} \to [\kappa] \times [\kappa]$ by letting $f(\theta) = (\theta(0), \theta(1))$ for all $\theta : \{0,1\} \to [\kappa]$. Then
+To see this, define $f : [\kappa]^{[2]} \to [\kappa] \times [\kappa]$ by letting $f(\theta) = (\theta(0), \theta(1))$ for all $\theta : [2] \to [\kappa]$. Then
 \begin{itemize}
-\item $f$ is injective. To see this, let $\theta, \varphi : \{0,1\} \to [\kappa]$ and assume $f(\theta) = f(\varphi)$. Then $(\theta(0), \theta(1)) = (\varphi(0), \varphi(1))$, so that $\theta(0) = \varphi(0)$ and $\theta(1) = \varphi(1)$. But then $\theta = \varphi$ by function extensionality, as required.
-\item $f$ is surjective. To see this, let $(a,b) \in [\kappa] \times [\kappa]$, and define $\theta : \{ 0,1 \} \to [\kappa]$ by letting $\theta(0)=a$ and $\theta(1)=b$. Then we have $f(\theta) = (\theta(0), \theta(1)) = (a,b)$, as required.
+\item $f$ is injective. To see this, let $\theta, \varphi : [2] \to [\kappa]$ and assume $f(\theta) = f(\varphi)$. Then $(\theta(0), \theta(1)) = (\varphi(0), \varphi(1))$, so that $\theta(0) = \varphi(0)$ and $\theta(1) = \varphi(1)$. But then $\theta = \varphi$ by function extensionality, as required.
+\item $f$ is surjective. To see this, let $(a,b) \in [\kappa] \times [\kappa]$, and define $\theta : [2] \to [\kappa]$ by letting $\theta(0)=a$ and $\theta(1)=b$. Then we have $f(\theta) = (\theta(0), \theta(1)) = (a,b)$, as required.
 \end{itemize}
 Since $f$ is a bijection, it follows that
-\[ \kappa^2 ~=~ |[\kappa]|^{|\{0,1\}|} ~=~ |[\kappa]^{\{0,1\}}| ~=~ |[\kappa] \times [\kappa]| ~=~ \kappa \cdot \kappa \]
+\[ \kappa^2 ~=~ |[\kappa]|^{|[2]|} ~=~ |[\kappa]^{[2]}| ~=~ |[\kappa] \times [\kappa]| ~=~ \kappa \cdot \kappa \]
 as required.
 \end{example}
 
@@ -246,10 +246,10 @@ Let $X$ be a set. Then $|\mathcal{P}(X)| = 2^{|X|}$.
 \end{theorem}
 
 \begin{cproof}
-There is a bijection $i : \mathcal{P}(X) \to \{ 0,1 \}^{X}$ defined for all $U \subseteq X$ by letting $i(U) = \chi_U \in \{ 0,1 \}^X$, where $\chi_U : X \to \{ 0,1 \}$ is the characteristic function of $U$ (see \Cref{defCharacteristicFunction}). Note that $i$ is a bijection by \Cref{thmCharacteristicFunctionsCharacteriseSubsets}.
+There is a bijection $i : \mathcal{P}(X) \to [2]^{X}$ defined for all $U \subseteq X$ by letting $i(U) = \chi_U \in [2]^X$, where $\chi_U : X \to [2]$ is the characteristic function of $U$ (see \Cref{defCharacteristicFunction}). Note that $i$ is a bijection by \Cref{thmCharacteristicFunctionsCharacteriseSubsets}.
 
 It follows by \Cref{lemCardinalityOfFunctionSet} that
-\[ |\mathcal{P}(X)| ~=~ |\{ 0,1 \}^X| ~=~ |\{0,1\}|^{|X|} ~=~ 2^{|X|} \]
+\[ |\mathcal{P}(X)| ~=~ |[2]^X| ~=~ |[2]|^{|X|} ~=~ 2^{|X|} \]
 as required.
 \end{cproof}
 
@@ -380,7 +380,7 @@ We prove that $\displaystyle \sum_{n \in \mathbb{N}} n = \aleph_0$.
 Define a function $f : \displaystyle \bigsqcup_{n \in \mathbb{N}} [n] \to \mathbb{N} \times \mathbb{N}$ by $f(n,k) = (n,k)$ for all $n \in \mathbb{N}$ and $k \in [n]$. Evidently $f$ is injective, since it is the inclusion function of a subset. Therefore
 \[ \sum_{n \in \mathbb{N}} n ~\le~ |\mathbb{N} \times \mathbb{N}| ~=~ \aleph_0 \cdot \aleph_0 ~=~ \aleph_0 \]
 
-Define a function $g : \mathbb{N} \to \displaystyle \bigsqcup_{n \in \mathbb{N}} [n]$ by $g(n) = (n+1, 1)$ for all $n \in \mathbb{N}$. Then $g$ is an injection, since given $m,n \in \mathbb{N}$, if $g(m)=g(n)$, then $(m+1,1) = (n+1,1)$, and so $m+1=n+1$. Thus $m=n$, as required. So we have
+Define a function $g : \mathbb{N} \to \displaystyle \bigsqcup_{n \in \mathbb{N}} [n]$ by $g(n) = (n+1, 0)$ for all $n \in \mathbb{N}$. Then $g$ is an injection, since given $m,n \in \mathbb{N}$, if $g(m)=g(n)$, then $(m+1,0) = (n+1,0)$, and so $m+1=n+1$. Thus $m=n$, as required. So we have
 \[ \aleph_0 ~=~ |\mathbb{N}| ~\le~ \left| \bigsqcup_{n \in \mathbb{N}} [n] \right| ~=~ \sum_{n \in \mathbb{N}} n \]
 
 By the Cantor--Schr\"{o}der--Bernstein theorem, we have $\sum_{n \in \mathbb{N}} n = \aleph_0$.

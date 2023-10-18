@@ -149,18 +149,18 @@ For part (a), note that for each $n \in \mathbb{N}$, we have $[n] \subseteq \mat
 \[ n = |[n]| \le |\mathbb{N}| = \aleph_0 \]
 as required.
 
-For part (b), fix a cardinal number $\kappa$ and assume that $n \le \kappa$ for all $n \in \mathbb{N}$. Then there exist injections $j_n : \{0, 1, \dots, n-1 \} \to [\kappa]$ for each $n \in \mathbb{N}$.
+For part (b), fix a cardinal number $\kappa$ and assume that $n \le \kappa$ for all $n \in \mathbb{N}$. Then there exist injections $j_n : [n] \to [\kappa]$ for each $n \in \mathbb{N}$.
 
-We will use these injections to construct an injection $f : \mathbb{N} \to [\kappa]$ in the following way: each function $j_n : \{ 0,1,\dots,n \} \to [\kappa]$ takes exactly $n+1$ values. This means that for all $n \in \mathbb{N}$, the function $j_{n+1}$ takes at least one value in $[\kappa]$ that the function $j_n$ does not take---we will define $f(n+1)$ to be one of these values.
+We will use these injections to construct an injection $f : \mathbb{N} \to [\kappa]$ in the following way: for each $n \in \mathbb{N}$, the function $j_{n+1} : [n+1] \to [\kappa]$ takes exactly $n+1$ values since it is injective. This means that for all $n \in \mathbb{N}$, the function $j_{n+2}$ takes at least one value in $[\kappa]$ that the function $j_{n+1}$ does not take---we will define $f(n+1)$ to be one such value.
 
 Now let's define $f$ properly: define $f(n) \in [\kappa]$ for $n \in \mathbb{N}$ recursively as follows:
 \begin{itemize}
-\item $f(0) = j_0(0) \in [\kappa]$.
-\item Fix $n \in \mathbb{N}$ and suppose $f(k)$ has been defined for all $k \le n$, such that $f(k) \ne f(\ell)$ for $\ell < k$. Let
-\[ A = \{ a \le n+1 \mid j_{n+1}(a) \ne f(k) \text{ for all } k \le n \} \]
-Note that $A$ is inhabited: the set $\{ j_{n+1}(a) \mid 0 \le a \le n+1 \}$ has size $n+2$ since $j_{n+1}$ is injective, and the set $\{ f(k) \mid 0 \le k \le n \}$ has size $n+1$ by construction, so at least one $a \le n+1$ must satisfy the requirement that $j_{n+1}(a) \ne f(k)$ for all $k \le n$.
+\item $f(0) = j_1(0) \in [\kappa]$.
+\item Fix $n \in \mathbb{N}$, and suppose $f(k)$ has been defined for all $k \le n$ and satisfies $f(k) \ne f(\ell)$ for $\ell < k$. Let
+\[ A = \{ a \in [n+2] \mid j_{n+2}(a) \ne f(k) \text{ for all } k \le n \} \]
+Note that $A$ is inhabited: the set $\{ j_{n+2}(a) \mid a \in [n+2] \}$ has size $n+2$ since $j_{n+2}$ is injective, and the set $\{ f(k) \mid k \le n \}$ has size $n+1$ by construction, so at least one $a \in [n+2]$ must satisfy the requirement that $j_{n+2}(a) \ne f(k)$ for all $k \le n$.
 
-Let $a$ be the least element of $A$, and define $f(n+1) = j_{n+1}(a)$. Then by construction we have $j_{n+1}(a) \ne f(k)$ for any $k < n+1$, as required.
+Let $a$ be the least element of $A$, and define $f(n+1) = j_{n+2}(a)$. Then by construction we have $f(n+1) \ne f(k)$ for any $k < n$, as required.
 \end{itemize}
 
 By construction, the function $f$ is injective, since for all $n \in \mathbb{N}$, the value $f(n) \in [\kappa]$ was defined so that $f(n) \ne f(k)$ for any $k < n$.

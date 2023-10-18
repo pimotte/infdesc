@@ -2,7 +2,7 @@
 \section{Countable and uncountable sets}
 \secbegin{secCountableUncountableSets}
 
-In \Cref{secFiniteSets}, we defined what it means for a set to be `finite' in order to capture the idea that its elements can be listed in such a way that the list has a start and an end. We did so by observing that a list of the elements of a finite set is essentially the same thing as a bijection $f : [n] \to X$ for some $n \in \mathbb{N}$, with the element $f(k) \in X$ playing the role of the $k^{\text{th}}$ element of the list.
+In \Cref{secFiniteSets}, we defined what it means for a set to be `finite' in order to capture the idea that its elements can be listed in such a way that the list has a start and an end. We did so by observing that a list of the elements of a finite set is essentially the same thing as a bijection $f : [n] \to X$ for some $n \in \mathbb{N}$, with the element $f(k) \in X$ playing the role of the element in position $k$ in the list.
 
 We are now interested in \textit{infinite} sets. We certainly can't expect a list of all the elements of an infinite set to end, so the question now is: can its elements be listed if we allow the list to be infinite? We will call such sets \textit{countable sets}.
 
@@ -20,8 +20,8 @@ This does not fulfil our criterion that the list must have a start: it is infini
 \[ 0,~ -1,~ 1,~ -2,~ 2,~ -3,~ 3,~ \dots,~ -n,~ n,~ -(n+1),~ n+1,~ \dots\]
 This is not how we would usually think about listing the integers, but we have nonetheless found a way of doing it so that every integer appears at some finite stage on the list.
 
-But specifying a list of the elements of an infinite set $X$, such that every element of $X$ appears at some finite stage on the list, is equivalent to specifying a bijection $f : \mathbb{N} \to X$, where the element $f(k) \in X$ plays the role of the $k^{\text{th}}$ element of the list---that is, the elements of $X$ can be listed as
-\[  f(0),~ f(1),~ f(2),~ \dots,~ f(n),~ f(n+1),~ \]
+But specifying a list of the elements of an infinite set $X$, such that every element of $X$ appears at some finite stage on the list, is equivalent to specifying a bijection $f : \mathbb{N} \to X$, where the element $f(k) \in X$ plays the role of the element in position $k$ of the list---that is, the elements of $X$ can be listed as
+\[  f(0),~ f(1),~ f(2),~ \dots,~ f(n),~ f(n+1),~ \dots \]
 
 This motivates the following definition.
 
@@ -101,7 +101,7 @@ Let $n \ge 1$ and let $X_1, \dots, X_n$ be countably infinite sets. Then the pro
 \begin{cproof}
 We proceed by induction on $n \ge 1$.
 \begin{itemize}
-\item (\textbf{Base case}) When $n=1$ the assertion is trivial: if $X_1$ is countably infinite then $X_1$ is countably infinite.
+\item (\textbf{Base case}) When $n=1$ the assertion is trivial: if $X_1$ is countably infinite then $\displaystyle \prod_{i=1}^1 X_i$ is equal to $X_1$, which is countably infinite.
 \item (\textbf{Induction step}) Fix $n \ge 1$ and suppose that for any sets $X_1, \dots, X_n$, the product $\prod_{i=1}^n X_i$ is countably infinite. Fix sets $X_1, \dots, X_{n+1}$. Then $\prod_{i=1}^n X_i$ is countably infinite by the induction hypothesis, and $X_{n+1}$ is countably infinite by assumption, so by \Cref{exProductOfTwoCountableSetsIsCountable}, the set
 \[ \left( \prod_{i=1}^n X_i \right) \times X_{n+1} \]
 is countably infinite. But by \Cref{exProductOfSuccNSets} there is a bijection 
@@ -206,6 +206,8 @@ The function $q$ is surjective by definition of $\mathbb{Q}$---indeed, to say $x
 By \Cref{exCountableFromInjSurjC}, it follows that $\mathbb{Q}$ is countable.
 \end{cproof}
 
+% To do: concept used before introduced - define (X choose k) in Section 6.1
+
 \begin{exercise} \label{exFiniteSubsetsCountableFixedSize}
 Let $X$ be a countable set. Prove that $\binom{X}{k}$ is countable for each $k \in \mathbb{N}$.
 \begin{backhint}
@@ -255,7 +257,7 @@ The argument used in \Cref{thmCantorForN} is an example of \textit{Cantor's diag
 \label{thmCantorDiagonalGeneral}
 Let $X$ be a set, and assume that for every function $f : \mathbb{N} \to X$, there is:
 \begin{enumerate}[(i)]
-\item A family of logical formulae $p_n(x)$ with $x \in X$, one for each $n \in \mathbb{N}$; and
+\item For each $n \in \mathbb{N}$, a logical formula $p_n(x)$ with free variable $x \in X$; and
 \item An element $b \in X$;
 \end{enumerate}
 such that $\forall n \in \mathbb{N},~ [p_n(b) \Leftrightarrow \neg p_n(f(n))]$. Then $X$ is uncountable.
@@ -277,7 +279,7 @@ Hence $X$ is uncountable by \Cref{exCountabilityFromInjectionsAndSurjections}\re
 \begin{strategy}[Cantor's diagonal argument]
 \label{strCantorDiagonal}
 \index{Cantor's diagonal argument}
-In order to prove that a set $X$ is uncountable, it suffices to prove that no function $f : \mathbb{N} \to X$ is surjective using the following argument: given a function $f : \mathbb{N} \to X$, find an element $b \in X$ that `disagrees' with each value $f(n)$ about some statement involving $n$.
+In order to prove that a set $X$ is uncountable, it suffices to prove that no function $f : \mathbb{N} \to X$ is surjective using the following argument: given a function $f : \mathbb{N} \to X$, find an element $b \in X$ that `disagrees' with all the values of $f$, in the sense that for each $n \in \mathbb{N}$, $b$ and $f(n)$ disagree about something to do with $n$.
 \end{strategy}
 
 \begin{example}
@@ -291,6 +293,8 @@ In the language of \Cref{thmCantorDiagonalGeneral}, the statement $p_n(U)$ (for 
 
 The definition $B = \{ k \in \mathbb{N} \mid k \not\in f(k) \}$ forces $n \in B \Leftrightarrow n \not\in f(n)$ to be true for all $n \in \mathbb{N}$, and so Cantor's diagonal argument applies.
 \end{example}
+
+\todo{Move the following theorem, which depends on content from Chapter 9}
 
 Cantor's diagonal argument can also be used to prove that $\mathbb{R}$ is uncountable by considering the decimal expansions of real numbers (\Cref{defBaseBExpansionOfRealNumber}).
 
@@ -341,16 +345,18 @@ For (iii)$\Rightarrow$(i), suppose there is an injection $f : U \to X$ for some 
 
 \begin{proposition}
 \label{propBinarySequencesAreUncountable}
-The set $\{0,1\}^{\mathbb{N}}$ of all functions $\mathbb{N} \to \{0,1\}$ is uncountable.
+The set $[2]^{\mathbb{N}}$ of all functions $\mathbb{N} \to [2]$ is uncountable.
 \end{proposition}
 
 \begin{cproof}
-Define $F : \mathcal{P}(\mathbb{N}) \to \{0,1\}^{\mathbb{N}}$ for $U \subseteq \mathbb{N}$ by letting $F(U) = \chi_U : \mathbb{N} \to \{0,1\}$ be the characteristic function of $U$ (\Cref{defCharacteristicFunction}).
+Define $F : \mathcal{P}(\mathbb{N}) \to [2]^{\mathbb{N}}$ for $U \subseteq \mathbb{N}$ by letting $F(U) = \chi_U : \mathbb{N} \to [2]$ be the characteristic function of $U$ (\Cref{defCharacteristicFunction}).
 
 Given $U, V \subseteq \mathbb{N}$, we have
 \[ F(U) = F(V) \quad \Rightarrow \quad \chi_U = \chi_V \quad \Rightarrow \quad U = V \]
-by \Cref{thmCharacteristicFunctionsCharacteriseSubsets}. But then $F$ is injective, and $\mathcal{P}(\mathbb{N})$ is uncountable by Cantor's theorem, so that $\{0,1\}^{\mathbb{N}}$ is uncountable by \Cref{thmUncountableFromInjSurj}.
+by \Cref{thmCharacteristicFunctionsCharacteriseSubsets}. But then $F$ is injective, and $\mathcal{P}(\mathbb{N})$ is uncountable by Cantor's theorem, so that $[2]^{\mathbb{N}}$ is uncountable by \Cref{thmUncountableFromInjSurj}.
 \end{cproof}
+
+It so happens that the function $F$ defined in the proof of \Cref{propBinarySequencesAreUncountable} is \textit{bijective}, not just injective; however, we did not prove this, since it was not needed in our proof.
 
 \begin{exercise}
 Prove that if a set $X$ has an uncountable subset, then $X$ is uncountable.
@@ -397,7 +403,7 @@ Now consider some of the sets that we know (or have been told) are uncountable:
 \index{length!of a word}
 \index{alphabet}
 \nindex{Sigmastar}{$\Sigma^*$}{Kleene star}
-Let $\Sigma$ be a set. A \textbf{word} over $\Sigma$ is an expression of the form $a_1 a_2 \dots a_n$, where $n \in \mathbb{N}$ and $a_i \in \Sigma$ for all $i \in [n]$. The natural number $n$ is called the \textbf{length} of the word. The unique word of length $0$ is called the \textbf{empty word}, and is denoted by $\varepsilon$ \inlatex{varepsilon}.
+Let $\Sigma$ be a set. A \textbf{word} over $\Sigma$ is an expression of the form $a_0 a_1 \dots a_{n-1}$, where $n \in \mathbb{N}$ and $a_i \in \Sigma$ for all $i \in [n]$. The natural number $n$ is called the \textbf{length} of the word. The unique word of length $0$ is called the \textbf{empty word}, and is denoted by $\varepsilon$ \inlatex{varepsilon}.
 
 The set $\Sigma$ is called the \textbf{alphabet}. The set of all words over $\Sigma$ is denoted by $\Sigma^*$ \inlatex{Sigma\^{}*}; the operation $(-)^{\star}$ is called the \textbf{Kleene star}.
 \end{definition}
@@ -492,7 +498,7 @@ Prove that the set of all polynomials with rational coefficients is countable.
 \end{exercise}
 
 \begin{exercise}
-Consider the following argument that claims to be a proof that $\mathcal{P}(\mathbb{N})$ is countable. (It isn't.)
+Consider the following erroneous argument that claims to be a proof that $\mathcal{P}(\mathbb{N})$ is countable.
 \begin{quote}
 Let $\Sigma = \left\{ \mathbb{N},x,U,V,\boxed{\mid},\boxed{\in},\boxed{\{},\boxed{\}} \right\}$---again, we have boxed some symbols to emphasise that they are elements of $\Sigma$.
 
@@ -502,7 +508,7 @@ for all $U, V \subseteq \mathbb{N}$. Then $\Sigma$ is finite, and $D$ is injecti
 \[ D(U) = D(V) ~ \Rightarrow ~ \{ x \in \mathbb{N} \mid x \in U \} = \{ x \in \mathbb{N} \mid x \in V \} ~ \Rightarrow ~ U = V \]
 Since $D$ is a finite description of the subsets of $\mathbb{N}$ over a finite alphabet, it follows from \Cref{thmCountableIffFiniteDescription} that $\mathcal{P}(\mathbb{N})$ is countable. \hfill $\Box$
 \end{quote}
-This proof cannot be valid, since we know that $\mathcal{P}(\mathbb{N})$ is uncountable. Where in the proof did we go wrong?
+This proof cannot be valid, since we already proved in \Cref{thmCantorForN} that $\mathcal{P}(\mathbb{N})$ is uncountable. Where in the proof did we go wrong?
 \hintlabel{exBadProofThatPowerSetOfNIsCountable}{%
 Is $\Sigma$ \textit{really} finite? Is $D$ \textit{really} well-defined?
 }

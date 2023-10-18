@@ -347,22 +347,22 @@ Let $X$ be a set. Then $(\mathcal{P}(X), \subseteq)$ is a Boolean algebra.
 Another extremely important example of a Boolean algebra is known as the \textit{Lindenbaum--Tarski algebra}, which we define in \Cref{defLindenbaumTarskiAlgebra}. In order to define it, we need to prove that the definition will make sense. First of all, we fix some notation.
 
 \begin{definition}
-Let $P$ be a set, thought of as a set of propositional variables. Write $L(P)$ to denote the set of propositional formulae with propositional variables in $P$---that is, the elements of $L(P)$ are strings built from the elements of $P$, using the operations of conjunction ($\wedge$), disjunction ($\vee$) and negation ($\neg$).
+Let $P$ be a set, thought of as a set of propositional variables. Write $\mathcal{L}(P)$ to denote the set of propositional formulae with propositional variables in $P$---that is, the elements of $\mathcal{L}(P)$ are strings built from the elements of $P$, using the operations of conjunction ($\wedge$), disjunction ($\vee$) and negation ($\neg$).
 \end{definition}
 
 \begin{lemma}
-Logical equivalence $\equiv$ is an equivalence relation on $L(P)$.
+Logical equivalence $\equiv$ is an equivalence relation on $\mathcal{L}(P)$.
 \end{lemma}
 \begin{cproof}
-This is immediate from definition of equivalence relation, since for $s,t \in L(P)$, $s \equiv t$ is defined to mean that $s$ and $t$ have the same truth values for all assignments of truth values to their propositional variables.
+This is immediate from definition of equivalence relation, since for $s,t \in \mathcal{L}(P)$, $s \equiv t$ is defined to mean that $s$ and $t$ have the same truth values for all assignments of truth values to their propositional variables.
 \end{cproof}
 
-In what follows, the set $P$ of propositional variables is fixed; we may moreover take it to be countably infinite, since all strings in $L(P)$ are finite.
+In what follows, the set $P$ of propositional variables is fixed; we may moreover take it to be countably infinite, since all strings in $\mathcal{L}(P)$ are finite.
 
 \begin{definition}
 \label{defLindenbaumTarskiAlgebra}
 \index{Lindenbaum--Tarski algebra}
-The \textbf{Lindenbaum--Tarski algebra} (\textbf{for propositional logic}) over $P$ is the pair $(A, \vdash)$, where $A = L(P)/{\equiv}$ and $\vdash$ is the relation on $A$ defined by $[s]_{\equiv} \vdash [t]_{\equiv}$ if and only if $s \Rightarrow t$ is a tautology.
+The \textbf{Lindenbaum--Tarski algebra} (\textbf{for propositional logic}) over $P$ is the pair $(A, \vdash)$, where $A = \mathcal{L}(P)/{\equiv}$ and $\vdash$ is the relation on $A$ defined by $[s]_{\equiv} \vdash [t]_{\equiv}$ if and only if $s \Rightarrow t$ is a tautology.
 \end{definition}
 
 In what follows, we will simply write $[{-}]$ for $[{-}]_{\equiv}$.

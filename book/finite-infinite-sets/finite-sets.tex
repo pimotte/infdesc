@@ -22,13 +22,9 @@ This is good intuition, but isn't good enough as a mathematical definition, beca
 \textit{A set $X$ is finite if the elements of $X$ can be listed one by one\\
 in such a way that the list has both a start and an end.}
 \end{center}
-This is better but is still not entirely precise---it is not entirely clear what is meant by `listed one by one'. But we can make this precise: to list the elements of $X$ one-by-one means that we are specifying a `first element', a `second element', a `third element', and so on. To say that this list has an end means that we eventually reach the `$n^{\text{th}}$ element', for some $n \in \mathbb{N}$, and there is no `$(n+1)^{\text{st}}$ element'. In other words, for some natural number $n$, we are pairing up the elements of $X$ with the natural numbers from $1$ to $n$.
+This is better but is still not entirely precise---it is not entirely clear what is meant by `listed one by one'. But we can make this precise. Let's label the positions in our list with natural numbers. To list the elements of $X$ means to specify an element of $X$ to go in position $0$, then another element of $X$ to go in position $1$, and so on, until we eventually run out of elements of $X$---the fact that we eventually run out of elements is exactly what we want to capture by our definition of `finite'.
 
-Recall that, for each $n \in \mathbb{N}$, the set of natural numbers from $1$ up to $n$ has its own notation:
-
-\RSdefBracketN*
-
-Since `pairing up' really means `finding a bijection', we are now ready to define what it means for a set to be finite.
+If the listed elements of $X$ occupy positions $0,1,\dots,{n-1}$, this means that we have effectively paired up the elements of $[n]$ (the list positions) with the elements of $X$ (the set being listed). Since `pairing up' really means `finding a bijection', we are now ready to define what it means for a set to be finite.
 
 \begin{definition}
 \label{defFiniteSet}
@@ -46,10 +42,10 @@ In order to prove that a set $X$ is finite, it suffices to find a bijection $[n]
 
 \begin{example}
 \label{exSomeFiniteSets}
-Let $X = \{ \text{red}, \text{orange}, \text{yellow}, \text{green}, \text{blue}, \text{purple} \}$. We said above that $X$ is finite; now we can prove it. Define $f : [6] \to X$ by
+Let $X = \{ \text{red}, \text{orange}, \text{yellow}, \text{green}, \text{blue}, \text{purple} \}$, and define $f : [6] \to X$ by
 \[ \begin{matrix}
-f(1) = \text{red} & f(2) = \text{orange} & f(3) = \text{yellow} \\
-f(4) = \text{green} & f(5) = \text{blue} & f(6) = \text{purple}
+f(0) = \text{red} & f(1) = \text{orange} & f(2) = \text{yellow} \\
+f(3) = \text{green} & f(4) = \text{blue} & f(5) = \text{purple}
 \end{matrix} \]
 The function $f$ is evidently a bijection, since each element of $X$ can be expressed uniquely as $f(k)$ for some $k \in [6]$. So $X$ is finite.
 \end{example}
@@ -79,7 +75,7 @@ Note that $f^{\vee}$ is well-defined by injectivity of $f$: indeed, if we had $f
 
 To see that $f^{\vee}$ is injective, let $x,y \in X \setminus \{ a \}$ and $f^{\vee}(x) = f^{\vee}(y)$. Then $f(x) = f(y)$, so that $x=y$ by injectivity of $f$.
 
-Now suppose that $f$ is a bijection. Then $f$ has an inverse $g : Y \to X$, which is itself a bijection (and hence an injection). Repeating the above argument with $g$ yields an injection $g^{\vee} : Y \setminus \{ f(a) \} \to X \setminus \{ a \}$ defined by $g^{\vee}(y) = g(y)$ for all $y \in Y$. But then for all $x \in X \setminus \{ a \}$ and all $y \in Y \setminus \{ f(a) \}$ we have
+Now suppose that $f$ is a bijection. Then $f$ has an inverse $g : Y \to X$, which is itself a bijection (and hence an injection). Repeating the above argument with $g$ yields an injection $g^{\vee} : Y \setminus \{ f(a) \} \to X \setminus \{ a \}$ defined by $g^{\vee}(y) = g(y)$ for all $y \in Y \setminus \{ f(a) \}$. But then for all $x \in X \setminus \{ a \}$ and all $y \in Y \setminus \{ f(a) \}$ we have
 \[ g^{\vee}(f^{\vee}(x)) = g(f(x)) = x \quad \text{and} \quad f^{\vee}(g^{\vee}(y)) = f(g(y)) \]
 so that $g^{\vee}$ is an inverse for $f^{\vee}$. Hence if $f$ is a bijection, then $f^{\vee}$ is a bijection.
 \end{cproof}
@@ -108,7 +104,7 @@ Let $m,n \in \mathbb{N}$.
 \end{theorem}
 
 \begin{cproof}[of (a)]
-For fixed $m \in \mathbb{N}$, let $p(m)$ be the assertion that, for all $n \in \mathbb{N}$, if there exists an injection $[m] \to [n]$, then $m \le n$. We prove that $p(m)$ is true for all $m \in \mathbb{N}$ by induction.
+We will prove by induction on $m$ that, for all $m,n \in \mathbb{N}$, if there exists an injection $[m] \to [n]$, then $m \le n$.
 
 \begin{itemize}
 \item (\textbf{Base case}) We need to prove that, for all $n \in \mathbb{N}$ if there exists an injection $[0] \to [n]$, then $0 \le n$. This is automatically true, since $0 \le n$ for all $n \in \mathbb{N}$.
@@ -116,12 +112,12 @@ For fixed $m \in \mathbb{N}$, let $p(m)$ be the assertion that, for all $n \in \
 
 Now let $n \in \mathbb{N}$ and suppose that there is an injection $f : [m+1] \to [n]$. We need to prove that $m+1 \le n$.
 
-First note that $n \ge 1$. Indeed, since $m+1 \ge 1$, we have $1 \in [m+1]$, and so $f(1) \in [n]$. This means that $[n]$ is inhabited, and so $n \ge 1$. In particular, $n-1 \in \mathbb{N}$ and so the set $[n-1]$ is well-defined. It suffices to prove that $m \le n-1$.
+First note that $n > 1$. Indeed, since $m+1 > 0$, we have $0 \in [m+1]$, and so $f(0) \in [n]$. This means that $[n]$ is inhabited, and so $n > 0$. In particular, $n-1 \in \mathbb{N}$ and so the set $[n-1]$ is well-defined. It suffices to prove that $m \le n-1$.
 
 Let $a = f(m+1) \in [n]$. Then:
 \begin{itemize}
-\item By \Cref{lemRemoveElementFromDomainAndCodomain} there is an injection $f^{\vee} : [m] = [m+1] \setminus \{ m+1 \} \to [n] \setminus \{ a \}$.
-\item By \Cref{lemRemoveElementFromSet} there is a bijection $g : [n] \setminus \{ a \} \to [n] \setminus \{ n \} = [n-1]$.
+\item By \Cref{lemRemoveElementFromDomainAndCodomain} there is an injection $f^{\vee} : [m] = [m+1] \setminus \{ m \} \to [n] \setminus \{ a \}$.
+\item By \Cref{lemRemoveElementFromSet} there is a bijection $g : [n] \setminus \{ a \} \to [n] \setminus \{ n-1 \} = [n-1]$.
 \end{itemize}
 
 Composing these two functions gives an injection $g \circ f^{\vee} : [m] \to [n-1]$. But then $m \le n-1$ by the induction hypothesis, and so $m+1 \le n$ as required.
@@ -162,30 +158,30 @@ Let $X$ be a finite set. The \textbf{size} (or \textbf{cardinality}) of $X$, wri
 
 \begin{example}
 \label{exBijectionFromIntegersFromMinusNToNToBracketTwoNPlusOne}
-Fix $n \in \mathbb{N}$ and let $X = \{ a \in \mathbb{Z} \mid -n \le a \le n \}$. There is a bijection $f : [2n+1] \to X$ defined by $f(k) = k-n-1$. Indeed:
+Fix $n \in \mathbb{N}$ and let $X = \{ a \in \mathbb{Z} \mid -n \le a \le n \}$. There is a bijection $f : [2n+1] \to X$ defined by $f(k) = k-n$ for all $k \in [2n+1]$. Indeed:
 \begin{itemize}
 \item \textbf{$f$ is well-defined.}
 %% BEGIN EXTRACT (xtrIntroducingVariableExampleTwo) %%
-We need to prove $f(k) \in X$ for all $k \in [2n+1]$. Well given $k \in [2n+1]$, we have $1 \le k \le 2n+1$, and so
-\[ -n = 1-(n+1) \le ~ \underbrace{k-(n+1)}_{=f(k)} ~  \le (2n+1) - (n+1) = n \]
+We need to prove $f(k) \in X$ for all $k \in [2n+1]$. Well given $k \in [2n+1]$, we have $0 \le k \le 2n$, and so
+\[ -n = 0-n ~ \le ~ \underbrace{k-n}_{=f(k)} ~ \le ~ 2n - n = n \]
 so that $f(k) \in X$ as claimed.
 %% END EXTRACT %%
-\item \textbf{$f$ is injective.} Let $k, \ell \in [2n+1]$ and assume $f(k) = f(\ell)$. Then $k - n - 1 = \ell - n - 1$, and so $k = \ell$.
-\item \textbf{$f$ is surjective.} Let $a \in X$ and define $k = a+n+1$. Then
-\[ 1 = (-n) + n + 1 \le ~ \underbrace{a + n + 1}_{= k} ~ \le n + n + 1 = 2n+1 \]
-and so $k \in [2n+1]$, and moreover $f(k) = (a+n+1)-n-1 = a$.
+\item \textbf{$f$ is injective.} Let $k, \ell \in [2n+1]$ and assume $f(k) = f(\ell)$. Then $k-n = \ell-n$, and so $k = \ell$.
+\item \textbf{$f$ is surjective.} Let $a \in X$ and define $k = a+n$. Then
+\[ 0 = (-n) + n \le ~ \underbrace{a + n}_{= k} ~ \le n + n = 2n < 2n+1 \]
+and so $k \in [2n+1]$, and moreover $f(k) = (a+n)-n = a$.
 \end{itemize}
 Since $f$ is a bijection, we have $|X| = 2n+1$ by \Cref{defSize}.
 \end{example}
 
 \begin{exercise}
 \label{exAddRemoveElementsOfFiniteSets}
-Let $X$ be a finite set with $|X| = n > 1$. Let $a \in X$ and let $b \not \in X$. Prove that
+Let $X$ be a finite set.
 \begin{enumerate}[(a)]
-\item $X \setminus \{ a \}$ is finite and $|X \setminus \{ a \}| = n-1$; and
-\item $X \cup \{ b \}$ is finite and $|X \cup \{ b \}| = n+1$.
+\item Prove that for all $a \in X$, the set $X \setminus \{ a \}$ is finite and $|X \setminus \{ a \}| = |X|-1$; and
+\item Prove that for all $b \not\in X$, the set $X \cup \{ b \}$ is finite and $|X \cup \{ b \}| = |X|+1$.
 \end{enumerate}
-Identify where in your proofs you make use the hypotheses that $a \in X$ and $b \not \in X$.
+What happens in part (a) if we do not require $a \in X$? What happens in part (b) if we do not require $b \not\in X$?
 \end{exercise}
 
 \subsection*{Comparing the sizes of finite sets}
@@ -275,8 +271,8 @@ We will prove this in the case when $X$ and $Y$ are disjoint. The general case, 
 Let $m = |X|$ and $n=|Y|$, and let $f : [m] \to X$ and $g : [n] \to Y$ be bijections.
 
 Since $X$ and $Y$ are disjoint, we have $X \cap Y = \varnothing$. Define $h : [m+n] \to X \cup Y$ as follows; given $k \in [m+n]$, let
-\[ h(k) = \begin{cases} f(k) & \text{if } k \le m \\ g(k-m) & \text{if } k > m \end{cases} \]
-Note that $h$ is well-defined: the cases $k \le m$ and $k > m$ are mutually exclusive, they cover all possible cases, and $k-m \in [n]$ for all $m+1 \le k \le n$ so that $g(k-m)$ is defined. It is then straightforward to check that $h$ has an inverse $h^{-1} : X \cup Y \to [m+n]$ defined by
+\[ h(k) = \begin{cases} f(k) & \text{if } k < m \\ g(k-m) & \text{if } k \ge m \end{cases} \]
+Note that $h$ is well-defined: the cases $k < m$ and $k \ge m$ are mutually exclusive, they cover all possible cases, and $k-m \in [n]$ for all $m \le k < n$ so that $g(k-m)$ is defined. It is then straightforward to check that $h$ has an inverse $h^{-1} : X \cup Y \to [m+n]$ defined by
 \[ h^{-1}(z) = \begin{cases} f^{-1}(z) & \text{if } z \in X \\ g^{-1}(z)+m & \text{if } z \in Y \end{cases} \]
 Well-definedness of $h^{-1}$ relies fundamentally on the assumption that $X \cap Y = \varnothing$, as this is what ensures that the cases $x \in X$ and $x \in Y$ are mutually exclusive.
 
@@ -300,7 +296,7 @@ The following steps complete the proof of \Cref{propUnionOfFiniteSetsIsFinite}:
 \end{exercise}
 
 \begin{exercise}
-Let $X$ be a finite set and let $U \subseteq X$. Prove that $X \setminus U$ is finite, and moreover $|X \setminus U| = |X| - |U|$.
+Let $X$ be a finite set and let $U \subseteq X$. Prove that $X \setminus U$ is finite, and moreover $|X \setminus U| = |X| - |U|$. How does this result change if $U$ is not required to be a subset of $X$?
 \hintlabel{exSizeOfRelativeComplement}{%
 Apply \Cref{propUnionOfFiniteSetsIsFinite} with $Y=U$.
 }
@@ -342,18 +338,20 @@ We'll prove by induction on $n \ge 1$ that every subset $U \subseteq \mathbb{N}$
 \begin{itemize}
 \item (\textbf{Base case}) Take $U \subseteq \mathbb{N}$ with $|U|=1$. then $U = \{ m \}$ for some $m \in \mathbb{N}$. Since $m$ is the only element of $U$, it is certainly the greatest element of $U$!
 
-\item (\textbf{Induction step}) Fix $n \ge 1$ and suppose that every set of natural numbers of size $n$ has a greatest element (\textbf{IH}).
+\item (\textbf{Induction step}) Fix $n \ge 1$ and suppose that every set of natural numbers of size $n$ has a greatest element.
 
 Let $U \subseteq \mathbb{N}$ with $|U| = n+1$. We wish to show that $U$ has a greatest element.
 
-Since $|U| = n+1$, we may write $U = \{ m_1, m_2, \dots, m_n, m_{n+1} \}$ for distinct natural numbers $m_k$. But then $|U \setminus \{ m_{n+1} \}| = n$ by \Cref{exAddRemoveElementsOfFiniteSets}, and so by the induction hypothesis, $U \setminus \{ m_{n+1} \}$ has a greatest element, say $m_k$. Now:
+Since $|U| = n+1 > 0$, we know that $U$ is inhabited, so there is an element $a \in U$. By \Cref{exAddRemoveElementsOfFiniteSets}(a) we have $|U \setminus \{ a \}| = |U| - 1 = n$, and so by the induction hypothesis, $U \setminus \{ a \}$ has a greatest element $m \in U \setminus \{ a \}$. Now either $a < m$ or $a > m$.
 \begin{itemize}
-\item If $m_k < m_{n+1}$, then $m_{n+1}$ is the greatest element of $U$.
-\item If $m_k > m_{n+1}$, then $m_k$ is the greatest element of $U$.
+\item If $a < m$, then $m$ is the greatest element of $U$; and
+\item If $a > m$, then $a$ is the greatest element of $U$.
 \end{itemize}
-In any case, $U$ has a greatest element. This completes the induction step.
+In any case, we see that $U$ has a greatest element.
 \end{itemize}
 \end{cproof}
+
+\Cref{lemFinSetGreatestElement} is equivalent to the assertion that every inhabited subset of $\mathbb{N}$ with no greatest element is infinite. We can therefore deduce that $\mathbb{N}$ is infinite very easily, as we do in the next theorem.
 
 \begin{theorem}
 \label{thmNIsInfinite}

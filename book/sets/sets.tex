@@ -98,12 +98,12 @@ Set-builder notation is useful for defining sets based on the properties they sa
 
 \begin{restatable}{definition}{RSdefBracketN}
 \label{defBracketN}
-Let $n \in \mathbb{N}$. The set $[n]$ is defined by $[n] = \{ k \in \mathbb{N} \mid 1 \le k \le n \}$.
+Let $n \in \mathbb{N}$. The set $[n]$ is defined by $[n] = \{ k \in \mathbb{N} \mid k < n \}$.
 \end{restatable}
 
 \begin{example}
 \label{exBracketN}
-In implied list notation, $[n] = \{ 1, 2, \dots, n \}$. For example, $[4] = \{ 1, 2, 3, 4 \}$. Note that $[0]$ has no elements (it is \textit{empty}---see \Cref{defInhabited}), since there are no natural numbers $k$ satisfying the inequality $1 \le k \le 0$.
+In implied list notation, $[n] = \{ 0, 1, \dots, n-1 \}$. For example, $[4] = \{ 0, 1, 2, 3 \}$. Note that $[0]$ has no elements (it is \textit{empty}---see \Cref{defInhabited}), since there are no natural numbers $k$ satisfying the inequality $k < 0$.
 \end{example}
 
 While not particularly interesting yet, sets of the form $[n]$ will be fundamental throughout \Cref{chCombinatorics}, as they are used to define the notion of a \textit{finite set}, as well as the \textit{size} of a finite set.
@@ -350,7 +350,7 @@ The set $\{ x \in \mathbb{R} \mid x^2 = 2 \}$ is inhabited since, for example $\
 \end{example}
 
 \begin{example}
-We observed in \Cref{exBracketN} that the set $[0]$ is empty; here's a more formal proof. Towards a contradiction, suppose $[0]$ is inhabited. Then there is some $k \in \mathbb{N}$ such that $1 \le k \le 0$. It follows that $1 \le 0$, which contradicts the fact that $0<1$. Hence $[0]$ is empty, after all.
+We observed in \Cref{exBracketN} that the set $[0]$ is empty; here's a more formal proof. Towards a contradiction, suppose $[0]$ is inhabited. Then there is some $k \in \mathbb{N}$ such that $k < 0$. It follows that $0 < 0$, since $0 \in \mathbb{N}$, which is a contradiction. Hence $[0]$ is empty, after all.
 \end{example}
 
 \begin{exercise}

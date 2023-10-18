@@ -10,7 +10,7 @@ For example, the number $N$ of words spoken by a child over the course of a year
 
 In this chapter, we will concern ourselves only with the discrete setting.
 
-It is important to understand from the outset that, although we use language like \textit{outcome}, \textit{event}, \textit{probability} and \textit{random}, and although we use real-world examples, everything we do concerns mathematical objects: sets, elements of sets, and functions. If we say, for example, ``the probability that a roll of a fair six-sided die shows $3$ or $4$ is $\frac{1}{3}$,'' we are actually interpreting the situation mathematically---the \textit{outcomes} of the die rolls are interpreted as the elements of the set $[6]$; the \textit{event} that the die shows $3$ or $4$ is interpreted as the subset $\{ 3, 4 \} \subseteq [6]$; and the \textit{probability} that this event occurs is the value of a particular function $\mathbb{P} : \mathcal{P}([6]) \to [0,1]$ on input $\{ 3, 4 \}$. The mathematical interpretation is called a \textbf{model}\index{model!probablistic} of the real-world situation.
+It is important to understand from the outset that, although we use language like \textit{outcome}, \textit{event}, \textit{probability} and \textit{random}, and although we use real-world examples, everything we do concerns mathematical objects: sets, elements of sets, and functions. If we say, for example, ``the probability that a roll of a fair six-sided die shows $3$ or $4$ is $\frac{1}{3}$,'' we are actually interpreting the situation mathematically---the \textit{outcomes} of the die rolls are interpreted as the elements of the set $\{ 1, 2, 3, 4, 5, 6 \}$; the \textit{event} that the die shows $3$ or $4$ is interpreted as the subset $\{ 3, 4 \} \subseteq \{ 1, 2, 3, 4, 5, 6 \}$; and the \textit{probability} that this event occurs is the value of a particular function $\mathbb{P} : \mathcal{P}(\{ 1, 2, 3, 4, 5, 6 \}) \to [0,1]$ on input $\{ 3, 4 \}$. The mathematical interpretation is called a \textbf{model}\index{model!probablistic} of the real-world situation.
 
 \begin{definition}
 \label{defDiscreteProbabilitySpace}
@@ -38,9 +38,9 @@ There is a general notion of a probability space, which does not require the sam
 \label{exProbabilitySpaceSixSidedDie}
 We model the roll of a fair six-sided die.
 
-The possible \textbf{outcomes} of the roll are $1$, $2$, $3$, $4$, $5$ and $6$, so we can take $\Omega = [6]$ to be the sample space.
+The possible \textbf{outcomes} of the roll are $1$, $2$, $3$, $4$, $5$ and $6$, so we can take $\Omega = \{ 1, 2, 3, 4, 5, 6 \}$ to be the sample space.
 
-The \textbf{events} correspond with subsets of $[6]$. For example:
+The \textbf{events} correspond with subsets of $\Omega$. For example:
 \begin{itemize}
 \item $\{ 4 \}$ is the event that the die roll shows $4$. This event occurs with probability $\frac{1}{6}$.
 \item $\{ 1, 3, 5 \}$ is the event that the die roll is odd. This event occurs with probability $\frac{1}{2}$
@@ -52,7 +52,7 @@ The \textbf{events} correspond with subsets of $[6]$. For example:
 
 More generally, since each outcome occurs with equal probability $\frac{1}{6}$, we can define
 \[ \mathbb{P}(A) = \frac{|A|}{6} \text{ for all events } A \]
-We will verify that $\mathbb{P}$ defines a probability measure on $[6]$ in \Cref{exProbabilitySpaceSixSidedDieVerifyMeasure}.
+We will verify that $\mathbb{P}$ defines a probability measure on $\Omega$ in \Cref{exProbabilitySpaceSixSidedDieVerifyMeasure}.
 \end{example}
 
 \begin{example}
@@ -108,11 +108,11 @@ Hence the two conditions are equivalent.
 
 \begin{example}
 \label{exProbabilitySpaceSixSidedDieVerifyMeasure}
-We prove that the function $\mathbb{P}$ from \Cref{exProbabilitySpaceSixSidedDie} truly does define a probability measure. Indeed, let $\Omega=[6]$ and let $\mathbb{P} : \mathcal{P}(\Omega) \to [0,1]$ be defined by
+We prove that the function $\mathbb{P}$ from \Cref{exProbabilitySpaceSixSidedDie} truly does define a probability measure. Indeed, let $\Omega = \{ 1, 2, 3, 4, 5, 6 \}$ and let $\mathbb{P} : \mathcal{P}(\Omega) \to [0,1]$ be defined by
 \[ \mathbb{P}(A) = \frac{|A|}{6} \text{ for all events } A \]
-Then $\mathbb{P}(\Omega) = \frac{6}{6} = 1$, so condition (i) in \Cref{defDiscreteProbabilitySpace} is satisfied. Moreover, for each $A \subseteq [6]$ we have
+Then $\mathbb{P}(\Omega) = \frac{6}{6} = 1$, so condition (i) in \Cref{defDiscreteProbabilitySpace} is satisfied. Moreover, for each $A \subseteq \Omega$ we have
 \[ \sum_{\omega \in A} \mathbb{P}(\{\omega\}) = \sum_{\omega \in A} \frac{1}{6} = \frac{|A|}{6} = \mathbb{P}(A) \]
-so, by \Cref{propEquivalentSecondAxiomsForDiscreteProbabilitySpace}, $\mathbb{P}$ defines a probability measure on $[6]$.
+so, by \Cref{propEquivalentSecondAxiomsForDiscreteProbabilitySpace}, $\mathbb{P}$ defines a probability measure on $\Omega$.
 \end{example}
 
 \Cref{propEquivalentSecondAxiomsForDiscreteProbabilitySpace} makes defining probability measures much easier, since it implies that probability measures are determined entirely by their values on individual outcomes. This means that, in order to define a probability measure, we only need to specify its values on individual outcomes and check that the sum of these probabilities is equal to $1$. This is significantly easier than defining $\mathbb{P}(A)$ on \textit{all} events $A \subseteq \Omega$ and checking the two conditions of \Cref{defDiscreteProbabilitySpace}.
@@ -172,7 +172,7 @@ In the real world, we might want to talk about the probability that two events b
 
 \begin{example}
 \label{exInformalOrAndNot}
-Let $(\Omega,\mathbb{P})$ be the probability space modelling two rolls of a fair six-sided die---that is, the sample space $\Omega=[6] \times [6]$ with probability measure $\mathbb{P}$ defined by $\mathbb{P}(\{(a,b)\}) = \frac{1}{36}$ for each $(a,b) \in \Omega$.
+Let $(\Omega,\mathbb{P})$ be the probability space modelling two rolls of a fair six-sided die---that is, the sample space $\Omega = \{ 1, 2, 3, 4, 5, 6 \}^2$ with probability measure $\mathbb{P}$ defined by $\mathbb{P}(\{(a,b)\}) = \frac{1}{36}$ for each $(a,b) \in \Omega$.
 
 Let $A$ be the event that the sum of the die rolls is even, that is
 \[ A = \begin{Bmatrix}(1,1), & (1,3), & (1,5), & (2,2), & (2,4), & (2,6),\\
@@ -185,7 +185,7 @@ Then
 \begin{itemize}
 \item Consider the event that the sum of the die rolls is even \textbf{or} greater than or equal to $9$. An outcome $\omega$ gives rise to this event precisely when either $\omega \in A$ or $\omega \in B$; so the event in question is $A \cup B$;
 \item Consider the event that the sum of the die rolls is even \textbf{and} greater than or equal to $9$. An outcome $\omega$ gives rise to this event precisely when both $\omega \in A$ and $\omega \in B$; so the event in question is $A \cap B$;
-\item Consider the event that the sum of the die rolls is \textbf{not} even. An outcome $\omega$ gives rise to this event precisely when $\omega \not \in A$; so the event in question is is $([6] \times [6]) \setminus A$.
+\item Consider the event that the sum of the die rolls is \textbf{not} even. An outcome $\omega$ gives rise to this event precisely when $\omega \not \in A$; so the event in question is $\Omega \setminus A$.
 \end{itemize}
 Thus we can interpret `or' as union, `and' as intersection, and `not' as relative complement in the sample space.
 \end{example}
@@ -211,10 +211,12 @@ Prove that
 \item $\{ \omega \in \Omega \mid p(\omega) \vee q(\omega) \} = A \cup B$;
 \item $\{ \omega \in \Omega \mid \neg p(\omega) \} = A^c$.
 \end{itemize}
-For reference, in \Cref{exInformalOrAndNot}, we had $\Omega = [6] \times [6]$ and we defined $p(a,b)$ to be `$a+b$ is even' and $q(a,b)$ to be `$a+b \ge 7$'.
+For reference, in \Cref{exInformalOrAndNot}, we had $\Omega = \{ 1, 2, 3, 4, 5, 6 \}^2$ and we defined $p(a,b)$ to be `$a+b$ is even' and $q(a,b)$ to be `$a+b \ge 7$'.
 \end{exercise}
 
 With this in mind, it will be useful to know how set operations on events interact with probabilities. A useful tool in this investigation is that of an \textit{indicator function}.
+
+\todo{Eliminate redundancy---characteristic functions are already defined in Chapter 3}
 
 \begin{definition}
 \label{defIndicatorFunction}
@@ -272,9 +274,9 @@ Although there are nice expressions for unions and complements of events, it is 
 
 \begin{example}
 Let $\Omega = [3]$ and define a probability measure $\mathbb{P}$ on $\Omega$ by letting
-\[ \mathbb{P}(\{1\}) = \frac{1}{4}, \qquad \mathbb{P}(\{2\}) = \frac{1}{2} \qquad \text{and} \qquad \mathbb{P}(\{3\}) = \frac{1}{4} \]
+\[ \mathbb{P}(\{0\}) = \frac{1}{4}, \qquad \mathbb{P}(\{1\}) = \frac{1}{2} \qquad \text{and} \qquad \mathbb{P}(\{2\}) = \frac{1}{4} \]
 Then we have
-\[ \mathbb{P}(\{1,2\} \cap \{2,3\}) = \mathbb{P}(\{2\}) = \frac{1}{2} \ne \frac{9}{16} = \frac{3}{4} \cdot \frac{3}{4} = \mathbb{P}(\{1,2\}) \cdot \mathbb{P}(\{2,3\}) \]
+\[ \mathbb{P}(\{0,1\} \cap \{1,2\}) = \mathbb{P}(\{1\}) = \frac{1}{2} \ne \frac{9}{16} = \frac{3}{4} \cdot \frac{3}{4} = \mathbb{P}(\{0,1\}) \cdot \mathbb{P}(\{1,2\}) \]
 \end{example}
 
 This demonstrates that it is not always the case that $\mathbb{P}(A \cap B) = \mathbb{P}(A) \mathbb{P}(B)$ for events $A,B$ in a given probability space. Pairs of events $A,B$ for which this equation \textit{is} true are said to be \textit{independent}.
@@ -288,10 +290,12 @@ Let $(\Omega,\mathbb{P})$ be a probability space and let $A,B$ be events. We say
 
 \begin{example}
 A fair six-sided die is rolled twice. Let $A$ be the event that the first roll shows $4$, and let $B$ be the event that the second roll is even. Then
-\[ A = \{ (4,1), (4,2), (4,3), (4,4), (4,5), (4,6) \} \]
+\[ A = \{ (4,1), (4,2), (4,3), (4,4), (4,5), (4,6) \} = \{ 4 \} \times \{ 1, 2, 3, 4, 5, 6 \} \]
 so $\mathbb{P}(A) = \frac{6}{36} = \frac{1}{6}$; and
-\[ B = \{ (a,2), (a,4), (a,6) \mid a \in [6] \} \]
-so $\mathbb{P}(B) = \frac{18}{36} = \frac{1}{2}$. Moreover $A \cap B = \{ (4,2), (4,4), (4,6) \}$, so it follows that
+\[ B = \{ 1, 2, 3, 4, 5, 6 \} \times \{ 2, 4, 6 \} \]
+which has size $6 \times 3 = 18$, so $\mathbb{P}(B) = \frac{18}{36} = \frac{1}{2}$.
+
+Moreover $A \cap B = \{ (4,2), (4,4), (4,6) \}$, so it follows that
 \[ \mathbb{P}(A \cap B) = \frac{3}{36} = \frac{1}{12} = \frac{1}{6} \cdot \frac{1}{2} = \mathbb{P}(A)\mathbb{P}(B) \]
 so the events $A$ and $B$ are independent.
 
@@ -376,7 +380,7 @@ Let $(\Omega,\mathbb{P})$ be a probability space and let $A,B$ be events such th
 \begin{example}
 A fair six-sided die is rolled twice. We compute the probability that the first roll showed a $2$ given that the sum of the die rolls is less than $5$.
 
-We can model this situation by taking the sample space to be $[6] \times [6]$, with each outcome having an equal probability of $\frac{1}{36}$.
+We can model this situation by taking the sample space to be $\{ 1, 2, 3, 4, 5, 6 \}^2$, with each outcome having an equal probability of $\frac{1}{36}$.
 
 Let $A$ be the event that the first die roll shows a $2$, that is
 \[ A = \{ (2,1),(2,2),(2,3),(2,4),(2,5),(2,6) \} \]

@@ -274,8 +274,8 @@ We may assume that $a \ge 0$, otherwise replace $a$ by its remainder modulo $p$.
 
 We will prove that $a^{p} \equiv a \bmod p$ by induction on $a$.
 \begin{itemize}
-\item (\textbf{BC}) Since $p > 0$ we have $0^p=0$, hence $0^p \equiv 0 \bmod p$.
-\item (\textbf{IS}) Fix $a \ge 0$ and suppose $a^p \equiv a \bmod p$. Then $(a+1)^p \equiv a^p+1^p \bmod p$ by \Cref{lemBinomPrimeExponent}. Now $a^p \equiv a \bmod p$ by the induction hypothesis, and $1^p = 1$, so we have $(a+1)^p \equiv a+1 \bmod p$.
+\item (\textbf{Base case}) Since $p > 0$ we have $0^p=0$, hence $0^p \equiv 0 \bmod p$.
+\item (\textbf{Induction step}) Fix $a \ge 0$ and suppose $a^p \equiv a \bmod p$. Then $(a+1)^p \equiv a^p+1^p \bmod p$ by \Cref{lemBinomPrimeExponent}. Now $a^p \equiv a \bmod p$ by the induction hypothesis, and $1^p = 1$, so we have $(a+1)^p \equiv a+1 \bmod p$.
 \end{itemize}
 By induction, we're done.
 \end{cproof}
@@ -318,7 +318,7 @@ Unfortunately, the hypothesis that $p$ is prime in Fermat's little theorem canno
 \index{totient}
 Let $n \in \mathbb{Z}$. The \textbf{totient}\index{totient} of $n$ is the natural number $\varphi(n)$\nindex{totient}{$\varphi(n)$}{totient} \inlatex{varphi(n)}\lindexmmc{varphi}{$\varphi$} defined by
 \[ \varphi(n) = | \{ k \in [ |n| ] \mid k \perp n \}| \]
-That is, $\varphi(n)$ is the number of integers from $1$ up to $|n|$ which are coprime to $n$. The function $\varphi : \mathbb{Z} \to \mathbb{N}$ is called \textbf{Euler's totient function}.
+That is, $\varphi(n)$ is the number of natural numbers less than $|n|$ which are coprime to $n$. The function $\varphi : \mathbb{Z} \to \mathbb{N}$ is called \textbf{Euler's totient function}.
 \end{definition}
 
 \begin{example}
@@ -327,6 +327,7 @@ Here are some examples of totients:
 \begin{itemize}
 \item The elements of $[6]$ which are coprime to $6$ are $1$ and $5$, so $\varphi(6)=2$.
 \item If $p$ is a positive prime, then by \Cref{corCoprimeToPrimeIffNotDivisibleByPrime}, every element of $[p]$ is coprime to $p$ except for $p$ itself. Hence if $p$ is a positive prime then $\varphi(p)=p-1$. More generally, if $p$ is prime then $\varphi(p) = |p|-1$.
+\item $[1] = \{ 0 \}$ and $\mathrm{gcd}(0,1) = 1$, so that $0 \perp 1$, and hence $\varphi(1) = 1$.
 \end{itemize}
 \end{example}
 

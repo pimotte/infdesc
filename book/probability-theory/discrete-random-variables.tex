@@ -2,19 +2,19 @@
 \section{Discrete random variables}
 \secbegin{secDiscreteRandomVariables}
 
-Events in a probability space are sometimes unenlightening when looked at in isolation. For example, suppose we roll a fair six-sided die twice. The outcomes are elements of the set $[6] \times [6]$, each occurring with equal probability $\frac{1}{36}$. The event that the die rolls sum to $7$ is precisely the subset
-\[ \{ (1,6), (2,5), (3,4), (4,3), (5,2), (6,1) \} \subseteq [6] \times [6] \]
+Events in a probability space are sometimes unenlightening when looked at in isolation. For example, suppose we roll a fair six-sided die twice. The outcomes are elements of the set $\Omega = \{ 1, 2, 3, 4, 5, 6 \}^2$, each occurring with equal probability $\frac{1}{36}$. The event that the die rolls sum to $7$ is precisely the subset
+\[ \{ (1,6), (2,5), (3,4), (4,3), (5,2), (6,1) \} \subseteq \Omega \]
 and so we can say that the probability that the two rolls sum to $7$ is
 \[ \mathbb{P}( \{ (1,6), (2,5), (3,4), (4,3), (5,2), (6,1) \}) = \frac{1}{6} \]
 However, it is not at all clear from the expression $\{ (1,6), (2,5), (3,4), (4,3), (5,2), (6,1) \}$ that, when we wrote it down, what we had in mind was the event that the sum of the die rolls is $7$. Moreover, the expression of the event in this way does not make it clear how to generalise to other possible sums of die rolls.
 
-Note that the sum of the die rolls defines a function $S : [6] \times [6] \to [12]$, defined by
-\[ S(a,b) = a+b \text{ for all } (a,b) \in [6] \times [6] \]
+Note that the sum of the die rolls defines a function $S : \Omega \to \mathbb{N}$, defined by
+\[ S(a,b) = a+b \text{ for all } (a,b) \in \Omega \]
 The function $S$ allows us to express our event in a more enlightening way: indeed,
-\[ \{ (1,6), (2,5), (3,4), (4,3), (5,2), (6,1) \} = \{ (a,b) \in [6] \times [6] \mid a+b=7 \} = S^{-1}[\{7\}] \]
+\[ \{ (1,6), (2,5), (3,4), (4,3), (5,2), (6,1) \} = \{ (a,b) \in \Omega \mid a+b=7 \} = S^{-1}[\{7\}] \]
 (Recall the definition of \textit{preimage} in \Cref{defPreimage}.) Thus the probability that the sum of the two die rolls is $7$ is equal to $\mathbb{P}(S^{-1}[\{7\}])$.
 
-If we think of $S$ not as a function $[6] \times [6] \to [12]$, but as a $[12]$-valued \textit{random variable}, which varies according to a random outcome in $[6] \times [6]$, then we can informally say
+If we think of $S$ not as a function $\Omega \to \mathbb{N}$, but as a $\mathbb{N}$-valued \textit{random variable}, which varies according to a random outcome in $\Omega$, then we can informally say
 \[ \mathbb{P}\{S = 7\} = \frac{1}{6} \quad \text{which formally means} \quad \mathbb{P}(S^{-1}[\{7\}]) = \frac{1}{6} \]
 This affords us much more generality. Indeed, we could ask what the probability is that the die rolls sum to a value greater than or equal to $7$. In this case, note that the die rolls $(a,b)$ sum to a number greater than or equal to $7$ if and only if $a+b \in \{7,8,9,10,11,12\}$, which occurs if and only if $(a,b) \in S^{-1}[\{7,8,9,10,11,12\}]$. Thus, we might informally say
 \[ \mathbb{P}\{S \ge 7\} = \frac{7}{12} \quad \text{which formally means} \quad \mathbb{P}(S^{-1}[\{7,8,9,10,11,12\}]) = \frac{7}{12} \]
@@ -167,9 +167,9 @@ Let $(\Omega,\mathbb{P})$ be a discrete probability space and let $X,Y : \Omega 
 \begin{example}
 A fair six-sided die is rolled twice. Let $X$ be the value shown on the first roll and $Y$ be the value shown on the second roll.
 
-We can model this situation by letting $\Omega = [6] \times [6]$ with $\mathbb{P}(\{(a,b)\})=\frac{1}{36}$ for all $(a,b) \in \Omega$. The random variables $X,Y$ can thus be taken to be functions $\Omega \to [6]$ defined by
+We can model this situation by letting $\Omega = \{ 1, 2, 3, 4, 5, 6 \}^2$ with $\mathbb{P}(\{(a,b)\})=\frac{1}{36}$ for all $(a,b) \in \Omega$. The random variables $X,Y$ can thus be taken to be functions $\Omega \to \{ 1, 2, 3, 4, 5, 6 \}$ defined by
 \[ X(a,b)=a \text{ and } Y(a,b)=b \text{ for all } (a,b) \in \Omega \]
-So let $e,e' \in [6]$. Note first that
+So let $e,e' \in \{ 1, 2, 3, 4, 5, 6 \}$. Note first that
 \begin{align*}
 & \{ X = e \} \cap \{ Y = e' \} && \\
 &= \{ (a,b) \in \Omega \mid a=e \} \cap \{ (a,b) \in \Omega \mid b=e' \} && \text{by \Cref{ntnRandomVariableEvents}} \\
@@ -182,7 +182,7 @@ The events $\{ X = e \}$ and $\{ Y = e' \}$ are independent, and so $X$ and $Y$ 
 \end{example}
 
 \begin{exercise}
-A coin which shows heads with probability $p \in [0,1]$, and tails otherwise, is flipped five times. For each $i \in [5]$, let
+A coin which shows heads with probability $p \in [0,1]$, and tails otherwise, is flipped five times. For each $1 \le i \le 5$, let
 \[ X_i = \begin{cases} 0 & \text{if the } i^{\text{th}} \text{ flip shows tails} \\
 1 & \text{if the } i^{\text{th}} \text{ flip shows heads} \end{cases} \]
 Prove that the random variables $X_1,X_2,X_3,X_4,X_5$ are pairwise independent.
@@ -200,12 +200,12 @@ where $a \in \mathbb{R}$. Note that the random variables $X+Y, XY, aX, a$ are al
 \end{notation}
 
 \begin{example}
-A coin which shows heads with probability $p \in [0,1]$, and tails otherwise, is flipped $n$ times. For each $i \in [n]$, let
+A coin which shows heads with probability $p \in [0,1]$, and tails otherwise, is flipped $n$ times. For each $1 \le i \le n$, let
 \[ X_i = \begin{cases} 0 & \text{if the } i^{\text{th}} \text{ flip shows tails} \\
 1 & \text{if the } i^{\text{th}} \text{ flip shows heads} \end{cases} \]
-Then each $X_i$ is a $\{ 0,1 \}$-valued random variable.
+Then each $X_i$ is a $[2]$-valued random variable.
 
-Define $X = X_1 + X_2 + \cdots + X_n$. Then $X$ is a $\{ 0,1,\dots,n \}$-valued random variable representing the number of heads that show in total after the coin is flipped $n$ times.
+Define $X = X_1 + X_2 + \cdots + X_n$. Then $X$ is a $\mathbb{N}$-valued random variable representing the number of heads that show in total after the coin is flipped $n$ times.
 \end{example}
 
 \subsection*{Probability distributions}
@@ -225,9 +225,9 @@ If $X$ is uniformly distributed on $E$, we write $X \sim \mathrm{Unif}(E)$ \inla
 \end{definition}
 
 \begin{example}
-Let $(\Omega,\mathbb{P})$ be the probability space modelling the roll of a fair six-sided die, and let $X$ be the $[6]$-valued random variable representing the number shown. Then for each $k \in [6]$ we have
+Let $(\Omega,\mathbb{P})$ be the probability space modelling the roll of a fair six-sided die, and let $X$ be the $\{ 1, 2, 3, 4, 5, 6 \}$-valued random variable representing the number shown. Then for each $k \in \{ 1, 2, 3, 4, 5, 6 \}$ we have
 \[ f_X(k) = \mathbb{P}\{X=k\} = \mathbb{P}(\{k\}) = \frac{1}{6} \]
-so $X$ is uniformly distributed on $[6]$.
+so $X$ is uniformly distributed on $\{ 1, 2, 3, 4, 5, 6 \}$.
 \end{example}
 
 \begin{exercise}
@@ -424,7 +424,7 @@ Let $(\Omega,\mathbb{P})$ be a probability space, let $E \subseteq \mathbb{R}$ b
 
 \begin{example}
 \label{exExpectationFairDieRoll}
-Let $X$ be a random variable representing the value shown when a fair six-sided die is rolled. Then $X \sim \mathrm{U}([6])$, so that $f_X(k)=\frac{1}{6}$ for all $k \in [6]$, and hence
+Let $X$ be a random variable representing the value shown when a fair six-sided die is rolled. Then $X \sim \mathrm{U}(\{ 1, 2, 3, 4, 5, 6 \})$, so that $f_X(k)=\frac{1}{6}$ for all $1 \le k \le 6$, and hence
 \[ \mathbb{E}[X] = 1 \cdot \frac{1}{6} + 2 \cdot \frac{1}{6} + 3 \cdot \frac{1}{6} + 4 \cdot \frac{1}{6} + 5 \cdot \frac{1}{6} + 6 \cdot \frac{1}{6} = \frac{21}{6} = 3.5 \]
 so the expected value of the die roll is $3.5$.
 \end{example}
@@ -538,8 +538,8 @@ Let $(\Omega,\mathbb{P})$ be a probability space, let $E \subseteq \mathbb{R}$ b
 \label{exCoinCollectorExpectation}
 Recall \Cref{exCoinCollectorSetUp}: an urn contains $n \ge 1$ distinct coupons. Each time you draw a coupon that you have not drawn before, you get a stamp. When you get all $n$ stamps, you win. We find the expected number of times you need to draw a coupon from the urn in order to win.
 
-For each $k \in [n]$, let $X_k$ be the random variable representing the number of draws required to draw the $k^{\text{th}}$ new coupon, after $k-1$ coupons have been collected. Then the total number of times a coupon must be drawn is $X = X_1+X_2+\cdots+X_n$.
+For each $1 \le k \le n$, let $X_k$ be the random variable representing the number of draws required to draw the $k^{\text{th}}$ new coupon, after $k-1$ coupons have been collected. Then the total number of times a coupon must be drawn is $X = X_1+X_2+\cdots+X_n$.
 
-We already saw that $X_k \sim \mathrm{Geom}\left( \frac{n-k+1}{n} \right)$ for each $k \in [n]$. By \Cref{exExpectationOfGeometricPositive}, we have $\mathbb{E}[X_k] = \frac{n}{n-k+1}$ for all $k \in [n]$. By linearity of expectation, it follows that
+We already saw that $X_k \sim \mathrm{Geom}\left( \frac{n-k+1}{n} \right)$ for each $1 \le k \le n$. By \Cref{exExpectationOfGeometricPositive}, we have $\mathbb{E}[X_k] = \frac{n}{n-k+1}$ for all $1 \le k \le n$. By linearity of expectation, it follows that
 \[ \mathbb{E}[X] = \sum_{k=1}^n \mathbb{E}[X_k] = \sum_{k=1}^n \frac{n}{n-k+1} = n \sum_{i=1}^n \frac{1}{i} \]
 \end{example}

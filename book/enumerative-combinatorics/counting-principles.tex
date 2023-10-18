@@ -29,10 +29,10 @@ Intuitively, $\binom{X}{k}$ is the set of ways of picking $k$ elements from $X$,
 We find $\binom{[4]}{k}$ for all $k \in \mathbb{N}$.
 \begin{itemize}
 \item $\binom{[4]}{0} = \{\varnothing\}$ since the only set with $0$ elements is $\varnothing$;
-\item $\binom{[4]}{1} = \{ \{1\}, \{2\}, \{3\}, \{4\} \}$;
-\item $\binom{[4]}{2} = \{ \{1,2\}, \{1,3\}, \{1,4\}, \{2,3\}, \{2,4\}, \{3,4\} \}$;
-\item $\binom{[4]}{3} = \{ \{1,2,3\}, \{1,2,4\}, \{1,3,4\}, \{2,3,4\} \}$;
-\item $\binom{[4]}{4} = \{ \{ 1,2,3,4 \} \}$;
+\item $\binom{[4]}{1} = \{ \{0\}, \{1\}, \{2\}, \{3\} \}$;
+\item $\binom{[4]}{2} = \{ \{0,1\}, \{0,2\}, \{0,3\}, \{1,2\}, \{1,3\}, \{2,3\} \}$;
+\item $\binom{[4]}{3} = \{ \{0,1,2\}, \{0,1,3\}, \{0,2,3\}, \{1,2,3\} \}$;
+\item $\binom{[4]}{4} = \{ \{ 0,1,2,3 \} \}$;
 \item If $k \ge 5$ then $\binom{[4]}{k} = \varnothing$, since by \Cref{exSubsetOfFiniteSetIsFinite}, no subset of $[4]$ can have more than $4$ elements.
 \end{itemize}
 \end{example}
@@ -84,8 +84,8 @@ Let $X$ be a set. A \textbf{permutation} of $X$ is a bijection $X \to X$. Denote
 \begin{example}
 \label{exPermutationsOfBracket3}
 There are six permutations of the set $[3]$. Representing each $f \in S_3$ by the ordered triple $(f(1),f(2),f(3))$, these permutations are thus given by
-\[ (1,2,3),\ (1,3,2),\ (2,1,3),\ (2,3,1),\ (3,1,2),\ (3,2,1) \]
-For example, $(2,3,1)$ represents the permutation $f : [3] \to [3]$ defined by $f(1)=2$, $f(2)=3$ and $f(3)=1$.
+\[ (0,1,2),\ (0,2,1),\ (1,0,2),\ (1,2,0),\ (2,0,1),\ (2,1,0) \]
+For example, $(1,2,0)$ represents the permutation $f : [3] \to [3]$ defined by $f(0)=1$, $f(1)=2$ and $f(2)=0$.
 \end{example}
 
 \begin{exercise}
@@ -172,12 +172,12 @@ where $F$ is the set of flavours, $C = \{ \text{tub}, \text{regular cone}, \text
 We will prove that $|\mathcal{P}(X)| = 2^{|X|}$ for all finite sets $X$.
 
 Let $X$ be a finite set and let $n=|X|$. Write
-\[ X = \{ x_k \mid k \in [n] \} = \{ x_1, x_2, \dots, x_n \} \]
+\[ X = \{ x_k \mid k \in [n] \} = \{ x_0, x_1, \dots, x_{n-1} \} \]
 Intuitively, specifying an element of $\mathcal{P}(X)$---that is, a subset $U \subseteq X$---is equivalent to deciding, for each $k \in [n]$, whether $x_k \in U$ or $x_k \not \in U$ (`in or out'), which in turn is equivalent to specifying an element of $\{ \text{in}, \text{out} \}^n$.
 
 For example, taking $X=[7]$, the subset $U = \{ 1, 2, 6 \}$ corresponds with the choices
-\[ 1 \text{ in},\ 2 \text{ in},\ 3 \text{ out},\ 4 \text{ out},\ 5 \text{ out},\ 6 \text{ in},\ 7 \text{ out} \]
-and hence the element $(\text{in}, \text{in}, \text{out}, \text{out}, \text{out}, \text{in}, \text{out}) \in \{ \text{in}, \text{out} \}^7$.
+\[ 0 \text{ out},\ 1 \text{ in},\ 2 \text{ in},\ 3 \text{ out},\ 4 \text{ out},\ 5 \text{ out},\ 6 \text{ in} \]
+and hence the element $(\text{out}, \text{in}, \text{in}, \text{out}, \text{out}, \text{out}, \text{in}) \in \{ \text{in}, \text{out} \}^7$.
 
 This defines a function $i : \mathcal{P}(X) \to \{ \text{in}, \text{out} \}^n$. This function is injective, since different subsets determine different sequences; and it is surjective, since each sequence determines a subset.
 
@@ -257,7 +257,7 @@ We are now ready to state and prove the theorem giving rise to the multiplicatio
 \index{counting principle!multiplication principle}
 \index{multiplication principle}
 \index{rule of product}
-Let $n \ge 1$ and $m_1,m_2,\dots,m_n \in \mathbb{N}$. Suppose for each $i \in [n]$ that we are given finite sets $X^{(i)}_{a_1,\dots,a_{i-1}}$ with $|X^{(i)}_{a_1,\dots,a_{i-1}}| = m_i$, where $a_j \in X^{(i)}_{a_1,\dots,a_{j-1}}$ for each $j<i$. Define
+Let $n \ge 1$ and $m_1,m_2,\dots,m_n \in \mathbb{N}$. Suppose for each $1 \le i \le n$ that we are given finite sets $X^{(i)}_{a_1,\dots,a_{i-1}}$ with $|X^{(i)}_{a_1,\dots,a_{i-1}}| = m_i$, where $a_j \in X^{(i)}_{a_1,\dots,a_{j-1}}$ for each $j<i$. Define
 \[ P = \{ (a_1,a_2,\dots,a_n) \mid a_1 \in X^{(1)}, ~ a_2 \in X^{(2)}_{a_1}, ~ \dots, ~ a_n \in X^{(n)}_{a_1,\dots,a_{n-1}} \} \]
 Then $P$ is finite and $|P| = m_1 \times m_2 \times \cdots \times m_n$.
 \end{theorem}
@@ -267,7 +267,7 @@ We proceed by induction on $n \ge 1$.
 \begin{itemize}
 \item (\textbf{Base case}) When $n=1$, the statement says that given $m_1 \in \mathbb{N}$ and a finite set $X^{(1)}$ with $|X^{(1)}|=m_1$, then $P = \{ (a_1) \mid a_1 \in X^{(1)} \}$ is finite and $|P| = m_1$. This is true, since the function $X^{(1)} \to P$ defined by $a \mapsto (a)$ is evidently a bijection.
 
-\item (\textbf{Induction step}) Fix $n \ge 1$ and assume that the statement is true for this value of $n$.
+\item (\textbf{Induction step}) Fix $n \ge 1$ and assume that the theorem statement is true for this value of $n$.
 
 Let $m_1, m_2, \dots, m_n, m_{n+1} \in \mathbb{N}$ and suppose that we are given finite sets $X^{(i)}_{a_1,\dots,a_{i-1}}$ for each $i \in [n+1]$ just as in the statement of the theorem, and let
 \[ P = \{ (a_1,a_2,\dots,a_{n+1}) \mid a_1 \in X^{(1)}, ~ a_2 \in X^{(2)}_{a_1}, ~ \dots, ~ a_{n+1} \in X^{(n+1)}_{a_1,\dots,a_{n-1},a_n} \} \]
@@ -304,15 +304,15 @@ If there are $n \in \mathbb{N}$ steps and $m_k \in \mathbb{N}$ possible choices 
 \begin{example}
 We prove that there are six bijections $[3] \to [3]$. We can specify a bijection $f : [3] \to [3]$ according to the following procedure.
 \begin{itemize}
-\item \textbf{Step 1.} Choose the value of $f(1)$. There are $3$ choices.
-\item \textbf{Step 2.} Choose the value of $f(2)$. The values $f(2)$ can take depend on the chosen value of $f(1)$.
+\item \textbf{Step 1.} Choose the value of $f(0)$. There are $3$ choices: $0$, $1$ or $2$.
+\item \textbf{Step 2.} Choose the value of $f(1)$. The values $f(1)$ can take depend on the chosen value of $f(0)$.
 \begin{itemize}
-\item If $f(1)=1$, then $f(2)$ can be equal to $2$ or $3$.
-\item If $f(1)=2$, then $f(2)$ can be equal to $1$ or $3$.
-\item If $f(1)=3$, then $f(2)$ can be equal to $1$ or $2$.
+\item If $f(0)=0$, then $f(1)$ can be equal to $1$ or $2$.
+\item If $f(0)=1$, then $f(1)$ can be equal to $0$ or $2$.
+\item If $f(0)=2$, then $f(1)$ can be equal to $0$ or $1$.
 \end{itemize}
-In each case, there are $2$ choices for the value of $f(2)$.
-\item \textbf{Step 3.} Choose the value of $f(3)$. The values $f(3)$ can take depend on the values of $f(1)$ and $f(2)$. We could split into the (six!) cases based on the values of $f(1)$ and $f(2)$ chosen in Steps 1 and 2; but we won't. Instead, note that $\{f(1),f(2)\}$ has two elements, and by injectivity $f(3)$ must have a distinct value, so that $[3] \setminus \{ f(1),f(2) \}$ has one element. This element must be the value of $f(3)$. Hence there is only possible choice of $f(3)$.
+In each case, there are $2$ choices for the value of $f(1)$.
+\item \textbf{Step 3.} Choose the value of $f(2)$. The values $f(2)$ can take depend on the values of $f(0)$ and $f(1)$. We could split into the (six!) cases based on the values of $f(0)$ and $f(1)$ chosen in Steps 1 and 2; but we won't. Instead, note that $\{f(0),f(1)\}$ has two elements, and by injectivity $f(2)$ must have a distinct value, so that $[3] \setminus \{ f(0),f(1) \}$ has one element. This element must be the value of $f(2)$. Hence there is only possible choice of $f(2)$.
 \end{itemize}
 By the multiplication principle, there are $3 \times 2 \times 1 = 6$ bijections $[3] \to [3]$.
 \end{example}
@@ -348,7 +348,7 @@ If you have not covered \Cref{secEquivalenceRelationsPartitions} yet, you are en
 In this section, we will simplify matters in two ways:
 \begin{itemize}
 \item When we say `partition' in this section (and \Cref{secAlternatingSums}), we will allow the sets in the partition to be empty---that is, we will just need conditions (b) and (c) of \Cref{defPartition} to hold.
-\item Since our sets are finite, so will the index set $I$ be; so we will only ever partition our sets into finitely many pieces. That is, all of our partitions will take form $\{ U_1, U_2, \dots, U_n \}$ for some $n \in \mathbb{N}$.
+\item Since our sets are finite, so will $\mathcal{A}$ be; so we will only ever partition our sets into finitely many pieces. That is, all of our partitions will take form $\{ A_1, A_2, \dots, A_n \}$ for some $n \in \mathbb{N}$.
 \end{itemize}
 
 With all of this said, let's get right to it.
@@ -358,8 +358,8 @@ With all of this said, let's get right to it.
 \index{addition principle}
 \index{rule of sum}
 \index{counting principle!addition principle}
-Let $X$ be a set and let $\{ U_1, \dots, U_n \}$ be a partition of $X$ for some $n \in \mathbb{N}$, such that each set $U_i$ is finite. Then $X$ is finite, and
-\[ |X| = |U_1| + |U_2| + \cdots + |U_n| \]
+Let $X$ be a set and let $\{ A_1, \dots, A_n \}$ be a partition of $X$ for some $n \in \mathbb{N}$, such that each set $A_i$ is finite. Then $X$ is finite, and
+\[ |X| = |A_1| + |A_2| + \cdots + |A_n| \]
 \end{theorem}
 
 \begin{exercise}
@@ -368,7 +368,7 @@ Prove \Cref{thmAdditionPrinciple}. The proof follows the same pattern as that of
 
 \begin{strategy}[Counting using the addition principle]
 \label{strAdditionPrinciple}
-Let $X$ be a finite set. In order to compute $|X|$, it suffices to find a partition $U_1, U_2, \dots, U_n$ of $X$; it then follows that $|X| = \sum_{k=1}^n |U_i|$.
+Let $X$ be a finite set. In order to compute $|X|$, it suffices to find a partition $A_1, A_2, \dots, A_n$ of $X$; it then follows that $|X| = \sum_{k=1}^n |A_i|$.
 \end{strategy}
 
 \begin{example}
@@ -376,19 +376,19 @@ We will count the number of inhabited subsets of $[7]$ which either contain only
 
 Let $O$ denote the set of inhabited subsets of $[7]$ containing only odd numbers, and let $E$ denote the set of inhabited subsets of $[7]$ containing only even numbers. Note that $\{ O, E \}$ forms a partition of the set we are counting, and so our set has $|O|+|E|$ elements.
 \begin{itemize}
-\item An element of $O$ must be a subset of $\{1,3,5,7\}$. By \Cref{exNumSubsetsOfFiniteSet} there are $2^4=16$ such subsets. Thus the number of \textit{inhabited} subsets of $[7]$ containing only odd numbers is $15$, since we must exclude the empty set. That is, $|O|=15$.
-\item A subset containing only even numbers must be a subset of $\{2,4,6\}$. Again by \Cref{exNumSubsetsOfFiniteSet} there are $2^3=8$ such subsets. Hence there are $7$ inhabited subsets of $[7]$ containing only even numbers. That is, $|E|=7$.
+\item An element of $E$ must be a subset of $\{0,2,4,6\}$. By \Cref{exNumSubsetsOfFiniteSet} there are $2^4=16$ such subsets. Thus the number of \textit{inhabited} subsets of $[7]$ containing only odd numbers is $15$, since we must exclude the empty set. That is, $|O|=15$.
+\item An element of $O$ must be a subset of $\{1,3,5\}$. Again by \Cref{exNumSubsetsOfFiniteSet} there are $2^3=8$ such subsets. Hence there are $7$ inhabited subsets of $[7]$ containing only even numbers. That is, $|E|=7$.
 \end{itemize}
 Hence there are $15+7=22$ inhabited subsets of $[7]$ containing only even or only odd numbers. And here they are:
 \[ \begin{matrix}
-\{ 1 \} & \{ 3 \} & \{ 5 \} & \{ 7 \} & \{ 1, 3 \} & \hspace{20pt} & \{ 2 \} & \{ 4 \} & \{ 6 \} \\
-\{ 1, 5 \} & \{ 1, 7 \} & \{ 3, 5 \} & \{ 3, 7 \} & \{ 5, 7 \} && \{ 2, 4 \} & \{ 2, 6 \} & \{ 4, 6 \} \\
-\{ 1, 3, 5 \} & \{ 1, 3, 7 \} & \{ 1, 5, 7 \} & \{ 3, 5, 7 \} & \{ 1, 3, 5, 7\} && \{ 2, 4, 6 \} && 
+\{ 0 \} & \{ 2 \} & \{ 4 \} & \{ 6 \} & \{ 0, 2 \} & \hspace{20pt} & \{ 1 \} & \{ 3 \} & \{ 5 \} \\
+\{ 0, 4 \} & \{ 0, 6 \} & \{ 2, 4 \} & \{ 2, 6 \} & \{ 4, 6 \} && \{ 1, 3 \} & \{ 1, 5 \} & \{ 3, 5 \} \\
+\{ 0, 2, 4 \} & \{ 0, 2, 6 \} & \{ 0, 4, 6 \} & \{ 2, 4, 6 \} & \{ 0, 2, 4, 6\} && \{ 1, 3, 5 \} && 
 \end{matrix} \]
 \end{example}
 
 \begin{exercise}
-Pick your favourite integer $n > 1000$. For this value of $n$, how many inhabited subsets of $[n]$ contain either only even or only odd numbers? (You need not evaluate exponents.)
+Pick your favourite integer $n \ge 1000$. For this value of $n$, how many inhabited subsets of $[n]$ contain either only even or only odd numbers? (You need not evaluate exponents.)
 \end{exercise}
 
 We now consider some examples of finite sets which use both the multiplication principle and the addition principle.
@@ -398,20 +398,20 @@ We now consider some examples of finite sets which use both the multiplication p
 A city has $6n$ inhabitants. The favourite colour of $n$ of the inhabitants is orange, the favourite colour of $2n$ of the inhabitants is pink, and the favourite colour of $3n$ of the inhabitants is turquoise. The city government wishes to form a committee with equal representation from the three colour preference groups to decide how the new city hall should be painted. We count the number of ways this can be done.
 
 Let $X$ be the set of possible committees. First note that
-\[ X = \bigcup_{k=0}^n X_k \]
-where $X_k$ is the set of committees with exactly $k$ people from each colour preference group. Indeed, we must have $k \le n$, since it is impossible to have a committee with more than $n$ people from the orange preference group.
+\[ X = \bigcup_{k=0}^n A_k \]
+where $A_k$ is the set of committees with exactly $k$ people from each colour preference group. Indeed, we must have $k \le n$, since it is impossible to have a committee with more than $n$ people from the orange preference group.
 
-Moreover, if $k \ne \ell$ then $X_k \cap X_{\ell} = \varnothing$, since if $k \ne \ell$ then a committee cannot simultaneously have exactly $k$ people and exactly $\ell$ people from each preference group.
+Moreover, if $k \ne \ell$ then $A_k \cap A_{\ell} = \varnothing$, since if $k \ne \ell$ then a committee cannot simultaneously have exactly $k$ people and exactly $\ell$ people from each preference group.
 
 By the addition principle, we have
-\[ |X| = \sum_{k=0}^n |X_k| \]
-We count $X_k$ for fixed $k$ using the following procedure:
+\[ |X| = \sum_{k=0}^n |A_k| \]
+We count $A_k$ for fixed $k$ using the following procedure:
 \begin{itemize}
 \item \textbf{Step 1.} Choose $k$ people from the orange preference group to be on the committee. There are $\binom{n}{k}$ choices.
 \item \textbf{Step 2.} Choose $k$ people from the pink preference group to be on the committee. There are $\binom{2n}{k}$ choices.
 \item \textbf{Step 3.} Choose $k$ people from the turquoise preference group to be on the committee. There are $\binom{3n}{k}$ choices.
 \end{itemize}
-By the multiplication principle, it follows that $|X_k| = \binom{n}{k} \binom{2n}{k} \binom{3n}{k}$. Hence
+By the multiplication principle, it follows that $|A_k| = \binom{n}{k} \binom{2n}{k} \binom{3n}{k}$. Hence
 \[ |X| = \sum_{k=0}^n \binom{n}{k} \binom{2n}{k} \binom{3n}{k} \]
 \end{example}
 
@@ -557,14 +557,14 @@ The following proposition demonstrates that the combinatorial definition of fact
 
 \begin{theorem}
 \label{thmFactorialAsProduct}
-$0!=1$ and if $n \in \mathbb{N}$ then $(n+1)! = (n+1) \cdot n!$.
+$0!=1$, and $(n+1)! = (n+1) \cdot n!$ for all $n \in \mathbb{N}$.
 \end{theorem}
 \begin{cproof}
 The only permutation of $\varnothing$ is the empty function $e : \varnothing \to \varnothing$. Hence $S_0 = \{ e \}$ and $0!=|S_0|=1$.
 
 Let $n \in \mathbb{N}$. A permutation of $[n+1]$ is a bijection $f : [n+1] \to [n+1]$. Specifying such a bijection is equivalent to carrying out the following procedure:
 \begin{itemize}
-\item Choose the (unique!) element $k \in [n+1]$ such that $f(k) = n+1$. There are $n+1$ choices for $k$.
+\item Choose the (unique!) element $k \in [n+1]$ such that $f(k) = n$. There are $n+1$ choices for $k$.
 \item Choose the values of $f$ at each $\ell \in [n+1]$ with $\ell \ne k$. This is equivalent to finding a bijection $[n+1] \setminus \{ k \} \to [n]$. Since $|[n+1] \setminus \{ k \}| = |[n]| = n$, there are $n!$ such choices.
 \end{itemize}
 By the multiplication principle, we have
@@ -618,8 +618,8 @@ by finding a procedure for counting the number of $k$-element subsets of an appr
 \item \textbf{Step 1.} Split into cases based on the number $\ell$ of cats in $U$. Note that we must have $0 \le \ell \le k$, since the number of cats must be a natural number and cannot exceed $k$ as $|U|=k$. Moreover, these cases are mutually exclusive. Hence by the addition principle we have
 \[ \binom{m+n}{k} = \sum_{\ell=0}^k a_{\ell} \]
 where $a_{\ell}$ is the number of subsets of $X$ containing $\ell$ cats and $k-\ell$ dogs.
-\item \textbf{Step 2.} Choose $\ell$ cats from the $m$ cats in $X$ to be elements of $U$. There are $\binom{[m]}{\ell}$ such choices.
-\item \textbf{Step 3.} Choose $k-\ell$ dogs from the $n$ dogs in $X$ to be elements of $U$. There are $\binom{[n]}{k-\ell}$ such choices.
+\item \textbf{Step 2.} Choose $\ell$ cats from the $m$ cats in $X$ to be elements of $U$. There are $\binom{m}{\ell}$ such choices.
+\item \textbf{Step 3.} Choose $k-\ell$ dogs from the $n$ dogs in $X$ to be elements of $U$. There are $\binom{n}{k-\ell}$ such choices.
 \end{itemize}
 The multiplication principle shows that $a_{\ell} = \binom{m}{\ell} \binom{n}{k-\ell}$. Hence
 \[ \binom{m+n}{k} = \sum_{\ell=0}^k \binom{m}{\ell} \binom{n}{k-\ell} \]

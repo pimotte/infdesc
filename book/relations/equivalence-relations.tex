@@ -189,6 +189,8 @@ So $a \sim b$ if and only if $[a]_{\sim} = [b]_{\sim}$.
 
 For congruence, special terminology and notation exists for equivalence classes and quotients.
 
+\todo{Move next three items to Section 7.3u}
+
 \begin{definition}
 \label{defCongruenceClass}
 \index{congruence class}
@@ -211,8 +213,8 @@ The next exercise generalises the previous one, proving that congruence classes 
 \begin{exercise}
 \label{exCongruenceClassesCorrespondWithRemainders}
 Let $n \in \mathbb{Z}$ with $n \ne 0$. Prove that the function
-\[ i : \{ 0,~ 1,~ \dots,~ |n|-1 \} \to \mathbb{Z}/n\mathbb{Z} \]
-defined by $i(r) = [r]_n$ for all $0 \le r < |n|$ is a bijection.
+\[ i : [|n|] \to \mathbb{Z}/n\mathbb{Z} \]
+defined by $i(r) = [r]_n$ for all $r \in [|n|]$ is a bijection.
 \end{exercise}
 
 \subsection*{Partitions}
@@ -223,23 +225,23 @@ A partition of a set $X$ is a way of breaking $X$ up into mutually disjoint subs
 \label{defPartition}
 \index{pairwise disjoint}
 \index{disjoint!pairwise}
-A \textbf{partition} of a set $X$ is a collection $\mathcal{U} = \{ U_i \mid i \in I \}$ of subsets of $X$ such that the following conditions hold:
+A \textbf{partition} of a set $X$ is a set $\mathcal{A}$ of subsets of $X$ (that is, a subset $\mathcal{A} \subseteq \mathcal{P}(X)$) such that the following conditions hold:
 \begin{enumerate}[(a)]
-\item For each $i \in I$, the subset $U_i$ is inhabited;
-\item The sets $U_i$ for $i \in I$ are \textbf{pairwise disjoint}---that is, $U_i \cap U_j$ is empty for all $i,j \in I$ with $i \ne j$;
-\item $\bigcup_{i \in I} U_i = X$.
+\item Every set $A \in \mathcal{A}$ is inhabited;
+\item The sets in $\mathcal{A}$ are \textbf{pairwise disjoint}, which means that for all $A,B \in \mathcal{A}$, if $A \cap B$ is inhabited, then $A=B$;
+\item $\displaystyle \bigcup_{A \in \mathcal{A}} A = X$.
 \end{enumerate}
 \end{restatable}
 
-Note that, by contraposition, condition (b) in \Cref{exConditionsForPartition} is equivalent to saying that for all $i,j \in I$, if $U_i \cap U_j$ is inhabited, then $i=j$---this is useful for verifying pairwise disjointness in proofs.
+Note that condition (b) in \Cref{exConditionsForPartition} is equivalent to its contrapositive, which says that for all $A,B \in \mathcal{A}$, if $A \ne B$, then $A \cap B$ is empty---this more intuitively captures the reason why we use the term `pairwise disjoint', but is less useful in proofs.
 
 \begin{strategy}[Proving a family of subsets forms a partition]
 \label{strProvingSubsetsFormPartition}
-Let $X$ be a set. In order to prove a collection $\mathcal{U} \subseteq \mathcal{P}(X)$ is a partition of $X$, it suffices to prove:
+Let $X$ be a set. In order to prove a collection $\mathcal{A} \subseteq \mathcal{P}(X)$ is a partition of $X$, it suffices to prove:
 \begin{enumerate}[(a)]
-\item Each $U \in \mathcal{U}$ is inhabited;
-\item For all $U, V \in \mathcal{U}$, if $U \cap V$ is inhabited, then $U=V$;
-\item For all $a \in X$, there is some $U \in \mathcal{U}$ such that $a \in U$.
+\item Each $A \in \mathcal{A}$ is inhabited;
+\item For all $A,B \in \mathcal{A}$, if $A \cap B$ is inhabited, then $A=B$;
+\item For all $x \in X$, there is some $A \in \mathcal{A}$ such that $x \in A$.
 \end{enumerate}
 \end{strategy}
 
@@ -272,7 +274,7 @@ That is, $\mathcal{F}$ is the set of subsets of $X$ given by the preimages of in
 
 \begin{exercise}
 \label{exConditionsForPartition}
-Let $X$ be a set and let $\mathcal{U} = \{ U_i \mid i \in I \}$ be a family of inhabited subsets of $X$. Prove that $\mathcal{U}$ is a partition of $X$ if and only if for eeach $a \in X$, there is a unique set $U_i \in \mathcal{U}$ with $a \in U_i$.
+Let $X$ be a set and let $\mathcal{A}$ be a set of inhabited subsets of $X$. Prove that $\mathcal{A}$ is a partition of $X$ if and only if for each $x \in X$, there is a unique set $A \in \mathcal{A}$ with $a \in A$.
 \end{exercise}
 
 \begin{exercise}
@@ -284,24 +286,25 @@ In fact, the converse of \Cref{exQuotientIsPartition} is also true, as we prove 
 
 \begin{proposition}
 \label{propPartitionIsQuotientByEquivalenceRelation}
-Let $X$ be a set and let $\mathcal{U}$ be a partition of $X$. Then $\mathcal{U}=X/{\sim}$ for a unique equivalence relation $\sim$ on $X$.
+Let $X$ be a set and let $\mathcal{A}$ be a partition of $X$. Then $\mathcal{A}=X/{\sim}$ for a unique equivalence relation $\sim$ on $X$.
 \end{proposition}
 
 \begin{cproof}
 Define a relation $\sim$ by
-\[ x \sim y \quad \Leftrightarrow \quad \exists U \in \mathcal{U},\, x \in U \text{ and } y \in U \]
+\[ x \sim y \quad \Leftrightarrow \quad \exists A \in \mathcal{A},\, x \in A \text{ and } y \in A \]
 for all $x,y \in X$. That is, $x \sim y$ if and only if $x$ and $y$ are elements of the same set of the partition. We check that $\sim$ is an equivalence relation.
 \begin{itemize}
-\item \textbf{Reflexivity.} Let $x \in X$. Then $x \in U$ for some $U \in \mathcal{U}$ since $\bigcup_{U \in \mathcal{U}} U = X$. Hence $x \sim x$.
-\item \textbf{Symmetry.} Let $x,y \in X$ and suppose $x \sim y$. Then there is some $U \in \mathcal{U}$ with $x \in U$ and $y \in U$. But then it is immediate that $y \sim x$.
-\item \textbf{Transitivity.} Let $x,y,z \in X$ and suppose that $x \sim y$ and $y \sim z$. Then there exist $U,V \in \mathcal{U}$ with $x,y \in U$ and $y,z \in V$. Thus $y \in U \cap V$. Since $\mathcal{U}$ is a partition of $X$, its elements are pairwise disjoint; thus if $U \ne V$ then $U \cap V = \varnothing$. Hence $U=V$. Thus $x \in U$ and $z \in U$, so $x \sim z$.
+\item \textbf{Reflexivity.} Let $x \in X$. Then $x \in A$ for some $A \in \mathcal{A}$ since $\bigcup_{A \in \mathcal{A}} A = X$. Hence $x \sim x$.
+\item \textbf{Symmetry.} Let $x,y \in X$ and suppose $x \sim y$. Then there is some $A \in \mathcal{U}$ with $x \in A$ and $y \in A$. But then it is immediate that $y \sim x$.
+\item \textbf{Transitivity.} Let $x,y,z \in X$ and suppose that $x \sim y$ and $y \sim z$. Then there exist $A,B \in \mathcal{A}$ with $x,y \in A$ and $y,z \in B$. Thus $y \in A \cap B$. Since $A \cap B$ is inhabited, it follows by pairwise disjointness that $A=B$. Therefore $x \in A$ and $z \in A$, and so $x \sim z$, as required.
 \end{itemize}
-The definition of $\sim$ makes it immediate that $X/{\sim} = \mathcal{U}$.
+The definition of $\sim$ makes it immediate that $X/{\sim} = \mathcal{A}$.
+% To do: does it really???
 
-To prove that $\sim$ is the only such relation, suppose $\approx$ is another equivalence relation on $X$ for which $X/{\approx}=\mathcal{U}$. Then, given $x,y \in X$, we have:
+To prove that $\sim$ is the only such relation, suppose $\approx$ is another equivalence relation on $X$ for which $X/{\approx}=\mathcal{A}$. Then, given $x,y \in X$, we have:
 \begin{align*}
-x \sim y & \Leftrightarrow \exists U \in \mathcal{U},\, x \in U \wedge y \in U && \text{by definition of $\sim$} \\
-& \Leftrightarrow \exists z \in X,\, x \in [z]_{\approx} \wedge y \in [z]_{\approx} && \text{since $\mathcal{U} = X/{\approx}$} \\
+x \sim y & \Leftrightarrow \exists A \in \mathcal{A},\, x \in A \wedge y \in A && \text{by definition of $\sim$} \\
+& \Leftrightarrow \exists z \in X,\, x \in [z]_{\approx} \wedge y \in [z]_{\approx} && \text{since $\mathcal{A} = X/{\approx}$} \\
 & \Leftrightarrow \exists z \in X,\, x \approx z \wedge y \approx z && \text{by definition of $[z]_{\approx}$} \\
 & \Leftrightarrow x \approx y && \text{by symmetry and transitivity}
 \end{align*}
@@ -314,40 +317,39 @@ The following lemma can be skipped over without grave consequences---it is a tec
 
 \begin{lemma}
 \label{lemBijectionBetweenPartitionAndComponentsInducesBijectionOfSets}
-Let $X$ and $Y$ be sets, let $\{ U_i \mid i \in I \}$ be a partition of $X$ and let $\{ V_j \mid j \in J \}$ be a partition of $Y$. If there exists:
+Let $X$ and $Y$ be sets, let $\mathcal{A}$ be a partition of $X$ and let $\mathcal{B}$ be a partition of $Y$. If there exists:
 \begin{itemize}
-\item A bijection $f : I \to J$; and
-\item For each $i \in I$, a bijection $g_i : U_i \to V_{f(i)}$;
+\item A bijection $F : \mathcal{A} \to \mathcal{B}$; and
+\item For each $A \in \mathcal{A}$, a bijection $g_A : A \to F(A)$;
 \end{itemize}
 then there exists a bijection $h : X \to Y$.
 \end{lemma}
 
 \begin{cproof}
-Given $a \in X$, let $i(a)$ be the unique element of $I$ such that $a \in X_{i(a)}$. Note that this is valid since $\{ X_i \mid i \in I \}$ is a partition of $X$. Likewise, given $b \in Y$, let $j(b)$ be the unique element of $J$ such that $b \in Y_{j(b)}$.
+Given $x \in X$, let $A_x$ be the unique set in the partition $\mathcal{A}$ containing $x$ as an element; likewise, given $y \in Y$, let $B_y$ be the unique set in $\mathcal{B}$ containing $y$ as an element. Note that these sets exist and are unique by \Cref{exConditionsForPartition}.
 
-Define $h : X \to Y$ by $h(a) = g_{i(a)}(a)$ for all $a \in X$. This is well-defined since
-\[ h(a) = g_{i(a)}(a) \in Y_{f(i(a))} \subseteq Y \]
-This also shows that $j(h(a)) = f(i(a))$.
+Define $h : X \to Y$ by $h(x) = g_{A_x}(x)$ for all $x \in X$. To see that $h$ is well-defined, note that for all $x \in X$ we have $g_{A_x} : A_x \to F(A_x)$, so $x$ is in the domain of $g_{A_x}$; and
+\[ h(x) = g_{A_x}(x) \in F(A_x) \subseteq Y \]
+Furthermore, given $x \in X$ we know that $B_{h(x)}$ is the unique set in $\mathcal{B}$ containing $h(x)$ as an element---since $F(A_x) \in \mathcal{B}$ and $h(x) \in F(A_x)$, it follows that $F(A_x) = B_{h(x)}$, and so $F^{-1}(B_{h(x)}) = A_x$.
 
-Now define $k : Y \to X$ by $k(b) = g_{f^{-1}(j(b))}^{-1}(b)$ for all $b \in Y$. Then $k$ is well-defined: indeed, $g_{f^{-1}(j(b))}$ is a function from $U_{f^{-1}(j(b))}$ to $V_{j(b)}$, and so
-\[ k(b) = g_{f^{-1}(j(b))}^{-1}(b) \in U_{f^{-1}(j(b))} \subseteq X \]
-This also shows that $i(k(b)) = f^{-1}(j(b))$.
+Now define $k : Y \to X$ by $k(y) = g_{F^{-1}(B_y)}^{-1}(y)$ for all $y \in Y$. To see that $k$ is well-defined, note that for all $y \in Y$ we have $g_{F^{-1}(B_y)} : F(F^{-1}(B_y)) \to F^{-1}(B_y)$, so that $g_{F^{-1}(B_y)} : B_y \to F^{-1}(B_y)$, meaning that $y$ is in the domain of $g_{F^{-1}(B_y)}$; and
+\[ k(y) = g_{F^{-1}(B_y)}(y) \in F^{-1}(B_y) \subseteq X \]
+Just like with our definition of $h$, we also see that for all $y \in Y$ we have $F^{-1}(B_y) = A_{k(y)}$.
 
-Then $k$ is an inverse for $h$. To see this, let $a \in X$; then
+To see that $k$ is a left inverse for $h$, let $x \in X$---then
 \begin{align*}
-k(h(a)) &= g_{f^{-1}(j(h(a)))}^{-1} (h(a)) && \text{by definition of $k$} \\
-&= g_{f^{-1}(f(i(a)))}^{-1} (h(a)) && \text{since $j(h(a)) = f(i(a))$} \\
-&= g_{i(a)}^{-1}(h(a)) && \text{since $f^{-1} \circ f = \mathrm{id}_I$} \\
-&= g_{i(a)}^{-1}(g_{i(a)}(a)) && \text{by definition of $h$} \\
-&= a && \text{since $g_{i(a)}^{-1} \circ g_{i(a)} = \mathrm{id}_{X_{i(a)}}$}
+k(h(x)) &= g_{F^{-1}(B_{h(x)})}^{-1}(h(x)) && \text{by definition of $k$} \\
+&= g_{A_x}^{-1}(h(x)) && \text{since $F^{-1}(B_{h(x)}) = A_x$} \\
+&= g_{A_x}^{-1}(g_{A_x}(x)) && \text{by definition of $h$} \\
+&= x && \text{since $g_{A_x}^{-1} \circ g_{A_x} = \mathrm{id}_{A_x}$}
 \end{align*}
 
-A similarly tedious computation reveals that $h(k(b)) = b$ for all $b \in Y$:
+To see that $k$ is right inverse for $h$, let $y \in Y$---then
 \begin{align*}
-h(k(b)) &= g_{i(k(b))}(k(b)) && \text{by definition of $h$} \\
-&= g_{f^{-1}(j(b))}(k(b)) && \text{since $i(k(b)) = f^{-1}(j(b))$} \\
-&= g_{f^{-1}(j(b))}(g_{f^{-1}(j(b))}^{-1}(b)) && \text{by definition of $k$} \\
-&= b && \text{since $g_{f^{-1}(j(b))} \circ g_{f^{-1}(j(b))}^{-1} = \mathrm{id}_{Y_{j(b)}}$}
+h(k(y)) &= g_{A_{k(y)}}(k(y)) && \text{by definition of $h$} \\
+&= g_{A_{k(y)}}(g_{F^{-1}(B_y)}^{-1}(y)) && \text{by definition of $k$} \\
+&= g_{A_{k(y)}}(g_{A_{k(y)}}^{-1}(y)) && \text{since $F^{-1}(B_y) = A_{k(y)}$} \\
+&= y && \text{since $g_{A_{k(y)}} \circ g_{A_{k(y)}}^{-1} = \mathrm{id}_{F(A_{k(y)})}$}
 \end{align*}
 
 So $k$ is an inverse for $h$, as required.
@@ -382,30 +384,30 @@ Let $n \in \mathbb{Z}$ with $n \ne 0$. Describe the quotient function $q_n : \ma
 Let $\sim$ be an equivalence relation on a set $X$. Prove that the quotient function $q_{\sim} : X \to X/{\sim}$ is surjective.
 \end{exercise}
 
-The theorem we prove next can be viewed as the converse to \Cref{exQuotientFunctionIsSurjective}. It proves that every surjection `is' a quotient function, in the sense that given any surjection $p : X \to A$, we can view $A$ as a quotient of $X$ by a suitably-defined equivalence relation, and then $p$ `is' the corresponding quotient function.
+The theorem we prove next can be viewed as the converse to \Cref{exQuotientFunctionIsSurjective}. It proves that every surjection `is' a quotient function, in the sense that given any surjection $p : X \to Z$, we can view $Z$ as a quotient of $X$ by a suitably-defined equivalence relation, and then $p$ `is' the corresponding quotient function.
 
 \begin{theorem}
 \label{thmEquivalenceRelationsSurjections}
-Let $X$ be a set. Then for every set $A$ and every surjection $p : X \to A$, there exist a unique equivalence relation $\sim$ on $X$ and bijection $f : X/{\sim} \to A$ such that $f([x]) = p(x)$ for all $x \in X$.
+Let $X$ be a set. Then for every set $Z$ and every surjection $p : X \to Z$, there exist a unique equivalence relation $\sim$ on $X$ and bijection $f : X/{\sim} \to Z$ such that $f([x]) = p(x)$ for all $x \in X$.
 \end{theorem}
 
 \begin{cproof}
-Let $A$ be a set and $p : X \to A$ be a surjection.
+Let $Z$ be a set and $p : X \to Z$ be a surjection.
 \begin{itemize}
-\item (\textbf{Existence}) Define a relation $\sim$ on $X$ by $x \sim y$ if and only if $p(x) = p(y)$. Then $\sim$ is an equivalence relation by \Cref{exEquivalenceRelationFromFunction}.
+\item (\textbf{Existence}) Define a relation $\sim$ on $X$ for all $x,y \in X$ by letting $x \sim y$ if and only if $p(x) = p(y)$. Then $\sim$ is an equivalence relation by \Cref{exEquivalenceRelationFromFunction}.
 
 Moreover, given $x \in X$, we have
 \[ [x]_{\sim} = \{ y \in X \mid p(x) = p(y) \} = p^{-1}[\{p(x)\}] \]
-So define $f : X/{\sim} \to A$ by letting $f([x]_{\sim}) = p(x)$. Then $f$ is well-defined, since if $[x]_{\sim} = [y]_{\sim}$ then $x \sim y$, so that $p(x)=p(y)$.
+So define $f : X/{\sim} \to Z$ by letting $f([x]_{\sim}) = p(x)$. Then $f$ is well-defined, since if $[x]_{\sim} = [y]_{\sim}$ then $x \sim y$, so that $p(x)=p(y)$.
 
 Furthermore, $f$ is a bijection:
 \begin{itemize}
 \item (\textbf{Injectivity}) Let $[x]_{\sim},[y]_{\sim} \in X/{\sim}$ and assume $f([x]_{\sim}) = f([y]_{\sim})$. Then $p(x)=p(y)$, so that $x \sim y$, and hence $[x]_{\sim} = [y]_{\sim}$.
-\item (\textbf{Surjectivity}) Let $a \in A$. Since $p$ is a surjection, there is some $x \in X$ such that $p(x) = a$. But then $f([x]_{\sim}) = p(x) = a$.
+\item (\textbf{Surjectivity}) Let $z \in Z$. Since $p$ is a surjection, there is some $x \in X$ such that $p(x) = z$. But then $f([x]_{\sim}) = p(x) = z$.
 \end{itemize}
-So we have established that there exist an equivalence relation $\sim$ on $X$ and a bijection $f : X/{\sim} \to A$ such that $f([x]_{\sim}) = p(x)$ for all $x \in X$.
+So we have established that there exist an equivalence relation $\sim$ on $X$ and a bijection $f : X/{\sim} \to Z$ such that $f([x]_{\sim}) = p(x)$ for all $x \in X$.
 
-\item (\textbf{Uniqueness}) Suppose $\approx$ is another equivalence relation on $X$ and that $g : X/{\approx} \to A$ is a bijection such that $g([x]_{\approx}) = p(x)$ for all $x \in X$. We prove that ${\sim} = {\approx}$, and then that $g = f$, so that $\sim$ and $f$ are unique.
+\item (\textbf{Uniqueness}) Suppose $\approx$ is another equivalence relation on $X$ and that $g : X/{\approx} \to Z$ is a bijection such that $g([x]_{\approx}) = p(x)$ for all $x \in X$. We prove that ${\sim} = {\approx}$, and then that $g = f$, so that $\sim$ and $f$ are unique.
 
 So let $x,y \in X$. Then
 \begin{align*}

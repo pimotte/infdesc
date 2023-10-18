@@ -144,7 +144,7 @@ In order to find $x$, it is often useful to start from the equation $f(x)=y$ and
 \end{strategy}
 
 \begin{example}
-Fix $n \in \mathbb{N}$ with $n > 0$, and define a function $r : \mathbb{Z} \to \{ 0, 1, \dots, n-1 \}$ by letting $r(a)$ be the remainder of $a$ when divided by $n$ (see \Cref{thmDivisionPreliminary}). This function is surjective, since for each $k \in \{ 0, 1, \dots, n-1 \}$ we have $r(k)=k$.
+Fix $n \in \mathbb{N}$ with $n > 0$, and define a function $r : \mathbb{Z} \to [n]$ by letting $r(a)$ be the remainder of $a$ when divided by $n$ (see \Cref{thmDivisionPreliminary}). This function is surjective, since for each $k \in [n]$ we have $r(k)=k$.
 \end{example}
 
 \begin{exercise}
@@ -314,20 +314,20 @@ Let $f : X \to Y$ be a function. A \textbf{right inverse} (or \textbf{pre-invers
 \end{definition}
 
 \begin{example}
-Define $f : \mathbb{R} \to \mathbb{R}^{\ge 0}$ by $f(x)=x^2$. Note that $f$ is surjective, since for each $y \in \mathbb{R}^{\ge 0}$ we have $\sqrt{y} \in \mathbb{R}$ and $f(\sqrt{y}) = y$. However $f$ is not injective; for instance
+Define $f : \mathbb{R} \to [0,\infty)$ by $f(x)=x^2$. Note that $f$ is surjective, since for each $y \in [0,\infty)$ we have $\sqrt{y} \in \mathbb{R}$ and $f(\sqrt{y}) = y$. However $f$ is not injective; for instance
 \[ f(-1) = 1 = f(1) \]
 Here are three right inverses for $f$:
 \begin{itemize}
-\item The positive square root function $g : \mathbb{R}^{\ge 0} \to \mathbb{R}$ defined by $g(y)=\sqrt{y}$ for all $y \in \mathbb{R}^{\ge 0}$. Indeed, for each $y \in \mathbb{R}^{\ge 0}$ we have
+\item The positive square root function $g : [0,\infty) \to \mathbb{R}$ defined by $g(y)=\sqrt{y}$ for all $y \in [0,\infty)$. Indeed, for each $y \in [0,\infty)$ we have
 \[ f(g(y)) = f(\sqrt{y}) = (\sqrt{y})^2 = y \]
-\item The negative square root function $h : \mathbb{R}^{\ge 0} \to \mathbb{R}$ defined by $h(y)=-\sqrt{y}$ for all $y \in \mathbb{R}^{\ge 0}$. Indeed, for each $y \in \mathbb{R}^{\ge 0}$ we have
+\item The negative square root function $h : [0,\infty) \to \mathbb{R}$ defined by $h(y)=-\sqrt{y}$ for all $y \in [0,\infty)$. Indeed, for each $y \in [0,\infty)$ we have
 \[ f(h(y)) = f(-\sqrt{y}) = (-\sqrt{y})^2 = y \]
-\item The function $k : \mathbb{R}^{\ge 0} \to \mathbb{R}$ defined by
+\item The function $k : [0,\infty) \to \mathbb{R}$ defined by
 \[ k(y) = \begin{cases}
 \sqrt{y} & \text{if } 2n \le y < 2n+1 \text{ for some } n \in \mathbb{N} \\
 -\sqrt{y} & \text{otherwise}
 \end{cases} \]
-Note that $k$ is well-defined, and again $f(k(y)) = y$ for all $y \in \mathbb{R}^{\ge 0}$ since no matter what value $k(y)$ takes, it is equal to either $\sqrt{y}$ or $-\sqrt{y}$.
+Note that $k$ is well-defined, and again $f(k(y)) = y$ for all $y \in [0,\infty)$ since no matter what value $k(y)$ takes, it is equal to either $\sqrt{y}$ or $-\sqrt{y}$.
 \end{itemize}
 There are many more right inverses for $f$---in fact, there are infinitely many more!
 \end{example}
@@ -439,8 +439,8 @@ Since $g$ is a left inverse for $f$ and a right inverse for $f$, it is a two-sid
 \label{exFindTwoSidedInverses}
 The following functions have two-sided inverses. For each, find its inverse and prove that it is indeed an inverse.
 \begin{enumerate}[(a)]
-\item $f : \mathbb{R} \to \mathbb{R}$ defined by $f(x)=\frac{2x+1}{3}$.
-\item $g : \mathcal{P}(\mathbb{N}) \to \mathcal{P}(\mathbb{N})$ defined by $g(X) = \mathbb{N} \setminus X$.
+\item $f : \mathbb{R} \to \mathbb{R}$ defined by $f(x)=\dfrac{2x+1}{3}$ for all $x \in \mathbb{R}$;
+\item $g : \mathcal{P}(\mathbb{N}) \to \mathcal{P}(\mathbb{N})$ defined by $g(X) = \mathbb{N} \setminus X$ for all $X \in \mathcal{P}(\mathbb{N}$);
 \item $h : \mathbb{N} \times \mathbb{N} \to \mathbb{N}$ defined by $h(m,n) = 2^m(2n+1)-1$ for all $m,n \in \mathbb{N}$.
 \end{enumerate}
 \begin{backhint}
@@ -469,14 +469,12 @@ It turns out that if a function has both a left and a right inverse, then they m
 Let $f : X \to Y$ be a function and suppose $\ell : Y \to X$ is a left inverse for $f$ and $r : Y \to X$ is a right inverse for $f$. Then $\ell=r$.
 \end{proposition}
 \begin{cproof}
-The proof is deceptively simple:
+The proof is deceptively simple. Let $y \in Y$. Then:
 \begin{align*}
-\ell &= \ell \circ \mathrm{id}_Y && \text{by definition of identity functions} \\
-&= \ell \circ (f \circ r) && \text{since $r$ is a right inverse for $f$} \\
-&= (\ell \circ f) \circ r && \text{by \Cref{exCompositionIsAssociative}} \\
-&= \mathrm{id}_X \circ r && \text{since $\ell$ is a left inverse for $f$} \\
-&= r && \text{by definition of identity functions}
+\ell(y) &= \ell(f(r(y)) && \text{since } f \circ r = \mathrm{id}_Y \\
+&= r(y) && \text{since } \ell \circ f = \mathrm{id}_X
 \end{align*}
+so $\ell = r$ by function extensionality.
 \end{cproof}
 
 There is some intuition behind why the left and right inverses of a function $f : X \to Y$ should be equal if they both exist.
