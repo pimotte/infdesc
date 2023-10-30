@@ -78,6 +78,7 @@ We say $q$ is the \textbf{quotient} and $r$ is the \textbf{remainder} of $a$ div
 \begin{example}
 Some examples of division include:
 \[ 14 = 2 \times 5 + 4, \qquad -14 = -3 \times 5 + 1, \qquad 15 = 3 \times 5 + 0 \]
+Note in particular that, even though the remainder of $14$ when divided by $5$ is $4$, the remainder of $-14$ when divided by $5$ is $1$, not $-4$. This is because remainders are non-negative by definition.
 \end{example}
 
 \begin{definition}
@@ -105,30 +106,44 @@ We now introduce the very basic notion of a \textit{unit}. This notion is introd
 Let $u \in \mathbb{Z}$. We say $u$ is a \textbf{unit} if $u \mid 1$; that is, $u$ is a unit if there exists $v \in \mathbb{Z}$ such that $uv=1$.
 \end{definition}
 
-\begin{proposition}\label{propUnitsOfZ}
+\begin{proposition}
+\label{propUnitsOfZ}
 The only units in $\mathbb{Z}$ are $1$ and $-1$.
 \end{proposition}
 \begin{cproof}
 First note that $1$ and $-1$ are units, since $1 \cdot 1 = 1$ and $(-1) \cdot (-1) = 1$. Now suppose that $u \in \mathbb{Z}$ is a unit, and let $v \in \mathbb{Z}$ be such that $uv=1$. Certainly $u \ne 0$, since $0v=0 \ne 1$. If $u>1$ or $u<-1$ then $v = \frac{1}{u} \not \in \mathbb{Z}$. So we must have $u \in \{ -1, 1 \}$.
 \end{cproof}
 
-\Cref{exOneDivDivZero} shows that $-1$, $0$ and $1$ are, from the point of view of divisibility, fairly trivial. For this reason, most of the results we discuss regarding divisibility will concern \textbf{nonzero nonunits}\index{nonzero nonunit}, i.e.\ all integers except $-1$, $0$ or $1$.
+\Cref{exOneDivDivZero} shows that $-1$, $0$ and $1$ are fairly trivial from the point of view of divisibility, so we often want to remove them from consideration when defining concepts or proving facts about integers. For this reason, we have a term for integers that are \textit{not} trivial in this sense.
+
+\begin{definition}
+\label{defNonZeroNonUnit}
+A \textbf{nonzero nonunit}\index{nonzero nonunit} is an integer that is neither zero nor a unit.
+\end{definition}
+
+By \Cref{propUnitsOfZ}, the nonzero nonunits are precisely the integers other than $-1$, $0$ and $1$. In other words, an integer $n$ is a nonzero nonunit if and only if $|n| > 1$.
 
 \subsection*{Greatest common divisors}
 
-\begin{definition}\index{greatest common divisor}
+\begin{definition}
 \label{defGCD}
-Let $a, b \in \mathbb{Z}$. An integer $d$ is a \textbf{greatest common divisor} of $a$ and $b$ if:
-\begin{enumerate}[(a)]
-\item $d \mid a$ and $d \mid b$;
-\item If $q$ is another integer such that $q \mid a$ and $q \mid b$, then $q \mid d$.
-\end{enumerate}
+\index{common divisor}
+\index{greatest common divisor}
+Let $a, b \in \mathbb{Z}$.
+\begin{itemize}
+\item A \textbf{common divisor} of $a$ and $b$ is an integer $c$ such that $c \mid a$ and $c \mid b$;
+\item A \textbf{greatest common divisor} of $a$ and $b$ is an integer $d$ such that (i) $d$ is a common divisor of $a$ and $b$, and (ii) for all $c \in \mathbb{Z}$, if $c$ is a common divisor of $a$ and $b$, then $c \mid d$.
+\end{itemize}
 \end{definition}
+
+Condition (ii) in the definition of `greatest common divisor' in \Cref{defGCD} is a little counterintuitive: the word `greatest' suggests that we might want $d \ge c$ for all common divisors $c$ of $a$ and $b$, but the definition has `$c \mid d$' instead of `$d \ge c$'. That is, instead of $d$ being \textit{greater than or equal to} all common divisors, it is \textit{divisible by} all common divisors.
+
+There are two good reasons for defining it this way. First, we will use greatest common divisors primarily for reasoning about divisibility---the order of the integers as they appear on the number line turns out to be much less relevant in proving facts in number theory. Second, it allows us to generalise the definition of `greatest common divisor' to other settings where we \textit{can} make sense of divisibility but don't have a natural notion of order, such as polynomials.
 
 \begin{example}
 \label{exGCDsOfFourAndSix}
 $2$ is a greatest common divisor of $4$ and $6$; indeed:
-\begin{enumerate}[(a)]
+\begin{enumerate}[(i)]
 \item $4 = 2 \times 2$, and $6 = 3 \times 2$, so $2 \mid 4$ and $2 \mid 6$;
 \item Suppose $q \mid 4$ and $q \mid 6$. The divisors of $4$ are $\pm 1, \pm 2, \pm 4$ and the divisors of $6$ are $\pm 1$, $\pm 2$, $\pm 3$, $\pm 6$. Since $q$ divides both, it must be the case that $q \in \{ {-2}, {-1}, 1, 2 \}$; in any case, $q \mid 2$.
 \end{enumerate}
@@ -151,34 +166,34 @@ We will now prove that greatest common divisors \textit{exist}---that is, any tw
 Every pair of integers $a,b$ has a greatest common divisor.
 \end{theorem}
 \begin{cproof}
-First note that if $a=b=0$, then $0$ is a greatest common divisor for $a$ and $b$. Moreover, we may take $a,b$ to be non-negative, since divisibility is insensitive to sign. So suppose that $a, b \ge 0$ and that $a,b$ are not both zero.
+First note that the greatest common divisor of $0$ and $0$ is $0$---the conditions in \Cref{defGCD} follow immediately from the fact that every integer divides $0$ (as you hopefully found in \Cref{exOneDivDivZero}).
 
-Define a set $X \subseteq \mathbb{Z}$ by
-\[ X = \{ au+bv \mid u,v \in \mathbb{Z},\ au+bv > 0 \} \]
-That is, $X$ is the set of positive integers of the form $au+bv$.
+So now let's assume that $a$ and $b$ are not both zero.
 
-$X$ is inhabited. To see this, note that $a^2 > 0$ or $b^2 > 0$ since $a \ne 0$ or $b \ne 0$, so letting $u=a$ and $v=b$ in the expression $au+bv$, we see that
-\[ au+bv=a^2+b^2>0 \quad \Rightarrow \quad a^2+b^2 \in X \]
+Define a subset $X \subseteq \mathbb{N}$ by
+\[ X = \{ n \in \mathbb{N} \mid n > 0 \text{ and } n = au+bv \text{ for some } u,v \in \mathbb{Z} \} \]
+
+$X$ is inhabited. To see this, note that $a^2 > 0$ or $b^2 > 0$ since $a$ and $b$ are not both zero, so letting $u=a$ and $v=b$ in the expression $au+bv$, we see that $au+bv=a^2+b^2>0$, and so $a^2+b^2 \in X$.
+
 By the well-ordering principle, $X$ has a least element $d$, and by definition of $X$ there exist $u,v \in \mathbb{Z}$ such that $d = au+bv$.
 
 We will prove that $d$ is a greatest common divisor for $a$ and $b$.
 \begin{itemize}
-\item $d \mid a$. If $a=0$, then this is immediate, so suppose that $a > 0$. Let $q,r \in \mathbb{Z}$ be such that \[ a=qd+r \qquad \text{and} \qquad 0 \le r < d \]
-Moreover
+\item $d \mid a$. To see this, let $r$ be the remainder of $a$ when divided by $d$, so that $0 \le r < d$ and $a=qd+r$ for some $q \in \mathbb{Z}$. But then
 \[ r = a-qd = a-q(au+bv) = a(1-qu) + b(-qv) \]
-If $r>0$ then this implies that $r \in X$; but this would contradict minimality of $d$, since $r < d$. So we must have $r=0$ after all.
-\item $d \mid b$. The proof of this is identical to the proof that $d \mid a$.
-\item Suppose $q$ is an integer dividing both $a$ and $b$. Then $q \mid au+bv$ by \Cref{exDivisibilityIsLinear}. Since $au+bv=d$, we have $q \mid d$.
+If $r>0$ then this implies that $r \in X$; but this would contradict minimality of $d \in X$, since $r < d$. So we must have $r=0$. Therefore $a = qd$, and so $d \mid a$, as required.
+\item $d \mid b$. The proof of this is identical to the proof that $d \mid a$, but with the roles of $a$ and $b$ swapped.
+\item Suppose $c$ is a common divisor of $a$ and $b$. Then $q \mid au+bv$ by \Cref{exDivisibilityIsLinear}, and so $q \mid d$ since $au+bv=d$.
 \end{itemize}
-So $d$ is a greatest common divisor of $a$ and $b$ after all.
+So we have verified that $d$ is a greatest common divisor of $a$ and $b$.
 \end{cproof}
 
 \begin{exercise}
 \label{exGCDUnique}
-Let $a,b \in \mathbb{Z}$. If $d$ and $d'$ are two greatest common divisors of $a$ and $b$, then either $d=d'$ or $d=-d'$.
+Let $a,b \in \mathbb{Z}$. If $d_1$ and $d_2$ are two greatest common divisors of $a$ and $b$, then either $d_1=d_2$ or $d_1=-d_2$.
 \begin{backhint}
 \hintref{exGCDUnique}
-Start by proving that $d$ and $d'$ must divide each other.
+Start by proving that $d_1$ and $d_2$ must divide each other.
 \end{backhint}
 \end{exercise}
 
@@ -208,68 +223,82 @@ Our goal for the rest of this subsection is to investigate the behaviour of grea
 
 \begin{theorem}
 \label{thmGCDSubtractMultiple}
-Let $a,b,q,r \in \mathbb{Z}$, and suppose that $a=qb+r$. Then
-\[ \mathrm{gcd}(a,b) = \mathrm{gcd}(b,r) \]
+Let $a,b,m,n \in \mathbb{Z}$, and suppose that $a=mb+n$. Then
+\[ \mathrm{gcd}(a,b) = \mathrm{gcd}(b,n) \]
 \end{theorem}
 \begin{cproof}
 Let $d = \mathrm{gcd}(a,b)$. We check that $d$ satisfies the conditions required to be a greatest common divisor of $b$ and $r$.
 
 Note that $d \mid a$ and $d \mid b$, so let $s,t \in \mathbb{Z}$ be such that $a=sd$ and $b=td$.
 \begin{itemize}
-\item $d \mid b$ by definition, and $d \mid r$ since
-\[ r = a-qb = sd-qtd = (s-qt)d \]
-\item Suppose $d' \mid b$ and $d' \mid r$; say $b = ud'$ and $r=vd'$ with $u,v \in \mathbb{Z}$. Then $d' \mid a$, since
-\[ a = qb+r = qud'+vd' = (qu+v)d' \]
-so $d' \mid d$ since $d = \mathrm{gcd}(a,b)$.
+\item We already know that $d \mid b$; and $d \mid n$ since
+\[ n = a-mb = sd-mtd = (s-mt)d \]
+so $d$ is a common divisor of $b$ and $n$.
+\item Let $c \in \mathbb{Z}$ and suppose that $c \mid b$ and $c \mid n$; say $b = uc$ and $n=vc$ with $u,v \in \mathbb{Z}$. Then $c \mid a$, since
+\[ a = mb+n = muc+vc = (mu+v)c \]
+so $c \mid d$ since $d = \mathrm{gcd}(a,b)$.
 \end{itemize}
-So $d$ is a greatest common divisor of $b$ and $r$. Since $d>0$, the result is shown.
+So $d$ is a greatest common divisor of $b$ and $n$. Since $d \ge 0$, we have $d = \mathrm{gcd}(b,n)$ by uniqueness (\Cref{exGCDUnique}), as required.
 \end{cproof}
 
-Combined with the division theorem (\Cref{thmDivisionTheorem}), \Cref{thmGCDSubtractMultiple} gives a relatively fast algorithm for computing the greatest common divisor of two integers, known as the \textbf{Euclidean algorithm}.
+A consequence of \Cref{thmGCDSubtractMultiple} is that, for all $a,b \in \mathbb{Z}$ with $b \ne 0$, if $r$ is the remainder of $a$ when divided by $b$, then $\mathrm{gcd}(a,b) = \mathrm{gcd}(b,r)$. To see this, note that $a=qb+r$ for some $q \in \mathbb{Z}$, and so we can set $m=q$ and $n=r$ in the result of \Cref{thmGCDSubtractMultiple}.
+
+\begin{exercise}
+\label{exFactsAboutGCDs}
+Prove the following facts about greatest common divisors:
+\begin{enumerate}[(a)]
+\item\label{itmFactsAboutGCDsAbsoluteValue} $\mathrm{gcd}(a,b) = \mathrm{gcd}(|a|,|b|)$ for all $a,b \in \mathbb{Z}$.
+\item\label{itmFactsAboutGCDsSwapOrder} $\mathrm{gcd}(a,b) = \mathrm{gcd}(b,a)$ for all $a,b \in \mathbb{Z}$.
+\item\label{itmFactsAboutGCDsZero} $\mathrm{gcd}(a,0) = |a|$ for all $a \in \mathbb{Z}$.
+\end{enumerate}
+\vspace{-20pt}
+\end{exercise}
+
+Combined with the division theorem (\Cref{thmDivisionTheorem}), the results of \Cref{thmGCDSubtractMultiple} and \Cref{exFactsAboutGCDs} give rise to a relatively fast algorithm for computing the greatest common divisor of two integers, known as the \textbf{Euclidean algorithm}.
 
 \begin{strategy}[Euclidean algorithm]
 \label{strEuclideanAlgorithm}
 \index{Euclidean algorithm}
 Let $a,b \in \mathbb{Z}$. To compute $\mathrm{gcd}(a,b)$, proceed as follows.
-\begin{itemize}
-\item Set $r_0 = |a|$ and $r_1 = |b|$.
-\item Given $r_{n-2}$ and $r_{n-1}$, define $r_n$ to be the remainder of $r_{n-2}$ divided by $r_{n-1}$.
-\item Stop when $r_n = 0$; then $r_{n-1} = \mathrm{gcd}(a,b)$.
-\end{itemize}
+\begin{enumerate}[(1)]
+\item Replace $a$ by $|a|$ and $b$ by $|b|$, and then if $a<b$, swap $a$ and $b$. This ensures that $a \ge b \ge 0$, and it doesn't affect the value of the greatest common divisor by parts \ref{itmFactsAboutGCDsAbsoluteValue} and \ref{itmFactsAboutGCDsSwapOrder} of \Cref{exFactsAboutGCDs}.
+\item If $b = 0$, return $a$. This is valid since we know $\mathrm{gcd}(a,0) = a$ by \Cref{exFactsAboutGCDs}\ref{itmFactsAboutGCDsZero}.
+\item\label{itmEuclideanAlgorithmRecursiveStep} If $b > 0$, let $r$ be the remainder of $a$ when divided by $b$, and return $\mathrm{gcd}(b,r)$. This doesn't change the value of the greatest common divisor by \Cref{thmGCDSubtractMultiple}.
+\end{enumerate}
 \end{strategy}
 
+Before we work through any examples of the Euclidean algorithm, note that it always terminates: in (3) note that $0 \le r < b$ since $r$ is the remainder of $a$ when divided by $b$, so the second argument to the algorithm decreases---but remains non-negative---each time it is called. Therefore the second argument must eventually reach $0$, at which point the algorithm terminates in (2).
+
 \begin{example}
-We will find the greatest common divisor of $148$ and $28$.
-\begin{align*}
-148 &= 5 \times 28 + 8 && \\
-28 &= 3 \times 8 + 4 && \\
-8 &= 2 \times \boxed{4} + 0 && \leftarrow \text{Stop!}
-\end{align*}
-Hence $\mathrm{gcd}(148, 28) = 4$. Here the sequence of remainders is given by:
-\[ r_0=148, \quad r_1 = 28, \quad r_2 = 8, \quad r_3 = 4, \quad r_4 = 0 \]
+We will compute $\mathrm{gcd}(148,28)$ using the Euclidean algorithm. Note that $148 \ge 28 \ge 0$, so we don't need to do anything in step (1). Iterating step (3), we obtain:
+\begin{itemize}
+\item $148 = 5 \times 28 + 8$, so $\mathrm{gcd}(148,28) = \mathrm{gcd}(28,8)$.
+\item $28 = 3 \times 8 + 4$, so $\mathrm{gcd}(28,8) = \mathrm{gcd}(8,4)$.
+\item $8 = 2 \times 4 + 0$, so $\mathrm{gcd}(8,4) = \mathrm{gcd}(4,0)$.
+\end{itemize}
+Finally, step (2) gives $\mathrm{gcd}(4,0) = 4$. So $\mathrm{gcd}(148,48) = 4$.
 \end{example}
 
 \begin{example} \label{exGCD13115757}
 The Euclidean algorithm works surprisingly quickly, even for relatively large numbers. Consider the problem of computing $\mathrm{gcd}(1311, 5757)$ for example:
 \begin{align*}
-5757 &= 4 \times 1311 + 513 && \\
-1311 &= 2 \times 513 + 285 && \\
-513 &= 1 \times 285 + 228 && \\
-285 &= 1 \times 228 + 57 && \\
-228 &= 4 \times \boxed{57} + 0 && \leftarrow \text{Stop!}
+5757 &= 4 \times 1311 + 513 &\leadsto \mathrm{gcd}(5757,1311) &= \mathrm{gcd}(1311,513)  \\
+1311 &= 2 \times 513 + 285 &&= \mathrm{gcd}(513,285) \\
+513 &= 1 \times 285 + 228 &&= \mathrm{gcd}(285,228) \\
+285 &= 1 \times 228 + 57 &&= \mathrm{gcd}(228, 57) \\
+228 &= 4 \times 57 + 0 &&= \mathrm{gcd}(57,0) = 57
 \end{align*}
-Hence $\mathrm{gcd}(1311,5757) = 57$. Here the sequence of remainders is given by:
-\[ r_0=5757, \quad r_1 = 1311, \quad r_2 = 513, \quad r_3 = 285, \quad r_4 = 228, \quad r_5 = 57, \quad r_6 = 0 \]
+So $\mathrm{gcd}(5757,1311) = 57$.
 \end{example}
 
 \begin{example}
-Here's an example where one of the numbers is negative: we compute the value of $\mathrm{gcd}(-420, 76)$:
+Here's an example where one of the numbers is negative: we compute the value of $\mathrm{gcd}(76, -420)$. Using step (1), we instead compute $\mathrm{gcd}(420, 76)$.
 \begin{align*}
--420 &= (-6) \times 76 + 36 && \\
-76 &= 2 \times 36 + 4 && \\
-36 &= 9 \times \boxed{4} + 0 && \leftarrow \text{Stop!}
+420 &= 6 \times 76 + 36 &\leadsto \mathrm{gcd}(420,76) &= \mathrm{gcd}(76,36) \\
+76 &= 2 \times 36 + 4 &&= \mathrm{gcd}(36,4) \\
+36 &= 9 \times 4 + 0 &&= \mathrm{gcd}(4,0) = 4
 \end{align*}
-Hence $\mathrm{gcd}(-420, 76) = 4$.
+Hence $\mathrm{gcd}(76, -420) = \mathrm{gcd}(420,76) = 4$.
 \end{example}
 
 \begin{example}
@@ -405,7 +434,7 @@ We have now seen two important results:
 \item The \textbf{Euclidean algorithm}, which was a procedure for computing the greatest common divisor of two integers.
 \item \textbf{B\'{e}zout's lemma}, which provides a necessary and sufficient condition for equations of the form $ax+by=c$ to have an integer solution.
 \end{itemize}
-We will now develop the \textbf{reverse Euclidean algorithm}\index{Euclidean algorithm!reverse}\index{reverse Euclidean algorithm}, which provides a method for computing a solutions to (bivariate) linear Diophantine equations, when such a solution exists. Then we will prove a theorem that characterises \textit{all} integer solutions in terms of a given solution.
+We will now develop the \textbf{extended Euclidean algorithm}\index{Euclidean algorithm!extended}\index{extended Euclidean algorithm}, which provides a method for computing a solutions to (bivariate) linear Diophantine equations, when such a solution exists. Then we will prove a theorem that characterises \textit{all} integer solutions in terms of a given solution.
 
 \begin{example}
 Suppose we want to find integers $x$ and $y$ such that $327x+114y=18$. Running the Euclidean algorithm yields that $\mathrm{gcd}(327,114)=3$ --- see below. For reasons soon to become apparent, we rearrange each equation to express the remainder on its own.
@@ -436,11 +465,11 @@ Hence $(x,y) = (90,{-258})$ is a solution to the equation $327x+114y=18$.
 \begin{prooftip}
 Let $a,b \in \mathbb{Z}$ and let $d = \mathrm{gcd}(a,b)$. To find integers $x,y$ such that $ax+by=d$:
 \begin{enumerate}[(i)]
-\item Run the Euclidean algorithm on the pair $(a,b)$, keeping track of all quotients and remainders.
-\item Rearrange each equation of the form $r_{n-2} = q_nr_{n-1}+r_n$ to isolate $r_n$.
-\item Substitute for the remainders $r_k$ in reverse order until $\mathrm{gcd}(a,b)$ is expressed in the form $ax+by$ for some $x,y \in \mathbb{Z}$.
+\item Run the Euclidean algorithm on the pair $(a,b)$, keeping track of all quotients and remainders; note that in the penultimate equation, the remainder is $\mathrm{gcd}(a,b)$.
+\item Rearrange each equation to isolate the remainder.
+\item Starting from the (rearranged) penultimate equation, substitute for the remainders in reverse order until $\mathrm{gcd}(a,b)$ is expressed in the form $ax+by$ for some $x,y \in \mathbb{Z}$.
 \end{enumerate}
-This process is called the \textbf{reverse Euclidean algorithm}.
+This process is called the \textbf{extended Euclidean algorithm}.
 \end{prooftip}
 
 \begin{exercise}
