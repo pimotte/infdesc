@@ -354,7 +354,7 @@ Let $P$ be a set, thought of as a set of propositional variables. Write $\mathca
 Logical equivalence $\equiv$ is an equivalence relation on $\mathcal{L}(P)$.
 \end{lemma}
 \begin{cproof}
-This is immediate from definition of equivalence relation, since for $s,t \in \mathcal{L}(P)$, $s \equiv t$ is defined to mean that $s$ and $t$ have the same truth values for all assignments of truth values to their propositional variables.
+By \Cref{thmLogicalEquivalentIffSameTruthValues} we know that, for all $s,t \in \mathcal{L}(P)$, $s \equiv t$ if and only if $s$ and $t$ have the same truth values for all assignments of truth values to their constituent propositional variables. Reflexivity, symmetry and transitivity of $\equiv$ are then immediate.
 \end{cproof}
 
 In what follows, the set $P$ of propositional variables is fixed; we may moreover take it to be countably infinite, since all strings in $\mathcal{L}(P)$ are finite.
