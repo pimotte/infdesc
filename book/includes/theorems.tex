@@ -6,6 +6,9 @@
 
 % Styles
 
+% Width of border around shaded theorem boxes
+\newcommand{\thmboxborderwidth}{0.25pt}
+
 \declaretheoremstyle[
     spaceabove=6pt,
     spacebelow=6pt,
@@ -24,7 +27,7 @@
     notefont={\mdseries},
     notebraces={(}{)},
     bodyfont={\fixthmbox\normalfont},
-    shaded={bgcolor=thmbgcol, rulecolor=thmbdcol, rulewidth=0.25pt}
+    shaded={bgcolor=thmbgcol, rulecolor=thmbdcol, rulewidth=\thmboxborderwidth}
 ]{infdescimptthm}
 
 \declaretheoremstyle[
@@ -45,7 +48,7 @@
     notefont={\mdseries},
     notebraces={(}{)},
     bodyfont={\fixthmbox\normalfont},
-    shaded={bgcolor=defbgcol, rulecolor=defbdcol, rulewidth=0.25pt}
+    shaded={bgcolor=defbgcol, rulecolor=defbdcol, rulewidth=\thmboxborderwidth}
 ]{infdescimptdef}
 
 \declaretheoremstyle[
@@ -67,7 +70,7 @@
     notefont={\mdseries},
     notebraces={(}{)},
     bodyfont={\fixthmbox\normalfont},
-    shaded={bgcolor=exbgcol, rulecolor=exbdcol, rulewidth=0.25pt}
+    shaded={bgcolor=exbgcol, rulecolor=exbdcol, rulewidth=\thmboxborderwidth}
 ]{infdescimptex}
 
 \declaretheoremstyle[
@@ -100,7 +103,7 @@
     notefont={\mdseries},
     notebraces={(}{)},
     bodyfont={\fixthmbox\normalfont},
-    shaded={bgcolor=prbgcol, rulecolor=prbdcol, rulewidth=0.25pt}
+    shaded={bgcolor=prbgcol, rulecolor=prbdcol, rulewidth=\thmboxborderwidth}
 ]{infdescimptpr}
 
 \declaretheoremstyle[
@@ -132,7 +135,7 @@
     notefont={\mdseries},
     notebraces={(}{)},
     bodyfont={\fixthmbox\normalfont},
-    shaded={bgcolor=tipbgcol, rulecolor=tipbdcol, rulewidth=0.25pt}
+    shaded={bgcolor=tipbgcol, rulecolor=tipbdcol, rulewidth=\thmboxborderwidth}
 ]{infdescimpttip}
 
 \declaretheoremstyle[

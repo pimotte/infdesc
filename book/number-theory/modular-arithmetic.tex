@@ -867,7 +867,7 @@ It turns out that \Cref{thmTotientIsMultiplicative} and \Cref{exTotientMultiplyB
 \label{thmTotientFormula}
 Let $n$ be a nonzero integer. Then
 \[ \varphi(n) = |n| \cdot \prod_{p \mid n} \left( 1 - \frac{1}{p} \right) \]
-where the product is indexed over positive primes $p$ dividing $n$
+where the product is indexed over distinct positive primes $p$ dividing $n$.
 \end{restatable}
 \begin{cproof}
 Since $\varphi(n) = \varphi(-n)$ for all $n \in \mathbb{Z}$, we may assume that $n>0$. Moreover
@@ -880,7 +880,7 @@ for primes $0<p_1<p_2<\cdots<p_r$ and natural numbers $k_1,k_2,\dots,k_r \ge 1$.
 
 By repeated application of \Cref{thmTotientIsMultiplicative}, we have
 \[ \varphi(n) = \prod_{i=1}^r \varphi(p_i^{k_i}) \]
-By \Cref{exTotientMultiplyByPrime}, we have
+for all $1 \le i \le r$. By \Cref{exTotientMultiplyByPrime}, we have
 \[ \varphi(p_i^{k_i}) = p_i^{k_i}-p_i^{k_i-1} = p_i^{k_i} \left( 1-\frac{1}{p_i} \right) \]
 Combining these two results, it follows that
 \[ \varphi(n) = \prod_{i=1}^r p_i^{k_i} \left( 1 - \frac{1}{p_i} \right) = \left(\prod_{i=1}^r p_i^{k_i} \right) \left( \prod_{i=1}^r \left( 1 - \frac{1}{p_i} \right) \right) = n \cdot \prod_{i=1}^r \left( 1 - \frac{1}{p_i} \right) \]
