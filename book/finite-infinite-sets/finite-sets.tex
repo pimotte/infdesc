@@ -112,9 +112,9 @@ We will prove by induction on $m$ that, for all $m,n \in \mathbb{N}$, if there e
 
 Now let $n \in \mathbb{N}$ and suppose that there is an injection $f : [m+1] \to [n]$. We need to prove that $m+1 \le n$.
 
-First note that $n > 1$. Indeed, since $m+1 > 0$, we have $0 \in [m+1]$, and so $f(0) \in [n]$. This means that $[n]$ is inhabited, and so $n > 0$. In particular, $n-1 \in \mathbb{N}$ and so the set $[n-1]$ is well-defined. It suffices to prove that $m \le n-1$.
+First note that $n > 0$. Indeed, since $m+1 > 0$, we have $0 \in [m+1]$, and so $f(0) \in [n]$. This means that $[n]$ is inhabited, and so $n > 0$. In particular, $n-1 \in \mathbb{N}$ and so the set $[n-1]$ is well-defined. It suffices to prove that $m \le n-1$.
 
-Let $a = f(m+1) \in [n]$. Then:
+Let $a = f(m) \in [n]$. Then:
 \begin{itemize}
 \item By \Cref{lemRemoveElementFromDomainAndCodomain} there is an injection $f^{\vee} : [m] = [m+1] \setminus \{ m \} \to [n] \setminus \{ a \}$.
 \item By \Cref{lemRemoveElementFromSet} there is a bijection $g : [n] \setminus \{ a \} \to [n] \setminus \{ n-1 \} = [n-1]$.
