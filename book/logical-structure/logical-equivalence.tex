@@ -400,7 +400,7 @@ Prove \Cref{thmDeMorganLogicalOperators}(b) thrice: once using the definition of
 \end{exercise}
 
 \begin{example}
-We often use de Morgan's laws for logical operators without thinking about it. For example to say that `neither $3$ nor $7$ is even' is equivalent to saying `$3$ is odd and $7$ is odd'. The former statement translates to
+We often use de Morgan's laws for logical operators without thinking about it. For example, to say that `neither $3$ nor $7$ is even' is equivalent to saying `$3$ is odd and $7$ is odd'. The former statement translates to
 \[ \neg [(3 \text{ is even}) \vee (7 \text{ is even})]\]
 while the second statement translates to
 \[ [\neg (3 \text{ is even})] \wedge [\neg (7 \text{ is even})]\]
@@ -538,7 +538,7 @@ At this point, the statement being negated is of the form $(\text{stuff}) \Right
 Now we are negating an existentially quantified formula again, so using de Morgan's laws for quantifiers gives:
 \[ \forall a \in \mathbb{R},\, \exists \varepsilon \in \mathbb{R},\, (\varepsilon > 0 \wedge \forall N \in \mathbb{N},\, \neg \forall n \in \mathbb{N},\, [n \ge N \Rightarrow |x_n-a| < \varepsilon])\]
 %
-The formula being negated here is univerally quantified, so using de Morgan's laws for quantifiers \textit{again} gives:
+The formula being negated here is universally quantified, so using de Morgan's laws for quantifiers \textit{again} gives:
 \[ \forall a \in \mathbb{R},\, \exists \varepsilon \in \mathbb{R},\, (\varepsilon > 0 \wedge \forall N \in \mathbb{N},\, \exists n \in \mathbb{N},\, \neg [n \ge N \Rightarrow |x_n-a| < \varepsilon])\]
 %
 We're almost there! The statement being negated here is an implication, so applying the rule $\neg (p \Rightarrow q) \equiv p \wedge (\neg q)$ again yields:
