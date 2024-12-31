@@ -2,6 +2,10 @@
 \section{Division}
 \secbegin{secDivision}
 
+
+
+\todo{Old content from here}
+
 This section introduces the notion of \textit{divisibility}. As we have already mentioned, it is not always the case that one integer can divide another. As you read through this section, note that we never use fractions; everything we do is \textit{internal} to $\mathbb{Z}$, and does not require that we `spill over' to $\mathbb{Q}$ at any point. This will help you when you study ring theory in the future, and is a good practice to mimic in your own work.
 
 The following theorem, called the division theorem, is the crux of everything that is to follow.
@@ -183,7 +187,7 @@ We will prove that $d$ is a greatest common divisor for $a$ and $b$.
 \[ r = a-qd = a-q(au+bv) = a(1-qu) + b(-qv) \]
 If $r>0$ then this implies that $r \in X$; but this would contradict minimality of $d \in X$, since $r < d$. So we must have $r=0$. Therefore $a = qd$, and so $d \mid a$, as required.
 \item $d \mid b$. The proof of this is identical to the proof that $d \mid a$, but with the roles of $a$ and $b$ swapped.
-\item Suppose $c$ is a common divisor of $a$ and $b$. Then $q \mid au+bv$ by \Cref{exDivisibilityIsLinear}, and so $q \mid d$ since $au+bv=d$.
+\item Suppose $c$ is a common divisor of $a$ and $b$. Then $c \mid au+bv$ by \Cref{exDivisibilityIsLinear}, and so $c \mid d$ since $au+bv=d$.
 \end{itemize}
 So we have verified that $d$ is a greatest common divisor of $a$ and $b$.
 \end{cproof}

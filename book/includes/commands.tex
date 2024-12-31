@@ -7,7 +7,7 @@
 % Text mode
 
 % Contact and website information
-\newcommand{\authoremail}{clive@infinitedescent.xyz}
+\newcommand{\authoremail}{clive.newstead@infinitedescent.xyz}
 \newcommand{\bookurl}{https://infinitedescent.xyz}
 
 % Symbols for optional content
@@ -62,8 +62,8 @@
 \newcommand{\fitheight}[1]{\resizebox{\textheight}{!}{#1}}
 \newcommand{\fitheightc}[2]{\resizebox{#1\textheight}{!}{#2}}
 
-% To-do remarks and hints
-\newcommand{\todo}[1]{{\color{magenta} \textbf{To do:} #1}}
+% To-do remarks
+\newcommand{\todo}[1]{{\color{magenta} \textbf{Note:} #1}}
 
 % Custom table alignments
 % Source: http://tex.stackexchange.com/questions/12703/
@@ -162,6 +162,9 @@ In \Crefrange{#1}{#2}, determine (with proof) whether the conclusion is always, 
 \renewcommand{\geq}{\geqslant}
 \renewcommand*{\thefootnote}{\color{fncol} [\alph{footnote}]}
 
+% Modular arithmetic
+\newcommand{\cmod}[1]{~\left(\text{mod}~#1\right)}
+
 % Force \displaystyle for indexed operations
 \let\nsum\sum
 \let\nprod\prod
@@ -184,7 +187,6 @@ In \Crefrange{#1}{#2}, determine (with proof) whether the conclusion is always, 
 \newcommand{\sbigcap}{\nbigcap\limits}
 \newcommand{\sbigcup}{\nbigcup\limits}
 \newcommand{\sbigsqcup}{\nbigsqcup\limits}
-
 
 
 % Text and math mode

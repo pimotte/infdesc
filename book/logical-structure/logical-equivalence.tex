@@ -411,6 +411,13 @@ while the second statement translates to
 Prove that $\neg (p \Rightarrow q) \equiv p \wedge (\neg q)$ twice, once using a truth table, and once using \Cref{exImplicationInTermsOfDisjunctionWithTruthTables} together with de Morgan's laws and the law of double negation.
 \end{exercise}
 
+Although conjunctions can be negated using de Morgan's laws, the following exercise offers a different way of negating conjunctions that is often more practical when being used in a proof.
+
+\begin{exercise}
+\label{exNegationOfConjunctionAlternative}
+Prove that $\neg (p \wedge q) \equiv p \Rightarrow (\neg q)$. What strategy does this suggest for proving that a conjunction is false? How does this compare with the strategy suggested by de Morgan's laws for logical operators?
+\end{exercise}
+
 De Morgan's laws for logical operators generalise to statements about quantifiers, expressing a similar duality between $\forall$ and $\exists$ as we have between $\wedge$ and $\vee$.
 
 \begin{theorem}[de Morgan's laws for quantifiers]
@@ -631,56 +638,3 @@ For (a), note that a derivation of $q$ from $p$ is sufficient to establish the t
 
 Now (b) follows from (a), since logical equivalence is defined in terms of derivation in each direction, and $\Leftrightarrow$ is simply the conjunction of two implications.
 \end{cproof}
-
-%\textit{Aaand breathe!} All this new notation can be overwhelming at first, but it will be worth it in the end. This chapter was all about teaching you a new language---new symbols, new terminology---because without it, our future pursuits will be impossible. If you're stuck now, then don't worry: you'll soon get the hang of it, especially when we start using this new language in context. You can, of course, refer back to the results in this chapter for reference at any point in the future.
-
-\begin{tldr}{secLogicalEquivalence}
-\subsubsection*{Logical equivalence}
-
-\begin{tldrlist}
-\tldritem{defLogicalEquivalence}
-Two logical formulae are \textit{logically equivalent} (written $\equiv$) if each can be derived from the other.
-
-\tldritem{defTruthTable}
-The \textit{truth table} of a propositional formula is a tabulation of its truth values under all assignments of truth values to its constituent propositional variables. Two propositional formulae are logically equivalent if and only if they have identical columns in a truth table.
-\end{tldrlist}
-
-\subsubsection*{Some specific logical equivalences}
-
-\begin{tldrlist}
-\tldritem{thmDoubleNegation}
-The double-negation of a proposition is equivalent to the original proposition. This gives rise to `indirect' proof by contradiction: in order to prove that a proposition $p$ is \textit{true}, assume $p$ is false and derive a contradiction.
-
-\tldritem{defContrapositive}
-The \textit{contrapositive} of an implication $p \Rightarrow q$ is the implication $(\neg q) \Rightarrow (\neg p)$. Every implication is equivalent to its contrapositive, so in order to prove $p \Rightarrow q$, it suffices to assume that $q$ is false, and derive that $p$ is false.
-
-\tldritem{thmDeMorganLogicalOperators}
-De Morgan's laws for logical operators say that $\neg (p \wedge q) \equiv (\neg p) \vee (\neg q)$ and $\neg (p \vee q) \equiv (\neg p) \wedge (\neg q)$.
-
-\tldritem{exNegationOfImplication}
-The negation of $p \Rightarrow q$ is logically equivalent to $p \wedge (\neg q)$, so in order to prove that $p \Rightarrow q$ is \textit{false}, it suffices to prove that $p$ is true but $q$ is false.
-
-\tldritem{thmDeMorganQuantifiers}
-De Morgan's laws for quantifiers say that $\neg \forall x \in X,\, p(x) \equiv \exists x \in X,\, \neg p(x)$ and $\neg \exists x \in X,\, p(x) \equiv \forall x \in X,\, \neg p(x)$. The first of these suggests the strategy of \textit{proof by counterexample}.
-\end{tldrlist}
-
-\subsubsection*{Maximal negation}
-
-\begin{tldrlist}
-\tldritem{defMaximallyNegatedLogicalFormula}
-A logical formula is \textit{maximally negated} if it contains no negation operators (except, perhaps, immediately before a propositional variable or predicate).
-
-\tldritem{thmLogicalFormulaEquivalentToMaximallyNegated}
-Every logical formula built using the logical operators and quantifiers in this section is logically equivalent to a maximally negated one.
-\end{tldrlist}
-
-\subsubsection*{Tautologies}
-
-\begin{tldrlist}
-\tldritem{defTautology}
-A \textit{tautology} is a logical formula that is true no matter what assignment of truth values is given to its constituent propositional variables or what values are substituted for its free variables. Tautologies can be invoked as assumptions at any point in a proof.
-
-\tldritem{thmTautologyAndDerivation}
-A proposition $p$ can be derived from a proposition $q$ if and only if $p \Rightarrow q$ is a tautology; and $p \equiv q$ if and only if $p \Leftrightarrow q$ is a tautology.
-\end{tldrlist}
-\end{tldr}

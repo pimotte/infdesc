@@ -227,11 +227,11 @@
 \declaretheorem[style=infdescimptdef, numbered=no, refname={definition,definitions}, Refname={Definition,Definitions}, name=Definition]{predefinition*}
 \declaretheorem[style=infdescimptdef, sibling=theorem, refname={definition,definitions}, Refname={Definition,Definitions}, name={\optmark{Definition}}]{opredefinition}
 
-\declaretheorem[style=infdescdef, sibling=theorem, refname={notation,notations}, Refname={Notation,Notations}, name=Notation]{notation}
-\declaretheorem[style=infdescdef, sibling=chtheorem, refname={notation,notations}, Refname={Notation,Notations}, name=Notation]{chnotation}
+\declaretheorem[style=infdescimptdef, sibling=theorem, refname={notation,notations}, Refname={Notation,Notations}, name=Notation]{notation}
+\declaretheorem[style=infdescimptdef, sibling=chtheorem, refname={notation,notations}, Refname={Notation,Notations}, name=Notation]{chnotation}
 \declaretheorem[style=infdescimptdef, sibling=theorem, refname={notation,notations}, Refname={Notation,Notations}, name=Notation]{inotation}
-\declaretheorem[style=infdescdef, numbered=no, refname={notation,notations}, Refname={Notation,Notations}, name=Notation]{notation*}
-\declaretheorem[style=infdescdef, sibling=theorem, refname={notation,notations}, Refname={Notation,Notations}, name={\optmark{Notation}}]{onotation}
+\declaretheorem[style=infdescimptdef, numbered=no, refname={notation,notations}, Refname={Notation,Notations}, name=Notation]{notation*}
+\declaretheorem[style=infdescimptdef, sibling=theorem, refname={notation,notations}, Refname={Notation,Notations}, name={\optmark{Notation}}]{onotation}
 
 \declaretheorem[style=infdescimptdef, sibling=theorem, refname={vocabulary,vocabulary}, Refname={Vocabulary,Vocabulary}, name={Vocabulary}]{vocabulary}
 \declaretheorem[style=infdescimptdef, sibling=chtheorem, refname={vocabulary,vocabulary}, Refname={Vocabulary,Vocabulary}, name={Vocabulary}]{chvocabulary}
@@ -347,34 +347,62 @@
 % https://tex.stackexchange.com/a/415986 (user31729)
 
 \newcommand{\hintref}[1]{{\color{excol}\fontfamily{bch}\bfseries Hint for \Cref{#1}}\\}
+\newcommand{\solutionref}[1]{{\color{excol}\fontfamily{bch}\bfseries Solution to \Cref{#1}}\\}
 
-\newwrite\collectedcontentfile
+\newwrite\hintsfile
+\newwrite\solutionsfile
 \AtBeginDocument{%
   % Automatically open the file at the beginning of the document
-  \immediate\openout\collectedcontentfile=\jobname.cll
+  \immediate\openout\hintsfile=\jobname-hints.cll
+  \immediate\openout\solutionsfile=\jobname-solutions.cll
 }
 
 \NewEnviron{backhint}{
-  \immediate\write\collectedcontentfile{%
-    \expandafter\unexpanded\expandafter{\BODY}^^J
+  \immediate\write\hintsfile{%
+    \expandafter\unexpanded\expandafter{\BODY}^^J%
+  }%
+}
+
+\NewEnviron{backsolution}{
+  \immediate\write\solutionsfile{%
+    \expandafter\unexpanded\expandafter{\BODY}^^J%
   }%
 }
 
 \newcommand{\printhints}{%
   % Closing the file
-  \immediate\closeout\collectedcontentfile% 
-  \InputIfFileExists{\jobname.cll}{}{}
+  \immediate\closeout\hintsfile% 
+  \InputIfFileExists{\jobname-hints.cll}{}{}
+}
+
+\newcommand{\printsolutions}{%
+  % Closing the file
+  \immediate\closeout\solutionsfile% 
+  \InputIfFileExists{\jobname-solutions.cll}{}{}
 }
 
 \newcommand{\hintlabel}[2]{\label{#1}
 \begin{backhint}
-\hintref{#1}
-#2
+\hintref{#1}%
+#2%
 \end{backhint}%
+}
+
+\newcommand{\solution}[2]{\label{#1:solution}
+\begin{backsolution}
+\solutionref{#1:solution}%
+#2%
+\end{backsolution}%
 }
 
 \newcommand{\hintsection}[1]{%
 \begin{backhint}
 \subsection*{#1}
 \end{backhint}%
+}
+
+\newcommand{\solutionsection}[1]{%
+\begin{backsolution}
+\subsection*{#1}
+\end{backsolution}%
 }

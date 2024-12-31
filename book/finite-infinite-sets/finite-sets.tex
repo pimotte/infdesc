@@ -5,9 +5,9 @@
 As its title suggests, this section is all about exploring the properties of finite sets, and to do this we must first define what we mean by `finite'. We certainly know a finite set when we see one---for example:
 \begin{itemize}
 \item The set $\{ \text{red}, \text{orange}, \text{yellow}, \text{green}, \text{blue}, \text{purple} \}$ is finite.
-\item The set $[0,1]$ is infinite, but it has finite length.
-\item The set $[0,\infty)$ is infinite and has infinite length.
-\item The set $\mathcal{P}(\mathbb{N})$ is infinite, but has no notion of `length' to speak of.
+\item The set $[0,1]$ has infinitely many elements, but it has finite length.
+\item The set $[0,\infty)$ has infinitely many elements and has infinite length.
+\item The set $\mathcal{P}(\mathbb{N})$ has infinitely many elements, but has no notion of `length' to speak of.
 \item The empty set $\varnothing$ is finite.
 \end{itemize}
 
@@ -34,12 +34,6 @@ If the listed elements of $X$ occupy positions $0,1,\dots,{n-1}$, this means tha
 A set $X$ is \textbf{finite} if there exists a bijection $f : [n] \to X$ for some $n \in \mathbb{N}$. The function $f$ is called an \textbf{enumeration} of $X$. If $X$ is not finite we say it is \textbf{infinite}.
 \end{definition}
 
-This definition suggests the following strategy for proving that a set is finite.
-
-\begin{strategy}[Proving that a set is finite]
-In order to prove that a set $X$ is finite, it suffices to find a bijection $[n] \to X$ for some $n \in \mathbb{N}$.
-\end{strategy}
-
 \begin{example}
 \label{exSomeFiniteSets}
 Let $X = \{ \text{red}, \text{orange}, \text{yellow}, \text{green}, \text{blue}, \text{purple} \}$, and define $f : [6] \to X$ by
@@ -53,6 +47,9 @@ The function $f$ is evidently a bijection, since each element of $X$ can be expr
 \begin{exercise}
 \label{exBracketNIsFinite}
 Prove that $[n]$ is finite for each $n \in \mathbb{N}$.
+\solution{exBracketNIsFinite}{%
+Let $n \in \mathbb{N}$. The identity function $\mathrm{id}_{[n]} : [n] \to [n]$ is a bijection by \Cref{exIdentityBijection}, so is an enumeration of $[n]$.
+}
 \end{exercise}
 
 Note that \Cref{exBracketNIsFinite} implies, in particular, that $\varnothing$ is finite, since $\varnothing = [0]$.
@@ -67,17 +64,17 @@ To be able to prove this, we must first prove some technical results involving f
 
 \begin{lemma}
 \label{lemRemoveElementFromDomainAndCodomain}
-Let $X$ and $Y$ be sets, let $f : X \to Y$ be an injection and let $a \in X$. Then there is an injection $f^{\vee} : X \setminus \{ a \} \to Y \setminus \{ f(a) \}$ defined by $f^{\vee}(x) = f(x)$ for all $x \in X \setminus \{ a \}$. Moreover if $f$ is a bijection $X \to Y$, then $f^{\vee}$ is a bijection $X \setminus \{ a \} \to Y \setminus \{ f(a) \}$.
+Let $X$ and $Y$ be sets, let $f : X \to Y$ be an injection and let $a \in X$. Then there is an injection $\tilde{f} : X \setminus \{ a \} \to Y \setminus \{ f(a) \}$ defined by $\tilde{f}(x) = f(x)$ for all $x \in X \setminus \{ a \}$. Moreover if $f$ is a bijection $X \to Y$, then $\tilde{f}$ is a bijection $X \setminus \{ a \} \to Y \setminus \{ f(a) \}$.
 \end{lemma}
 
 \begin{cproof}
-Note that $f^{\vee}$ is well-defined by injectivity of $f$: indeed, if we had $f(x) = f(a)$ for some $x \in X \setminus \{ a \}$, then that would imply $x=a \in X \setminus \{ a \}$, which is a contradiction.
+Note that $\tilde{f}$ is well-defined by injectivity of $f$: indeed, if we had $f(x) = f(a)$ for some $x \in X \setminus \{ a \}$, then that would imply $x=a \in X \setminus \{ a \}$, which is a contradiction.
 
-To see that $f^{\vee}$ is injective, let $x,y \in X \setminus \{ a \}$ and $f^{\vee}(x) = f^{\vee}(y)$. Then $f(x) = f(y)$, so that $x=y$ by injectivity of $f$.
+To see that $\tilde{f}$ is injective, let $x,y \in X \setminus \{ a \}$ and $\tilde{f}(x) = \tilde{f}(y)$. Then $f(x) = f(y)$, so that $x=y$ by injectivity of $f$.
 
-Now suppose that $f$ is a bijection. Then $f$ has an inverse $g : Y \to X$, which is itself a bijection (and hence an injection). Repeating the above argument with $g$ yields an injection $g^{\vee} : Y \setminus \{ f(a) \} \to X \setminus \{ a \}$ defined by $g^{\vee}(y) = g(y)$ for all $y \in Y \setminus \{ f(a) \}$. But then for all $x \in X \setminus \{ a \}$ and all $y \in Y \setminus \{ f(a) \}$ we have
-\[ g^{\vee}(f^{\vee}(x)) = g(f(x)) = x \quad \text{and} \quad f^{\vee}(g^{\vee}(y)) = f(g(y)) \]
-so that $g^{\vee}$ is an inverse for $f^{\vee}$. Hence if $f$ is a bijection, then $f^{\vee}$ is a bijection.
+Now suppose that $f$ is a bijection. Then $f$ has an inverse $g : Y \to X$, which is itself a bijection (and hence an injection). Repeating the above argument with $g$ yields an injection $\tilde{g} : Y \setminus \{ f(a) \} \to X \setminus \{ a \}$ defined by $\tilde{g}(y) = g(y)$ for all $y \in Y \setminus \{ f(a) \}$. But then for all $x \in X \setminus \{ a \}$ and all $y \in Y \setminus \{ f(a) \}$ we have
+\[ \tilde{g}(\tilde{f}(x)) = g(f(x)) = x \quad \text{and} \quad \tilde{f}(\tilde{g}(y)) = f(g(y)) \]
+so that $\tilde{g}$ is an inverse for $\tilde{f}$. Hence if $f$ is a bijection, then $\tilde{f}$ is a bijection.
 \end{cproof}
 
 A consequence of \Cref{lemRemoveElementFromDomainAndCodomain} is the next useful result, which we will use in our proof that every set has a unique `size'.
@@ -90,7 +87,7 @@ Let $X$ be an inhabited set. There is a bijection $X \setminus \{ a \} \to X \se
 \begin{cproof}
 Define $f : X \to X$ be the function that swaps $a$ and $b$ and leaves all other elements of $X$ fixed---that is, we define
 \[ f(x) = \begin{cases} b & \text{if } x = a \\ a & \text{if } x = b \\ x & \text{if } x \not\in \{ a, b \} \end{cases} \]
-Note that $f(f(x)) = x$ for all $x \in X$, so $f$ is a bijection---it is its own inverse! Since $f(a) = b$, it follows from \Cref{lemRemoveElementFromDomainAndCodomain} that the function $f^{\vee} : X \setminus \{ a \} \to X \setminus \{ b \}$ defined by $f^{\vee}(x) = f(x)$ for all $x \in X \setminus \{ a \}$ is a bijection, as required.
+Note that $f(f(x)) = x$ for all $x \in X$, so $f$ is a bijection---it is its own inverse! Since $f(a) = b$, it follows from \Cref{lemRemoveElementFromDomainAndCodomain} that the function $\tilde{f} : X \setminus \{ a \} \to X \setminus \{ b \}$ defined by $\tilde{f}(x) = f(x)$ for all $x \in X \setminus \{ a \}$ is a bijection, as required.
 \end{cproof}
 
 \begin{theorem}
@@ -116,11 +113,11 @@ First note that $n > 0$. Indeed, since $m+1 > 0$, we have $0 \in [m+1]$, and so 
 
 Let $a = f(m) \in [n]$. Then:
 \begin{itemize}
-\item By \Cref{lemRemoveElementFromDomainAndCodomain} there is an injection $f^{\vee} : [m] = [m+1] \setminus \{ m \} \to [n] \setminus \{ a \}$.
+\item By \Cref{lemRemoveElementFromDomainAndCodomain} there is an injection $\tilde{f} : [m] = [m+1] \setminus \{ m \} \to [n] \setminus \{ a \}$.
 \item By \Cref{lemRemoveElementFromSet} there is a bijection $g : [n] \setminus \{ a \} \to [n] \setminus \{ n-1 \} = [n-1]$.
 \end{itemize}
 
-Composing these two functions gives an injection $g \circ f^{\vee} : [m] \to [n-1]$. But then $m \le n-1$ by the induction hypothesis, and so $m+1 \le n$ as required.
+Composing these two functions gives an injection $g \circ \tilde{f} : [m] \to [n-1]$. But then $m \le n-1$ by the induction hypothesis, and so $m+1 \le n$ as required.
 \end{itemize}
 The result now follows by induction.
 \end{cproof}
@@ -198,9 +195,9 @@ We are now in a position to prove this, at least when $X$ and $Y$ are finite. Th
 \label{thmFiniteSetsAndJections}
 Let $X$ and $Y$ be sets.
 \begin{enumerate}[(a)]
-\item If $Y$ is finite and there is an injection $f : X \to Y$, then $X$ is finite and $|X| \le |Y|$.
-\item If $X$ is finite and there is a surjection $f : X \to Y$, then $Y$ is finite and $|X| \ge |Y|$.
-\item If one of $X$ or $Y$ is finite and there is a bijection $f : X \to Y$, then $X$ and $Y$ are both finite and $|X| = |Y|$.
+\item\label{itmFiniteSetFromInjection} If $Y$ is finite and there is an injection $f : X \to Y$, then $X$ is finite and $|X| \le |Y|$.
+\item\label{itmFiniteSetFromSurjection} If $X$ is finite and there is a surjection $f : X \to Y$, then $Y$ is finite and $|X| \ge |Y|$.
+\item\label{itmFiniteSetFromBijection} If one of $X$ or $Y$ is finite and there is a bijection $f : X \to Y$, then $X$ and $Y$ are both finite and $|X| = |Y|$.
 \end{enumerate}
 \end{theorem}
 
@@ -216,7 +213,7 @@ Fix a finite set $Y$ of size $n+1$ and an injection $f : X \to Y$. We need to pr
 
 If $X$ is empty, then $|X| = 0 \le n+1$ as required. So assume that $X$ is inhabited, and fix an element $a \in X$.
 
-By \Cref{lemRemoveElementFromDomainAndCodomain}, there is an injection $f^{\vee} : X \setminus \{ a \} \to Y \setminus \{ f(a) \}$. Moreover, by \Cref{exAddRemoveElementsOfFiniteSets}, $Y \setminus \{ f(a) \}$ is finite and $|Y \setminus \{ f(a) \}| = (n+1) - 1 = n$.
+By \Cref{lemRemoveElementFromDomainAndCodomain}, there is an injection $\tilde{f} : X \setminus \{ a \} \to Y \setminus \{ f(a) \}$. Moreover, by \Cref{exAddRemoveElementsOfFiniteSets}, $Y \setminus \{ f(a) \}$ is finite and $|Y \setminus \{ f(a) \}| = (n+1) - 1 = n$.
 
 Applying the induction hypothesis with $Z = Y \setminus \{ f(a) \}$ tells us that, $X \setminus \{ a \}$ is finite and $|X \setminus \{ a \}| \le n$. But $|X \setminus \{ a \}| = |X| - 1$ by \Cref{exAddRemoveElementsOfFiniteSets}, and so $|X| \le n+1$, as required.
 \end{itemize}
@@ -232,6 +229,7 @@ Prove parts (b) and (c) of \Cref{thmFiniteSetsAndJections}.
 
 \begin{strategy}[Comparing the sizes of finite sets]
 \label{strComparingSizesOfFiniteSets}
+\index{bijective proof}
 Let $X$ and $Y$ be finite sets.
 \begin{enumerate}[(a)]
 \item In order to prove that $|X| \le |Y|$, it suffices to find an injection $X \to Y$.
@@ -246,9 +244,12 @@ Strategy \ref{strBijectiveProof} is commonly known as \textbf{bijective proof}.
 We now use \Cref{strComparingSizesOfFiniteSets} to prove some \textit{closure properties} of finite sets---that is, operations we can perform on finite sets to ensure that the result remains finite.
 
 \begin{exercise}
-Let $X$ be a finite set. Prove that every subset $U \subseteq X$ is finite and $|U| \le |X|$.
+Let $X$ be a finite set. Prove that every subset $A \subseteq X$ is finite and $|A| \le |X|$.
 \hintlabel{exSubsetOfFiniteSetIsFinite}{%
-Given $U \subseteq X$, find an injection $U \to X$ and apply \Cref{thmFiniteSetsAndJections}(a).
+Given $A \subseteq X$, find an injection $A \to X$ and apply \Cref{thmFiniteSetsAndJections}\ref{itmFiniteSetFromInjection}.
+}%
+\solution{exSubsetOfFiniteSetIsFinite}{%
+Let $i : A \to X$ be the \textit{inclusion function}, defined by $i(x)=x$ for all $x \in A$. For all $a,b \in A$, if $i(a)=i(b)$, then $a=b$ by definition of $i$, so that $i$ is injective. Since $X$ is finite and $i : A \to X$ is an injection, it follows from \Cref{thmFiniteSetsAndJections}\ref{itmFiniteSetFromInjection}.
 }
 \end{exercise}
 
@@ -323,7 +324,7 @@ for each $k \in [m]$ and $\ell \in [n]$. It is easy to see that this is a biject
 for all $x \in X$ and $y \in Y$. By \Cref{exBijectionBetweenProductOfBracketSets} there is a bijection $p : [mn] \to [m] \times [n]$, and by \Cref{exCompositeOfBijectionsIsBijection} the composite $h \circ p : [mn] \to X \times Y$ is a bijection. Hence $|X \times Y| = mn$.
 \end{cproof}
 
-In summary, we have proved that the property of finiteness is preserved by taking subsets, pairwise unions, pairwise intersections, pairwise cartesian products, and relative complements. 
+In summary, we have proved that the property of finiteness is preserved by taking subsets, pairwise unions, pairwise intersections, pairwise cartesian products, and relative complements.
 
 \subsection*{Infinite sets}
 

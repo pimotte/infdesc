@@ -78,12 +78,12 @@ Fix $n \in \mathbb{N}$. Prove that $\binom{n}{0} = 1$, $\binom{n}{1} = n$ and $\
 \begin{definition}
 \label{defPermutationPreliminary}
 \index{permutation}
-Let $X$ be a set. A \textbf{permutation} of $X$ is a bijection $X \to X$. Denote the set of all permutations of $X$ by $\mathrm{Sym}(X)$\nindex{Sym}{$\mathrm{Sym}(X)$}{set of permutations} \inlatex{mathrm\{Sym\}} and write $S_n = \mathrm{Sym}([n])$ for $n \in \mathbb{N}$.
+Let $X$ be a set. A \textbf{permutation} of $X$ is a bijection $X \to X$.
 \end{definition}
 
 \begin{example}
 \label{exPermutationsOfBracket3}
-There are six permutations of the set $[3]$. Representing each $f \in S_3$ by the ordered triple $(f(1),f(2),f(3))$, these permutations are thus given by
+There are six permutations of the set $[3]$. Representing each bijection $f : [3] \to [3]$ by the ordered triple $(f(0),f(1),f(2))$ of its values, these permutations are thus given by
 \[ (0,1,2),\ (0,2,1),\ (1,0,2),\ (1,2,0),\ (2,0,1),\ (2,1,0) \]
 For example, $(1,2,0)$ represents the permutation $f : [3] \to [3]$ defined by $f(0)=1$, $f(1)=2$ and $f(2)=0$.
 \end{example}
@@ -95,16 +95,33 @@ List all the permutations of the set $[4]$.
 \begin{definition}
 \label{defFactorial}
 \index{factorial}
-Let $n \in \mathbb{N}$. Denote by $n!$\nindex{nfactorial}{$n"!$}{factorial} (read: `$n$ factorial') the number of permutations of a set of size $n$. That is, $n! = |S_n|$. The numbers $n!$ are called \textbf{factorials}.
+Let $n \in \mathbb{N}$. Denote by $n!$\nindex{nfactorial}{$n"!$}{factorial} (read: `$n$ factorial') the number of permutations of $[n]$. That is,
+\[ n! = |\{ f : [n] \to [n] \mid f \text{ is a bijection} \}| \]
+The numbers $n!$ are called \textbf{factorials}.
 \end{definition}
 
 \begin{example}
 \Cref{exPermutationsOfBracket3} shows that $3!=6$.
 \end{example}
 
+The result of the following exercise allows us to interpret factorials in different ways than just permutations of sets.
+
+\begin{exercise}[Other characterisations of the factorial]
+\label{exOtherCharacterisationsOfFactorial}
+Let $n \in \mathbb{N}$, and let $X$ and $Y$ be finite sets with $|X|=|Y|=n$.
+
+Prove that the following sets all have size $n!$:
+\begin{enumerate}[(a)]
+\item The set of all $n$-tuples $(x_0,x_1,\dots,x_{n-1}) \in X^n$ such that each element of $X$ appears exactly once in the list;
+\item The set of all permutations of $X$;
+\item The set of all enumerations of $X$ (that is, bijections $[n] \to X$); and
+\item The set of all bijections $X \to Y$.
+\end{enumerate}
+\end{exercise}
+
 \subsection*{Products and procedures}
 
-We saw in \Cref{propProductOfFiniteSetsIsFinite} that, given two finite sets $X$ and $Y$, the product $X \times Y$ is finite. We also found a formula for its size, namely $|X \times Y| = |X| \cdot |Y|$. The \textit{multiplication principle} (\Cref{strMultiplicationPrinciple}) generalises this formula to products that may contain any finite number of sets, not just two.
+We saw in \Cref{propProductOfFiniteSetsIsFinite} that, given two finite sets $X$ and $Y$, the product $X \times Y$ is finite. We also found a formula for its size, namely $|X \times Y| = |X| \cdot |Y|$. The \textit{multiplication principle} (\Cref{thmMultiplicationPrincipleGeneral}) generalises this formula to products that may contain any finite number of sets, not just two.
 
 \begin{lemma}
 \label{lemMultiplicationPrincipleIndependent}
@@ -134,20 +151,35 @@ by \Cref{propProductOfFiniteSetsIsFinite}. Applying the induction hypothesis, we
 By induction, we're done.
 \end{cproof}
 
-\Cref{lemMultiplicationPrincipleIndependent} gives rise to a useful strategy for computing the size of a finite set $X$---see \Cref{strMultiplicationPrincipleIndependent}. Intuitively, by devising a step-by-step procedure for specifying an element of $X$, we are constructing a cartesian product $\prod_{k=1}^n X_k$, where $X_k$ is the set of choices to be made in the $k^{\text{th}}$ step. This establishes a bijection $\prod_{k=1}^n X_k \to X$, which by bijective proof (\Cref{strComparingSizesOfFiniteSets}\ref{strBijectiveProof}) lets us compute $|X|$ as the product of the numbers of choices that can be made in each step.
+\Cref{lemMultiplicationPrincipleIndependent} gives rise to a useful strategy for computing the size of a finite set $X$---see \Cref{thmMultiplicationPrincipleIndependent}. Intuitively, by devising a step-by-step procedure for specifying an element of $X$, we are constructing a cartesian product $\prod_{k=1}^n X_k$, where $X_k$ is the set of choices to be made in the $k^{\text{th}}$ step. This establishes a bijection $\prod_{k=1}^n X_k \to X$, which by bijective proof (\Cref{strComparingSizesOfFiniteSets}\ref{strBijectiveProof}) lets us compute $|X|$ as the product of the numbers of choices that can be made in each step.
 
-\begin{strategy}[Multiplication principle {(independent version)}]
-\label{strMultiplicationPrincipleIndependent}
-Let $X$ be a finite set. In order to compute $|X|$, it suffices to find a step-by-step procedure for specifying elements of $X$, such that:
-\vspace{5pt}
-\begin{itemize}
-\item Each element is specified by a unique sequence of choices;
-\item Each step in the procedure is independent of the previous step;
-\item There are finitely many choices to be made at each step.
-\end{itemize}
-\vspace{5pt}
-If there are $n \in \mathbb{N}$ steps and $m_k \in \mathbb{N}$ possible choices in the $k^{\text{th}}$ step, then $|X| = \prod_{k=1}^n m_k$.
-\end{strategy}
+\begin{definition}
+\label{defSpecificationProcedure}
+\index{specification procedure}
+A \textbf{specification procedure} for a set $X$ is a sequence of $r$ steps, for some $r \in \mathbb{N}$, such that:
+\begin{enumerate}[(i)]
+\item In each step, one of a predetermined set of choices is made---which choices are available may in general depend on the choices made in the previous steps;
+\item Each sequence of choices determines an element of $X$; and
+\item Each element of $X$ is uniquely determined by a unique sequence of choices.
+\end{enumerate}  
+\end{definition}
+
+\begin{example}
+Let $n \in \mathbb{N}$. A specification procedure for $\mathcal{P}([n])$ is as follows. There are $n$ steps, numbered Step $0$ through Step $n-1$. To specify an element $A \in \mathcal{P}([n])$ (that is, a subset $A \subseteq [n]$), for each $k \in [n]$, we decide in Step $k$ whether $k \in A$ or $k \not\in A$.
+\end{example}
+
+In the context of \Cref{defSpecificationProcedure}, letting $S$ be the set of all sequences of choices, condition (ii) is equivalent to the existence of a function $S \to X$, which sends a sequence of choices to the element of $X$ determined by those choices, and condition (iii) is equivalent to this function being a bijection. So if $S$ is finite, then so is $X$, and $|X| = |S|$.
+
+If, for each $k \in [r]$, the available choices in Step $k$ are independent of those made in other steps, this means that $S = \displaystyle \prod_{k \in [r]} S_k$, where $S_k$ is the set of choices that are available in Step $k$.
+
+Therefore we can apply \Cref{lemMultiplicationPrincipleIndependent} to obtain the following theorem:
+
+\begin{theorem}[Multiplication principle {(independent version)}]
+\label{thmMultiplicationPrincipleIndependent}
+Let $X$ be a set, and suppose that there is a specification procedure for $X$ such that in each step, there are finitely many choices available, and the choices are independent of those made in other steps. Then $X$ is finite.
+
+Moreover, letting $r \in \mathbb{N}$ be the number of steps, and letting $m_k$ for $k \in [r]$ be the numbers of choices available in the respective steps, we have $|X| = \prod_{k \in [r]} m_k$. \qed
+\end{theorem}
 
 \begin{example}
 You go to an ice cream stand selling the following flavours:
@@ -219,12 +251,12 @@ Any function $f : X \to Y$ with finite domain can be specified by listing its va
 Since September 2001, car number plates on the island of Great Britain have taken the form \texttt{XX\;NN\;XXX}, where each \texttt{X} can be any letter of the alphabet except for `I', `Q' or `Z', and \texttt{NN} is the last two digits of the year. [This is a slight simplification of what is really the case, but let's not concern ourselves with \textit{too} many details!] How many possible number plates are there? Number plates of vehicles registered in the region of Yorkshire begin with the letter `Y'. How many Yorkshire number plates can be issued in a given year?
 \end{exercise}
 
-The multiplication principle in the form of \Cref{strMultiplicationPrincipleIndependent} does not allow for steps later in a procedure to depend on those earlier in the procedure. To see why this is a problem, suppose we want to count the size of the set $X = \{ (a,b) \in [n] \times [n] \mid a \ne b \}$. A step-by-step procedure for specifying such an element is as follows:
+The multiplication principle in the form of \Cref{thmMultiplicationPrincipleIndependent} does not allow for steps later in a procedure to depend on those earlier in the procedure. To see why this is a problem, suppose we want to count the size of the set $X = \{ (a,b) \in [n] \times [n] \mid a \ne b \}$. A step-by-step procedure for specifying such an element is as follows:
 \begin{itemize}
 \item \textbf{Step 1.} Select an element $a \in [n]$. There are $n$ choices.
 \item \textbf{Step 2.} Select an element $b \in [n]$ with $b \ne a$. There are $n-1$ choices.
 \end{itemize}
-We would like to use \Cref{strMultiplicationPrincipleIndependent} to deduce that $|X| = n(n-1)$. Unfortunately, this is not valid because the possible choices available to us in Step 2 depend on the choice made in Step 1. Elements of cartesian products do not depend on one another, and so the set of sequences of choices made cannot necessarily be expressed as a cartesian product of two sets. Thus we cannot apply \Cref{lemMultiplicationPrincipleIndependent}. Oh no!
+We would like to use \Cref{thmMultiplicationPrincipleIndependent} to deduce that $|X| = n(n-1)$. Unfortunately, this is not valid because the possible choices available to us in Step 2 depend on the choice made in Step 1. Elements of cartesian products do not depend on one another, and so the set of sequences of choices made cannot necessarily be expressed as a cartesian product of two sets. Thus we cannot apply \Cref{lemMultiplicationPrincipleIndependent}. Oh no!
 
 However, provided that the \textit{number} of choices in each step remains constant, in spite of the choices themselves changing, it turns out that we can still compute the size of the set in question by multiplying together the numbers of choices.
 
@@ -233,73 +265,65 @@ This is what we prove next. We begin with a pairwise version (analogous to \Cref
 \begin{lemma}
 \label{lemMultiplicationPrinciplePairwise}
 Fix $m,n \in \mathbb{N}$. Let $X$ be a finite set with $|X|=m$, and for each $a \in X$, let $Y_a$ be a finite set with $|Y_a|=n$. Then the set
-\[ P = \{ (a, b) \mid a \in X \text{ and } b \in Y_a \} \]
-is finite and $|P| = mn$.
+\[ Z = \{ (a, b) \mid a \in X \text{ and } b \in Y_a \} \]
+is finite and $|Z| = mn$.
 \end{lemma}
 
 \begin{cproof}
-Fix bijections $f : [m] \to X$ and $g_a : [n] \to Y_a$ for each $a \in X$. Define $h : [m] \times [n] \to P$ by letting $h(i,j) = (f(i), g_{f(i)}(j))$ for each $(i,j) \in [m] \times [n]$. Then:
+Fix bijections $f : [m] \to X$ and $g_a : [n] \to Y_a$ for each $a \in X$. Define $h : [m] \times [n] \to Z$ by letting $h(i,j) = (f(i), g_{f(i)}(j))$ for each $(i,j) \in [m] \times [n]$. Then:
 \begin{itemize}
 \item $h$ is well-defined, since for all $i \in [m]$ and $j \in [n]$ we have $f(i) \in X$ and $g_{f(i)}(j) \in Y_{f(i)}$.
 \item $h$ is injective. To see this, fix $(i,j), (k,\ell) \in [m] \times [n]$ and assume that $h(i,j) = h(k,\ell)$. Then $(f(i),g_{f(i)}(j)) = (f(k),g_{f(k)}(\ell))$, so that $f(i)=f(k)$ and $g_{f(i)}(j) = g_{f(k)}(\ell)$. Since $f$ is injective, we have $i=k$---therefore $g_{f(i)}(j) = g_{f(i)}(\ell)$, and then since $g_{f(i)}$ is injective, we have $j=\ell$. Thus $(i,j) = (k,\ell)$, as required.
-\item $h$ is surjective. To see this, let $(a,b) \in P$. Since $f$ is surjective and $a \in X$, we have $a=f(i)$ for some $i \in [m]$. Since $g_a$ is surjective and $b \in Y_a$, we have $b=g_a(j)$ for some $j \in [n]$. But then
+\item $h$ is surjective. To see this, let $(a,b) \in Z$. Since $f$ is surjective and $a \in X$, we have $a=f(i)$ for some $i \in [m]$. Since $g_a$ is surjective and $b \in Y_a$, we have $b=g_a(j)$ for some $j \in [n]$. But then
 \[ (a,b) = (f(i), g_a(j)) = (f(i), g_{f(i)}(j)) = h(i,j) \]
 so that $h$ is surjective.
 \end{itemize}
 
-Since $h$ is a bijection, we have $|P| = |[m] \times [n]|$ by \Cref{thmFiniteSetsAndJections}(iii), which is equal to $mn$ by \Cref{propProductOfFiniteSetsIsFinite}.
+Since $h$ is a bijection, we have $|Z| = |[m] \times [n]|$ by \Cref{thmFiniteSetsAndJections}(iii), which is equal to $mn$ by \Cref{propProductOfFiniteSetsIsFinite}.
 \end{cproof}
 
 We are now ready to state and prove the theorem giving rise to the multiplication principle in its full generality.
 
-\begin{theorem}[Multiplication principle]
-\label{thmMultPrinciple}
+\begin{theorem}[Multiplication principle {(general version)}]
+\label{thmMultiplicationPrincipleGeneral}
 \index{counting principle!multiplication principle}
 \index{multiplication principle}
 \index{rule of product}
-Let $n \ge 1$ and $m_1,m_2,\dots,m_n \in \mathbb{N}$. Suppose for each $1 \le i \le n$ that we are given finite sets $X^{(i)}_{a_1,\dots,a_{i-1}}$ with $|X^{(i)}_{a_1,\dots,a_{i-1}}| = m_i$, where $a_j \in X^{(i)}_{a_1,\dots,a_{j-1}}$ for each $j<i$. Define
-\[ P = \{ (a_1,a_2,\dots,a_n) \mid a_1 \in X^{(1)}, ~ a_2 \in X^{(2)}_{a_1}, ~ \dots, ~ a_n \in X^{(n)}_{a_1,\dots,a_{n-1}} \} \]
-Then $P$ is finite and $|P| = m_1 \times m_2 \times \cdots \times m_n$.
+Let $X$ be a set, and suppose that there is a specification procedure for $X$ such that in each step, there are finitely many choices available, and the number of available choices is independent of those made in other steps. Then $X$ is finite.
+
+Moreover, letting $r \in \mathbb{N}$ be the number of steps, and letting $m_k$ for $k \in [r]$ be the numbers of choices available in the respective steps, we have $|X| = \prod_{k \in [r]} m_k$.
 \end{theorem}
 
 \begin{cproof}
-We proceed by induction on $n \ge 1$.
+Given an $r$-step specification procedure for $X$, define a family of sets as follows:
 \begin{itemize}
-\item (\textbf{Base case}) When $n=1$, the statement says that given $m_1 \in \mathbb{N}$ and a finite set $X^{(1)}$ with $|X^{(1)}|=m_1$, then $P = \{ (a_1) \mid a_1 \in X^{(1)} \}$ is finite and $|P| = m_1$. This is true, since the function $X^{(1)} \to P$ defined by $a \mapsto (a)$ is evidently a bijection.
+\item Let $X^{(0)}$ be the set of all choices available in Step $0$, and let $m_0 = |X^{(0)}| \in \mathbb{N}$.
+\item For each $k \in \mathbb{N}$ with $0 < k < r$, and each sequence $s$ of choices available in Steps $0$ through $k-1$: let $X^{(k)}_s$ be the set of all choices available in Step $k$ when the choices made in the previous steps were those in $s$; and let $m_k = |X^{(k)}_s| \in \mathbb{N}$. Note that the value of $m_k$ is independent of $s$ by the assumption in the theorem.
+\end{itemize}
+Finally, let $P$ be the set of all sequences of steps. Note that there is a bijection $P \to X$ by definition of specification procedure, so it suffices to prove that $P$ is finite and that $|P| = \displaystyle \prod_{k \in [r]} m_k$.
 
-\item (\textbf{Induction step}) Fix $n \ge 1$ and assume that the theorem statement is true for this value of $n$.
-
-Let $m_1, m_2, \dots, m_n, m_{n+1} \in \mathbb{N}$ and suppose that we are given finite sets $X^{(i)}_{a_1,\dots,a_{i-1}}$ for each $i \in [n+1]$ just as in the statement of the theorem, and let
-\[ P = \{ (a_1,a_2,\dots,a_{n+1}) \mid a_1 \in X^{(1)}, ~ a_2 \in X^{(2)}_{a_1}, ~ \dots, ~ a_{n+1} \in X^{(n+1)}_{a_1,\dots,a_{n-1},a_n} \} \]
-We need to prove that $|P| = m_1 \times m_2 \times \cdots \times m_n \times m_{n+1}$.
-
-So define
-\[ Q = \{ (a_1,a_2,\dots,a_n) \mid a_1 \in X^{(1)}, ~ a_2 \in X^{(2)}_{a_1}, ~ \dots, ~ a_n \in X^{(n)}_{a_1,\dots,a_{n-1}} \} \]
-and, given $q = (a_1,\dots,a_n) \in Q$, define $Y_q = X^{(n+1)}_{a_1,\dots,a_n}$. Observe that there is an evident bijection
-\[ \{ (q,a_{n+1}) \mid q \in Q, ~ a_{n+1} \in Y_{q} \} \to P \]
-defined by $((a_1,a_2,\dots,a_n),a_{n+1}) \mapsto (a_1,a_2,\dots,a_n,a_{n+1})$.
-
-Now $|Q|=m_1 \times m_2 \times \cdots \times m_n$, and $|Y_q| = m_{n+1}$ for each $q \in Q$, so it follows from \Cref{lemMultiplicationPrinciplePairwise} that
-\[ |P| = (m_1 \times m_2 \times \cdots \times m_n) \times m_{n+1} = m_1 \times m_2 \times \cdots \times m_n \times m_{n+1} \]
+We proceed by induction on $r \ge 1$.
+\begin{itemize}
+\item (\textbf{Base case}) When $r=1$, there is a single step in the specification procedure, so the function $f : X^{(0)} \to P$ defined by $f(s) = (s)$ is a bijection, and so $P$ is finite and
+\[ |P| = |X^{(0)}| = m_0 = \prod_{k \in [1]} m_k \]
 as required.
+
+\item (\textbf{Induction step}) Let $r \ge 1$ and suppose that the theorem statement holds for $r$-step specification procedures.
+
+Suppose now that we have an $(r+1)$-step specification procedure (with steps numbered $0$ through $r$, say), and let the sets $X^{(k)}_s$ and natural numbers $m_k$ (for suitable natural numbers $k$ and sequences $s$ of choices) and $P$ be defined as at the beginning of the theorem.
+
+Let $Q$ be the set of all sequences of choices made in Steps $0$ through $r-1$, and define $Z = \{ (s,c_r) \mid s \in Q \text{ and } c_r \in X^{(r)}_s \}$.
+
+There is an evident bijection $f : Z \to P$ given by
+\[ f((c_0,\dots,c_{r-1}),c_r) = (c_0,c_1,\dots,c_{r-1},c_r) \]
+for all $((c_0,\dots,c_{r-1}),c_r) \in Z$.
+
+But now $|Q| = \displaystyle \prod_{k \in [r]} m_k$ by the induction hypothesis, and $|X^{(r)}_s| = m_r$ for all $s \in Q$ by definition of $m_r$, so by \Cref{lemMultiplicationPrinciplePairwise} we have that $Z$ is finite and
+\[ |Z| = |Q| \cdot |X^{(r)}_s| = \left(\prod_{k \in [r]} m_k\right) \cdot m_r = \prod_{k \in [r+1]} m_k \]
+
+Since $f$ is a bijection, $P$ is also finite and also has this size, as required. \qed
 \end{itemize}
 \end{cproof}
-
-\Cref{strMultiplicationPrinciple} summarises how \Cref{thmMultPrinciple} is useful in our proofs.
-
-\begin{strategy}[Counting using the multiplication principle]
-\label{strMultiplicationPrinciple}
-Let $X$ be a finite set. In order to compute $|X|$, it suffices to find a step-by-step procedure for specifying elements of $X$, such that:
-\vspace{5pt}
-\begin{itemize}
-\item Each element is specified by a unique sequence of choices;
-\item The choices available in each step depend only on choices made in previous steps;
-\item There are finitely many choices available in each step;
-\item The \textit{number} of choices available in each step does not depend on choices made in previous steps;
-\end{itemize}
-\vspace{5pt}
-If there are $n \in \mathbb{N}$ steps and $m_k \in \mathbb{N}$ possible choices in the $k^{\text{th}}$ step, then $|X| = \prod_{k=1}^n m_k$.
-\end{strategy}
 
 \begin{example}
 We prove that there are six bijections $[3] \to [3]$. We can specify a bijection $f : [3] \to [3]$ according to the following procedure.
@@ -339,7 +363,7 @@ By the multiplication principle, there are $2 \cdot (26!)^2$ such rearrangements
 
 \subsection*{Sums and partitions}
 
-We saw in \Cref{propUnionOfFiniteSetsIsFinite} that, given two finite sets $X$ and $Y$, the union $X \cup Y$ is finite. We also found formulae for their size, namely $|X \cup Y| = |X| + |Y| - |X \cap Y|$. The \textit{addition principle} (\Cref{strAdditionPrinciple}) generalises this formula to any finite number of sets, provided the sets have no elements in common with one another---that is they are \textit{pairwise disjoint}. [The hypothesis of pairwise disjointness is removed in the \textit{inclusion--exclusion principle}, which is studied in \Cref{secAlternatingSums}.]
+We saw in \Cref{propUnionOfFiniteSetsIsFinite} that, given two finite sets $X$ and $Y$, the union $X \cup Y$ is finite. We also found formulae for their size, namely $|X \cup Y| = |X| + |Y| - |X \cap Y|$. The \textit{addition principle} (\Cref{thmAdditionPrinciple}) generalises this formula to any finite number of sets, provided the sets have no elements in common with one another---that is they are \textit{pairwise disjoint}. [The hypothesis of pairwise disjointness is removed in the \textit{inclusion--exclusion principle}, which is studied in \Cref{secAlternatingSums}.]
 
 If you have not covered \Cref{secEquivalenceRelationsPartitions} yet, you are encouraged to take a brief detour to read from \Cref{defPartition} to \Cref{exConditionsForPartition}; the definition of a \textit{partition} of a set is recalled below.
 
@@ -348,7 +372,7 @@ If you have not covered \Cref{secEquivalenceRelationsPartitions} yet, you are en
 In this section, we will simplify matters in two ways:
 \begin{itemize}
 \item When we say `partition' in this section (and \Cref{secAlternatingSums}), we will allow the sets in the partition to be empty---that is, we will just need conditions (b) and (c) of \Cref{defPartition} to hold.
-\item Since our sets are finite, so will $\mathcal{A}$ be; so we will only ever partition our sets into finitely many pieces. That is, all of our partitions will take form $\{ A_1, A_2, \dots, A_n \}$ for some $n \in \mathbb{N}$.
+\item Since our sets are finite, so will $\mathcal{A}$ be; so we will only ever partition our sets into finitely many pieces. That is, all of our partitions will take form $\mathcal{A} = \{ A_i \mid i \in [n] \}$ for some $n \in \mathbb{N}$.
 \end{itemize}
 
 With all of this said, let's get right to it.
@@ -358,18 +382,13 @@ With all of this said, let's get right to it.
 \index{addition principle}
 \index{rule of sum}
 \index{counting principle!addition principle}
-Let $X$ be a set and let $\{ A_1, \dots, A_n \}$ be a partition of $X$ for some $n \in \mathbb{N}$, such that each set $A_i$ is finite. Then $X$ is finite, and
-\[ |X| = |A_1| + |A_2| + \cdots + |A_n| \]
+Let $X$ be a set and let $\mathcal{A} = \{ A_i \mid i \in [n] \}$ be a partition of $X$ for some $n \in \mathbb{N}$, such that each set $A_i$ is finite. Then $X$ is finite, and
+\[ |X| = \sum_{i \in [n]} |A_i| \]
 \end{theorem}
 
 \begin{exercise}
 Prove \Cref{thmAdditionPrinciple}. The proof follows the same pattern as that of \Cref{lemMultiplicationPrincipleIndependent}. Be careful to make sure you identify where you use the hypothesis that the sets $U_i$ are pairwise disjoint!
 \end{exercise}
-
-\begin{strategy}[Counting using the addition principle]
-\label{strAdditionPrinciple}
-Let $X$ be a finite set. In order to compute $|X|$, it suffices to find a partition $A_1, A_2, \dots, A_n$ of $X$; it then follows that $|X| = \sum_{k=1}^n |A_i|$.
-\end{strategy}
 
 \begin{example}
 We will count the number of inhabited subsets of $[7]$ which either contain only even numbers, or contain only odd numbers.

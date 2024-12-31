@@ -48,66 +48,66 @@ A particularly useful family of equivalence relations is given by \textit{congru
 \label{defCongruence}
 \index{congruence}
 \index{modulo}
-\nindex{mod}{$a \equiv b \bmod n$}{congruence}
-\nindex{mod2}{$\bmod$}{congruence}
+\nindex{mod}{$a \equiv b \cmod{n}$}{congruence}
+\nindex{mod2}{$\cmod{n}$}{congruence}
 \lindexmmc{not}{$\not\in, \not\equiv, \dots$}
-\lindexmmc{bmod}{$\bmod$}
-Fix $n \in \mathbb{Z}$. Given integers $a,b \in \mathbb{Z}$, we say $a$ is \textbf{congruent} to $b$ \textbf{modulo} $n$, and write
-\[ a \equiv b \bmod{n} \text{ \inlatexnb{a \textbackslash{}equiv b \textbackslash{}bmod\{n\}}} \]
-if $n$ divides $a-b$. If $a$ is not congruent to $b$ modulo $n$, write
-\[ a \not \equiv b \bmod n \text{ \inlatex{not\textbackslash{}equiv}} \]
+\lindexmmc{pmod}{$\cmod{n}$}
+Fix $n \in \mathbb{Z}$. Given integers $a,b \in \mathbb{Z}$, we say \textbf{$a$ is congruent to $b$ modulo $n$}, and write
+\[ a \equiv b \cmod{n} \text{ \inlatexnb{a \textbackslash{}equiv b \textbackslash{}pmod\{n\}}} \]
+if $n \mid b-a$. If $a$ is not congruent to $b$ modulo $n$, write
+\[ a \not \equiv b \cmod{n} \text{ \inlatex{not\textbackslash{}equiv}} \]
 The number $n$ is called the \textbf{modulus} of the congruence.
 \end{restatable}
 
-Before we prove that congruence is modulo $n$ is an equivalence relation for all $n \in \mathbb{Z}$, it is worthwhile to get a feel for how it works.
+Before we prove that congruence is modulo $n$ (for fixed $n \in \mathbb{Z}$) is an equivalence relation for all $n \in \mathbb{Z}$, it is worthwhile to get a feel for how it works.
 
 \begin{example}
 \label{exCongruenceModuloTwoIsSameAsParity}
-Let $a,b \in \mathbb{Z}$. Then $a \equiv b \bmod 2$ if and only if $a$ and $b$ are both even or both odd---that is, if and only if they have the same \textit{parity}.
+Let $a,b \in \mathbb{Z}$. Then $a \equiv b \cmod{2}$ if and only if $a$ and $b$ are both even or both odd---that is, if and only if they have the same \textit{parity}.
 
 Indeed, by the division theorem, we can write $a=2k+i$ and $b=2\ell+j$ for some $k,\ell \in \mathbb{Z}$ and $i,j \in \{ 0,1 \}$. Then
 \[ b - a ~=~ (2k+i) - (2\ell+j) ~=~ 2(k-\ell) + (i-j) \]
-Note that $i-j \in \{ {-1},0,1 \}$, and so $a \equiv b \bmod 2$ if and only if $i=j$. But this occurs if and only if $i=j=0$, in which case $a$ and $b$ are both even, or $i=j=1$, in which case $a$ and $b$ are both odd.
+Note that $i-j \in \{ {-1},0,1 \}$, and so $a \equiv b \cmod{2}$ if and only if $i=j$. But this occurs if and only if $i=j=0$, in which case $a$ and $b$ are both even, or $i=j=1$, in which case $a$ and $b$ are both odd.
 \end{example}
 
 \begin{example}
 \label{exModuloTenIsSameAsLastDigit}
-Let $a,b \in \mathbb{N}$. Then $a \equiv b \bmod{10}$ if and only if $10$ divides $b-a$, which occurs if and only if the last digit in the decimal expansion of $b-a$ is $0$. But this implies that the decimal expansions of $a$ and $b$ have the same last digit. So the relation of congruence modulo $10$ on $\mathbb{N}$ is the same as the relation of `having the same last (decimal) digit'.
+Let $a,b \in \mathbb{N}$. Then $a \equiv b \cmod{10}$ if and only if $10$ divides $b-a$, which occurs if and only if the last digit in the decimal expansion of $b-a$ is $0$. But this implies that the decimal expansions of $a$ and $b$ have the same last digit. So the relation of congruence modulo $10$ on $\mathbb{N}$ is the same as the relation of `having the same last (decimal) digit'.
 \end{example}
 
 \begin{exercise}
-Let $n \in \mathbb{Z}$. Prove that if $n \ne 0$, then $a \equiv b \bmod n$ if and only if $a$ and $b$ have the same remainder when divided by $n$.
+Let $n \in \mathbb{Z}$. Prove that if $n \ne 0$, then $a \equiv b \cmod{n}$ if and only if $a$ and $b$ have the same remainder when divided by $n$.
 \end{exercise}
 
 \begin{exercise}
-Let $a,b \in \mathbb{Z}$. When is it true that $a \equiv b \bmod 0$? When is it true that $a \equiv b \bmod 1$?
+Let $a,b \in \mathbb{Z}$. When is it true that $a \equiv b \cmod{0}$? When is it true that $a \equiv b \cmod{1}$?
 \end{exercise}
 
 Having got a better feel for how congruence works, we now prove that, for each $n \in \mathbb{Z}$, congruence modulo $n$ is an equivalence relation on $\mathbb{Z}$.
 
 \begin{restatable}{theorem}{rthmCongruenceIsEquivalenceRelation}
 \label{thmCongruenceIsEquivalenceRelation}
-Let $n \in \mathbb{Z}$. Then congruence modulo $n$ is an equivalence relation on $\mathbb{Z}$. That is:
+Let $n \in \mathbb{Z}$. Then congruence modulo $n$ is an equivalence relation on $\mathbb{Z}$. That is
 \begin{enumerate}[(a)]
-\item $a \equiv a \bmod n$ for all $a \in \mathbb{Z}$;
-\item For all $a,b \in \mathbb{Z}$, if $a \equiv b \bmod n$, then $b \equiv a \bmod n$;
-\item For all $a,b,c \in \mathbb{Z}$, if $a \equiv b \bmod n$ and $b \equiv c \bmod n$, then $a \equiv c \bmod n$.
+\item $a \equiv a \cmod{n}$ for all $a \in \mathbb{Z}$;
+\item For all $a,b \in \mathbb{Z}$, if $a \equiv b \cmod{n}$, then $b \equiv a \cmod{n}$;
+\item For all $a,b,c \in \mathbb{Z}$, if $a \equiv b \cmod{n}$ and $b \equiv c \cmod{n}$, then $a \equiv c \cmod{n}$.
 \end{enumerate}
 \end{restatable}
 
 \begin{cproof}
 \fixlistskip
 \begin{enumerate}[(a)]
-\item Let $a \in \mathbb{Z}$. Note that $a-a=0$, which is divisible by $n$ since $0 = 0 \times n$, and hence $a \equiv a \bmod n$. So congruence modulo $n$ is reflexive.
-\item Let $a,b \in \mathbb{Z}$ and suppose $a \equiv b \bmod n$. Then $n$ divides $a-b$, so that $a-b = kn$ for some $k \in \mathbb{Z}$. Hence $b-a=-kn$, and so $n$ divides $b-a$, so that $b \equiv a \bmod n$ as required. So congruence modulo $n$ is symmetric.
-\item Let $a,b,c \in \mathbb{Z}$ and suppose that $a \equiv b \bmod n$ and $b \equiv c \bmod n$. Then $n$ divides both $a-b$ and $b-c$, so there exist $k, \ell \in \mathbb{Z}$ such that
+\item Let $a \in \mathbb{Z}$. Note that $a-a=0$, which is divisible by $n$ since $0 = 0 \times n$, and hence $a \equiv a \cmod{n}$. So congruence modulo $n$ is reflexive.
+\item Let $a,b \in \mathbb{Z}$ and suppose $a \equiv b \cmod{n}$. Then $n$ divides $a-b$, so that $a-b = kn$ for some $k \in \mathbb{Z}$. Hence $b-a=-kn$, and so $n$ divides $b-a$, so that $b \equiv a \cmod{n}$ as required. So congruence modulo $n$ is symmetric.
+\item Let $a,b,c \in \mathbb{Z}$ and suppose that $a \equiv b \cmod{n}$ and $b \equiv c \cmod{n}$. Then $n$ divides both $a-b$ and $b-c$, so there exist $k, \ell \in \mathbb{Z}$ such that
 \[ a-b = kn \quad \text{and} \quad b-c = \ell n \]
-Hence $a-c = (a-b)+(b-c) = (k+\ell)n$, so that $n$ divides $a-c$. Hence $a \equiv c \bmod n$, as required. So congruence modulo $n$ is transitive.
+Hence $a-c = (a-b)+(b-c) = (k+\ell)n$, so that $n$ divides $a-c$. Hence $a \equiv c \cmod{n}$, as required. So congruence modulo $n$ is transitive.
 \end{enumerate}
 Since congruence modulo $n$ is reflexive, symmetric and transitive, it is an equivalence relation.
 \end{cproof}
 
-\subsection*{Equivalence classes}
+\subsection*{Equivalence classes and quotients}
 
 What makes equivalence relations so useful is they give us a way of ignoring information that is irrelevant to the task at hand.
 
@@ -140,7 +140,7 @@ This is because, without braces, \LaTeX{} thinks you're saying `$X$-forward-slas
 
 \begin{example}
 \label{exEquivalenceClassesModuloTwo}
-Let $\sim$ be the relation of congruence modulo $2$ on $\mathbb{Z}$. We showed in \Cref{exCongruenceModuloTwoIsSameAsParity} that, for all $a,b \in \mathbb{Z}$ we have $a \equiv b \bmod 2$ if and only if $a$ and $b$ have the same parity. But this means that, for all $[a]_{\sim}$ is the set of all integers with the same parity as $a$---that is:
+Let $\sim$ be the relation of congruence modulo $2$ on $\mathbb{Z}$. We showed in \Cref{exCongruenceModuloTwoIsSameAsParity} that, for all $a,b \in \mathbb{Z}$ we have $a \equiv b \cmod{2}$ if and only if $a$ and $b$ have the same parity. But this means that, for all $[a]_{\sim}$ is the set of all integers with the same parity as $a$---that is:
 \begin{itemize}
 \item If $a$ is even, then $[a]_{\sim}$ is the set of all even integers; and
 \item If $a$ is odd, then $[a]_{\sim}$ is the set of all odd integers.
@@ -187,9 +187,19 @@ We have shown by double containment that $[a]_{\sim} = [b]_{\sim}$.
 So $a \sim b$ if and only if $[a]_{\sim} = [b]_{\sim}$.
 \end{cproof}
 
-For congruence, special terminology and notation exists for equivalence classes and quotients.
+%\Cref{thmEquivalenceRelationDescendsToEqualityOnQuotient} provides a way of ensuring that functions defined on equivalence classes are well-defined.
+%
+%\begin{exercise}
+%Let $X$ and $Y$ be sets, and let $\sim$ be an equivalence relation on $X$.
+%\begin{enumerate}[(a)]
+%\item Prove that for all functions $f : X \to Y$, if $f(a)=f(b)$ for all $a,b \in X$ with $a \sim b$, then there is a unique function $f_{\sim} : X/{\sim} \to Y$ such that $f_{\sim}([x]_{\sim}) = f(x)$ for all $x \in X$.
+%\item ...example...
+%\end{enumerate}
+%\end{exercise}
 
-\todo{Move next three items to Section 7.3u}
+\subsection*{Congruence classes}
+
+For congruence, special terminology and notation exists for equivalence classes and quotients.
 
 \begin{definition}
 \label{defCongruenceClass}
@@ -197,13 +207,15 @@ For congruence, special terminology and notation exists for equivalence classes 
 \nindex{an}{$[a]_n$}{congruence class}
 \nindex{ZnZ}{$\mathbb{Z}/n\mathbb{Z}$}{set of congruence classes modulo $n$}
 Let $n \in \mathbb{Z}$. The \textbf{congruence class} of an integer $a$ modulo $n$ is defined by
-\[ [a]_n ~=~ [a]_{\equiv \bmod n} ~=~ \{ x \in \mathbb{Z} \mid a \equiv x \bmod n \} \]
+\[ [a]_n ~=~ [a]_{\equiv_n} ~=~ \{ x \in \mathbb{Z} \mid a \equiv x \cmod{n} \} \]
+where $\equiv_n$ denotes the relation of congruence modulo $n$.
+
 The set of all congruence classes modulo $n$ is denoted by
-\[ \mathbb{Z}/n\mathbb{Z} ~=~ \mathbb{Z}/({\equiv \bmod n}) ~=~ \{ [a]_n \mid a \in \mathbb{Z} \} \]
+\[ \mathbb{Z}/n\mathbb{Z} ~=~ \mathbb{Z}/{\equiv_n} ~=~ \{ [a]_n \mid a \in \mathbb{Z} \} \]
 \end{definition}
 
 \begin{example}
-Using the terminology of congruence classes, \Cref{exEquivalenceClassesModuloTwo} can be rephrased by saying that $\mathbb{Z}/2\mathbb{Z} = \{ [0]_2, [1]_2 \}$. Moreover, \Cref{thmEquivalenceRelationDescendsToEqualityOnQuotient} gives us a more succinct proof: for all $a \in \mathbb{Z}$, we have $a \equiv 0 \bmod 2$ if and only if $a$ is even, and $a \equiv 1 \bmod 2$ if and only if $a$ is odd. Therefore for all $a \in \mathbb{Z}$, we have $[a]_2 = [0]_2$ or $[a]_2 = [1]_2$, and so
+Using the terminology of congruence classes, \Cref{exEquivalenceClassesModuloTwo} can be rephrased by saying that $\mathbb{Z}/2\mathbb{Z} = \{ [0]_2, [1]_2 \}$. Moreover, \Cref{thmEquivalenceRelationDescendsToEqualityOnQuotient} gives us a more succinct proof: for all $a \in \mathbb{Z}$, we have $a \equiv 0 \cmod{2}$ if and only if $a$ is even, and $a \equiv 1 \cmod{2}$ if and only if $a$ is odd. Therefore for all $a \in \mathbb{Z}$, we have $[a]_2 = [0]_2$ or $[a]_2 = [1]_2$, and so
 \[ \mathbb{Z}/2\mathbb{Z} ~=~ \{ [a]_2 \mid a \in \mathbb{Z} \} ~=~ \{ [0]_2, [1]_2 \} \]
 Additionally, $[0]_2$ is the set of all even integers and $[1]_2$ is the set of all odd integers.
 \end{example}
@@ -212,7 +224,7 @@ The next exercise generalises the previous one, proving that congruence classes 
 
 \begin{exercise}
 \label{exCongruenceClassesCorrespondWithRemainders}
-Let $n \in \mathbb{Z}$ with $n \ne 0$. Prove that the function
+Let $n \in \mathbb{Z}$. Prove that the function
 \[ i : [|n|] \to \mathbb{Z}/n\mathbb{Z} \]
 defined by $i(r) = [r]_n$ for all $r \in [|n|]$ is a bijection.
 \end{exercise}
@@ -225,44 +237,41 @@ A partition of a set $X$ is a way of breaking $X$ up into mutually disjoint subs
 \label{defPartition}
 \index{pairwise disjoint}
 \index{disjoint!pairwise}
-A \textbf{partition} of a set $X$ is a set $\mathcal{A}$ of subsets of $X$ (that is, a subset $\mathcal{A} \subseteq \mathcal{P}(X)$) such that the following conditions hold:
+\index{cover}
+\index{partition}
+A \textbf{partition} of a set $X$ is a set $\mathcal{A} \subseteq \mathcal{P}(X)$ (that is, a set of subsets of $X$) such that the following conditions hold:
 \begin{enumerate}[(a)]
 \item Every set $A \in \mathcal{A}$ is inhabited;
-\item The sets in $\mathcal{A}$ are \textbf{pairwise disjoint}, which means that for all $A,B \in \mathcal{A}$, if $A \cap B$ is inhabited, then $A=B$;
-\item $\displaystyle \bigcup_{A \in \mathcal{A}} A = X$.
+\item $\mathcal{A}$ is a \textbf{cover} of $X$: for all $x \in X$, there exists $A \in \mathcal{A}$ such that $x \in A$; and
+\item $\mathcal{A}$ is \textbf{pairwise disjoint}: for all $A,B \in \mathcal{A}$, if $A \cap B$ is inhabited, then $A=B$.
 \end{enumerate}
 \end{restatable}
 
-Note that condition (b) in \Cref{exConditionsForPartition} is equivalent to its contrapositive, which says that for all $A,B \in \mathcal{A}$, if $A \ne B$, then $A \cap B$ is empty---this more intuitively captures the reason why we use the term `pairwise disjoint', but is less useful in proofs.
-
-\begin{strategy}[Proving a family of subsets forms a partition]
-\label{strProvingSubsetsFormPartition}
-Let $X$ be a set. In order to prove a collection $\mathcal{A} \subseteq \mathcal{P}(X)$ is a partition of $X$, it suffices to prove:
-\begin{enumerate}[(a)]
-\item Each $A \in \mathcal{A}$ is inhabited;
-\item For all $A,B \in \mathcal{A}$, if $A \cap B$ is inhabited, then $A=B$;
-\item For all $x \in X$, there is some $A \in \mathcal{A}$ such that $x \in A$.
-\end{enumerate}
-\end{strategy}
+A few remarks about the definition of a partition are in order:
+\begin{itemize}
+\item Later in the textbook, we will encounter contexts in which we want to talk about a partition of a set \textit{without} requiring that the sets in the partition be inhabited. We will address this when we need to, but for the purposes of this section, we \textit{do} need this condition.
+\item The definition of $\mathcal{A}$ being a cover of $X$ is equivalent to the assertion that $X \subseteq \bigcup \mathcal{A}$. Furthermore, since $\mathcal{A}$ is a subset of $X$, we automatically have $\bigcup \mathcal{A} \subseteq X$. So a set $\mathcal{A} \subseteq \mathcal{P}(X)$ is a cover of $X$ if and only if $\bigcup \mathcal{A} = X$.
+\item Pairwise disjointness of $\mathcal{A}$ means, intuitively, that distinct sets in $\mathcal{A}$ do not overlap. If you were asked to write down what this means, you would probably say something like: ``for all $A, B \in \mathcal{A}$, if $A \ne B$, then $A \cap B$ is empty''. This is good for intuition, but less useful for proofs, since both the hypothesis and the conclusion of the implication are negative statements, which would suggest a proof by contradiction every time we want to show a collection of sets is pairwise disjoint. The definition we gave in \Cref{defPartition} uses the \textit{contrapositive} of this implication, which we know is equivalent by \Cref{thmLawOfContraposition}, but is more useful for proofs of pairwise disjointness because it does not contain any negations.
+\end{itemize}
 
 \begin{example}
 \label{exPartitionOfZIntoEvenAndOdd}
-We can partition $\mathbb{Z}$ as $E \cup O$, where $E$ is the set of all even integers and $O$ is the set of all odd integers:
-\begin{enumerate}[(a)]
-\item $E$ and $O$ are inhabited, since $0 \in E$ and $1 \in O$.
-\item The family $\{ E, O \}$ is pairwise disjoint if and only if $E \cap O$ is empty; and it is, since no integer can be both even and odd.
-\item $E \cup O = \mathbb{Z}$ since every integer is either even or odd.
-\end{enumerate}
+Let $E$ be the set of all even integers and $O$ be the set of all odd integers. Then $\{ E, O \}$ is a partition of $\mathbb{Z}$:
+\begin{itemize}
+\item (\textbf{Inhabitation}) $E$ and $O$ are inhabited, since for example $0 \in E$ and $1 \in O$.
+\item (\textbf{Covering}) Every integer $n$ is either even (so $n \in E$) or odd (so $n \in O$), and hence $\{ E, O \}$ is a cover of $\mathbb{Z}$.
+\item (\textbf{Pairwise disjointness}) The family $\{ E, O \}$ is pairwise disjoint if and only if $E \cap O$ is empty; and it is, since no integer can be both even and odd.
+\end{itemize}
 \end{example}
 
 \begin{example}
 \label{exPartitionOfNIntoPairs}
-The sets $\{ 2n, 2n+1 \}$ for $n \in \mathbb{N}$ form a partition of $\mathbb{N}$:
-\begin{enumerate}[(a)]
-\item $2n \in \{ 2n, 2n+1 \}$ for each $n \in \mathbb{N}$, so the sets are all inhabited.
-\item Suppose that $m,n \in \mathbb{N}$ and that $\{ 2m, 2m+1 \} \cap \{ 2n, 2n+1 \}$ is inhabited. Note that $2m \ne 2n+1$ and $2n \ne 2m+1$ by the division theorem (\Cref{thmDivisionTheorem}), so either $2m=2n$ or $2m+1=2n+1$. But in both cases we see that $m=n$. Hence the sets $\{ 2n, 2n+1 \}$ for $n \in \mathbb{N}$ are pairwise disjoint. 
-\item Given $a \in \mathbb{N}$, we have $a=2n+i$, where $n \in \mathbb{N}$ is the quotient of $a$ when divided by $2$, and where $i \in \{0,1\}$ is the remainder of $a$ when divided by $2$. But then $a \in \{ 2n, 2n+1 \}$. Thus $\bigcup_{n \in \mathbb{N}} \{ 2n, 2n+1 \} = \mathbb{N}$.
-\end{enumerate}
+Let $\mathcal{A} = \{ \{ 2n, 2n+1 \} \mid n \in \mathbb{N} \}$. Then $\mathcal{A}$ is a partition of $\mathbb{N}$:
+\begin{itemize}
+\item (\textbf{Inhabitation}) Let $A \in \mathcal{A}$. Then $A = \{ 2n, 2n+1 \}$ for some $n \in \mathbb{N}$, and so $2n \in A$. Hence $A$ is inhabited.
+\item (\textbf{Covering}) Let $x \in \mathbb{N}$. If $x$ is even, then $x=2n$ for some $n \in \mathbb{N}$, and if $x$ is odd, then $x=2n+1$ for some $n \in \mathbb{N}$. In both cases there is a natural number $n$ such that $x \in \{ 2n, 2n+1 \}$, and $\{ 2n, 2n+1 \} \in \mathcal{A}$. So $\mathcal{A}$ is a cover of $\mathbb{N}$.
+\item (\textbf{Pairwise disjointness}) Let $A,B \in \mathcal{A}$ and assume that $A \cap B$ is inhabited. Let $m,n \in \mathbb{N}$ be such that $A = \{ 2m, 2m+1 \}$ and $B = \{ 2n, 2n+1 \}$, and let $x \in A \cap B$, which exists since $A \cap B$ is inhabited. Since $A$ and $B$ each have a unique even element and a unique odd element, we must either have $x=2m=2n$ or $x=2m+1=2n+1$ depending on whether $x$ is even or odd. But in both cases we have $m=n$, so that $A=B$ as required. So $\mathcal{A}$ is pairwise disjoint.
+\end{itemize}
 \end{example}
 
 \begin{exercise}
@@ -277,29 +286,40 @@ That is, $\mathcal{F}$ is the set of subsets of $X$ given by the preimages of in
 Let $X$ be a set and let $\mathcal{A}$ be a set of inhabited subsets of $X$. Prove that $\mathcal{A}$ is a partition of $X$ if and only if for each $x \in X$, there is a unique set $A \in \mathcal{A}$ with $a \in A$.
 \end{exercise}
 
-\begin{exercise}
-\label{exQuotientIsPartition}
-If $\sim$ be an equivalence relation on $X$, then $X/{\sim}$ is a partition $X$.
-\end{exercise}
+\begin{theorem}[Equivalence relations correspond with partitions]
+\label{thmEquivalenceRelationsPartitions}
+Let $X$ be a set.
+\begin{enumerate}[(a)]
+\item For all equivalence relations $\sim$ on $X$, the quotient $X/{\sim}$ is a partition of $X$.
+\item For all partitions $\mathcal{A}$ of $X$, there is a unique equivalence relation $\sim$ on $X$ such that $\mathcal{A} = X/{\sim}$.
+\end{enumerate}
+\end{theorem}
 
-In fact, the converse of \Cref{exQuotientIsPartition} is also true, as we prove next.
-
-\begin{proposition}
-\label{propPartitionIsQuotientByEquivalenceRelation}
-Let $X$ be a set and let $\mathcal{A}$ be a partition of $X$. Then $\mathcal{A}=X/{\sim}$ for a unique equivalence relation $\sim$ on $X$.
-\end{proposition}
-
-\begin{cproof}
+\begin{cproof}[{of (b)}]
 Define a relation $\sim$ by
 \[ x \sim y \quad \Leftrightarrow \quad \exists A \in \mathcal{A},\, x \in A \text{ and } y \in A \]
 for all $x,y \in X$. That is, $x \sim y$ if and only if $x$ and $y$ are elements of the same set of the partition. We check that $\sim$ is an equivalence relation.
 \begin{itemize}
-\item \textbf{Reflexivity.} Let $x \in X$. Then $x \in A$ for some $A \in \mathcal{A}$ since $\bigcup_{A \in \mathcal{A}} A = X$. Hence $x \sim x$.
-\item \textbf{Symmetry.} Let $x,y \in X$ and suppose $x \sim y$. Then there is some $A \in \mathcal{U}$ with $x \in A$ and $y \in A$. But then it is immediate that $y \sim x$.
+\item \textbf{Reflexivity.} Let $x \in X$. Then $x \in A$ for some $A \in \mathcal{A}$ since $\mathcal{A}$ is a cover of $X$.
+\item \textbf{Symmetry.} Let $x,y \in X$ and suppose $x \sim y$. Then there is some $A \in \mathcal{A}$ with $x \in A$ and $y \in A$. But then it is immediate that $y \sim x$.
 \item \textbf{Transitivity.} Let $x,y,z \in X$ and suppose that $x \sim y$ and $y \sim z$. Then there exist $A,B \in \mathcal{A}$ with $x,y \in A$ and $y,z \in B$. Thus $y \in A \cap B$. Since $A \cap B$ is inhabited, it follows by pairwise disjointness that $A=B$. Therefore $x \in A$ and $z \in A$, and so $x \sim z$, as required.
 \end{itemize}
-The definition of $\sim$ makes it immediate that $X/{\sim} = \mathcal{A}$.
-% To do: does it really???
+
+We prove $X/{\sim} = \mathcal{A}$ by double containment; each inclusion direction will itself require a further double containment proof.
+\begin{itemize}
+\item[$(\subseteq)$] Let $E \in X/{\sim}$. Then $E = [x]_{\sim}$ for some $x \in X$. Let $A \in \mathcal{A}$ be the unique set in the partition with $x \in A$. We claim that $E=A$.
+\begin{itemize}[leftmargin=20pt]
+\item[$(\subseteq)$] Let $y \in E = [x]_{\sim}$. Then $x \sim y$, so there exists $B \in \mathcal{A}$ such that $x \in B$ and $y \in B$. But $x \in A$ and $\mathcal{A}$ is pairwise disjoint, so $B=A$, and so $y \in A$ as required.
+\item[$(\supseteq)$] Let $y \in A$. Then since $x \in A$ and $y \in A$, we have $x \sim y$, so that $y \in [x]_{\sim} = E$, as required.
+\end{itemize}
+Therefore $E = A \in \mathcal{A}$, as required.
+\item[$(\supseteq$)] Let $A \in \mathcal{A}$. Then $A$ is inhabited, so there exists an element $x \in A$. We claim that $A = [x]_{\sim}$.
+\begin{itemize}[leftmargin=20pt]
+\item[$(\subseteq)$] Let $y \in A$. Then $x \in A$ and $y \in A$, so $x \sim y$, and hence $y \in [x]_{\sim}$.
+\item[$(\supseteq)$] Let $y \in [x]_{\sim}$. Then $x \sim y$, so there exists $B \in \mathcal{A}$ with $x \in B$ and $y \in B$. But $x \in A$ and $\mathcal{A}$ is pairwise disjoint, so $A=B$, and so $y \in A$ as required.
+\end{itemize}
+So $A = [x]_{\sim} \in X/{\sim}$, as required.
+\end{itemize}
 
 To prove that $\sim$ is the only such relation, suppose $\approx$ is another equivalence relation on $X$ for which $X/{\approx}=\mathcal{A}$. Then, given $x,y \in X$, we have:
 \begin{align*}
@@ -311,7 +331,20 @@ x \sim y & \Leftrightarrow \exists A \in \mathcal{A},\, x \in A \wedge y \in A &
 So ${\sim} = {\approx}$.
 \end{cproof}
 
-\Cref{exQuotientIsPartition} and \Cref{propPartitionIsQuotientByEquivalenceRelation} prove that equivalence relations and quotients are essentially the same thing: the quotient of a set by an equivalence relation is a partition of the set, and every partition of a set is the quotient by a unique equivalence relation!
+\begin{exercise}
+\label{exQuotientIsPartition}
+Prove part (a) of \Cref{thmEquivalenceRelationsPartitions}.
+\end{exercise}
+
+\Cref{thmEquivalenceRelationsPartitions} implies that equivalence relations and quotients are essentially the same thing: the quotient of a set by an equivalence relation is a partition of the set, and every partition of a set is the quotient by a unique equivalence relation. Another way of stating this is that the function
+\[ \mathcal{Q} : \left\{ \begin{matrix} \text{equivalence} \\ \text{relations on } X \end{matrix} \right\} \to \left\{ \begin{matrix} \text{partitions} \\ \text{of } X \end{matrix} \right\} \]
+defined by $\mathcal{Q}(\sim)=X/{\sim}$ for all equivalence relations $\sim$ on $X$, is a bijection. Well-definedness of $\mathcal{Q}$ is ensured by part (a) of \Cref{thmEquivalenceRelationsPartitions}, and the fact that $\mathcal{Q}$ is a bijection is ensured by part (b).
+
+\begin{exercise}
+For each $i \in [0,1)$ let $A_i = \{ i+n \mid n \in \mathbb{Z} \} \subseteq \mathbb{R}$, and define $\mathcal{A} = \{ A_i \mid i \in [0,1) \}$.
+
+Prove that $\mathcal{A}$ is a partition of $\mathbb{R}$, and provide an explicit description of the (unique!) equivalence relation $\sim$ on $\mathbb{R}$ such that $\mathbb{R}/{\sim} = \mathcal{A}$.
+\end{exercise}
 
 The following lemma can be skipped over without grave consequences---it is a technical result with an extremely fiddly proof, but we will use it at a couple of points later in the book. It says that, given two partitioned sets, if we can pair up the sets in the partition, and pair up the elements in each pair of paired-up partitions, then we can pair up the elements of each set.
 
