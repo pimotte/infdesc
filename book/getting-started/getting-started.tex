@@ -123,13 +123,16 @@ The numbers represented by points on the number line are called \textbf{real num
 ~
 \end{definition}
 
-We will use the number line to define four other types of number: the \textit{natural numbers} (\Cref{defNaturalNumberInformal}), the \textit{integers} (\Cref{defIntegerInformal}) and the \textit{rational numbers} (\Cref{defRationalNumberInformal}).
+We will use the number line to provide geometric interpretations four particular types of real number: the \textit{natural numbers} (\Cref{defNaturalNumberInformal}), the \textit{integers} (\Cref{defIntegerInformal}) and the \textit{rational numbers} (\Cref{defRationalNumberInformal}).
 
-Each of these types of number has a different character and is used for different purposes, as we will see later in this chapter and throughout this book.
+Each of these types of number has a different character and different properties, and is used for different purposes, as we will see later in this chapter and throughout this book.
 
 \subsubsection*{Natural numbers}
 
-The \textit{natural numbers} are the numbers used for counting---they are the answers to questions of the form `how many'---for example, at the time of writing this textbook, I have \textit{three} uncles, \textit{five} guinea pigs and \textit{zero} cats.
+The \textit{natural numbers} are the numbers used for counting---they are the answers to questions of the form `how many'---for example, at the time of writing this paragraph, I have \textit{three} uncles, \textit{five} guinea pigs
+% Shout out to Pippin, Peaches, Polly, Penelope and Plouffe
+% Rest in peace, Tuft and Peeve! <3
+and \textit{zero} cats.
 
 Counting is a skill humans have had for a very long time; we know this because there is evidence of people using tally marks tens of thousands of years ago. Tally marks provide one method of counting small numbers: starting with nothing, proceed through the objects you want to count one by one, and make a mark for every object. When you are finished, there will be as many marks as there are objects. We are taught from a young age to count with our fingers; this is another instance of making tally marks, where now instead of making a mark we raise a finger.
 
@@ -244,7 +247,7 @@ Now set $m = \ceil{-x}$. By definition of ceiling we have $m-1 < -x \le m$. Mult
 
 Suppose I buy a pizza which is divided evenly into eight slices. A friend and I decide to share the pizza. I don't have much of an appetite, so I eat three slices and my friend eats five. Unfortunately, we cannot represent the proportion of the pizza each of us has eaten using natural numbers or integers: we each ate more than zero pizzas, but less than one pizza.
 
-However, we're not far off: we can count the number of equal parts the pizza was split into, and of those parts, we can count how many we had. On the number line, this could be represented by splitting the unit line segments into eight equal segments. Counting eight segments is then equivalent to counting one unit, and each segment represents one slice of pizza.
+However, we're not far off: we can count the number of equal parts the pizza was split into, and of those parts, we can count how many we had. On the number line, this could be represented by splitting the unit line segments into eight equal segments, whose length we call an \textit{eighth} ($\frac{1}{8}$) of a unit. Counting eight segments is then equivalent to counting one unit, and each segment represents one slice of pizza.
 
 \begin{center}
 \begin{tikzpicture}
@@ -258,6 +261,8 @@ However, we're not far off: we can count the number of equal parts the pizza was
 % https://tex.stackexchange.com/a/435565
 \draw[decorate, decoration={brace,mirror,amplitude=5pt,raise=5pt}] (-4,0) -- (-1.05,0) node[midway,below,yshift=-10pt] {\small My share of pizza} ;
 \draw[decorate, decoration={brace,mirror,amplitude=5pt,raise=5pt}] (-0.95,0) -- (4,0) node[midway,below,yshift=-10pt] {\small My friend's share of pizza} ;
+\draw[latex-latex] (-3, 0.4) -- (-2, 0.4) node[midway,above] {\small $\frac{1}{8}$} ;
+
 \end{tikzpicture}
 \end{center}
 
@@ -266,22 +271,44 @@ This kind of procedure gives rise to the \textit{rational numbers}.
 \label{defRationalNumberInformal}
 \index{rational number}
 \index{number!rational}
-The \textbf{rational numbers} are those that can be expressed as an integer divided by a nonzero integer; they are represented by the points at the number line which can be obtained by dividing any of the unit line segments between integers into an equal number of parts.
+A \textbf{rational number} is a real number that can be expressed as an integer divided by a nonzero integer; that is, $x$ is a rational number if and only if there are integers $a$ and $b$, with $b \ne 0$, such that $x = \dfrac{a}{b}$.
+
+The representation of rational numbers on the number line is a little more involved. Given a positive integer $b$, the real number $\frac{1}{b}$ represents the length obtained by breaking up the unit length into $b$ equal parts:
 \begin{center}
 \begin{tikzpicture}
-\draw[latex-latex] (-5.5, 0) -- (5.5, 0) ; 
-\foreach \x in {-5,-4,-3,-2,-1,0,1,2,3,4,5} \draw (\x, 0) -- (\x, 0.25) node[above] {$\x$} ;
-\foreach \x in {-5,-4,-3,-2,-1,0,1,2,3,4,5} {
-  \foreach \i in {-0.33,0.33} {
-    \draw (\x+\i, 0) -- (\x+\i, 0.15) ;
-  }
+\draw (0,0) -- (2,0);
+\draw[latex-latex] (0,-0.5) -- (2,-0.5) node[midway, below] {$1$} ;
+\foreach \i in {0,1} \draw[dotted] (2*\i,-0.1) -- (2*\i,-0.5) ;
+\draw (0,-0.1) -- (0,0.1) ;
+\draw (2,-0.1) -- (2,0.1) ;
+\foreach \i in {1,2} \draw (2*\i/3, -0.05) -- (2*\i/3, 0.05) ;
+\foreach \i in {0,1,2,3} \draw[dotted] (2*\i/3, 0.05) -- (2*\i/3, 0.5) ;
+\foreach \i in {0,1,2} \draw[latex-latex] (2*\i/3,0.5) -- (2*\i/3+2/3,0.5) node[midway,above] {$\frac{1}{3}$} ;
+\end{tikzpicture}
+\end{center}
+The real numbers of the form $\frac{a}{b}$, where $a$ is an integer, are those obtained by starting at $0$ and moving to the left or right by $\frac{1}{b}$ units some number of times, with the direction and number of steps determined by the value of $a$:
+
+\begin{center}
+\begin{tikzpicture}
+\draw[latex-latex] (-5.67, 0) -- (5.67, 0) ; 
+\foreach \x in {-2,-1,0,1,2} \draw (2*\x, 0.25) -- (2*\x, 0) node[below] {$\x$} ;
+\foreach \a in {-8,-7,-5,-4,-2,-1,1,2,4,5,7,8} \draw (2*\a/3, 0) -- (2*\a/3, 0.15) ;
+\foreach \a in {-8,-7,-6,-5,-4,-3,-2,-1,0,1,2,3,4,5,6,7,8} {
+  \draw (2*\a/3, 0.2) node[above] {\small $\frac{\a}{3}$} ;
 }
 \end{tikzpicture}
 \end{center}
-More precisely, a rational number is a real number that can be expressed as an integer divided by a nonzero integer; that is, $x$ is a rational number if and only if there are integers $a$ and $b$, with $b \ne 0$, such that $x = \dfrac{a}{b}$.
+
+When $b<0$, we obtain the geometric interpretation of $\frac{a}{b}$ using the fact that $\frac{a}{b}=\frac{-a}{-b}$.
 \end{definition}
 
-The rational numbers are a very important example of a type of algebraic structure known as a \textit{field}---they are particularly central to algebraic number theory and algebraic geometry.
+The rational numbers are a very important example of a type of algebraic structure known as a \textit{field}, meaning that they can be added, subtracted, multiplied and divided; indeed, given integers $a,b,c,d$ with $b \ne 0$ and $d \ne 0$, we have
+\[ \frac{a}{b} + \frac{c}{d} = \frac{ad+bc}{bd}, \qquad \frac{a}{b} - \frac{c}{d} = \frac{ad-bc}{bd}, \qquad \frac{a}{b} \times \frac{c}{d} = \frac{ac}{bd} \]
+and when $c \ne 0$ (so that $\frac{c}{d} \ne 0$) we have
+\[ \frac{a/b}{c/d} = \frac{ad}{bc} \]
+The expressions on the right-hand sides of the previous four equations are fractions with integers in the numerator and denominator, and the denominators are all nonzero, so they demonstrate that the expressions on the left-hand sides of the equations are rational numbers.
+
+Rational numbers central to several areas of mathematics, including algebraic number theory and algebraic geometry.
 
 %\subsubsection*{Complex numbers}
 %
