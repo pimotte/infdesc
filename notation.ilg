@@ -1,4 +1,4 @@
-This is makeindex, version 2.15 [TeX Live 2022/dev] (kpathsea + Thai support).
+This is makeindex, version 2.17 [TeX Live 2023] (kpathsea + Thai support).
 Scanning input file notation.idx....
 !! Input index error (file = notation.idx, line = 27):
    -- Extra `@' at position 51 of first argument.
