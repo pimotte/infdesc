@@ -207,3 +207,15 @@ In \Crefrange{#1}{#2}, determine (with proof) whether the conclusion is always, 
 \newcommand{\ifadaptedelse}[2]{\ifdefempty{\adaptername}{#2}{#1}}
 \newcommand{\ifadapted}[1]{\ifadaptedelse{#1}{}}
 \newcommand{\iforiginal}[1]{\ifadaptedelse{}{#1}}
+
+
+
+
+%
+% Language
+%
+
+\newcommand{\gbus}[2]{%
+\ifnumequal{\value{englishvariant}}{0}{#1}{}%
+\ifnumequal{\value{englishvariant}}{1}{#2}{}%
+}
