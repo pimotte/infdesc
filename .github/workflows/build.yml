@@ -15,4 +15,6 @@ jobs:
         with:
           name: PDF
           path: infdesc.pdf
+          os: debian
+          texlive_version: 2023
       
