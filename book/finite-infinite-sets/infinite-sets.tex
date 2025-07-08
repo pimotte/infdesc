@@ -115,10 +115,10 @@ We often just want to know whether a set is \textit{countable}, rather than coun
 
 The following theorem allows us to prove that a set $X$ is countable---that is, finite or countably infinite---by either surjecting $\mathbb{N}$ onto $X$, or injecting $X$ into $\mathbb{N}$. Using the intuition of \Cref{secFiniteSets}, where we compared the sizes of finite sets using injections and surjections, this says that a set is countable if and only if $X$ is at most as large as $\mathbb{N}$.
 
-%% Note for future: injection case doesn't require X inhabited.
+%% Note for future: injection case doesn't require X non-empty.
 \begin{theorem}
 \label{thmCountableFromInjSurj}
-Let $X$ be an inhabited set. The following are equivalent:
+Let $X$ be an non-empty set. The following are equivalent:
 \begin{enumerate}[(i)]
 \item $X$ is countable;
 \item There exists an injection $g : X \to \mathbb{N}$;
@@ -138,7 +138,7 @@ We'll prove $\text{(i)} \Rightarrow \text{(ii)} \Rightarrow \text{(iii)} \Righta
 Define $g : X \to \mathbb{N}$ by $g(x) = f^{-1}(x)$ for all $x \in X$. Note that $g$ is well-defined since for all $x \in X$ we have $f^{-1}(x) \in [n] \subseteq \mathbb{N}$. Moreover for all $x_1,x_2 \in X$, if $g(x_1)=g(x_2)$, then $f^{-1}(x_1) = f^{-1}(x_2)$, and so applying $f$ to both sides of the equation gives $x_1=x_2$. Therefore $g$ is injective, as required.
 \end{itemize}
 
-\item $\text{(ii)} \Rightarrow \text{(iii)}$. Suppose there exists an injection $g : X \to \mathbb{N}$. Since $X$ is inhabited, $g$ has a left inverse $h : \mathbb{N} \to X$ by \Cref{propIfInjectiveThenHasLeftInverse}, which is surjective by \Cref{exLeftInversesAreSurjective}.
+\item $\text{(ii)} \Rightarrow \text{(iii)}$. Suppose there exists an injection $g : X \to \mathbb{N}$. Since $X$ is non-empty, $g$ has a left inverse $h : \mathbb{N} \to X$ by \Cref{propIfInjectiveThenHasLeftInverse}, which is surjective by \Cref{exLeftInversesAreSurjective}.
 
 \item $\text{(iii)} \Rightarrow \text{(i)}$. Suppose that there exists a surjection $h : \mathbb{N} \to X$. If $X$ is finite, then $X$ is countable by definition of countability, so assume that $X$ is infinite.
 
@@ -176,7 +176,7 @@ Intuitively, we should be able to define $f$ by listing the values of $g$ in inc
 
 \begin{exercise}
 \label{exCountabilityFromInjectionsAndSurjections}
-Let $X$ be an inhabited set. The following are equivalent:
+Let $X$ be an non-empty set. The following are equivalent:
 \begin{enumerate}[(i)]
 \item \label{itmInjectionSurjectionCountableSets} $X$ is countable;
 \item \label{itmInjectionIntoCountableSet} There exists an injection $g : X \to C$ for some countable set $C$;
@@ -224,7 +224,7 @@ is countable.
 \end{theorem}
 
 \begin{cproof}
-We may assume that the sets $X_n$ are all inhabited, since the empty set does not contribute to the union.
+We may assume that the sets $X_n$ are all non-empty, since the empty set does not contribute to the union.
 
 For each $n \in \mathbb{N}$ there is a surjection $f_n : \mathbb{N} \to X_n$. Define $f : \mathbb{N} \times \mathbb{N} \to X$ by $f(m,n)=f_m(n)$ for all $m,n \in \mathbb{N}$. Then $f$ is surjective: if $x \in X$ then $x \in X_m$ for some $m \in \mathbb{N}$. Since $f_m$ is surjective, it follows that $x=f_m(n)$ for some $n \in \mathbb{N}$. But then $x=f(m,n)$. Since $\mathbb{N} \times \mathbb{N}$ is countable, it follows from \Cref{exCountableFromInjSurjC} that $X$ is countable.
 \end{cproof}

@@ -81,7 +81,7 @@ A consequence of \Cref{lemRemoveElementFromDomainAndCodomain} is the next useful
 
 \begin{lemma}
 \label{lemRemoveElementFromSet}
-Let $X$ be an inhabited set. There is a bijection $X \setminus \{ a \} \to X \setminus \{ b \}$ for all $a, b \in X$.
+Let $X$ be an non-empty set. There is a bijection $X \setminus \{ a \} \to X \setminus \{ b \}$ for all $a, b \in X$.
 \end{lemma}
 
 \begin{cproof}
@@ -109,7 +109,7 @@ We will prove by induction on $m$ that, for all $m,n \in \mathbb{N}$, if there e
 
 Now let $n \in \mathbb{N}$ and suppose that there is an injection $f : [m+1] \to [n]$. We need to prove that $m+1 \le n$.
 
-First note that $n > 0$. Indeed, since $m+1 > 0$, we have $0 \in [m+1]$, and so $f(0) \in [n]$. This means that $[n]$ is inhabited, and so $n > 0$. In particular, $n-1 \in \mathbb{N}$ and so the set $[n-1]$ is well-defined. It suffices to prove that $m \le n-1$.
+First note that $n > 0$. Indeed, since $m+1 > 0$, we have $0 \in [m+1]$, and so $f(0) \in [n]$. This means that $[n]$ is non-empty, and so $n > 0$. In particular, $n-1 \in \mathbb{N}$ and so the set $[n-1]$ is well-defined. It suffices to prove that $m \le n-1$.
 
 Let $a = f(m) \in [n]$. Then:
 \begin{itemize}
@@ -205,13 +205,13 @@ Let $X$ and $Y$ be sets.
 \item We prove by induction that, for all $n \in \mathbb{N}$, if $Y$ is a finite set of size $n$ and there is an injection $f : X \to Y$, then $X$ is finite and $|X| \le n$.
 
 \begin{itemize}
-\item (\textbf{Base case}) Let $Y$ be a finite set of size $0$---that is, $Y$ is empty. Suppose there is an injection $f : X \to Y$. If $X$ is inhabited, then there exists an element $a \in X$, so that $f(a) \in Y$. This contradicts emptiness of $Y$, so that $X$ must be empty. Hence $|X| = 0 \le 0$, as required.
+\item (\textbf{Base case}) Let $Y$ be a finite set of size $0$---that is, $Y$ is empty. Suppose there is an injection $f : X \to Y$. If $X$ is non-empty, then there exists an element $a \in X$, so that $f(a) \in Y$. This contradicts emptiness of $Y$, so that $X$ must be empty. Hence $|X| = 0 \le 0$, as required.
 
 \item (\textbf{Induction step}) Fix $n \in \mathbb{N}$ and assume that, if $Z$ is a finite set of size $n$ and there is an injection $f : X \to Z$, then $X$ is finite and $|X| \le n$.
 
 Fix a finite set $Y$ of size $n+1$ and an injection $f : X \to Y$. We need to prove that $X$ is finite and $|X| \le n+1$.
 
-If $X$ is empty, then $|X| = 0 \le n+1$ as required. So assume that $X$ is inhabited, and fix an element $a \in X$.
+If $X$ is empty, then $|X| = 0 \le n+1$ as required. So assume that $X$ is non-empty, and fix an element $a \in X$.
 
 By \Cref{lemRemoveElementFromDomainAndCodomain}, there is an injection $\tilde{f} : X \setminus \{ a \} \to Y \setminus \{ f(a) \}$. Moreover, by \Cref{exAddRemoveElementsOfFiniteSets}, $Y \setminus \{ f(a) \}$ is finite and $|Y \setminus \{ f(a) \}| = (n+1) - 1 = n$.
 
@@ -332,7 +332,7 @@ We conclude this section by proving that not all sets are finite---specifically,
 
 \begin{lemma}
 \label{lemFinSetGreatestElement}
-Every inhabited finite set of natural numbers has a greatest element.
+Every non-empty finite set of natural numbers has a greatest element.
 \end{lemma}
 \begin{cproof}
 We'll prove by induction on $n \ge 1$ that every subset $U \subseteq \mathbb{N}$ of size $n$ has a greatest element.
@@ -343,7 +343,7 @@ We'll prove by induction on $n \ge 1$ that every subset $U \subseteq \mathbb{N}$
 
 Let $U \subseteq \mathbb{N}$ with $|U| = n+1$. We wish to show that $U$ has a greatest element.
 
-Since $|U| = n+1 > 0$, we know that $U$ is inhabited, so there is an element $a \in U$. By \Cref{exAddRemoveElementsOfFiniteSets}(a) we have $|U \setminus \{ a \}| = |U| - 1 = n$, and so by the induction hypothesis, $U \setminus \{ a \}$ has a greatest element $m \in U \setminus \{ a \}$. Now either $a < m$ or $a > m$.
+Since $|U| = n+1 > 0$, we know that $U$ is non-empty, so there is an element $a \in U$. By \Cref{exAddRemoveElementsOfFiniteSets}(a) we have $|U \setminus \{ a \}| = |U| - 1 = n$, and so by the induction hypothesis, $U \setminus \{ a \}$ has a greatest element $m \in U \setminus \{ a \}$. Now either $a < m$ or $a > m$.
 \begin{itemize}
 \item If $a < m$, then $m$ is the greatest element of $U$; and
 \item If $a > m$, then $a$ is the greatest element of $U$.
@@ -352,7 +352,7 @@ In any case, we see that $U$ has a greatest element.
 \end{itemize}
 \end{cproof}
 
-\Cref{lemFinSetGreatestElement} is equivalent to the assertion that every inhabited subset of $\mathbb{N}$ with no greatest element is infinite. We can therefore deduce that $\mathbb{N}$ is infinite very easily, as we do in the next theorem.
+\Cref{lemFinSetGreatestElement} is equivalent to the assertion that every non-empty subset of $\mathbb{N}$ with no greatest element is infinite. We can therefore deduce that $\mathbb{N}$ is infinite very easily, as we do in the next theorem.
 
 \begin{theorem}
 \label{thmNIsInfinite}

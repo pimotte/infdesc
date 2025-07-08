@@ -391,14 +391,14 @@ Prove \Cref{thmAdditionPrinciple}. The proof follows the same pattern as that of
 \end{exercise}
 
 \begin{example}
-We will count the number of inhabited subsets of $[7]$ which either contain only even numbers, or contain only odd numbers.
+We will count the number of non-empty subsets of $[7]$ which either contain only even numbers, or contain only odd numbers.
 
-Let $E$ denote the set of inhabited subsets of $[7]$ containing only even numbers, and let $O$ denote the set of inhabited subsets of $[7]$ containing only odd numbers. Note that $\{ E, O \}$ forms a partition of the set we are counting, and so our set has $|E|+|O|$ elements.
+Let $E$ denote the set of non-empty subsets of $[7]$ containing only even numbers, and let $O$ denote the set of non-empty subsets of $[7]$ containing only odd numbers. Note that $\{ E, O \}$ forms a partition of the set we are counting, and so our set has $|E|+|O|$ elements.
 \begin{itemize}
 \item An element of $E$ must be a subset of $\{0,2,4,6\}$. By \Cref{exNumSubsetsOfFiniteSet} there are $2^4=16$ such subsets. Thus the number of \textit{inhabited} subsets of $[7]$ containing only odd numbers is $15$, since we must exclude the empty set. That is, $|E|=15$.
-\item An element of $O$ must be a subset of $\{1,3,5\}$. Again by \Cref{exNumSubsetsOfFiniteSet} there are $2^3=8$ such subsets. Hence there are $7$ inhabited subsets of $[7]$ containing only even numbers. That is, $|O|=7$.
+\item An element of $O$ must be a subset of $\{1,3,5\}$. Again by \Cref{exNumSubsetsOfFiniteSet} there are $2^3=8$ such subsets. Hence there are $7$ non-empty subsets of $[7]$ containing only even numbers. That is, $|O|=7$.
 \end{itemize}
-Hence there are $15+7=22$ inhabited subsets of $[7]$ containing only even or only odd numbers. And here they are:
+Hence there are $15+7=22$ non-empty subsets of $[7]$ containing only even or only odd numbers. And here they are:
 \[ \begin{matrix}
 \{ 0 \} & \{ 2 \} & \{ 4 \} & \{ 6 \} & \{ 0, 2 \} & \hspace{20pt} & \{ 1 \} & \{ 3 \} & \{ 5 \} \\
 \{ 0, 4 \} & \{ 0, 6 \} & \{ 2, 4 \} & \{ 2, 6 \} & \{ 4, 6 \} && \{ 1, 3 \} & \{ 1, 5 \} & \{ 3, 5 \} \\
@@ -407,7 +407,7 @@ Hence there are $15+7=22$ inhabited subsets of $[7]$ containing only even or onl
 \end{example}
 
 \begin{exercise}
-Pick your favourite integer $n \ge 1000$. For this value of $n$, how many inhabited subsets of $[n]$ contain either only even or only odd numbers? (You need not evaluate exponents.)
+Pick your favourite integer $n \ge 1000$. For this value of $n$, how many non-empty subsets of $[n]$ contain either only even or only odd numbers? (You need not evaluate exponents.)
 \end{exercise}
 
 We now consider some examples of finite sets which use both the multiplication principle and the addition principle.

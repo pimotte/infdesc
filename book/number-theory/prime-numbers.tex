@@ -270,7 +270,7 @@ So far we have seen several examples of prime numbers; to name a few, we've seen
 
 \begin{exercise}
 \label{exConstructPrimeNotInList}
-Let $P$ be an inhabited finite set of positive prime numbers and let $m$ be the product of all the elements of $P$. That is, for some $n \ge 1$ let
+Let $P$ be an non-empty finite set of positive prime numbers and let $m$ be the product of all the elements of $P$. That is, for some $n \ge 1$ let
 \[ P = \{ p_1, \dots, p_n \} \quad \text{and} \quad m = p_1 \times \cdots \times p_n \]
 where each $p_k \in P$ is a positive prime. Using the fundamental theorem of arithmetic, show that $m+1$ has a positive prime divisor which is not an element of $P$.
 \end{exercise}
@@ -279,7 +279,7 @@ where each $p_k \in P$ is a positive prime. Using the fundamental theorem of ari
 There are infinitely many primes.
 \end{theorem}
 \begin{cproof}
-We prove that there are infinitely many \textit{positive} prime numbers---the result then follows immediately. Let $P$ be the set of all positive prime numbers. Then $P$ is inhabited, since $2 \in P$, for example. If $P$ were finite, then by \Cref{exConstructPrimeNotInList}, there would be a positive prime which is not an element of $P$---but $P$ contains all positive primes, so that is impossible. Hence there are infinitely many positive primes.
+We prove that there are infinitely many \textit{positive} prime numbers---the result then follows immediately. Let $P$ be the set of all positive prime numbers. Then $P$ is non-empty, since $2 \in P$, for example. If $P$ were finite, then by \Cref{exConstructPrimeNotInList}, there would be a positive prime which is not an element of $P$---but $P$ contains all positive primes, so that is impossible. Hence there are infinitely many positive primes.
 \end{cproof}
 
 This is one proof of many and is attributed to Euclid, who lived around 2300 years ago. We might hope that a proof of the infinitude of primes gives some insight into how the primes are \textit{distributed}. That is, we might ask questions like: how frequently do primes occur? How fast does the sequence of primes grow? How likely is there to be a prime number in a given set of integers?

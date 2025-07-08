@@ -237,7 +237,7 @@ The underlying reason why we can perform induction and recursion on the natural 
 \begin{theorem}[Well-ordering principle]
 \label{thmWellOrderingPrinciple}
 \index{well-ordering principle}
-Every inhabited set of natural numbers has a least element.
+Every non-empty set of natural numbers has a least element.
 \end{theorem}
 
 \begin{cproof}
@@ -255,7 +255,7 @@ Let $X \subseteq \mathbb{N}$ and suppose that $n+1 \in X$. One of two cases must
 In both cases we see that $X$ has a least element, as required.
 \end{itemize}
 
-Finally, note that the fact that we proved by induction implies the statement in the theorem, since an inhabited set of natural numbers is precisely a subset $X \subseteq \mathbb{N}$ such that $n \in X$ for some $n \in \mathbb{N}$.
+Finally, note that the fact that we proved by induction implies the statement in the theorem, since an non-empty set of natural numbers is precisely a subset $X \subseteq \mathbb{N}$ such that $n \in X$ for some $n \in \mathbb{N}$.
 \end{cproof}
 
 The following proof that $\sqrt{2}$ is irrational is a classic application of the well-ordering principle.
@@ -327,7 +327,7 @@ The well-ordering principle gives rise to a useful strategy for deriving contrad
 A set $X \subseteq \mathbb{R}$ has \textbf{infinite descent} if, for all $x \in X$, there exists $y \in X$ with $y < x$.
 \end{definition}
 
-The reason for the term `infinite descent' is that, if an inhabited set $X \subseteq \mathbb{R}$ has infinite descent, then we can construct an \textit{infinite}, \textit{descending} sequence of elements of $X$. To see this, note that since $X$ is inhabited, there is an element $x_0 \in X$; therefore there exists $x_1 \in X$ with $x_1 < x_0$; and so there exists an element $x_2 \in X$ with $x_2 < x_1$; and so on. In this way, we obtain a sequence $x_0,x_1,x_2,\dots{} \in X$ with
+The reason for the term `infinite descent' is that, if an non-empty set $X \subseteq \mathbb{R}$ has infinite descent, then we can construct an \textit{infinite}, \textit{descending} sequence of elements of $X$. To see this, note that since $X$ is non-empty, there is an element $x_0 \in X$; therefore there exists $x_1 \in X$ with $x_1 < x_0$; and so there exists an element $x_2 \in X$ with $x_2 < x_1$; and so on. In this way, we obtain a sequence $x_0,x_1,x_2,\dots{} \in X$ with
 \[ x_0 > x_1 > x_2 > \cdots \]
 
 \begin{example}
@@ -338,13 +338,13 @@ There are many examples of subsets $X \subseteq \mathbb{R}$ with infinite descen
 Prove that the interval $(0,1)$ has infinite descent.
 \end{exercise}
 
-The well-ordering principle is equivalent to the assertion that no inhabited subset of $\mathbb{N}$ has infinite descent---so if we construct an inhabited subset of $\mathbb{N}$ with infinite descent, then we have a contradiction. This gives rise to the following proof strategy.
+The well-ordering principle is equivalent to the assertion that no non-empty subset of $\mathbb{N}$ has infinite descent---so if we construct an non-empty subset of $\mathbb{N}$ with infinite descent, then we have a contradiction. This gives rise to the following proof strategy.
 
 \begin{strategy}[Proof by infinite descent]
 \label{strInfiniteDescent}
 \index{infinite descent!proof by}
 \index{proof!by infinite descent}
-In order to derive a contradiction from an assumption $p$, it suffices use $p$ to prove that there is an inhabited subset $X \subseteq \mathbb{N}$ with infinite descent.
+In order to derive a contradiction from an assumption $p$, it suffices use $p$ to prove that there is an non-empty subset $X \subseteq \mathbb{N}$ with infinite descent.
 \end{strategy}
 
 Our first example of proof by infinite descent will be used in the proof of the existence of \textit{quotients} and \textit{remainders}, which forms part of the division theorem---we stated the theorem without proof in \Cref{thmDivisionPreliminary} and will prove it fully in \Cref{thmDivisionTheorem}.
@@ -359,14 +359,14 @@ First, note that since $qb = (-q)(-b)$, we may assume that $b>0$ --- otherwise, 
 
 Define
 \[ X = \{ n \in \mathbb{N} \mid a = mb + n \text{ for some } m \in \mathbb{Z} \} \subseteq \mathbb{N} \]
-Note that $X$ is inhabited. Indeed:
+Note that $X$ is non-empty. Indeed:
 \begin{itemize}
 \item Suppose $a \ge 0$. Then $a \in \mathbb{N}$ and $a = 0 \cdot b + a$, so that $a \in X$.
 \item Suppose $a < 0$. Since $b>0$ we have $b \ge 1$, so that $1-b \le 0$ and hence $a(1-b) \ge 0$. So $a(1-b) \in \mathbb{N}$, and moreover $a = ba + a(1-b)$, so setting $m=b$ and $n=a(1-b)$ in the definition of $X$, we see that $a(1-b) \in X$.
 \end{itemize}
 By the well-ordering principle, $X$ has a minimal element $r \in X$, and by definition of $X$ there exists $q \in \mathbb{Z}$ such that $a=qb+r$. Since $r \in X$, we have $r \in \mathbb{N}$, so that $r \ge 0$. It remains to prove that $r<b$.
 
-Towards a contradiction, assume that $r \ge b$. We will prove that $X$, which we already know is an inhabited subset of $\mathbb{N}$, has infinite descent.
+Towards a contradiction, assume that $r \ge b$. We will prove that $X$, which we already know is an non-empty subset of $\mathbb{N}$, has infinite descent.
 
 So let $n \in X$, and let $m \in \mathbb{Z}$ be such that $a=mn+b$. Since $r \in X$ is minimal, we have $n \ge r \ge b$, and so $n-b \ge 0$. Therefore $n-b \in \mathbb{N}$, and furthermore
 \[ a = mb + n = (m+1)b + (n-b) \]
@@ -375,7 +375,7 @@ so that $n-b \in X$. Since $b>0$, we also have $n-b < n$.
 Thus we have proved that, for all $n \in X$, we have $n-b \in X$ and $n-b < n$, and therefore $X$ has infinite descent. This is a contradiction, so our assumption that $r \ge b$ is false, and so it must in fact be the case that $r<b$, as required.
 \end{example}
 
-A common application of proof by infinite descent is when proving a statement of the form $\forall n \ge n_0,\, p(n)$ (for some $n_0 \in \mathbb{N}$) by contradiction: if it is false, then there is a counterexample to $p(n)$, and so the set of all counterexamples is inhabited---we prove that the set of all counterexamples has infinite descent, leading to the desired contradiction. This is the strategy we use in the next example.
+A common application of proof by infinite descent is when proving a statement of the form $\forall n \ge n_0,\, p(n)$ (for some $n_0 \in \mathbb{N}$) by contradiction: if it is false, then there is a counterexample to $p(n)$, and so the set of all counterexamples is non-empty---we prove that the set of all counterexamples has infinite descent, leading to the desired contradiction. This is the strategy we use in the next example.
 
 \begin{example}[Existence of prime factorisation]
 \label{exExistenceOfPrimeFactorisationbyInfiniteDescent}
@@ -383,7 +383,7 @@ We will prove that every integer $n \ge 2$ can be expressed as a product of posi
 
 Towards a contradiction, assume that not every integer $\ge 2$ can be expressed as a product of positive prime numbers, and define
 \[ X = \{ n \ge 2 \mid n \text{ cannot be expressed as a product of positive prime numbers} \} \]
-Note that $X$ is inhabited by assumption.
+Note that $X$ is non-empty by assumption.
 
 Let $n \in X$. Then $n$ is not prime, since if it were prime then `$n$' would be an expression of $n$ as a product of positive prime numbers (namely, of just one positive prime number).
 

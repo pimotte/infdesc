@@ -293,15 +293,15 @@ Let $f : X \to Y$ be a function. Prove that if $f$ has a left inverse, then $f$ 
 In order to prove that a function $f : X \to Y$ is injective, it suffices to find a function $g : Y \to X$ such that $g(f(x)) = x$ for all $x \in X$.
 \end{strategy}
 
-It would be convenient if the converse to \Cref{exIfHasLeftInverseThenInjective} were true---and it is, provided that we impose the condition that the domain of the function be inhabited.
+It would be convenient if the converse to \Cref{exIfHasLeftInverseThenInjective} were true---and it is, provided that we impose the condition that the domain of the function be non-empty.
 
 \begin{proposition}
 \label{propIfInjectiveThenHasLeftInverse}
-Let $f : X \to Y$ be a function. If $f$ is injective and $X$ is inhabited, then $f$ has a left inverse.
+Let $f : X \to Y$ be a function. If $f$ is injective and $X$ is non-empty, then $f$ has a left inverse.
 \end{proposition}
 
 \begin{cproof}
-Suppose that $f$ is injective and $X$ is inhabited. Fix $x_0 \in X$---note that this element exists since $X$ is inhabited---and define $g : Y \to X$ as follows.
+Suppose that $f$ is injective and $X$ is non-empty. Fix $x_0 \in X$---note that this element exists since $X$ is non-empty---and define $g : Y \to X$ as follows.
 \[ g(y) = \begin{cases} x & \text{if } y=f(x) \text{ for some } x \in X \\ x_0 & \text{otherwise} \end{cases} \]
 The only part of the specification of $g$ that might cause it to fail to be well-defined is the case when $y=f(x)$ for some $x \in X$. The reason why $g$ is well-defined is precisely injectivity of $f$: if $y=f(x)$ for some $x \in X$, then the value of $x \in X$ for which $y = f(x)$ is unique. (Indeed, if $a \in X$ satisfied $y=f(a)$, then we'd have $a=x$ by injectivity of $f$.)
 
@@ -382,7 +382,7 @@ What makes this possible is to \textit{axiom of choice}, stated precisely below.
 \begin{axiom}[Axiom of choice]
 \label{axChoice}
 \index{axiom of choice}
-Let $\{ X_i \mid i \in I \}$ be a family of inhabited sets. Then there is a function $h : I \to \bigcup\limits_{i \in I} X_i$ such that $h(i) \in X_i$ for each $i \in I$.
+Let $\{ X_i \mid i \in I \}$ be a family of non-empty sets. Then there is a function $h : I \to \bigcup\limits_{i \in I} X_i$ such that $h(i) \in X_i$ for each $i \in I$.
 \end{axiom}
 
 There are reasons to keep track of the axiom of choice:
@@ -400,7 +400,7 @@ Let $X$ and $Y$ be sets and let $p(x,y)$ be a logical formula with free variable
 \end{propositionac}
 
 \begin{cproof}
-For each $a \in X$, define $Y_a = \{ b \in Y \mid p(a,b) \}$. Note that $Y_a$ is inhabited for each $a \in X$ by the assumption that $\forall x \in X,\, \exists y \in Y,\, p(x,y)$ is true. Since $Y_a \subseteq Y$ for each $a \in X$, by the axiom of choice there exists a function $h : X \to Y$ such that $h(a) \in Y_a$ for all $a \in X$. But then $p(a,h(a))$ is true for each $a \in X$ by definition of the sets $Y_a$.
+For each $a \in X$, define $Y_a = \{ b \in Y \mid p(a,b) \}$. Note that $Y_a$ is non-empty for each $a \in X$ by the assumption that $\forall x \in X,\, \exists y \in Y,\, p(x,y)$ is true. Since $Y_a \subseteq Y$ for each $a \in X$, by the axiom of choice there exists a function $h : X \to Y$ such that $h(a) \in Y_a$ for all $a \in X$. But then $p(a,h(a))$ is true for each $a \in X$ by definition of the sets $Y_a$.
 \end{cproof}
 
 In light of \Cref{propUsingAC}, the axiom of choice manifests itself in proofs as the following proof strategy.

@@ -276,15 +276,15 @@ Another fundamental example of a set is the \textit{empty set}, which is the set
 \label{defEmptyProperty}
 \index{empty set}
 \index{set!empty}
-\index{inhabited set}
+\index{non-empty set}
 \index{set!inhabited}
 A set $X$ is \textbf{inhabited} (or \textbf{nonempty}) if it has at least one element; otherwise, it is \textbf{empty}.
 \end{definition}
 
-The assertion that $X$ is inhabited is equivalent to the logical formula $\exists a,\, a \in X$, and the assertion that $X$ is empty is equivalent to the logical formula $\neg \exists a,\, a \in X$. This suggests the following strategy for proving that a set is inhabited, or that it is empty.
+The assertion that $X$ is non-empty is equivalent to the logical formula $\exists a,\, a \in X$, and the assertion that $X$ is empty is equivalent to the logical formula $\neg \exists a,\, a \in X$. This suggests the following strategy for proving that a set is non-empty, or that it is empty.
 
-\begin{strategy}[Proving that a set is inhabited or empty]
-In order to prove a set $X$ is inhabited, it suffices to exhibit an element. In order to prove a set $X$ is empty, assume that $X$ is inhabited---that is, that there is some element $a \in X$---and derive a contradiction.
+\begin{strategy}[Proving that a set is non-empty or empty]
+In order to prove a set $X$ is non-empty, it suffices to exhibit an element. In order to prove a set $X$ is empty, assume that $X$ is non-empty---that is, that there is some element $a \in X$---and derive a contradiction.
 \end{strategy}
 
 In other texts, the term \textit{nonempty} is more common than \textit{inhabited}, but there are reasons to prefer latter. Indeed, the statement `$X$ is non-empty' translates more directly to $\neg(\neg \exists a,\, a \in X)$, which has an unnecessary double-negative and suggests a proof of inhabitation by contradiction. For this reason, we use the term \textit{inhabited} in this book.
@@ -292,11 +292,11 @@ In other texts, the term \textit{nonempty} is more common than \textit{inhabited
 Emptiness may seem like a trivial condition---and it is---but owing to its canonicity, it arises all over the place.
 
 \begin{example}
-The set $\{ x \in \mathbb{R} \mid x^2 = 2 \}$ is inhabited since, for example $\sqrt{2} \in \mathbb{R}$ and $\sqrt{2}^2 = 2$. However, the set $\{ x \in \mathbb{Q} \mid x^2 = 2 \}$ is empty since, if it were inhabited, then there would be a rational number $x$ such that $x^2 = 2$, contrary to \Cref{propSqrt2IrrationalPreliminary}.
+The set $\{ x \in \mathbb{R} \mid x^2 = 2 \}$ is non-empty since, for example $\sqrt{2} \in \mathbb{R}$ and $\sqrt{2}^2 = 2$. However, the set $\{ x \in \mathbb{Q} \mid x^2 = 2 \}$ is empty since, if it were non-empty, then there would be a rational number $x$ such that $x^2 = 2$, contrary to \Cref{propSqrt2IrrationalPreliminary}.
 \end{example}
 
 \begin{example}
-We observed in \Cref{exBracketN} that the set $[0]$ is empty; here's a more formal proof. Towards a contradiction, suppose $[0]$ is inhabited. Then there is some $k \in \mathbb{N}$ such that $k < 0$. It follows that $0 < 0$, since $0 \in \mathbb{N}$, which is a contradiction. Hence $[0]$ is empty, after all.
+We observed in \Cref{exBracketN} that the set $[0]$ is empty; here's a more formal proof. Towards a contradiction, suppose $[0]$ is non-empty. Then there is some $k \in \mathbb{N}$ such that $k < 0$. It follows that $0 < 0$, since $0 \in \mathbb{N}$, which is a contradiction. Hence $[0]$ is empty, after all.
 \end{example}
 
 \begin{exercise}

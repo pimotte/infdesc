@@ -33,7 +33,7 @@ We may assume that $b>0$: if not, replace $b$ by $-b$ and $q$ by $-q$ in the pro
 \begin{itemize}
 \item \textbf{Existence.} Define $X = \{ r \in \mathbb{N} \mid a = qb+r \text{ for some } q \in \mathbb{Z} \} \subseteq \mathbb{N}$.
 
-Note first that $X$ is inhabited. Indeed:
+Note first that $X$ is non-empty. Indeed:
 \begin{itemize}
 \item Suppose $a \ge 0$. Then $a \in X$, since $a = 0 \cdot b + a$.
 \item Suppose $a<0$. Since $b > 0$ we have $1-b \le 0$, so that $(1-b)a \ge 0$. But then $a = ab + (1-b)a$, and so $(1-b)a \in X$.
@@ -177,7 +177,7 @@ So now let's assume that $a$ and $b$ are not both zero.
 Define a subset $X \subseteq \mathbb{N}$ by
 \[ X = \{ n \in \mathbb{N} \mid n > 0 \text{ and } n = au+bv \text{ for some } u,v \in \mathbb{Z} \} \]
 
-$X$ is inhabited. To see this, note that $a^2 > 0$ or $b^2 > 0$ since $a$ and $b$ are not both zero, so letting $u=a$ and $v=b$ in the expression $au+bv$, we see that $au+bv=a^2+b^2>0$, and so $a^2+b^2 \in X$.
+$X$ is non-empty. To see this, note that $a^2 > 0$ or $b^2 > 0$ since $a$ and $b$ are not both zero, so letting $u=a$ and $v=b$ in the expression $au+bv$, we see that $au+bv=a^2+b^2>0$, and so $a^2+b^2 \in X$.
 
 By the well-ordering principle, $X$ has a least element $d$, and by definition of $X$ there exist $u,v \in \mathbb{Z}$ such that $d = au+bv$.
 

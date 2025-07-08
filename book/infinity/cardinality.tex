@@ -158,7 +158,7 @@ Now let's define $f$ properly: define $f(n) \in [\kappa]$ for $n \in \mathbb{N}$
 \item $f(0) = j_1(0) \in [\kappa]$.
 \item Fix $n \in \mathbb{N}$, and suppose $f(k)$ has been defined for all $k \le n$ and satisfies $f(k) \ne f(\ell)$ for $\ell < k$. Let
 \[ A = \{ a \in [n+2] \mid j_{n+2}(a) \ne f(k) \text{ for all } k \le n \} \]
-Note that $A$ is inhabited: the set $\{ j_{n+2}(a) \mid a \in [n+2] \}$ has size $n+2$ since $j_{n+2}$ is injective, and the set $\{ f(k) \mid k \le n \}$ has size $n+1$ by construction, so at least one $a \in [n+2]$ must satisfy the requirement that $j_{n+2}(a) \ne f(k)$ for all $k \le n$.
+Note that $A$ is non-empty: the set $\{ j_{n+2}(a) \mid a \in [n+2] \}$ has size $n+2$ since $j_{n+2}$ is injective, and the set $\{ f(k) \mid k \le n \}$ has size $n+1$ by construction, so at least one $a \in [n+2]$ must satisfy the requirement that $j_{n+2}(a) \ne f(k)$ for all $k \le n$.
 
 Let $a$ be the least element of $A$, and define $f(n+1) = j_{n+2}(a)$. Then by construction we have $f(n+1) \ne f(k)$ for any $k < n$, as required.
 \end{itemize}

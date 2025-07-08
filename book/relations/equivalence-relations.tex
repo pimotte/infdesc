@@ -241,15 +241,15 @@ A partition of a set $X$ is a way of breaking $X$ up into mutually disjoint subs
 \index{partition}
 A \textbf{partition} of a set $X$ is a set $\mathcal{A} \subseteq \mathcal{P}(X)$ (that is, a set of subsets of $X$) such that the following conditions hold:
 \begin{enumerate}[(a)]
-\item Every set $A \in \mathcal{A}$ is inhabited;
+\item Every set $A \in \mathcal{A}$ is non-empty;
 \item $\mathcal{A}$ is a \textbf{cover} of $X$: for all $x \in X$, there exists $A \in \mathcal{A}$ such that $x \in A$; and
-\item $\mathcal{A}$ is \textbf{pairwise disjoint}: for all $A,B \in \mathcal{A}$, if $A \cap B$ is inhabited, then $A=B$.
+\item $\mathcal{A}$ is \textbf{pairwise disjoint}: for all $A,B \in \mathcal{A}$, if $A \cap B$ is non-empty, then $A=B$.
 \end{enumerate}
 \end{restatable}
 
 A few remarks about the definition of a partition are in order:
 \begin{itemize}
-\item Later in the textbook, we will encounter contexts in which we want to talk about a partition of a set \textit{without} requiring that the sets in the partition be inhabited. We will address this when we need to, but for the purposes of this section, we \textit{do} need this condition.
+\item Later in the textbook, we will encounter contexts in which we want to talk about a partition of a set \textit{without} requiring that the sets in the partition be non-empty. We will address this when we need to, but for the purposes of this section, we \textit{do} need this condition.
 \item The definition of $\mathcal{A}$ being a cover of $X$ is equivalent to the assertion that $X \subseteq \bigcup \mathcal{A}$. Furthermore, since $\mathcal{A}$ is a subset of $X$, we automatically have $\bigcup \mathcal{A} \subseteq X$. So a set $\mathcal{A} \subseteq \mathcal{P}(X)$ is a cover of $X$ if and only if $\bigcup \mathcal{A} = X$.
 \item Pairwise disjointness of $\mathcal{A}$ means, intuitively, that distinct sets in $\mathcal{A}$ do not overlap. If you were asked to write down what this means, you would probably say something like: ``for all $A, B \in \mathcal{A}$, if $A \ne B$, then $A \cap B$ is empty''. This is good for intuition, but less useful for proofs, since both the hypothesis and the conclusion of the implication are negative statements, which would suggest a proof by contradiction every time we want to show a collection of sets is pairwise disjoint. The definition we gave in \Cref{defPartition} uses the \textit{contrapositive} of this implication, which we know is equivalent by \Cref{thmLawOfContraposition}, but is more useful for proofs of pairwise disjointness because it does not contain any negations.
 \end{itemize}
@@ -258,7 +258,7 @@ A few remarks about the definition of a partition are in order:
 \label{exPartitionOfZIntoEvenAndOdd}
 Let $E$ be the set of all even integers and $O$ be the set of all odd integers. Then $\{ E, O \}$ is a partition of $\mathbb{Z}$:
 \begin{itemize}
-\item (\textbf{Inhabitation}) $E$ and $O$ are inhabited, since for example $0 \in E$ and $1 \in O$.
+\item (\textbf{Inhabitation}) $E$ and $O$ are non-empty, since for example $0 \in E$ and $1 \in O$.
 \item (\textbf{Covering}) Every integer $n$ is either even (so $n \in E$) or odd (so $n \in O$), and hence $\{ E, O \}$ is a cover of $\mathbb{Z}$.
 \item (\textbf{Pairwise disjointness}) The family $\{ E, O \}$ is pairwise disjoint if and only if $E \cap O$ is empty; and it is, since no integer can be both even and odd.
 \end{itemize}
@@ -268,9 +268,9 @@ Let $E$ be the set of all even integers and $O$ be the set of all odd integers. 
 \label{exPartitionOfNIntoPairs}
 Let $\mathcal{A} = \{ \{ 2n, 2n+1 \} \mid n \in \mathbb{N} \}$. Then $\mathcal{A}$ is a partition of $\mathbb{N}$:
 \begin{itemize}
-\item (\textbf{Inhabitation}) Let $A \in \mathcal{A}$. Then $A = \{ 2n, 2n+1 \}$ for some $n \in \mathbb{N}$, and so $2n \in A$. Hence $A$ is inhabited.
+\item (\textbf{Inhabitation}) Let $A \in \mathcal{A}$. Then $A = \{ 2n, 2n+1 \}$ for some $n \in \mathbb{N}$, and so $2n \in A$. Hence $A$ is non-empty.
 \item (\textbf{Covering}) Let $x \in \mathbb{N}$. If $x$ is even, then $x=2n$ for some $n \in \mathbb{N}$, and if $x$ is odd, then $x=2n+1$ for some $n \in \mathbb{N}$. In both cases there is a natural number $n$ such that $x \in \{ 2n, 2n+1 \}$, and $\{ 2n, 2n+1 \} \in \mathcal{A}$. So $\mathcal{A}$ is a cover of $\mathbb{N}$.
-\item (\textbf{Pairwise disjointness}) Let $A,B \in \mathcal{A}$ and assume that $A \cap B$ is inhabited. Let $m,n \in \mathbb{N}$ be such that $A = \{ 2m, 2m+1 \}$ and $B = \{ 2n, 2n+1 \}$, and let $x \in A \cap B$, which exists since $A \cap B$ is inhabited. Since $A$ and $B$ each have a unique even element and a unique odd element, we must either have $x=2m=2n$ or $x=2m+1=2n+1$ depending on whether $x$ is even or odd. But in both cases we have $m=n$, so that $A=B$ as required. So $\mathcal{A}$ is pairwise disjoint.
+\item (\textbf{Pairwise disjointness}) Let $A,B \in \mathcal{A}$ and assume that $A \cap B$ is non-empty. Let $m,n \in \mathbb{N}$ be such that $A = \{ 2m, 2m+1 \}$ and $B = \{ 2n, 2n+1 \}$, and let $x \in A \cap B$, which exists since $A \cap B$ is non-empty. Since $A$ and $B$ each have a unique even element and a unique odd element, we must either have $x=2m=2n$ or $x=2m+1=2n+1$ depending on whether $x$ is even or odd. But in both cases we have $m=n$, so that $A=B$ as required. So $\mathcal{A}$ is pairwise disjoint.
 \end{itemize}
 \end{example}
 
@@ -283,7 +283,7 @@ That is, $\mathcal{F}$ is the set of subsets of $X$ given by the preimages of in
 
 \begin{exercise}
 \label{exConditionsForPartition}
-Let $X$ be a set and let $\mathcal{A}$ be a set of inhabited subsets of $X$. Prove that $\mathcal{A}$ is a partition of $X$ if and only if for each $x \in X$, there is a unique set $A \in \mathcal{A}$ with $a \in A$.
+Let $X$ be a set and let $\mathcal{A}$ be a set of non-empty subsets of $X$. Prove that $\mathcal{A}$ is a partition of $X$ if and only if for each $x \in X$, there is a unique set $A \in \mathcal{A}$ with $a \in A$.
 \end{exercise}
 
 \begin{theorem}[Equivalence relations correspond with partitions]
@@ -302,7 +302,7 @@ for all $x,y \in X$. That is, $x \sim y$ if and only if $x$ and $y$ are elements
 \begin{itemize}
 \item \textbf{Reflexivity.} Let $x \in X$. Then $x \in A$ for some $A \in \mathcal{A}$ since $\mathcal{A}$ is a cover of $X$.
 \item \textbf{Symmetry.} Let $x,y \in X$ and suppose $x \sim y$. Then there is some $A \in \mathcal{A}$ with $x \in A$ and $y \in A$. But then it is immediate that $y \sim x$.
-\item \textbf{Transitivity.} Let $x,y,z \in X$ and suppose that $x \sim y$ and $y \sim z$. Then there exist $A,B \in \mathcal{A}$ with $x,y \in A$ and $y,z \in B$. Thus $y \in A \cap B$. Since $A \cap B$ is inhabited, it follows by pairwise disjointness that $A=B$. Therefore $x \in A$ and $z \in A$, and so $x \sim z$, as required.
+\item \textbf{Transitivity.} Let $x,y,z \in X$ and suppose that $x \sim y$ and $y \sim z$. Then there exist $A,B \in \mathcal{A}$ with $x,y \in A$ and $y,z \in B$. Thus $y \in A \cap B$. Since $A \cap B$ is non-empty, it follows by pairwise disjointness that $A=B$. Therefore $x \in A$ and $z \in A$, and so $x \sim z$, as required.
 \end{itemize}
 
 We prove $X/{\sim} = \mathcal{A}$ by double containment; each inclusion direction will itself require a further double containment proof.
@@ -313,7 +313,7 @@ We prove $X/{\sim} = \mathcal{A}$ by double containment; each inclusion directio
 \item[$(\supseteq)$] Let $y \in A$. Then since $x \in A$ and $y \in A$, we have $x \sim y$, so that $y \in [x]_{\sim} = E$, as required.
 \end{itemize}
 Therefore $E = A \in \mathcal{A}$, as required.
-\item[$(\supseteq$)] Let $A \in \mathcal{A}$. Then $A$ is inhabited, so there exists an element $x \in A$. We claim that $A = [x]_{\sim}$.
+\item[$(\supseteq$)] Let $A \in \mathcal{A}$. Then $A$ is non-empty, so there exists an element $x \in A$. We claim that $A = [x]_{\sim}$.
 \begin{itemize}[leftmargin=20pt]
 \item[$(\subseteq)$] Let $y \in A$. Then $x \in A$ and $y \in A$, so $x \sim y$, and hence $y \in [x]_{\sim}$.
 \item[$(\supseteq)$] Let $y \in [x]_{\sim}$. Then $x \sim y$, so there exists $B \in \mathcal{A}$ with $x \in B$ and $y \in B$. But $x \in A$ and $\mathcal{A}$ is pairwise disjoint, so $A=B$, and so $y \in A$ as required.

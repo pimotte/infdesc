@@ -47,7 +47,7 @@ If two sets have the same elements, then they are equal.
 A consequence of the axiom of extensionality is that two sets can be proved to be equal by proving that they contain the same elements.
 
 \begin{axiom}[Axiom of foundation]
-Every inhabited set has an $\in$-minimal element.
+Every non-empty set has an $\in$-minimal element.
 \[ \forall X,\, [(\exists y,\, y \in X) \Rightarrow \exists x,\, (x \in X \wedge \forall u \in X,\, u \not \in x)] \]
 The axiom of foundation states that $\in$ is a well-founded relation.
 \end{axiom}
@@ -59,7 +59,7 @@ Under the axiom of foundation, we have $X \not \in X$ for all sets $X$.
 \end{lemma}
 
 \begin{cproof}
-Let $X$ be a set. The set $\{ X \}$ is inhabited since $X \in \{ X \}$, so by the axiom of foundation there is some $x \in \{ X \}$ such that $u \not\in x$ for all $u \in \{ X \}$. But the only element of $\{ X \}$ is $X$ itself, so this says exactly that $X \not\in X$.
+Let $X$ be a set. The set $\{ X \}$ is non-empty since $X \in \{ X \}$, so by the axiom of foundation there is some $x \in \{ X \}$ such that $u \not\in x$ for all $u \in \{ X \}$. But the only element of $\{ X \}$ is $X$ itself, so this says exactly that $X \not\in X$.
 \end{cproof}
 
 \begin{exercise}
@@ -128,7 +128,7 @@ This contradicts \Cref{exStrictlyDecreasingSequenceOfSets}, so we must have $X=Y
 
 \begin{axiom}[Axiom of infinity]
 \label{axZFCInfinity}
-There is an inhabited set containing successor sets of all of its elements.
+There is an non-empty set containing successor sets of all of its elements.
 \[ \exists X,\, [(\exists u,\, u \in X) \wedge \forall x,\, (x \in X \Rightarrow x^+ \in X)] \]
 \end{axiom}
 
