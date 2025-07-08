@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.7.27)  25 FEB 2025 20:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.5.19)  8 JUL 2025 09:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -147,7 +147,7 @@ Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
 Package: babel 2024/01/07 v24.1 The Babel package
 \babel@savecnt=\count282
 \U@D=\dimen152
-\l@unhyphenated=\language89
+\l@unhyphenated=\language9
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read2
@@ -158,12 +158,16 @@ Language: british 2017/06/06 v3.3r English support from the babel system
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf
 Language: english 2017/06/06 v3.3r English support from the babel system
+Package babel Info: Hyphen rules for 'british' set to \l@english
+(babel)             (\language0). Reported on input line 82.
+Package babel Info: Hyphen rules for 'UKenglish' set to \l@english
+(babel)             (\language0). Reported on input line 83.
 Package babel Info: Hyphen rules for 'canadian' set to \l@english
 (babel)             (\language0). Reported on input line 102.
-Package babel Info: Hyphen rules for 'australian' set to \l@ukenglish
-(babel)             (\language39). Reported on input line 105.
-Package babel Info: Hyphen rules for 'newzealand' set to \l@ukenglish
-(babel)             (\language39). Reported on input line 108.
+Package babel Info: Hyphen rules for 'australian' set to \l@english
+(babel)             (\language0). Reported on input line 105.
+Package babel Info: Hyphen rules for 'newzealand' set to \l@english
+(babel)             (\language0). Reported on input line 108.
 )))
 (/usr/share/texlive/texmf-dist/tex/generic/babel/locale/en/babel-british.tex
 Package babel Info: Importing font and identification data for british
@@ -1795,13 +1799,8 @@ Writing index file vocabulary.idx
 
 Writing index file latex.idx
 ) (./book/includes/formatting.tex
-(/usr/share/texlive/texmf-dist/tex/latex/draftwatermark/draftwatermark.sty
-Package: draftwatermark 2020/12/08 3.0 Put a gray textual watermark on document
- pages
-)
 Package hyperref Info: Option `colorlinks' set `true' on input line 257.
-)
-(./book/includes/theorems.tex
+) (./book/includes/theorems.tex
 Package thmtools Info: Key `shaded' (with value `bgcolor=thmbgcol, rulecolor=th
 mbdcol, rulewidth=\thmboxborderwidth ')
 (thmtools)             is not a known style key.
@@ -1874,7 +1873,7 @@ Package: shadethm 1999/11/23
 (./book/includes/latex.tex
 \texbox=\box161
 ) (./book/includes/macros.tex))
-LaTeX Font Info:    Trying to load font information for T1+ptm on input line 35
+LaTeX Font Info:    Trying to load font information for T1+ptm on input line 36
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd
@@ -1882,53 +1881,52 @@ File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 ) (./infdesc.aux)
 \openout1 = `infdesc.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 35.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 36.
 LaTeX Font Info:    Trying to load font information for LGR+cmr on input line 3
-5.
+6.
 
 (/usr/share/texlive/texmf-dist/tex/latex/cbfonts-fd/lgrcmr.fd
 File: lgrcmr.fd 2017/07/29 v1.2 Greek European Computer Regular
 )
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
 * driver: pdftex
-* paper: custom
+* paper: a4paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * hratio: 1:1
 * vratio: 1:1
-* bindingoffset: 14.45377pt
 * modes: includehead includefoot twoside showcrop 
-* h-part:(L,W,R)=(36.135pt, 346.89624pt, 36.135pt)
-* v-part:(T,H,B)=(36.135pt, 578.16pt, 36.135pt)
-* \paperwidth=433.62pt
-* \paperheight=650.43pt
-* \textwidth=346.89624pt
-* \textheight=522.79758pt
-* \oddsidemargin=-21.68123pt
-* \evensidemargin=-36.135pt
-* \topmargin=-36.135pt
+* h-part:(L,W,R)=(71.13188pt, 455.24411pt, 71.13188pt)
+* v-part:(T,H,B)=(71.13188pt, 702.78308pt, 71.13188pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=455.24411pt
+* \textheight=647.42065pt
+* \oddsidemargin=-1.1381pt
+* \evensidemargin=-1.1381pt
+* \topmargin=-1.1381pt
 * \headheight=14.0pt
 * \headsep=18.06749pt
 * \topskip=10.0pt
@@ -1982,28 +1980,28 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ))
-Package hyperref Info: Link coloring ON on input line 35.
+Package hyperref Info: Link coloring ON on input line 36.
 \openout8 = `infdesc-hints.cll'.
 
 \openout9 = `infdesc-solutions.cll'.
 
 *geometry* verbose mode - [ newgeometry ] result:
 * driver: pdftex
-* paper: custom
+* paper: a4paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * hratio: 1:1
 * vratio: 1:1
 * modes: twoside showcrop 
-* h-part:(L,W,R)=(65.04366pt, 303.53267pt, 65.04367pt)
-* v-part:(T,H,B)=(97.56549pt, 455.299pt, 97.5655pt)
-* \paperwidth=433.62pt
-* \paperheight=650.43pt
-* \textwidth=303.53267pt
-* \textheight=455.299pt
-* \oddsidemargin=-7.22633pt
-* \evensidemargin=-7.22632pt
-* \topmargin=-6.77199pt
+* h-part:(L,W,R)=(89.62709pt, 418.25368pt, 89.6271pt)
+* v-part:(T,H,B)=(126.75832pt, 591.5302pt, 126.75833pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=418.25368pt
+* \textheight=591.5302pt
+* \oddsidemargin=17.3571pt
+* \evensidemargin=17.35712pt
+* \topmargin=22.42084pt
 * \headheight=14.0pt
 * \headsep=18.06749pt
 * \topskip=10.0pt
@@ -2024,75 +2022,71 @@ Package hyperref Info: Link coloring ON on input line 35.
 
 (./book/front-matter/titlepage.tex
 LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line
- 32.
+ 33.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )
 LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line
- 32.
+ 33.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlztmcm.fd
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
 LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line
- 32.
+ 33.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsztmcm.fd
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
 LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line
- 32.
+ 33.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omxztmcm.fd
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )
 LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 3
-2.
+3.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 32.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 33.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 32.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 33.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 32.
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 3
-2.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 33.
+LaTeX Font Info:    Trying to load font information for T1+bch on input line 40
+.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1bch.fd
+File: t1bch.fd 2004/10/18 font definitions for T1/bch.
+)
+<book/media/logo.pdf, id=7, 69.99951pt x 138.84973pt>
+File: book/media/logo.pdf Graphic file (type pdf)
+<use book/media/logo.pdf>
+Package pdftex.def Info: book/media/logo.pdf  used on input line 45.
+(pdftex.def)             Requested size: 69.99933pt x 138.84938pt.
+) [1
+
+
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-di
+st/fonts/enc/dvips/base/8r.enc} <./book/media/logo.pdf>] (./book/front-matter/c
+opyright.tex
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 1
+4.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 3
-2.
+1.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
-
-LaTeX Font Warning: Font shape `T1/cmtt/m/n' in size <108.405> not available
-(Font)              size <35.83> substituted on input line 32.
-
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/en
-c/dvips/cm-super/cm-super-t1.enc}
-
-
-
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}]
-LaTeX Font Info:    Trying to load font information for T1+bch on input line 40
-.
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1bch.fd
-File: t1bch.fd 2004/10/18 font definitions for T1/bch.
-)
-<book/media/logo.pdf, id=18, 69.99951pt x 138.84973pt>
-File: book/media/logo.pdf Graphic file (type pdf)
-<use book/media/logo.pdf>
-Package pdftex.def Info: book/media/logo.pdf  used on input line 45.
-(pdftex.def)             Requested size: 69.99933pt x 138.84938pt.
-)
-[2 <./book/media/logo.pdf>] (./book/front-matter/copyright.tex
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 31.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
@@ -2100,28 +2094,24 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 31.
 )
-(./book/front-matter/dedication.tex [3
+(./book/front-matter/dedication.tex [2
 
 
-] [4]) [5] [6
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}] [3]) [4] (./infdes
+c.toc [5
 
-] (./infdesc.toc [7]
-[8] [9] [10])
+] [6] [7])
 \tf@toc=\write10
 \openout10 = `infdesc.toc'.
 
- (./book/front-matter/preface.tex [11] [12
 
-] [13] [14] [15]
-[16]) (./book/front-matter/acknowledgements.tex
-Underfull \hbox (badness 10000) in paragraph at lines 122--2
-[]\T1/ptm/m/n/10 Such feed-back can be sent to the au-thor by email ([][]$\T1/c
-mtt/m/n/10 clive . newstead @
- []
+(./book/front-matter/preface.tex [8] [9
 
-[17] [18
+] [10] [11])
+(./book/front-matter/acknowledgements.tex [12] [13
 
-] [19]) [20] (./book/getting-started/_getting-started.tex
+]) [14]
+(./book/getting-started/_getting-started.tex
 Chapter 0.
 (./book/getting-started/getting-started.tex
 Package hyperref Info: bookmark level for unknown definition defaults to 0 on i
@@ -2133,45 +2123,45 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 21--21
 
 Package hyperref Info: bookmark level for unknown exercise defaults to 0 on inp
 ut line 26.
-[1
 
-
-]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 48--48
 [][] 
  []
 
-[2] [3]
+[1
+
+
+] [2]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 124--124
 [][] 
  []
 
-[4]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 153--153
 [][] 
  []
 
+[3]
 Package hyperref Info: bookmark level for unknown aside defaults to 0 on input 
 line 158.
-[5]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 183--183
 [][] 
  []
 
-
+[4]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 214--214
 [][] 
  []
 
-[6]
 Package hyperref Info: bookmark level for unknown example defaults to 0 on inpu
 t line 217.
- [7]
+[5]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 303--303
 [][] 
  []
 
-[8]
+[6]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 336--336
 [][] 
  []
@@ -2181,17 +2171,17 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 354--354
 [][] 
  []
 
-[9] [10] [11]
+[7] [8]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 474--474
 [][] 
  []
 
-[12]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 517--517
 [][] 
  []
 
-[13] [14]
+[9] [10]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 611.
 
@@ -2199,7 +2189,7 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 618--618
 [][] 
  []
 
-[15]
+[11]
 Package hyperref Info: bookmark level for unknown notation defaults to 0 on inp
 ut line 643.
 
@@ -2207,12 +2197,12 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 646--646
 [][] 
  []
 
-[16]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 665--665
 [][] 
  []
 
-[17]
+[12]
 Package hyperref Info: bookmark level for unknown proposition defaults to 0 on 
 input line 685.
 Package hyperref Info: bookmark level for unknown cproof defaults to 0 on input
@@ -2229,15 +2219,14 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 721--721
 [][] 
  []
 
-[18] [19]
+[13] [14]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 791--791
 [][] 
  []
 
-[20]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 952.
- [21]) [22] (./book/getting-started/q.tex
+[15]) [16] (./book/getting-started/q.tex
 Package hyperref Info: bookmark level for unknown chapex defaults to 0 on input
  line 3.
 
@@ -2250,15 +2239,14 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 61--61
 [][] 
  []
 
-[23] [24])) [25] [26
+[17])) [18] [19
 
-] [27] [28]
-(./book/logical-structure/_logical-structure.tex
+] [20] (./book/logical-structure/_logical-structure.tex
 Chapter 1.
-(./book/logical-structure/intro.tex) [29
+(./book/logical-structure/intro.tex) [21
 
 ]
-(./book/logical-structure/propositional-logic.tex [30] [31] [32] [33]
+(./book/logical-structure/propositional-logic.tex [22] [23] [24]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 167--167
 [][] 
  []
@@ -2268,7 +2256,6 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 182--182
 [][] 
  []
 
-[34]
 Package hyperref Info: bookmark level for unknown idefinition defaults to 0 on 
 input line 199.
 
@@ -2276,7 +2263,7 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 209--209
 [][] 
  []
 
-[35]
+[25]
 Package hyperref Info: bookmark level for unknown strategy defaults to 0 on inp
 ut line 235.
 
@@ -2289,7 +2276,7 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 250--250
 [][] 
  []
 
-[36]
+[26]
 \myBox1=\box163
 \myScoreStart1=\dimen341
 \myCenter1=\dimen342
@@ -2307,36 +2294,31 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 250--250
 \myCenter4=\dimen351
 \myScoreEnd4=\dimen352
 
-Overfull \hbox (3.70721pt too wide) in paragraph at lines 292--297
- [] 
- []
-
-[37]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 354--354
 [][] 
  []
 
-
+[27]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 405--405
 [][] 
  []
 
-[38] [39]
+[28]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 494--494
 [][] 
  []
 
-[40]
+[29]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 579--579
 [][] 
  []
 
-[41]
+[30]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 609--609
 [][] 
  []
 
-[42]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 642--642
 [][] 
  []
@@ -2345,17 +2327,17 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 642--642
 LaTeX Warning: Reference `exDiscriminantRealRoots' on page 1 undefined on input
  line 647.
 
-
+[31]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 662--662
 [][] 
  []
 
-[43]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 682--682
 [][] 
  []
 
-[44]
+[32]
 Package hyperref Info: bookmark level for unknown itheorem defaults to 0 on inp
 ut line 747.
 
@@ -2363,22 +2345,22 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 753--753
 [][] 
  []
 
-[45] [46]
+[33]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 840--840
 [][] 
  []
 
-
+[34]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 856--856
 [][] 
  []
 
-[47]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 895--895
 [][] 
  []
 
-[48]
+[35]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 942--942
 [][] 
  []
@@ -2390,17 +2372,17 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 956--956
 [][] 
  []
 
-[49]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 971--971
 [][] 
  []
 
-
+[36]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 1011--1011
 [][] 
  []
 
-[50]) [51] (./book/logical-structure/variables-quantifiers.tex
+) [37] (./book/logical-structure/variables-quantifiers.tex
 Overfull \hbox (0.5pt too wide) in paragraph at lines 22--22
 [][] 
  []
@@ -2410,18 +2392,18 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 32--32
 [][] 
  []
 
-[52] [53]
+[38]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 76--76
 [][] 
  []
 
-[54] [55]
+[39] [40]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 164--164
 [][] 
  []
 
-[56]
-Overfull \hbox (35.37524pt too wide) in paragraph at lines 183--187
+
+Overfull \hbox (13.70601pt too wide) in paragraph at lines 183--187
  [] 
  []
 
@@ -2430,10 +2412,10 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 194--194
 [][] 
  []
 
-[57]
+[41]
 Package hyperref Info: bookmark level for unknown commonerror defaults to 0 on 
 input line 248.
- [58]
+ [42]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 268--268
 [][] 
  []
@@ -2448,61 +2430,61 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 315--315
 [][] 
  []
 
-[59]
+[43]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 356--356
 [][] 
  []
 
-[60]
+[44]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 389--389
 [][] 
  []
 
 Package hyperref Info: bookmark level for unknown discussion defaults to 0 on i
 nput line 399.
-[61]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 410--410
 [][] 
  []
 
-[62]
+[45]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 469--469
 [][] 
  []
 
-[63]) [64] (./book/logical-structure/logical-equivalence.tex
+) [46] [47] (./book/logical-structure/logical-equivalence.tex
 Overfull \hbox (0.5pt too wide) in paragraph at lines 32--32
 [][] 
  []
 
-[65] [66]
+[48]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 100--100
 [][] 
  []
 
 Package hyperref Info: bookmark level for unknown cidea defaults to 0 on input 
 line 103.
-[67]
+[49]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 118--118
 [][] 
  []
 
-[68]
+[50]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 206--206
 [][] 
  []
 
-[69]
+[51]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 261--261
 [][] 
  []
 
-[70]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 282--282
 [][] 
  []
 
-[71]
+[52]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 308--308
 [][] 
  []
@@ -2517,12 +2499,12 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 338--338
 [][] 
  []
 
-[72]
+[53]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 382--382
 [][] 
  []
 
-[73] [74]
+[54]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 431--431
 [][] 
  []
@@ -2532,17 +2514,17 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 458--458
 [][] 
  []
 
-[75]
+[55]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 478--478
 [][] 
  []
 
-[76]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 505--505
 [][] 
  []
 
-[77] [78]
+[56] [57]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 580--580
 [][] 
  []
@@ -2552,27 +2534,27 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 586--586
 [][] 
  []
 
-[79]
+[58]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 634--634
 [][] 
  []
 
-[80]) [81] (./book/logical-structure/q.tex [82] [83] [84]))
-(./book/sets/_sets.tex [85] [86
-
-]
+) [59] (./book/logical-structure/q.tex [60] [61])) (./book/sets/_sets.tex
+[62]
 Chapter 2.
-(./book/sets/intro.tex) [87] (./book/sets/sets.tex
+(./book/sets/intro.tex) [63
+
+] (./book/sets/sets.tex
 Overfull \hbox (0.5pt too wide) in paragraph at lines 42--42
 [][] 
  []
 
-[88]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 93--93
 [][] 
  []
 
-[89]
+[64]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 129--129
 [][] 
  []
@@ -2582,27 +2564,27 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 133--133
 [][] 
  []
 
-[90]
+[65]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 201--201
 [][] 
  []
 
-
+[66]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 212--212
 [][] 
  []
 
-[91]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 282--282
 [][] 
  []
 
-[92]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 288--288
 [][] 
  []
 
-[93]
+[67]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 320--320
 [][] 
  []
@@ -2617,7 +2599,7 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 350--350
 [][] 
  []
 
-[94]) [95] (./book/sets/set-operations.tex
+[68]) [69] (./book/sets/set-operations.tex
 Overfull \hbox (0.5pt too wide) in paragraph at lines 19--19
 [][] 
  []
@@ -2627,12 +2609,12 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 34--34
 [][] 
  []
 
-[96]
+[70]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 81--81
 [][] 
  []
 
-[97]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 109--109
 [][] 
  []
@@ -2642,71 +2624,71 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 127--127
 [][] 
  []
 
-[98]
+[71]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 167--167
 [][] 
  []
 
-[99]
+[72]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 182--182
 [][] 
  []
 
-[100]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 231--231
 [][] 
  []
 
-[101]
+[73]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 272--272
 [][] 
  []
 
-[102] [103]
+[74]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 339--339
 [][] 
  []
 
-[104]
+[75]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 388--388
 [][] 
  []
 
-[105]
+[76]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 409--409
 [][] 
  []
 
-[106]
+[77]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 445--445
 [][] 
  []
 
-) [107] (./book/sets/q.tex
+) [78] (./book/sets/q.tex
 Overfull \hbox (0.5pt too wide) in paragraph at lines 63--63
 [][] 
  []
 
-[108]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 101--101
 [][] 
  []
 
-[109] [110])) (./book/functions/_functions.tex [111] [112
+[79] [80])) (./book/functions/_functions.tex [81] [82
 
 ]
 Chapter 3.
-(./book/functions/intro.tex) [113] (./book/functions/functions.tex
+(./book/functions/intro.tex) [83] (./book/functions/functions.tex
 Overfull \hbox (0.5pt too wide) in paragraph at lines 25--25
 [][] 
  []
 
-[114] [115] [116] [117]
+[84] [85]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 117--117
 [][] 
  []
 
-
+[86]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 122--122
 [][] 
  []
@@ -2716,27 +2698,27 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 131--131
 [][] 
  []
 
-[118]
+[87]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 171--171
 [][] 
  []
 
-[119]
+[88]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 210--210
 [][] 
  []
 
-[120]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 221--221
 [][] 
  []
 
-[121]
+[89]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 268--268
 [][] 
  []
 
-[122] [123]
+[90]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 339--339
 [][] 
  []
@@ -2746,27 +2728,27 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 349--349
 [][] 
  []
 
-
+[91]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 378--378
 [][] 
  []
 
-[124]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 388--388
 [][] 
  []
 
-[125]
+[92]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 433--433
 [][] 
  []
 
-[126]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 476--476
 [][] 
  []
 
-[127]) [128] (./book/functions/injections-surjections.tex [129]
+[93]) [94] (./book/functions/injections-surjections.tex
 Overfull \hbox (0.5pt too wide) in paragraph at lines 56--56
 [][] 
  []
@@ -2776,34 +2758,34 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 60--60
 [][] 
  []
 
-[130]
+[95] [96]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 138--138
 [][] 
  []
 
-[131]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 144--144
 [][] 
  []
 
-[132]
+[97]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 196--196
 [][] 
  []
 
 Package hyperref Info: bookmark level for unknown prooftip defaults to 0 on inp
 ut line 199.
-[133]
+[98]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 272--272
 [][] 
  []
 
-[134]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 294--294
 [][] 
  []
 
-[135]
+[99]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 325--325
 [][] 
  []
@@ -2813,11 +2795,12 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 355--355
 [][] 
  []
 
-[136] [137]
+[100]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 386--386
 [][] 
  []
 
+[101]
 Package hyperref Info: bookmark level for unknown propositionac defaults to 0 o
 n input line 398.
 Package hyperref Info: bookmark level for unknown strategyac defaults to 0 on i
@@ -2827,48 +2810,48 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 411--411
 [][] 
  []
 
-[138]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 432--432
 [][] 
  []
 
-[139]
+[102]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 472--472
 [][] 
  []
 
-[140]
+[103]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 502--502
 [][] 
  []
 
-[141]) [142] (./book/functions/q.tex
+) [104] [105] (./book/functions/q.tex
 Overfull \hbox (0.5pt too wide) in paragraph at lines 37--37
 [][] 
  []
 
-[143] [144] [145] [146]))
-(./book/mathematical-induction/_mathematical-induction.tex [147] [148
+[106] [107] [108])) (./book/mathematical-induction/_mathematical-induction.tex
+[109] [110
 
 ]
 Chapter 4.
-(./book/mathematical-induction/intro.tex) [149]
+(./book/mathematical-induction/intro.tex) [111]
 (./book/mathematical-induction/peanos-axioms.tex
 Overfull \hbox (0.5pt too wide) in paragraph at lines 27--27
 [][] 
  []
 
-[150]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 42--42
 [][] 
  []
 
-[151]
+[112]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 82--82
 [][] 
  []
 
-[152] [153]
+[113] [114]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 173--173
 [][] 
  []
@@ -2878,7 +2861,7 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 179--179
 [][] 
  []
 
-[154]
+[115]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 200--200
 [][] 
  []
@@ -2888,7 +2871,7 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 212--212
 [][] 
  []
 
-[155]) [156] (./book/mathematical-induction/weak-induction.tex
+) [116] (./book/mathematical-induction/weak-induction.tex
 Overfull \hbox (0.5pt too wide) in paragraph at lines 18--18
 [][] 
  []
@@ -2898,45 +2881,44 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 44--44
 [][] 
  []
 
-[157] [158] [159] [160] [161] [162] [163] [164] [165]
+[117] [118] [119] [120] [121] [122] [123]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 335--335
 [][] 
  []
 
-[166] [167] [168]
+[124] [125]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 426--426
 [][] 
  []
 
-[169] [170]) [171] (./book/mathematical-induction/strong-induction.tex
+[126] [127]) [128] (./book/mathematical-induction/strong-induction.tex
 Overfull \hbox (0.5pt too wide) in paragraph at lines 37--37
 [][] 
  []
 
-[172]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 67--67
 [][] 
  []
 
-[173]
+[129]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 121--121
 [][] 
  []
 
-[174]
+[130]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 144--144
 [][] 
  []
 
-[175] [176]
+[131] [132]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 241--241
 [][] 
  []
 
-[177]
 Package hyperref Info: bookmark level for unknown lemma defaults to 0 on input 
 line 271.
- [178]
+[133]
 Package hyperref Info: bookmark level for unknown writingtip defaults to 0 on i
 nput line 306.
 
@@ -2944,32 +2926,32 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 328--328
 [][] 
  []
 
-[179]
+[134]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 348--348
 [][] 
  []
 
-[180]) [181] (./book/mathematical-induction/q.tex [182] [183]))
-(./book/relations/_relations.tex [184]
-Chapter 5.
-(./book/relations/intro.tex) [185
+[135]) [136] (./book/mathematical-induction/q.tex [137] [138]))
+(./book/relations/_relations.tex [139] [140
 
-] (./book/relations/relations.tex
+]
+Chapter 5.
+(./book/relations/intro.tex) [141] (./book/relations/relations.tex
 Overfull \hbox (0.5pt too wide) in paragraph at lines 18--18
 [][] 
  []
 
-[186]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 50--50
 [][] 
  []
 
-
+[142]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 70--70
 [][] 
  []
 
-[187] [188]
+[143]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 117--117
 [][] 
  []
@@ -2979,89 +2961,89 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 129--129
 [][] 
  []
 
-
+[144]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 148--148
 [][] 
  []
 
-[189]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 159--159
 [][] 
  []
 
-[190]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 189--189
 [][] 
  []
 
-
+[145]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 234--234
 [][] 
  []
 
-[191]
+[146]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 276--276
 [][] 
  []
 
-[192]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 319--319
 [][] 
  []
 
-[193]) [194] [195] (./book/relations/equivalence-relations.tex
+[147]) [148] (./book/relations/equivalence-relations.tex
 Overfull \hbox (0.5pt too wide) in paragraph at lines 14--14
 [][] 
  []
 
-[196]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 60--60
 [][] 
  []
 
-[197]
+[149]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 96--96
 [][] 
  []
 
-[198]
+[150]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 126--126
 [][] 
  []
 
 Package hyperref Info: bookmark level for unknown latextip defaults to 0 on inp
 ut line 129.
-[199]
+[151]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 170--170
 [][] 
  []
 
-[200]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 215--215
 [][] 
  []
 
-
+[152]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 248--248
 [][] 
  []
 
-[201] [202]
+[153]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 296--296
 [][] 
  []
 
-[203] [204] [205]
+[154] [155] [156]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 405--405
 [][] 
  []
 
-[206]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 425--425
 [][] 
  []
 
-[207]) [208] (./book/relations/q.tex
+[157]) [158] (./book/relations/q.tex
 Overfull \hbox (0.5pt too wide) in paragraph at lines 52--52
 [][] 
  []
@@ -3071,23 +3053,22 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 64--64
 [][] 
  []
 
-[209] [210])) (./book/finite-infinite-sets/_finite-infinite-sets.tex [211]
-[212
+[159])) (./book/finite-infinite-sets/_finite-infinite-sets.tex [160]
+Chapter 6.
+(./book/finite-infinite-sets/intro.tex) [161
 
 ]
-Chapter 6.
-(./book/finite-infinite-sets/intro.tex) [213]
 (./book/finite-infinite-sets/finite-sets.tex
 Overfull \hbox (0.5pt too wide) in paragraph at lines 35--35
 [][] 
  []
 
-[214] [215]
+[162]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 101--101
 [][] 
  []
 
-[216]
+[163]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 137--137
 [][] 
  []
@@ -3097,39 +3078,32 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 150--150
 [][] 
  []
 
-
-Underfull \hbox (badness 3954) in paragraph at lines 153--154
-[][][][]\T1/ptm/m/n/10 Ex-ample 6.1.2[][] showed that $\OMS/ztmcm/m/n/10 jf[]\O
-ML/ztmcm/m/it/10 ; []; []; []; []; []\OMS/ztmcm/m/n/10 gj \OT1/ztmcm/m/n/10 = 6
-$\T1/ptm/m/n/10 , and
- []
-
-[217]
+[164]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 202--202
 [][] 
  []
 
-[218]
+[165]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 240--240
 [][] 
  []
 
-[219] [220] [221]
+[166] [167]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 360--360
 [][] 
  []
 
-[222]) [223] (./book/finite-infinite-sets/infinite-sets.tex [224]
+) [168] (./book/finite-infinite-sets/infinite-sets.tex
 Overfull \hbox (0.5pt too wide) in paragraph at lines 33--33
 [][] 
  []
 
-[225] [226]
+[169] [170]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 127--127
 [][] 
  []
 
-[227] [228]
+[171] [172]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 197--197
 [][] 
  []
@@ -3139,12 +3113,12 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 224--224
 [][] 
  []
 
-[229]
+[173]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 246--246
 [][] 
  []
 
-[230]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 264--264
 [][] 
  []
@@ -3154,37 +3128,37 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 283--283
 [][] 
  []
 
-[231]
+[174]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 304--304
 [][] 
  []
 
-[232]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 336--336
 [][] 
  []
 
-[233]
+[175] [176]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 409--409
 [][] 
  []
 
-[234] [235]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 448--448
 [][] 
  []
 
-
+[177]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 484--484
 [][] 
  []
 
-[236]) [237] (./book/finite-infinite-sets/q.tex)) [238] [239
+[178]) [179] (./book/finite-infinite-sets/q.tex)) [180] [181
 
-] [240]
+] [182]
 (./book/number-theory/_number-theory.tex
 Chapter 7.
-(./book/number-theory/intro.tex) [241
+(./book/number-theory/intro.tex) [183
 
 ] (./book/number-theory/divisibility.tex
 Overfull \hbox (0.5pt too wide) in paragraph at lines 18--18
@@ -3193,7 +3167,7 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 18--18
 
 Package hyperref Info: bookmark level for unknown strategy* defaults to 0 on in
 put line 21.
-[242]
+[184]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 80--80
 [][] 
  []
@@ -3203,12 +3177,12 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 94--94
 [][] 
  []
 
-[243]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 111--111
 [][] 
  []
 
-
+[185]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 126--126
 [][] 
  []
@@ -3218,12 +3192,12 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 141--141
 [][] 
  []
 
-[244]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 171--171
 [][] 
  []
 
-[245] [246]
+[186]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 216--216
 [][] 
  []
@@ -3233,30 +3207,30 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 232--232
 [][] 
  []
 
-[247]
+[187]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 272--272
 [][] 
  []
 
-[248]
+[188]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 321--321
 [][] 
  []
 
-[249] [250]
+[189]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 377--377
 [][] 
  []
 
-[251]
+[190]
 Package hyperref Info: bookmark level for unknown corollary defaults to 0 on in
 put line 413.
- [252] [253]
+ [191] [192]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 490--490
 [][] 
  []
 
-[254] [255]
+[193]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 553--553
 [][] 
  []
@@ -3266,17 +3240,17 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 571--571
 [][] 
  []
 
-[256]) [257] (./book/number-theory/prime-numbers.tex
+[194]) [195] (./book/number-theory/prime-numbers.tex
 Overfull \hbox (0.5pt too wide) in paragraph at lines 29--29
 [][] 
  []
 
-[258]
+[196]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 65--65
 [][] 
  []
 
-[259] [260]
+[197]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 120--120
 [][] 
  []
@@ -3286,17 +3260,17 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 151--151
 [][] 
  []
 
-[261] [262]
+[198]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 199--199
 [][] 
  []
 
-[263] [264]
+[199] [200]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 280--280
 [][] 
  []
 
-[265]) [266] (./book/number-theory/modular-arithmetic.tex
+[201]) [202] (./book/number-theory/modular-arithmetic.tex
 Overfull \hbox (0.5pt too wide) in paragraph at lines 7--7
 [][] 
  []
@@ -3306,52 +3280,52 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 11--11
 [][] 
  []
 
-[267] [268]
+[203]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 86--86
 [][] 
  []
 
-[269] [270] [271]
+[204] [205]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 165--165
 [][] 
  []
 
-[272] [273]
+[206] [207]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 241--241
 [][] 
  []
 
-[274]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 271--271
 [][] 
  []
 
-[275]
+[208]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 322--322
 [][] 
  []
 
-[276]
+[209]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 381--381
 [][] 
  []
 
-[277] [278]
+[210] [211]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 467--467
 [][] 
  []
 
-[279] [280] [281]
+[212] [213]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 587--587
 [][] 
  []
 
-[282]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 606--606
 [][] 
  []
 
-[283] [284]
+[214] [215]
 Package hyperref Info: bookmark level for unknown oexercise defaults to 0 on in
 put line 672.
 
@@ -3359,22 +3333,22 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 702--702
 [][] 
  []
 
-[285]
+[216]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 736--736
 [][] 
  []
 
-[286] [287] [288]
+[217] [218]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 825--825
 [][] 
  []
 
-[289] [290]
+[219] [220]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 871--871
 [][] 
  []
 
-[291]) [292] (./book/number-theory/q.tex
+) [221] (./book/number-theory/q.tex
 Overfull \hbox (0.5pt too wide) in paragraph at lines 29--29
 [][] 
  []
@@ -3384,31 +3358,23 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 41--41
 [][] 
  []
 
-[293]
-Underfull \hbox (badness 4886) in paragraph at lines 88--93
-\T1/ptm/m/n/10 where $\OML/ztmcm/m/it/10 d \OMS/ztmcm/m/n/10 2 \U/msb/m/n/10 N$
- \T1/ptm/m/n/10 is least such that $\OT1/ztmcm/m/n/10 5[] \OML/ztmcm/m/it/10 > 
-n$\T1/ptm/m/n/10 , and where $\OMS/ztmcm/m/n/10 b\OML/ztmcm/m/it/10 x\OMS/ztmcm
-/m/n/10 c$ \T1/ptm/m/n/10 ([]L[]T[]X code:
- []
-
-[294])) (./book/enumerative-combinatorics/_enumerative-combinatorics.tex
-[295] [296
+[222])) (./book/enumerative-combinatorics/_enumerative-combinatorics.tex
+[223] [224
 
 ]
 Chapter 8.
-(./book/enumerative-combinatorics/intro.tex) [297]
+(./book/enumerative-combinatorics/intro.tex) [225]
 (./book/enumerative-combinatorics/counting-principles.tex
 Overfull \hbox (0.5pt too wide) in paragraph at lines 24--24
 [][] 
  []
 
-[298]
+[226]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 54--54
 [][] 
  []
 
-[299]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 82--82
 [][] 
  []
@@ -3418,22 +3384,22 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 101--101
 [][] 
  []
 
-[300] [301]
+[227] [228]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 165--165
 [][] 
  []
 
-[302]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 182--182
 [][] 
  []
 
-[303] [304] [305]
+[229] [230] [231]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 295--295
 [][] 
  []
 
-[306] [307] [308]
+[232] [233]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 370--370
 [][] 
  []
@@ -3443,33 +3409,32 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 387--387
 [][] 
  []
 
-[309] [310] [311]
+[234] [235]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 458--458
 [][] 
  []
 
-[312]
+[236]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 506--506
 [][] 
  []
 
-[313] [314]
+[237] [238]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 580--580
 [][] 
  []
 
-[315]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 599--599
 [][] 
  []
 
-[316] [317]) [318] (./book/enumerative-combinatorics/alternating-sums.tex
-[319] [320]
+[239]) [240] (./book/enumerative-combinatorics/alternating-sums.tex [241]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 81--81
 [][] 
  []
 
-[321]
+[242]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 104--104
 [][] 
  []
@@ -3479,17 +3444,17 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 133--133
 [][] 
  []
 
-[322]
+[243]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 172--172
 [][] 
  []
 
-[323]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 197--197
 [][] 
  []
 
-[324] [325]
+[244] [245]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 250--250
 [][] 
  []
@@ -3499,62 +3464,62 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 275--275
 [][] 
  []
 
-[326] [327] [328] [329]
+[246] [247] [248]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 392--392
 [][] 
  []
 
-[330] [331] [332]
+[249] [250]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 480--480
 [][] 
  []
 
-[333]) [334] (./book/enumerative-combinatorics/q.tex [335] [336]))
-(./book/real-numbers/_real-numbers.tex [337] [338
-
-]
+) [251] (./book/enumerative-combinatorics/q.tex [252] [253]))
+(./book/real-numbers/_real-numbers.tex [254]
 Chapter 9.
-(./book/real-numbers/intro.tex) [339] (./book/real-numbers/inequalities.tex
+(./book/real-numbers/intro.tex) [255
+
+] (./book/real-numbers/inequalities.tex
 
 LaTeX Warning: Reference `defRealsInformal' on page 1 undefined on input line 5
 .
 
-[340]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 61--61
 [][] 
  []
 
-
+[256]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 75--75
 [][] 
  []
 
-[341] [342]
+[257]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 133--133
 [][] 
  []
 
-[343]
+[258]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 180--180
 [][] 
  []
 
-[344] [345]
+[259]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 223--223
 [][] 
  []
 
-[346] [347]
+[260] [261]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 307--307
 [][] 
  []
 
-[348] [349]
+[262]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 380--380
 [][] 
  []
 
-
+[263]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 387--387
 [][] 
  []
@@ -3564,17 +3529,17 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 398--398
 [][] 
  []
 
-[350] [351] [352]
+[264] [265]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 489--489
 [][] 
  []
 
-[353]
+[266]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 520--520
 [][] 
  []
 
-[354]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 541--541
 [][] 
  []
@@ -3584,27 +3549,27 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 552--552
 [][] 
  []
 
-[355]
+[267]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 594--594
 [][] 
  []
 
-[356]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 606--606
 [][] 
  []
 
-
+[268]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 628--628
 [][] 
  []
 
-[357]) [358] (./book/real-numbers/completeness-convergence.tex
+) [269] (./book/real-numbers/completeness-convergence.tex
 Overfull \hbox (0.5pt too wide) in paragraph at lines 20--20
 [][] 
  []
 
-[359]
+[270]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 62--62
 [][] 
  []
@@ -3619,140 +3584,140 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 81--81
 [][] 
  []
 
-[360] [361]
+[271]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 134--134
 [][] 
  []
 
-[362] [363]
+[272] [273]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 208--208
 [][] 
  []
 
-[364]
+[274]
 Package hyperref Info: bookmark level for unknown remark defaults to 0 on input
  line 249.
- [365] [366] [367] [368]
+ [275] [276]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 359--359
 [][] 
  []
 
-[369]
+[277]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 400--400
 [][] 
  []
 
-[370]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 421--421
 [][] 
  []
 
-[371]
+[278]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 476--476
 [][] 
  []
 
-[372] [373]
+[279] [280]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 540--540
 [][] 
  []
 
-[374]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 578--578
 [][] 
  []
 
-
+[281]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 602--602
 [][] 
  []
 
-[375]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 632--632
 [][] 
  []
 
-[376]
+[282]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 673--673
 [][] 
  []
 
-[377] [378]
+[283]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 734--734
 [][] 
  []
 
-
+[284]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 746--746
 [][] 
  []
 
-[379]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 767--767
 [][] 
  []
 
-[380]
+[285]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 809--809
 [][] 
  []
 
-[381]
+[286]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 838--838
 [][] 
  []
 
-[382]) [383] (./book/real-numbers/series-sums.tex
+) [287] (./book/real-numbers/series-sums.tex
 Overfull \hbox (0.5pt too wide) in paragraph at lines 21--21
 [][] 
  []
 
-[384]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 42--42
 [][] 
  []
 
-[385]
+[288]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 82--82
 [][] 
  []
 
-
+[289]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 111--111
 [][] 
  []
 
-[386] [387]
+[290]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 165--165
 [][] 
  []
 
-[388] [389]
+[291] [292]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 233--233
 [][] 
  []
 
-[390]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 245--245
 [][] 
  []
 
-[391]
+[293]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 297--297
 [][] 
  []
 
-[392]
+[294]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 312--312
 [][] 
  []
 
-[393]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 338--338
 [][] 
  []
 
-[394]
+[295]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 368--368
 [][] 
  []
@@ -3762,32 +3727,32 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 393--393
 [][] 
  []
 
-[395] [396]
+[296] [297]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 448--448
 [][] 
  []
 
-[397]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 488--488
 [][] 
  []
 
-[398]
+[298]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 522--522
 [][] 
  []
 
-[399] [400]
+[299] [300]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 585--585
 [][] 
  []
 
-[401]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 610--610
 [][] 
  []
 
-[402]
+[301]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 638--638
 [][] 
  []
@@ -3797,44 +3762,37 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 645--645
 [][] 
  []
 
-[403]
+[302]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 696--696
 [][] 
  []
 
-[404]
+[303]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 714--714
 [][] 
  []
 
-[405]) [406] (./book/real-numbers/q.tex [407] [408]))
-(./book/infinity/_infinity.tex [409] [410
+[304]) [305] (./book/real-numbers/q.tex [306])) (./book/infinity/_infinity.tex
+[307] [308
 
 ]
 Chapter 10.
-(./book/infinity/intro.tex) [411] (./book/infinity/cardinality.tex
+(./book/infinity/intro.tex) [309] (./book/infinity/cardinality.tex
 Overfull \hbox (0.5pt too wide) in paragraph at lines 32--32
 [][] 
  []
 
-[412]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 44--44
 [][] 
  []
 
-
-Underfull \hbox (badness 3895) in paragraph at lines 61--62
-[][]\T1/ptm/m/n/10 The \T1/ptm/b/n/10 car-din-al-ity of the con-tinuum \T1/ptm/
-m/n/10 is the car-dinal num-ber $\U/euf/m/n/10 c$ \T1/ptm/m/n/10 ([]L[]T[]X cod
-e:
- []
-
-
+[310]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 62--62
 [][] 
  []
 
-[413]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 88--88
 [][] 
  []
@@ -3844,7 +3802,7 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 104--104
 [][] 
  []
 
-[414]
+[311]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 125--125
 [][] 
  []
@@ -3854,43 +3812,37 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 145--145
 [][] 
  []
 
-[415]
+[312]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 179--179
 [][] 
  []
 
-[416] [417]
+[313]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 286--286
 [][] 
  []
 
-[418]
+[314]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 326--326
 [][] 
  []
 
-[419]
-Underfull \hbox (badness 1968) in paragraph at lines 343--344
-[]\T1/ptm/m/n/10 By the Cantor--Schröder--Bernstein the-orem ([][]The-orem 10.1
-.14[][]), it fol-lows that
- []
-
-) [420] (./book/infinity/cardinal-arithmetic.tex
+[315]) [316] (./book/infinity/cardinal-arithmetic.tex
 Overfull \hbox (0.5pt too wide) in paragraph at lines 20--20
 [][] 
  []
 
-[421]
+[317]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 64--64
 [][] 
  []
 
-[422] [423]
+[318]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 121--121
 [][] 
  []
 
-[424]
+[319]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 178--178
 [][] 
  []
@@ -3900,17 +3852,17 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 199--199
 [][] 
  []
 
-[425] [426]
+[320]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 246--246
 [][] 
  []
 
-
+[321]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 285--285
 [][] 
  []
 
-[427] [428]
+[322]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 342--342
 [][] 
  []
@@ -3920,129 +3872,100 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 367--367
 [][] 
  []
 
-[429] [430]
+[323] [324]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 414--414
 [][] 
  []
 
-[431]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 430--430
 [][] 
  []
 
-) [432] (./book/infinity/q.tex [433] [434]
+) [325] (./book/infinity/q.tex [326]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 180--180
 [][] 
  []
 
-[435])) (./book/probability-theory/_probability-theory.tex [436]
-Chapter 11.
-(./book/probability-theory/intro.tex) [437
+[327] [328])) (./book/probability-theory/_probability-theory.tex [329] [330
 
 ]
+Chapter 11.
+(./book/probability-theory/intro.tex) [331]
 (./book/probability-theory/discrete-probability-spaces.tex
 Overfull \hbox (0.5pt too wide) in paragraph at lines 31--31
 [][] 
  []
 
-[438] [439]
-Underfull \hbox (badness 1668) in paragraph at lines 73--74
-[]\T1/ptm/m/n/10 Countable ad-dit-iv-ity of prob-ab-il-ity measures---that is, 
-con-di-tion (ii) in [][]Defin-i-
- []
-
-[440] [441] [442] [443]
+[332] [333] [334] [335]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 200--200
 [][] 
  []
 
-[444]
+[336]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 226--226
 [][] 
  []
 
-[445]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 260--260
 [][] 
  []
 
-
-Overfull \hbox (2.54419pt too wide) detected at line 269
-[]
- []
-
-
+[337]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 289--289
 [][] 
  []
 
-[446] [447] [448]
+[338] [339]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 378--378
 [][] 
  []
 
-[449] [450] [451] [452]
+[340] [341]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 494--494
 [][] 
  []
 
-[453] [454] [455]) [456]
+[342] [343] [344]) [345]
 (./book/probability-theory/discrete-random-variables.tex
-Overfull \hbox (5.51111pt too wide) in paragraph at lines 8--10
-\T1/ptm/m/n/10 However, it is not at all clear from the ex-pres-sion $\OMS/ztmc
-m/m/n/10 f\OT1/ztmcm/m/n/10 (1\OML/ztmcm/m/it/10 ; \OT1/ztmcm/m/n/10 6)\OML/ztm
-cm/m/it/10 ; \OT1/ztmcm/m/n/10 (2\OML/ztmcm/m/it/10 ; \OT1/ztmcm/m/n/10 5)\OML/
-ztmcm/m/it/10 ; \OT1/ztmcm/m/n/10 (3\OML/ztmcm/m/it/10 ; \OT1/ztmcm/m/n/10 4)\O
-ML/ztmcm/m/it/10 ; \OT1/ztmcm/m/n/10 (4\OML/ztmcm/m/it/10 ; \OT1/ztmcm/m/n/10 3
-)\OML/ztmcm/m/it/10 ; \OT1/ztmcm/m/n/10 (5\OML/ztmcm/m/it/10 ; \OT1/ztmcm/m/n/1
-0 2)\OML/ztmcm/m/it/10 ; \OT1/ztmcm/m/n/10 (6\OML/ztmcm/m/it/10 ; \OT1/ztmcm/m/
-n/10 1)\OMS/ztmcm/m/n/10 g$
- []
-
-[457]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 35--35
 [][] 
  []
 
-
+[346]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 47--47
 [][] 
  []
 
-[458]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 85--85
 [][] 
  []
 
-[459] [460]
+[347]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 134--134
 [][] 
  []
 
-
+[348]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 165--165
 [][] 
  []
 
-[461]
+[349]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 200--200
 [][] 
  []
 
-[462]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 225--225
 [][] 
  []
 
-[463]
+[350]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 241--241
 [][] 
- []
-
-[464]
-Underfull \hbox (badness 1502) in paragraph at lines 263--264
-\T1/ptm/m/n/10 the \T1/ptm/b/n/10 Bernoulli dis-tri-bu-tion with para-meter $\O
-ML/ztmcm/m/it/10 p$ \T1/ptm/m/n/10 if its prob-ab-il-ity mass func-tion
  []
 
 
@@ -4050,80 +3973,73 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 266--266
 [][] 
  []
 
-
+[351]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 288--288
 [][] 
  []
 
-[465]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 311--311
 [][] 
  []
 
-[466]
-Underfull \hbox (badness 3668) in paragraph at lines 328--330
-[][]\T1/ptm/m/n/10 In [][]Ex-ample 11.2.25[][], we could have defined $\OMS/ztm
-cm/m/n/10 f\OT1/ztmcm/m/n/10 0\OML/ztmcm/m/it/10 ; \OT1/ztmcm/m/n/10 1\OMS/ztmc
-m/m/n/10 g$\T1/ptm/m/n/10 -valued ran-dom vari-ables
- []
-
-
+[352]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 343--343
 [][] 
  []
 
-[467]
+[353]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 366--366
 [][] 
  []
 
-[468] [469]
+[354]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 423--423
 [][] 
  []
 
-[470] [471]
+[355] [356]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 501--501
 [][] 
  []
 
-[472]) [473] (./book/probability-theory/q.tex))
-(./book/additional-topics/_additional-topics.tex [474]
-Chapter 12.
-(./book/additional-topics/intro.tex) [475
+[357]) [358] (./book/probability-theory/q.tex))
+(./book/additional-topics/_additional-topics.tex [359] [360
 
 ]
+Chapter 12.
+(./book/additional-topics/intro.tex) [361]
 (./book/additional-topics/order-relations.tex
 Overfull \hbox (0.5pt too wide) in paragraph at lines 23--23
 [][] 
  []
 
-[476]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 52--52
 [][] 
  []
 
-[477]
+[362]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 102--102
 [][] 
  []
 
-[478]
+[363]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 149--149
 [][] 
  []
 
-[479] [480]
+[364]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 209--209
 [][] 
  []
 
-
+[365]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 223--223
 [][] 
  []
 
-[481] [482]
+[366]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 281--281
 [][] 
  []
@@ -4138,20 +4054,14 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 320--320
 [][] 
  []
 
-[483]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 338--338
 [][] 
  []
 
-
+[367]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 345--345
 [][] 
- []
-
-
-Underfull \hbox (badness 1953) in paragraph at lines 347--348
-[]\T1/ptm/m/n/10 Another ex-tremely im-port-ant ex-ample of a Boolean al-gebra 
-is known as the
  []
 
 
@@ -4159,7 +4069,7 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 351--351
 [][] 
  []
 
-[484]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 366--366
 [][] 
  []
@@ -4169,37 +4079,37 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 373--373
 [][] 
  []
 
-[485]
+[368]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 410--410
 [][] 
  []
 
-[486]) [487] (./book/additional-topics/structural-induction.tex [488] [489]
+[369]) [370] (./book/additional-topics/structural-induction.tex [371]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 87--87
 [][] 
  []
 
-[490] [491] [492]
+[372] [373]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 230--230
 [][] 
  []
 
-
+[374]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 239--239
 [][] 
  []
 
-[493] [494]
+[375]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 302--302
 [][] 
  []
 
-[495] [496]
+[376]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 360--360
 [][] 
  []
 
-[497]
+[377]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 380--380
 [][] 
  []
@@ -4209,57 +4119,50 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 412--412
 [][] 
  []
 
-[498] [499]
+[378]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 475--475
 [][] 
  []
 
-[500]
+[379]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 512--512
 [][] 
  []
 
-[501]
+[380]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 555--555
 [][] 
  []
 
-[502]
-Underfull \hbox (badness 6380) in paragraph at lines 575--576
-[]\T1/ptm/m/n/10 We prove by struc-tural in-duc-tion on $\OT1/ztmcm/m/n/10 (\OM
-L/ztmcm/m/it/10 p[]; p[]; [] ; p[]\OT1/ztmcm/m/n/10 ) \OMS/ztmcm/m/n/10 2 \OML/
-ztmcm/m/it/10 A$ \T1/ptm/m/n/10 that the in-teger
- []
-
-[503] [504]
+[381] [382] [383]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 636--636
 [][] 
  []
 
-[505] [506] [507]
+[384] [385]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 740--740
 [][] 
  []
 
-[508]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 752--752
 [][] 
  []
 
-
+[386]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 779--779
 [][] 
  []
 
-[509]) [510] (./book/additional-topics/q.tex)) [511] [512
+) [387] (./book/additional-topics/q.tex)) [388] [389
 
-] [513] [514]
+] [390]
 (./book/proof-writing/_proof-writing.tex
 Appendix A.
-(./book/proof-writing/intro.tex) [515
+(./book/proof-writing/intro.tex) [391
 
 ]
-(./book/proof-writing/elements-of-proof-writing.tex [516]
+(./book/proof-writing/elements-of-proof-writing.tex
 Package hyperref Info: bookmark level for unknown writingprinciple defaults to 
 0 on input line 35.
 
@@ -4267,27 +4170,45 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 37--37
 [][] 
  []
 
+[392]
 Package hyperref Info: bookmark level for unknown extract defaults to 0 on inpu
 t line 42.
-[517] [518]
+ [393]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 100--100
 [][] 
  []
 
-[519]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 131--131
 [][] 
  []
 
-[520] [521] [522]
+[394] [395]
+Underfull \hbox (badness 2318) in paragraph at lines 188--189
+[]\T1/ptm/m/n/10 Let X, Y and Z be sets, let [][][][][][] and [][][][][][] [][]
+[][][][],
+ []
+
+
+Underfull \hbox (badness 5359) in paragraph at lines 188--189
+\T1/ptm/m/n/10 and as-sume that F and G are in-jec-tive. Let [][][][][][] [][][
+][][][] and as-sume
+ []
+
+
+Underfull \hbox (badness 5504) in paragraph at lines 188--189
+\T1/ptm/m/n/10 that [][][][][][]. Then [][][][][][] [][][][][][] by def-i-ni-ti
+on of
+ []
+
+[396]
 LaTeX Font Info:    Trying to load font information for LGR+artemisia on input 
 line 236.
-
-(/usr/share/texlive/texmf-dist/tex/latex/gfsartemisia/lgrartemisia.fd)
+ (/usr/share/texlive/texmf-dist/tex/latex/gfsartemisia/lgrartemisia.fd)
 LaTeX Font Info:    Font shape `LGR/artemisia/m/n' will be
 (Font)              scaled to size 9.29993pt on input line 236.
- [523])
-[524] (./book/proof-writing/vocabulary.tex [525]
+
+[397]) [398] (./book/proof-writing/vocabulary.tex [399]
 Package hyperref Info: bookmark level for unknown vocabulary defaults to 0 on i
 nput line 47.
 
@@ -4295,44 +4216,63 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 68--68
 [][] 
  []
 
-[526]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 106--106
 [][] 
  []
 
-[527]
+[400]
+Overfull \hbox (124.90173pt too wide) in paragraph at lines 121--122
+[][]\T1/ptm/m/n/10 First note that $[] \OT1/ztmcm/m/n/10 = []$ \T1/ptm/m/n/10 a
+nd $[] \OT1/ztmcm/m/n/10 = []$\T1/ptm/m/n/10 , so [][][][][][], [][][][][][].
+ []
+
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 144--144
 [][] 
  []
 
-[528]
+[401]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 177--177
 [][] 
  []
 
-[529]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 220--220
 [][] 
  []
 
-[530]
+[402]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 278--278
 [][] 
  []
 
-[531]
+[403]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 335--335
 [][] 
  []
 
-[532]
+[404]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 372--372
 [][] 
  []
 
-[533]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 402--402
 [][] 
+ []
+
+
+Overfull \hbox (4.26935pt too wide) in paragraph at lines 408--409
+[][]\T1/ptm/m/n/10 ... so by [][]Propo-si-tion 7.1.34[][], we have [][][][][][]
+. [][][][][][] [][][][][][].
+ []
+
+[405]
+Underfull \hbox (badness 10000) in paragraph at lines 431--432
+[]\T1/ptm/m/n/10 (\T1/ptm/b/n/10 We may\T1/ptm/m/n/10 ) \T1/ptm/b/n/10 as-sume 
+$[][]$ \T1/ptm/m/n/10 (\T1/ptm/b/n/10 without loss of gen-er-al-ity\T1/ptm/m/n/
+10 )---\T1/ptm/b/n/10 otherwise
  []
 
 
@@ -4340,9 +4280,13 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 435--435
 [][] 
  []
 
-[534]
-Overfull \hbox (35.83289pt too wide) in paragraph at lines 448--449
-[][][][][][][][]
+
+Underfull \hbox (badness 5607) in paragraph at lines 441--442
+[][]\T1/ptm/m/n/10 Re-call that $\OML/ztmcm/m/it/10 '\OT1/ztmcm/m/n/10 (\OMS/zt
+mcm/m/n/10 ^^@\OML/ztmcm/m/it/10 n\OT1/ztmcm/m/n/10 ) = \OML/ztmcm/m/it/10 '\OT
+1/ztmcm/m/n/10 (\OML/ztmcm/m/it/10 n\OT1/ztmcm/m/n/10 )$ \T1/ptm/m/n/10 for all
+ $\OML/ztmcm/m/it/10 n \OMS/ztmcm/m/n/10 2 \U/msb/m/n/10 Z$\T1/ptm/m/n/10 , so 
+[][][][][][] [][][][][][]---
  []
 
 
@@ -4350,36 +4294,36 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 474--474
 [][] 
  []
 
-[535]
+[406]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 502--502
 [][] 
  []
 
-[536]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 524--524
 [][] 
  []
 
-[537])) (./book/miscellany/_miscellany.tex [538]
-Appendix B.
-(./book/miscellany/intro.tex) [539
+[407])) (./book/miscellany/_miscellany.tex [408] [409] [410
 
-] (./book/miscellany/zfc.tex
+]
+Appendix B.
+(./book/miscellany/intro.tex) [411] (./book/miscellany/zfc.tex
 Overfull \hbox (0.5pt too wide) in paragraph at lines 22--22
 [][] 
  []
 
-[540]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 45--45
 [][] 
  []
 
-
+[412]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 53--53
 [][] 
  []
 
-[541]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 77--77
 [][] 
  []
@@ -4399,12 +4343,12 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 98--98
 [][] 
  []
 
-
+[413]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 107--107
 [][] 
  []
 
-[542]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 133--133
 [][] 
  []
@@ -4419,7 +4363,7 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 148--148
 [][] 
  []
 
-[543]
+[414]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 179--179
 [][] 
  []
@@ -4429,12 +4373,11 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 186--186
 [][] 
  []
 
-) [544] (./book/miscellany/number-sets.tex
+) [415] (./book/miscellany/number-sets.tex
 Overfull \hbox (0.5pt too wide) in paragraph at lines 27--27
 [][] 
  []
 
-[545]
 Package hyperref Info: bookmark level for unknown construction defaults to 0 on
  input line 48.
 
@@ -4442,27 +4385,27 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 51--51
 [][] 
  []
 
-
+[416]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 58--58
 [][] 
  []
 
-[546]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 93--93
 [][] 
  []
 
-[547] [548]
+[417] [418]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 166--166
 [][] 
  []
 
-[549] [550]
+[419]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 217--217
 [][] 
  []
 
-[551]
+[420]
 Package hyperref Info: bookmark level for unknown csketch defaults to 0 on inpu
 t line 252.
 
@@ -4470,7 +4413,7 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 262--262
 [][] 
  []
 
-[552] [553]
+[421]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 298--298
 [][] 
  []
@@ -4480,12 +4423,11 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 310--310
 [][] 
  []
 
-
+[422]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 319--319
 [][] 
  []
 
-[554]
 Package hyperref Info: bookmark level for unknown axioms defaults to 0 on input
  line 332.
 
@@ -4493,22 +4435,22 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 360--360
 [][] 
  []
 
-[555]
+[423] [424]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 409--409
 [][] 
  []
 
-[556]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 467--467
 [][] 
  []
 
-[557] [558]
+[425] [426]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 520--520
 [][] 
  []
 
-[559]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 547--547
 [][] 
  []
@@ -4518,7 +4460,7 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 552--552
 [][] 
  []
 
-[560]) [561] (./book/miscellany/limits-of-functions.tex
+[427]) [428] (./book/miscellany/limits-of-functions.tex
 Overfull \hbox (0.5pt too wide) in paragraph at lines 12--12
 [][] 
  []
@@ -4528,43 +4470,42 @@ Overfull \hbox (0.5pt too wide) in paragraph at lines 35--35
 [][] 
  []
 
-[562]
 Package hyperref Info: bookmark level for unknown convention defaults to 0 on i
 nput line 48.
-
+[429]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 59--59
 [][] 
  []
 
-[563]
+
 Overfull \hbox (0.5pt too wide) in paragraph at lines 89--89
 [][] 
  []
 
-[564]
+[430]
 Overfull \hbox (0.5pt too wide) in paragraph at lines 114--114
 [][] 
  []
 
-)) (./book/hints-solutions/_hints-solutions.tex [565] [566
+)) (./book/hints-solutions/_hints-solutions.tex [431] [432
 
 ]
 Appendix C.
-[567] (./infdesc-hints.cll [568]
-LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <108.405> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 51.
+[433] (./infdesc-hints.cll [434] [435] [436] [437] [438] [439] [440]
+Underfull \hbox (badness 1783) in paragraph at lines 235--236
+\T1/ptm/m/n/10 A se-quence of $\OML/ztmcm/m/it/10 k$ \T1/ptm/m/n/10 in-te-gers 
+$\OT1/ztmcm/m/n/10 (\OML/ztmcm/m/it/10 n[]; n[]; [] ; n[]\OT1/ztmcm/m/n/10 ) \O
+MS/ztmcm/m/n/10 2 \U/msb/m/n/10 Z[]$ \T1/ptm/m/n/10 can be en-coded as a se-que
+nce of $\OT1/ztmcm/m/n/10 2\OML/ztmcm/m/it/10 k$ \T1/ptm/m/n/10 nat-u-ral num-b
+ers
+ []
 
-
-LaTeX Font Warning: Font shape `T1/cmtt/m/n' in size <108.405> not available
-(Font)              size <35.83> substituted on input line 51.
-
-[569] [570] [571] [572] [573] [574] [575] [576] [577] [578] [579] [580]
-[581]) [582] (./infdesc-solutions.cll
+[441] [442] [443]) [444] [445] (./infdesc-solutions.cll
 Underfull \hbox (badness 10000) in paragraph at lines 9--9
 
  []
 
-[583] [584] [585] [586])) (./book/latex/_latex.tex [587] [588]
+[446] [447] [448])) (./book/latex/_latex.tex [449] [450]
 Appendix D.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 2.
@@ -4572,14 +4513,14 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 2.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 2.
-(./book/latex/latex.tex [589
+(./book/latex/latex.tex [451
 
-] [590]
+] [452]
 Overfull \hbox (6.79999pt too wide) in paragraph at lines 67--67
 [][] 
  []
 
-[591] [592] [593]
+[453] [454]
 Overfull \hbox (6.79999pt too wide) in paragraph at lines 162--162
 [][] 
  []
@@ -4589,22 +4530,21 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 180--180
 [][] 
  []
 
-[594]
+
 Overfull \hbox (6.79999pt too wide) in paragraph at lines 212--212
 [][] 
  []
 
-
+[455]
 Overfull \hbox (6.79999pt too wide) in paragraph at lines 236--236
 [][] 
  []
 
-[595]
 LaTeX Font Info:    Trying to load font information for T1+cmss on input line 2
 39.
- (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmss.fd
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 2023/04/13 v2.5m Standard LaTeX font definitions
-) [596]
+) [456]
 Overfull \hbox (6.79999pt too wide) in paragraph at lines 276--276
 [][] 
  []
@@ -4619,63 +4559,63 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 326--326
 [][] 
  []
 
-[597]
-<book/media/donkey.png, id=8845, 361.35pt x 430.60875pt>
+[457]
+<book/media/donkey.png, id=8210, 361.35pt x 430.60875pt>
 File: book/media/donkey.png Graphic file (type png)
 <use book/media/donkey.png>
 Package pdftex.def Info: book/media/donkey.png  used on input line 346.
-(pdftex.def)             Requested size: 104.06992pt x 124.01259pt.
+(pdftex.def)             Requested size: 136.57462pt x 162.75256pt.
 
 Overfull \hbox (6.79999pt too wide) in paragraph at lines 348--348
 [][] 
  []
 
-[598 <./book/media/donkey.png>] [599]
-<book/media/latex-exercise-crop.pdf, id=8862, 461.725pt x 600.2425pt>
+[458 <./book/media/donkey.png>]
+<book/media/latex-exercise-crop.pdf, id=8222, 461.725pt x 600.2425pt>
 File: book/media/latex-exercise-crop.pdf Graphic file (type pdf)
 <use book/media/latex-exercise-crop.pdf>
 Package pdftex.def Info: book/media/latex-exercise-crop.pdf  used on input line
  365.
 (pdftex.def)             Requested size: 461.72388pt x 600.24103pt.
- [600 <./book/media/latex-exercise-crop.pdf>]
+ [459 <./book/media/latex-exercise-crop.pdf>]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 374.
- (./book/media/template.tex))) [601] [602
 
-] [603
+(./book/media/template.tex))) [460] [461
 
-] [604]
+
+] [462]
 runsystem(makeindex infdesc.idx)...executed safely (allowed).
 
- (./infdesc.ind
-[605
+ (./infdesc.ind [463
 
 
-] [606] [607] [608] [609] [610])
+] [464]
+[465] [466]) [467] [468
+
+]
 runsystem(makeindex vocabulary.idx)...executed safely (allowed).
 
- (./vocabulary.ind) [611
+ (./vocabulary.ind) [469
 
-
-] [612
+] [470
 
 ]
 runsystem(makeindex notation.idx)...executed safely (allowed).
 
+ (./notation.ind
+[471
 
-(./notation.ind [613
-
-]) [614]
+]) [472]
 runsystem(makeindex latex.idx)...executed safely (allowed).
 
- (./latex.ind [615
+ (./latex.ind [473
 
 
-] [616])
-(./book/licence/_licence.tex [617] [618
+]) (./book/licence/_licence.tex [474] [475
 
-] [619] [620] [621] [622] [623])
-[624] 
+]
+[476] [477]) [478] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (./infdesc.aux)
  ***********
@@ -4684,21 +4624,17 @@ L3 programming layer <2020/03/25>
  ***********
 
 
-LaTeX Font Warning: Size substitutions with differences
-(Font)              up to 72.575pt have occurred.
-
-
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 52265 strings out of 474222
- 1045160 string characters out of 5748733
+ 52019 strings out of 476106
+ 1041521 string characters out of 5793933
  2091975 words of memory out of 5000000
- 68550 multiletter control sequences out of 15000+600000
- 747982 words of font info for 334 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 119i,20n,137p,1704b,2529s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 68218 multiletter control sequences out of 15000+600000
+ 741385 words of font info for 329 fonts, out of 8000000 for 9000
+ 59 hyphenation exceptions out of 8191
+ 119i,20n,137p,1693b,2529s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb></usr/
 share/texlive/texmf-dist/fonts/type1/bitstrea/charter/bchbi8a.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb></usr/share/texlive/t
@@ -4719,17 +4655,16 @@ e/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/share/texmf/fonts/type1/pu
 blic/cm-super/sfss1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt08
 00.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt0900.pfb></usr/share/t
-exmf/fonts/type1/public/cm-super/sftt1000.pfb></usr/share/texmf/fonts/type1/pub
-lic/cm-super/sftt3583.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol
-/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/urw/times/utmri8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/zap
-fding/uzdr.pfb>
-Output written on infdesc.pdf (644 pages, 2504194 bytes).
+exmf/fonts/type1/public/cm-super/sftt1000.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/sy
+mbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/urw/zapfding/uzdr.pfb>
+Output written on infdesc.pdf (492 pages, 2279865 bytes).
 PDF statistics:
- 11176 PDF objects out of 12825 (max. 8388607)
- 9980 compressed objects within 100 object streams
- 4836 named destinations out of 5155 (max. 500000)
+ 10479 PDF objects out of 10688 (max. 8388607)
+ 9442 compressed objects within 95 object streams
+ 4684 named destinations out of 5155 (max. 500000)
  652 words of extra memory for PDF output out of 10000 (max. 10000000)
 

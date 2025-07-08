@@ -10,6 +10,6 @@ Scanning input file notation.idx....
    -- Incomplete first argument (premature LFD).
 done (91 entries accepted, 3 rejected).
 Sorting entries....done (621 comparisons).
-Generating output file notation.ind....done (124 lines written, 0 warnings).
+Generating output file notation.ind....done (122 lines written, 0 warnings).
 Output written in notation.ind.
 Transcript written in notation.ilg.

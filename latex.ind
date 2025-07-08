@@ -2,168 +2,168 @@
 
   \item Math mode commands
     \subitem {\color  {lccol2} \tt  \textbackslash {}\{\dots  \textbackslash {}\}}, $\{\dots  \}$, 
-		\hyperpage{10}
+		\hyperpage{8}
     \subitem {\color  {lccol2} \tt  \textbackslash {}aleph}, $\aleph $, 
-		\hyperpage{413}
+		\hyperpage{310}
     \subitem {\color  {lccol2} \tt  \textbackslash {}approx}, $\approx $, 
-		\hyperpage{196}
+		\hyperpage{149}
     \subitem {\color  {lccol2} \tt  \textbackslash {}binom}, $\binom  {n}{k}$, 
-		\hyperpage{155}, \hyperpage{298}
+		\hyperpage{116}, \hyperpage{226}
     \subitem {\color  {lccol2} \tt  \textbackslash {}bot}, $\bot $, 
-		\hyperpage{47}, \hyperpage{68}, \hyperpage{478}
+		\hyperpage{35}, \hyperpage{50}, \hyperpage{364}
     \subitem {\color  {lccol2} \tt  \textbackslash {}cdot}, $\cdot $, 
-		\hyperpage{345}
+		\hyperpage{259}
     \subitem {\color  {lccol2} \tt  \textbackslash {}circ}, $\circ $, 
-		\hyperpage{122}
+		\hyperpage{90}
     \subitem {\color  {lccol2} \tt  \textbackslash {}cong}, $\cong  $, 
-		\hyperpage{196}
+		\hyperpage{149}
     \subitem {\color  {lccol2} \tt  \textbackslash {}dots}, $\dots  $, 
-		\hyperpage{11}
+		\hyperpage{8}
     \subitem {\color  {lccol2} \tt  \textbackslash {}equiv}, $\equiv $, 
-		\hyperpage{65}, \hyperpage{196}
+		\hyperpage{48}, \hyperpage{149}
     \subitem {\color  {lccol2} \tt  \textbackslash {}forall}, $\forall $, 
-		\hyperpage{57}
+		\hyperpage{41}
     \subitem {\color  {lccol2} \tt  \textbackslash {}ge}, $\geqslant $, 
-		\hyperpage{21}
+		\hyperpage{15}
     \subitem {\color  {lccol2} \tt  \textbackslash {}in}, $\in $, 
-		\hyperpage{9}
+		\hyperpage{7}
     \subitem {\color  {lccol2} \tt  \textbackslash {}infty}, $\infty $, 
-		\hyperpage{13}
+		\hyperpage{9}
     \subitem {\color  {lccol2} \tt  \textbackslash {}le}, $\leqslant $, 
-		\hyperpage{21}
+		\hyperpage{15}
     \subitem {\color  {lccol2} \tt  \textbackslash {}Leftrightarrow}, $\Leftrightarrow $, 
-		\hyperpage{44}
+		\hyperpage{32}
     \subitem {\color  {lccol2} \tt  \textbackslash {}lVert\dots  {}\textbackslash {}rVert}, $\lVert \dots  {} \rVert $, 
-		\hyperpage{342}
+		\hyperpage{257}
     \subitem {\color  {lccol2} \tt  \textbackslash {}mathbb}, $\mathbb  {A}, \mathbb  {B}, \dots  $, 
-		\hyperpage{10}, \hyperpage{439}, \hyperpage{470}, 
-		\hyperpage{596}
+		\hyperpage{7}, \hyperpage{332}, \hyperpage{355}, 
+		\hyperpage{456}
     \subitem {\color  {lccol2} \tt  \textbackslash {}mathbf}, $\mathbf  {Aa}, \mathbf  {Bb}, \dots  $, 
-		\hyperpage{596}
+		\hyperpage{456}
     \subitem {\color  {lccol2} \tt  \textbackslash {}mathcal}, $\mathcal  {A}, \mathcal  {B}, \dots  $, 
-		\hyperpage{88}, \hyperpage{94}, \hyperpage{596}
+		\hyperpage{64}, \hyperpage{69}, \hyperpage{456}
     \subitem {\color  {lccol2} \tt  \textbackslash {}mathfrak}, $\mathfrak  {Aa}, \mathfrak  {Bb}, \dots  $, 
-		\hyperpage{413}, \hyperpage{596}
+		\hyperpage{311}, \hyperpage{456}
     \subitem {\color  {lccol2} \tt  \textbackslash {}mathrel}, $\mathrel {R}, \dots  $, 
-		\hyperpage{186}
+		\hyperpage{142}
     \subitem {\color  {lccol2} \tt  \textbackslash {}mathrm}, $\mathrm  {Aa}, \mathrm  {Bb}, \dots  $, 
-		\hyperpage{118}, \hyperpage{120}, \hyperpage{187}, 
-		\hyperpage{247}, \hyperpage{257}, \hyperpage{360}, 
-		\hyperpage{490}, \hyperpage{498}, \hyperpage{596}
+		\hyperpage{87}, \hyperpage{89}, \hyperpage{143}, 
+		\hyperpage{187}, \hyperpage{194}, \hyperpage{271}, 
+		\hyperpage{372}, \hyperpage{378}, \hyperpage{456}
     \subitem {\color  {lccol2} \tt  \textbackslash {}mathsf}, $\mathsf  {Aa}, \mathsf  {Bb}, \dots  $, 
-		\hyperpage{412}, \hyperpage{596}
+		\hyperpage{310}, \hyperpage{456}
     \subitem {\color  {lccol2} \tt  \textbackslash {}mid}, $\mid $, 
-		\hyperpage{244}, \hyperpage{449}
+		\hyperpage{185}, \hyperpage{340}
     \subitem {\color  {lccol2} \tt  \textbackslash {}neg}, $\neg $, 
-		\hyperpage{47}
+		\hyperpage{35}
     \subitem {\color  {lccol2} \tt  \textbackslash {}nmid}, $\nmid $, 
-		\hyperpage{244}
+		\hyperpage{185}
     \subitem {\color  {lccol2} \tt  \textbackslash {}not}, $\not \in , \not \equiv , \dots  $, 
-		\hyperpage{197}, \hyperpage{267}
+		\hyperpage{150}, \hyperpage{203}
     \subitem {\color  {lccol2} \tt  \textbackslash {}nsubseteq}, $\nsubseteq $, 
-		\hyperpage{90}
+		\hyperpage{65}
     \subitem {\color  {lccol2} \tt  \textbackslash {}oplus}, $\oplus $, 
-		\hyperpage{323}
+		\hyperpage{243}
     \subitem {\color  {lccol2} \tt  \textbackslash {}perp}, $\perp $, 
-		\hyperpage{251}
+		\hyperpage{190}
     \subitem {\color  {lccol2} \tt  \textbackslash {}pmod}, $~\left (\text  {mod}~n\right )$, 
-		\hyperpage{197}, \hyperpage{267}
+		\hyperpage{150}, \hyperpage{203}
     \subitem {\color  {lccol2} \tt  \textbackslash {}prec}, $\prec $, 
-		\hyperpage{478}
+		\hyperpage{363}
     \subitem {\color  {lccol2} \tt  \textbackslash {}preceq}, $\preccurlyeq $, 
-		\hyperpage{476}
+		\hyperpage{362}
     \subitem {\color  {lccol2} \tt  \textbackslash {}Rightarrow}, $\Rightarrow $, 
-		\hyperpage{42}
+		\hyperpage{30}
     \subitem {\color  {lccol2} \tt  \textbackslash {}setminus}, $\setminus $, 
-		\hyperpage{102}
+		\hyperpage{74}
     \subitem {\color  {lccol2} \tt  \textbackslash {}sim}, $\sim $, 
-		\hyperpage{196}, \hyperpage{464}
+		\hyperpage{149}, \hyperpage{351}
     \subitem {\color  {lccol2} \tt  \textbackslash {}sqcup}, $\sqcup $, 
-		\hyperpage{221}
+		\hyperpage{167}
     \subitem {\color  {lccol2} \tt  \textbackslash {}sqsubset}, $\sqsubset $, 
-		\hyperpage{478}
+		\hyperpage{363}
     \subitem {\color  {lccol2} \tt  \textbackslash {}sqsubseteq}, $\sqsubseteq $, 
-		\hyperpage{476}
+		\hyperpage{362}
     \subitem {\color  {lccol2} \tt  \textbackslash {}subset}, $\subset $, 
-		\hyperpage{90}
+		\hyperpage{65}
     \subitem {\color  {lccol2} \tt  \textbackslash {}subseteq}, $\subseteq $, 
-		\hyperpage{90}
+		\hyperpage{65}
     \subitem {\color  {lccol2} \tt  \textbackslash {}subsetneq}, $\subsetneq $, 
-		\hyperpage{90}
+		\hyperpage{65}
     \subitem {\color  {lccol2} \tt  \textbackslash {}text}, $\text  {access text mode within math mode}$, 
-		\hyperpage{598}
+		\hyperpage{458}
     \subitem {\color  {lccol2} \tt  \textbackslash {}times}, $\times $, 
-		\hyperpage{68}
+		\hyperpage{50}
     \subitem {\color  {lccol2} \tt  \textbackslash {}to}, $\to $, 
-		\hyperpage{114}, \hyperpage{364}
+		\hyperpage{84}, \hyperpage{274}
     \subitem {\color  {lccol2} \tt  \textbackslash {}top}, $\top $, 
-		\hyperpage{68}, \hyperpage{478}
+		\hyperpage{50}, \hyperpage{364}
     \subitem {\color  {lccol2} \tt  \textbackslash {}triangle}, $\triangle $, 
-		\hyperpage{109}
+		\hyperpage{79}
     \subitem {\color  {lccol2} \tt  \textbackslash {}varepsilon}, $\varepsilon $, 
-		\hyperpage{364}
+		\hyperpage{274}
     \subitem {\color  {lccol2} \tt  \textbackslash {}varnothing}, $\varnothing $, 
-		\hyperpage{94}
+		\hyperpage{68}
     \subitem {\color  {lccol2} \tt  \textbackslash {}varphi}, $\varphi $, 
-		\hyperpage{276}
+		\hyperpage{209}
     \subitem {\color  {lccol2} \tt  \textbackslash {}vec}, $\vec  a, \vec  b, \dots  $, 
-		\hyperpage{341}
+		\hyperpage{256}
     \subitem {\color  {lccol2} \tt  \textbackslash {}vee}, $\vee $, 
-		\hyperpage{38}, \hyperpage{481}
+		\hyperpage{28}, \hyperpage{365}
     \subitem {\color  {lccol2} \tt  \textbackslash {}wedge}, $\wedge $, 
-		\hyperpage{35}, \hyperpage{481}
+		\hyperpage{26}, \hyperpage{365}
 
   \indexspace
 
   \item Math mode environments
     \subitem {\color  {lccol2} \tt  align*}, aligned equation, 
-		\hyperpage{597}
+		\hyperpage{457}
 
   \indexspace
 
   \item Text mode commands
     \subitem {\color  {lccol2} \tt  \textbackslash {}includegraphics}, insert image, 
-		\hyperpage{598}
+		\hyperpage{458}
     \subitem {\color  {lccol2} \tt  \textbackslash {}label}, label (for use with {\color  {lccol2} \tt  \textbackslash {}ref}), 
-		\hyperpage{595}
+		\hyperpage{456}
     \subitem {\color  {lccol2} \tt  \textbackslash {}ref}, reference (for use with {\color  {lccol2} \tt  \textbackslash {}label}), 
-		\hyperpage{595}
+		\hyperpage{456}
     \subitem {\color  {lccol2} \tt  \textbackslash {}section}, section title with number, 
-		\hyperpage{594}
+		\hyperpage{455}
     \subitem {\color  {lccol2} \tt  \textbackslash {}section*}, section title without number, 
-		\hyperpage{594}
+		\hyperpage{455}
     \subitem {\color  {lccol2} \tt  \textbackslash {}textbf}, \textbf  {bold}, 
-		\hyperpage{596}
+		\hyperpage{456}
     \subitem {\color  {lccol2} \tt  \textbackslash {}textit}, \textit  {italic}, 
-		\hyperpage{596}
+		\hyperpage{456}
     \subitem {\color  {lccol2} \tt  \textbackslash {}textsf}, \textsf  {sans-serif}, 
-		\hyperpage{596}
+		\hyperpage{456}
     \subitem {\color  {lccol2} \tt  \textbackslash {}texttt}, \texttt  {monospace}, 
-		\hyperpage{596}
+		\hyperpage{456}
     \subitem {\color  {lccol2} \tt  \textbackslash {}underline}, underlined, 
-		\hyperpage{596}
+		\hyperpage{456}
 
   \indexspace
 
   \item Text mode environments
     \subitem {\color  {lccol2} \tt  corollary}, corollary environment, 
-		\hyperpage{595}
+		\hyperpage{455}
     \subitem {\color  {lccol2} \tt  definition}, definition environment, 
-		\hyperpage{595}
+		\hyperpage{455}
     \subitem {\color  {lccol2} \tt  enumerate}, enumerated list, 
-		\hyperpage{594}
+		\hyperpage{455}
     \subitem {\color  {lccol2} \tt  example}, example environment, 
-		\hyperpage{595}
+		\hyperpage{455}
     \subitem {\color  {lccol2} \tt  itemize}, bulleted list, 
-		\hyperpage{594}
+		\hyperpage{455}
     \subitem {\color  {lccol2} \tt  lemma}, lemma environment, 
-		\hyperpage{595}
+		\hyperpage{455}
     \subitem {\color  {lccol2} \tt  proof}, proof environment, 
-		\hyperpage{595}
+		\hyperpage{455}
     \subitem {\color  {lccol2} \tt  proposition}, proposition environment, 
-		\hyperpage{595}
-    \subitem {\color  {lccol2} \tt  tabular}, table, \hyperpage{596}
+		\hyperpage{455}
+    \subitem {\color  {lccol2} \tt  tabular}, table, \hyperpage{457}
     \subitem {\color  {lccol2} \tt  theorem}, theorem environment, 
-		\hyperpage{595}
+		\hyperpage{455}
 
 \end{theindex}
