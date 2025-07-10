@@ -1,0 +1,29 @@
+\usepackage{refcount} % for getting exercise number
+\usepackage{newfile}
+\newwrite\exerciseplanning
+\AtBeginDocument{%
+  % Automatically open the file at the beginning of the document
+  \immediate\openout\exerciseplanning=planning.csv
+}
+
+
+\newcommand{\plan}[2]{
+    \immediate\write\exerciseplanning{%
+        #1;%
+        #2;%
+        exercise;%
+        \theexercise
+    }
+}
+\newcommand{\chplan}[2]{
+    \immediate\write\exerciseplanning{%
+        #1;%
+        #2;%
+        chapex;%
+        \thechapex
+    }
+}
+
+\AfterEndDocument{
+    \immediate\closeout\exerciseplanning
+}
