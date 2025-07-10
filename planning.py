@@ -14,8 +14,8 @@ with open('planning.csv', 'r') as file:
 difficulties = sorted({difficulty for moment in data for difficulty in data[moment]})
 
 # Write the output CSV file
-with open('planning2.csv', 'w', newline='', delimiter=';') as file:
-    writer = csv.writer(file)
+with open('planning_processed.csv', 'w', newline='') as file:
+    writer = csv.writer(file, delimiter=';')
     writer.writerow(['Moment'] + difficulties)
     for moment in sorted(data.keys()):
         row = [moment]
