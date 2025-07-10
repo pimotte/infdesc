@@ -47,7 +47,7 @@ Recall the definition of von Neumann natural numbers from \Cref{defVonNeumannNat
 \begin{construction}
 \label{cnsNaturalNumbersVonNeumann}
 We construct the set $\mathbb{N}_{\mathsf{vN}}$ of all von Neumann natural numbers as follows. Let $X$ be an arbitrary set satisfying the axiom of infinity (\Cref{axZFCInfinity}), and then define $\mathbb{N}_{\mathsf{vN}}$ to be the intersection of all subsets of $X$ that also satisfy the axiom of infinity---that is:
-\[ \mathbb{N}_{\mathsf{vN}} = \{ x \in X \mid \forall U \in \mathcal{P}(X),\, [U \text{ satisfies the axiom of infinity } \Rightarrow x \in U ] \} \]
+\[ \mathbb{N}_{\mathsf{vN}} = \{ x \in X \mid \forall U \in \mathcal{P}(X),\, [U \text{ satisfies the axiom of infinity} \Rightarrow x \in U ] \} \]
 \end{construction}
 
 The existence of $\mathbb{N}_{\mathsf{vN}}$ follows from the axioms of power set (\Cref{axZFCPowerSet}) and separation (\Cref{axZFCSeparation}).
@@ -102,11 +102,34 @@ But then $g(f(z_1)) = g(z_2) = z_1$ and, for all $n \in \mathbb{N}_1$, we have
 and so $g \circ f = \mathrm{id}_{\mathbb{N}_1}$ by \Cref{lemIdentityFromNNN}. Likewise $f \circ g = \mathrm{id}_{\mathbb{N}_2}$. Hence $g$ is an inverse for $f$, so that $f$ is a bijection, as required.
 \end{proof}
 
-With this settled, we will now simply work with a fixed notion of natural numbers $(\mathbb{N}, z, s)$, and not worry too much about how it is constructed---if you like, take $\mathbb{N} = \mathbb{N}_{\mathsf{vN}}$, $z = 0_{\mathsf{vN}} = \varnothing$ and $s(n) = n^+ = n \cup \{ n \}$ for all $n \in \mathbb{N}$.
+With this settled, we can now say with confidence that it does not matter exactly which notion of natural numbers we are referring to when we write `$\mathbb{N}$' or `$0$' or `$24$': if you and I are using two different notions of natural numbers, then we can translate between our notions using the unique bijection from \Cref{thmNNNUnique}.
 
-The arithmetic operations that we know and love---addition, multiplication and exponentiation---are defined using recursion in \Cref{secPeanosAxioms}; so are factorials and binomial coefficients.
+Just for fun, though, let's explore a couple of other possible constructions and conventions that could be used.
 
-We can define more familiar notions involving natural numbers. For example, we can define the relation $\le$ on $\mathbb{N}$ by defining $m \le n$ to mean $\exists k \in \mathbb{N},\, m+k=n$. An alternative approach would be to define `$m \le n$' for $m,n \in \mathbb{N}$ by an iterated recursion on $m$ and $n$---specifically:
+\Cref{exZermeloNaturalNumbers} demonstrates that the von Neumann construction (\Cref{cnsNaturalNumbersVonNeumann}) is not the only way of constructing a notion of natural numbers from a set theoretic foundation.
+
+\begin{exercise}[Zermelo natural numbers]
+\label{exZermeloNaturalNumbers}
+\index{natural number!Zermelo}
+Set $0_{\mathsf{Z}} = \varnothing$, and for all objects $x$ define $s_{\mathsf{Z}}(x) = \{ x \}$. Let
+\[ \mathbb{N}_{\mathsf{Z}} = \{ 0_{\mathsf{Z}},~ s_{\mathsf{Z}}(0_{\mathsf{Z}}),~ s_{\mathsf{Z}}(s_{\mathsf{Z}}(0_{\mathsf{Z}})),~ s_{\mathsf{Z}}(s_{\mathsf{Z}}(s_{\mathsf{Z}}(0_{\mathsf{Z}}))) ,~ \dots \} \]
+Prove that $(\mathbb{N}_{\mathsf{Z}}, 0_{\mathsf{Z}}, s_{\mathsf{Z}})$ is a notion of natural numbers; this construction of the natural numbers is called the \textbf{Zermelo construction}.
+\end{exercise}
+
+In this book we have used the convention that the natural numbers start at $0$; however, in \Cref{chGettingStarted} we briefly mentioned that some authors choose to start them at $1$ instead. \Cref{exNaturalNumbersArbitraryBase} shows that in fact we can, in theory, adopt a convention where \textit{any} integer is the least natural number, and everything will work out just fine---or, at least, it will from the perspective of Peano's axioms, so that we can still use recursion and induction.
+
+\begin{exercise}[Natural numbers with an arbitrary base]
+\label{exNaturalNumbersArbitraryBase}
+Let $b \in \mathbb{Z}$, and define $\mathbb{Z}_{\ge b} = \{ n \in \mathbb{Z} \mid n \ge b \}$; for example, $\mathbb{Z}_{\ge 1} = \{ 1, 2, 3, 4, 5, \dots \}$. Let $s_b : \mathbb{Z}_{\ge b} \to \mathbb{Z}_{\ge b}$ be the function defined by $s_b(n) = n+1$ for all $n \in \mathbb{Z}_{\ge b}$.
+
+Prove that $(\mathbb{Z}_{\ge b}, b, s_b)$ is a notion of natural numbers, and find an explicit description of the unique bijection $f : \mathbb{N}_{\mathsf{vN}} \to \mathbb{Z}$ described in the statement of \Cref{thmNNNUnique}.
+\end{exercise}
+
+Merely constructing the \textit{set} of natural numbers is not enough: we also need to provide constructions of every concept that relates to natural numbers, such as addition, multiplication, exponentiation, combinatorial coefficients, inequalities, and so on.
+
+Fortunately for us, we already did much of the hard work in \Cref{secPeanosAxioms}, where we provided recursive definitions of addition, multiplication, exponentiation, binomial coefficients and factorials.
+
+It does not take much additional work to define other such concepts. For example, consider the `$\le$' relation on $\mathbb{N}$. We could define `$m \le n$' to mean $\exists k \in \mathbb{N},\, m+k=n$, but this is slightly problematic because it is sensitive to the notion of natural numbers that we are considering---it gives the correct notion when we take $\mathbb{N} = \{ 0, 1, 2, 3, \dots \}$ (see \Cref{exTwoDefinitionsOfLeqOnN}) but not when we take $\mathbb{N} = \{ 1, 2, 3, 4, \dots \}$. We can solve this problem by defining `$m \le n$' for $m,n \in \mathbb{N}$ using an iterated recursion on $m$ and $n$---specifically, we declare the following:
 \begin{itemize}
 \item $0 \le 0$ is true;
 \item For all $m \in \mathbb{N}$, $m+1 \le 0$ is false;
@@ -115,7 +138,7 @@ We can define more familiar notions involving natural numbers. For example, we c
 \end{itemize}
 
 \begin{exercise}
-Prove that the recursive definition of $\le$ is equivalent to the definition of `$m \le n$' as `$\exists k \in \mathbb{N},\, m+k=n$'.
+Prove that the recursive definition of $\le$ is equivalent to the definition of `$m \le n$' as `$\exists k \in \mathbb{N},\, m+k=n$', provided we use the convention that $\mathbb{N} = \{ 0, 1, 2, 3, \dots \}$.
 \hintlabel{exTwoDefinitionsOfLeqOnN}{%
 Define two relations $\le$ and $\le'$ on $\mathbb{N}$, one using the recursive definition and the other using the definition as a logical formula; then use induction to prove that $m \le n \Leftrightarrow m \le' n$ for all $m,n \in \mathbb{N}$.
 }
@@ -339,7 +362,7 @@ Let $X$ be a set equipped with elements $0$ (`zero') and $1$ (`unit'), and binar
 \item[(F1)] $0 \ne 1$.
 \end{itemize}
 \item \textbf{Axioms for addition}
-\begin{itemize}
+\begin{itemize}[leftmargin=30pt]
 \item[(F2)] (Associativity) $x+(y+z) = (x+y)+z$ for all $x,y,z \in X$.
 \item[(F3)] (Identity) $x+0=x$ for all $x \in X$.
 \item[(F4)] (Inverse) For all $x \in X$, there exists $y \in X$ such that $x+y=0$.

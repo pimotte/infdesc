@@ -129,9 +129,9 @@ Each of these types of number has a different character and different properties
 
 \subsubsection*{Natural numbers}
 
-The \textit{natural numbers} are the numbers used for counting---they are the answers to questions of the form `how many'---for example, at the time of writing this paragraph, I have \textit{three} uncles, \textit{five} guinea pigs
-% Shout out to Pippin, Peaches, Polly, Penelope and Plouffe
-% Rest in peace, Tuft and Peeve! <3
+The \textit{natural numbers} are the numbers used for counting---they are the answers to questions of the form `how many'---for example, at the time of writing this paragraph, I have \textit{three} guinea pigs
+% Shout out to Peaches, Polly and Penelope
+% Rest in peace, Tuft, Peeve, Pippin and Plouffe! <3
 and \textit{zero} cats.
 
 Counting is a skill humans have had for a very long time; we know this because there is evidence of people using tally marks tens of thousands of years ago. Tally marks provide one method of counting small numbers: starting with nothing, proceed through the objects you want to count one by one, and make a mark for every object. When you are finished, there will be as many marks as there are objects. We are taught from a young age to count with our fingers; this is another instance of making tally marks, where now instead of making a mark we raise a finger.
@@ -155,10 +155,10 @@ The \textbf{natural numbers} are the nonnegative whole numbers; they are represe
 The natural numbers have very important and interesting mathematical structure, and are central to the material in \Cref{chCombinatorics}. A more precise characterisation of the natural numbers will be provided in \Cref{secPeanosAxioms}, and a mathematical construction of the set of natural numbers can be found in \Cref{secZFC} (see \Cref{cnsNaturalNumbersVonNeumann}). Central to these more precise characterisations will be the notions of `zero' and of `adding one'---just like making tally marks.
 
 \begin{aside}
-Some authors define the natural numbers to be the \textit{positive} whole numbers, excluding zero. We take $0$ to be a natural number since our main use of the natural numbers will be for counting finite sets, and a set with nothing in it is certainly finite! That said, as with any mathematical definition, the choice about whether $0$ is or is not a natural number a matter of taste or convenience, and is merely a convention---it is not something that can be proved or refuted.
+Some authors define the natural numbers to be the \textit{positive} whole numbers, starting at $1$ and excluding $0$. The perspective taken in this book is that the natural numbers are \textit{counting numbers}, and there will be plenty of times where we will count $0$ of something---for example, the number of eighteen-letter words on this page is $0$. That said, as with any mathematical definition, the choice about whether $0$ is or is not a natural number a matter of taste or convenience, and is merely a convention---it is not something that can be proved or refuted.
 \end{aside}
 
-Note that adding or multiplying two natural numbers always results in another natural number; this is to say that the natural numbers are \textit{closed} under the addition and multiplcation operations. More precisely, whenever $a$ and $b$ are natural numbers, so are $a+b$ and $ab$.
+Note that adding or multiplying two natural numbers always results in another natural number; this is to say that the natural numbers are \textit{closed} under the operations of addition and multiplication operations. More precisely, whenever $a$ and $b$ are natural numbers, so are $a+b$ and $ab$.
 
 Importantly, the natural numbers are \textit{not} closed under subtraction or division: for example, $1$ and $2$ are natural numbers, but $1-2$ and $\frac{1}{2}$ are not.
 
@@ -224,10 +224,10 @@ Let $n$ be an integer. Then $n \le n < n+1$ and $n-1 < n \le n$, and so $\floor{
 \begin{exercise}
 Suppose that $x$ is a real number that is not an integer. Prove that $\ceil{x} = \floor{x} + 1$.
 \hintlabel{exFloorCeilingOfNonInteger}{%
-Set $n = \floor{x}$ and verify that $n+1$ satisfies the definition of `ceiling'.
+Set $n = \floor{x}$ and verify that $n+1$ satisfies the definition of `ceiling of $x$', using the fact that $n$ is the floor of $x$ in your proof.
 }%
 \solution{exFloorCeilingOfNonInteger}{%
-Set $n = \floor{x}$. Then $n \le x < n+1$ by definition of floor. Since $x$ is not an integer and $n$ is, we have $n \ne x$; but then $n<x<n+1$, and so $(n+1)-1 < x \le n+1$. This inequality demonstrates that $n+1$ is the ceiling of $x$, and so $\ceil{x} = n+1 = \floor{x} + 1$, as required.
+Set $n = \floor{x}$. Then $n \le x < n+1$ by definition of floor. Since $x$ is not an integer and $n$ is, we have $n < x$; but then $n<x<n+1$, and so $(n+1)-1 < x \le n+1$. This inequality demonstrates that $n+1$ is the ceiling of $x$, and so $\ceil{x} = n+1 = \floor{x} + 1$, as required.
 }%
 \end{exercise}
 

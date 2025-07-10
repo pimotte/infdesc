@@ -144,7 +144,9 @@
 \makeatother
 
 % Better paragraph and list spacing inside theorem environments
-\newcommand{\fixthmbox}{\setlist[itemize,enumerate]{topsep={5pt},leftmargin=*}\setlength{\parskip}{7pt}}%}\vspace{-7pt}}
+% If theorem boxes look strange (e.g. too much whitespace, title overlaps with border), swap the commenting of the two lines below
+%\newcommand{\fixthmbox}{\setlist[itemize,enumerate]{topsep={5pt},leftmargin=*}\setlength{\parskip}{7pt}}
+\newcommand{\fixthmbox}{\setlist[itemize,enumerate]{topsep={5pt},leftmargin=*}\setlength{\parskip}{7pt}\vspace{-7pt}}
 
 % Better spacing when a theorem environment begins or ends with a list
 \newcommand{\fixlistskip}{~ \vspace{-20pt}}
