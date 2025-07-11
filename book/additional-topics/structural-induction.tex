@@ -267,7 +267,7 @@ Thus $\mathbb{N}$ is inductively defined by $(~ \mid 0)$ and $(n \mid n+1)$, as 
 
 \begin{example}
 \label{exInductivelyDefinedSetOfPropositionalFormulae}
-Let $P$ be a set of propositional variables. In order to exhibit $\mathcal{L}(P)$ as an inductively defined set, we should be slightly more precise about the role of \textit{brackets} in propositional formulae than we have been so far.
+Let $P$ be a set of propositional variables. In order to exhibit $\mathcal{L}(P)$ as an inductively defined set, we should be slightly more precise about the role of \textit{\gbus{brackets}{parentheses}} in propositional formulae than we have been so far.
 
 For example, if we take the rules discussed in \Cref{exPropositionalFormulaeAsInductivelyDefinedSetPreliminary} literally, then $p \wedge q \vee r$ would be a valid logical formula. This is problematic for two reasons: first, does it mean $(p \wedge q) \vee r$, or $p \wedge (q \vee r)$? These are not logically equivalent, so the distinction matters. Second, this causes the `uniqueness' part of \Cref{defInductivelyDefinedSet} to fail, since $p \wedge q \vee r = f_{\wedge}(p,f_{\vee}(q,r)) = f_{\vee}(f_{\wedge}(p,q),r)$.
 
@@ -476,7 +476,7 @@ then $p(x)$ is true for all $x \in A$.
 
 \begin{cproof}
 Assume that for all rules $\sigma$ and all $\mathbf{a} \in A^{\mathrm{ar}(\sigma)}$ we have
-\[ [\forall i \in [\mathrm{ar}(\sigma)],~ p(a_i)] \Rightarrow p(f_{\sigma}(a_1,a_2,\dots,a_r)) \]
+\[ [\forall i \in [\mathrm{ar}(\sigma)],~ p(a_i)] \Rightarrow p(f_{\sigma}(\mathbf{a})) \]
 
 Let $X = \{ a \in A \mid p(a) \} \subseteq A$. Then for all $a \in A$ we have $a \in X$ if and only if $p(a)$ is true. Thus we have
 \[ [\forall i \in [\mathrm{ar}(\sigma)],~ a_i \in X] \Rightarrow f_{\sigma}(\mathbf{a}) \in X \]
@@ -521,29 +521,29 @@ Thus we recover weak induction as a special case of structural induction.
 \end{example}
 
 \begin{example}
-Fix a set $P$ of propositional variables and let $\mathcal{L}(P)$ be the inductively defined set of (properly parenthesised) propositional formulae over $P$, as in \Cref{exInductivelyDefinedSetOfPropositionalFormulae}.
+Fix a set $P$ of propositional variables and let $\mathcal{L}(P)$ be the inductively defined set of (properly \gbus{bracketed}{parenthesised}) propositional formulae over $P$, as in \Cref{exInductivelyDefinedSetOfPropositionalFormulae}.
 
-We prove that every propositional formula $\varphi \in \mathcal{L}(P)$ has the same number of open brackets `$($' as closed brackets `$)$'.
+We prove that every propositional formula $\varphi \in \mathcal{L}(P)$ has the same number of open \gbus{brackets}{parentheses} `$($' as closed \gbus{brackets}{parentheses} `$)$'.
 
 \begin{itemize}
-\item (\textbf{Base cases}) The basic elements of $\mathcal{L}(P)$ are the propositional variables $p \in P$. So let $p \in P$; this is a logical formula with no open brackets and no closed brackets, so the number of open brackets is equal to the number of closed brackets.
+\item (\textbf{Base cases}) The basic elements of $\mathcal{L}(P)$ are the propositional variables $p \in P$. So let $p \in P$; this is a logical formula with no open \gbus{brackets}{parentheses} and no closed \gbus{brackets}{parentheses}, so the number of open \gbus{brackets}{parentheses} is equal to the number of closed \gbus{brackets}{parentheses}.
 
-\item (\textbf{Induction step} for $\wedge$) Let $\varphi, \psi \in \mathcal{L}(P)$ and assume that $\varphi$ and $\psi$ each have the same number of open brackets as closed brackets. Say $\varphi$ has $a$ open brackets and $a$ closed brackets, and $\psi$ has $b$ open brackets and $b$ closed brackets, where $a,b \in \mathbb{N}$. Now
+\item (\textbf{Induction step} for $\wedge$) Let $\varphi, \psi \in \mathcal{L}(P)$ and assume that $\varphi$ and $\psi$ each have the same number of open \gbus{brackets}{parentheses} as closed \gbus{brackets}{parentheses}. Say $\varphi$ has $a$ open \gbus{brackets}{parentheses} and $a$ closed \gbus{brackets}{parentheses}, and $\psi$ has $b$ open \gbus{brackets}{parentheses} and $b$ closed \gbus{brackets}{parentheses}, where $a,b \in \mathbb{N}$. Now
 \[ f_{\wedge}(\varphi, \psi) ~=~ (\varphi \wedge \psi) \]
-Since $\varphi$ contributes $a$ open brackets and $\psi$ contributes $b$ open brackets, this has $a+b+1$ open brackets; likewise it has $a+b+1$ closed brackets.
+Since $\varphi$ contributes $a$ open \gbus{brackets}{parentheses} and $\psi$ contributes $b$ open \gbus{brackets}{parentheses}, this has $a+b+1$ open \gbus{brackets}{parentheses}; likewise it has $a+b+1$ closed \gbus{brackets}{parentheses}.
 
 This completes the induction step for $\wedge$.
 
 \item (\textbf{Induction steps} for $\vee$ and $\Rightarrow$) These are identical to the induction step for $\wedge$---just replace $\wedge$ by the necessary logical operator throughout.
 
-\item (\textbf{Induction step} for $\neg$) Let $\varphi \in \mathcal{L}(P)$ and assume that $\varphi$ has the same number of open brackets as closed brackets---say it has $a$ of each, where $a \in \mathbb{N}$. Then
+\item (\textbf{Induction step} for $\neg$) Let $\varphi \in \mathcal{L}(P)$ and assume that $\varphi$ has the same number of open \gbus{brackets}{parentheses} as closed \gbus{brackets}{parentheses}---say it has $a$ of each, where $a \in \mathbb{N}$. Then
 \[ f_{\neg}(\varphi) ~=~ (\neg \varphi) \]
-Since $\varphi$ contributes $a$ open brackets, this has $a+1$ open brackets; likewise it has $a+1$ closed brackets.
+Since $\varphi$ contributes $a$ open \gbus{brackets}{parentheses}, this has $a+1$ open \gbus{brackets}{parentheses}; likewise it has $a+1$ closed \gbus{brackets}{parentheses}.
 
 This completes the induction step for $\neg$.
 \end{itemize}
 
-So by structural induction, it follows that every propositional formula $\varphi \in \mathcal{L}(P)$ has the same number of open brackets as closed brackets.
+So by structural induction, it follows that every propositional formula $\varphi \in \mathcal{L}(P)$ has the same number of open \gbus{brackets}{parentheses} as closed \gbus{brackets}{parentheses}.
 \end{example}
 
 \begin{exercise}
