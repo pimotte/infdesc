@@ -267,7 +267,7 @@ These proofs are a little bit silly, but they demonstrate that in list notation 
 }
 \end{exercise}
 
-\subsection*{Inhabitation and emptiness}
+\subsection*{(Non)-emptiness}
 
 Another fundamental example of a set is the \textit{empty set}, which is the set with no elements. But we have to be slightly careful about how we use the word `the', since it implies \textit{uniqueness}, and we don't know (yet) that two sets with no elements are necessarily equal. So first we will define what it means for a set to be empty, and then we'll show that there is exactly one empty set.
 
@@ -278,7 +278,7 @@ Another fundamental example of a set is the \textit{empty set}, which is the set
 \index{set!empty}
 \index{non-empty set}
 \index{set!inhabited}
-A set $X$ is \textbf{inhabited} (or \textbf{nonempty}) if it has at least one element; otherwise, it is \textbf{empty}.
+A set $X$ is \textbf{non-empty} if it has at least one element; otherwise, it is \textbf{empty}.
 \end{definition}
 
 The assertion that $X$ is non-empty is equivalent to the logical formula $\exists a,\, a \in X$, and the assertion that $X$ is empty is equivalent to the logical formula $\neg \exists a,\, a \in X$. This suggests the following strategy for proving that a set is non-empty, or that it is empty.
@@ -286,8 +286,6 @@ The assertion that $X$ is non-empty is equivalent to the logical formula $\exist
 \begin{strategy}[Proving that a set is non-empty or empty]
 In order to prove a set $X$ is non-empty, it suffices to exhibit an element. In order to prove a set $X$ is empty, assume that $X$ is non-empty---that is, that there is some element $a \in X$---and derive a contradiction.
 \end{strategy}
-
-In other texts, the term \textit{nonempty} is more common than \textit{inhabited}, but there are reasons to prefer latter. Indeed, the statement `$X$ is non-empty' translates more directly to $\neg(\neg \exists a,\, a \in X)$, which has an unnecessary double-negative and suggests a proof of inhabitation by contradiction. For this reason, we use the term \textit{inhabited} in this book.
 
 Emptiness may seem like a trivial condition---and it is---but owing to its canonicity, it arises all over the place.
 
