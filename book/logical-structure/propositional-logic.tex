@@ -238,6 +238,12 @@ A proof of the proposition $p \wedge q$ can be obtained by tying together two pr
 \end{strategy}
 
 \begin{example}
+\label{abstractConjunctionProof}
+Suppose we are given three true propositions $p$, $q$ and $r$, and we are required to prove that $(p \wedge q) \wedge r$ is true. 
+We first we prove that $p \wedge q$ is true, because $p$ is true and $q$ is true. After, we conclude that $(p \wedge q) \wedge r$ is true, because $p \wedge q$ is true and $r$ is true. This gives us a proof that $(p \wedge q) \wedge r$ is true.
+\end{example}
+
+\begin{example}
 \label{exSevenDividesTwentyEightConjunctionProof}
 Suppose we are required to prove that $7$ is a prime factor of $28$. In \Cref{exSevenDividesTwentyEightConjunction} we expressed `$7$ is a prime factor of $28$' as the conjunction of the propositions `$7$ is prime' and `$7$ divides $28$', and so \Cref{strProvingConjunctionsDirect} breaks down the proof into two steps: first prove that $7$ is prime, and then prove that $7$ divides $28$.
 \end{example}
@@ -250,9 +256,20 @@ If an assumption in a proof has the form $p \wedge q$, then we may assume $p$ an
 \end{strategy}
 
 \begin{example}
+\label{exAssumingConjunctionsAbstract}
+Suppose we are given two propositions $p$ and $q$ and we are given that $p \wedge q$ is true, and we are required to prove $q \wedge p$ is true.
+We can use \Cref{strAssumingConjunctionsDirect} to assume that $p$ is true and that $q$ is true. Then we can use \Cref{strProvingConjunctionsDirect} to prove that $q \wedge q$ is true, because we have both that $p$ is true and $q$ is true. 
+\end{example}
+
+\begin{example}
 \label{exSevenDividesTwentyEightConjunctionAssumption}
 Suppose that, somewhere in the process of proving a proposition, we arrive at the fact that $7$ is a prime factor of $28$. \Cref{strAssumingConjunctionsDirect} then allows us to use the separate facts that $7$ is prime and that $7$ divides $28$.
 \end{example}
+
+\begin{exercise}
+Suppose we are given three propositions $p$, $q$ and $r$ and we are given that $(p \wedge q) \wedge r$ is true.
+Use \Cref{strAssumingConjunctionsDirect} to prove that $q$ is true. 
+\end{exercise}
 
 \Cref{strProvingConjunctionsDirect,strAssumingConjunctionsDirect} seem almost \textit{obvious}. To an extent they are obvious, and that is why we are stating them first. But the real reason we are going through the process of precisely defining logical operators, their introduction and elimination rules, and the corresponding proof strategies, is that when you are in the middle of the proof of a complicated result, it is all too easy to lose track of what you have already proved and what remains to be proved. Keeping track of the assumptions and goals in a proof, and understanding what must be done in order to complete the proof, is a difficult task.
 
@@ -496,6 +513,20 @@ If an assumption in a proof has the form $p \vee q$, then we may derive a propos
 The following example illustrates how \Cref{strProvingDisjunctionsDirect,strAssumingDisjunctionsDirect} can be used together in a proof.
 
 \begin{example}
+\label{exAssumingDisjunctionsAbstract}
+Suppose we are given three propositions $p$, $q$, and $r$, and we are given that $(p \vee q) \wedge r$ is true. We are required to prove that $p \vee (q \wedge r)$ is true.
+
+By \Cref{strAssumingConjunctionsDirect}, we may assume that $p \vee q$ is true and that $r$ is true. By \Cref{strAssumingDisjunctionsDirect}, we split into two cases based on $p \vee q$:
+
+\begin{itemize}
+  \item \textbf{Case 1.} Suppose $p$ is true. Then, by \Cref{strProvingDisjunctionsDirect}, $p \vee (q \wedge r)$ is true.
+  \item \textbf{Case 2.} Suppose $q$ is true. Since $r$ is also true, \Cref{strProvingConjunctionsDirect} tells us that $q \wedge r$ is true, and so by \Cref{strProvingDisjunctionsDirect}, $p \vee (q \wedge r)$ is true.
+\end{itemize}
+
+In both cases, $p \vee (q \wedge r)$ is true.
+\end{example}
+
+\begin{example}
 \label{exPositiveProperFactorOfFourEvenOrPerfectSquare}
 Let $n$ be a positive proper factor of $4$, and suppose we want to prove that $n$ is either even or a perfect square.
 \begin{itemize}
@@ -516,6 +547,10 @@ Hence $n$ is either even or a perfect square. \qed
 
 Notice that in both Case 1 and Case 2, we did not explicitly mention that we had proved that `$n \text{ is even} \vee n \text{ is a perfect square}$', leaving that deduction to the reader---we only mentioned it after the proofs in each case were complete.
 \end{example}
+
+\begin{exercise}
+Let $p$, $q$, and $r$ be propositions, and suppose $q \vee r$ is true. Prove that $(p \vee q) \vee (p \vee r)$ is true, using \Cref{strAssumingDisjunctionsDirect} and \Cref{strProvingDisjunctionsDirect}.
+\end{exercise}
 
 The proof of \Cref{propRemainderOfSquaresModulo3} below splits into \textit{three} cases, rather than just two.
 
@@ -608,7 +643,15 @@ The expression $p \Rightarrow q$ represents `if $p$, then $q$'.
 In order to prove a proposition of the form $p \Rightarrow q$, it suffices to assume that $p$ is true, and then derive $q$ from that assumption.
 \end{strategy}
 
-The following proposition illustrates how \Cref{strProvingImplicationsDirect} can be used in a proof.
+The following example and proposition illustrate how \Cref{strProvingImplicationsDirect} can be used in a proof.
+
+\begin{example}
+Let $p$ and $q$ be propositions. Suppose we are required to prove that $p \Rightarrow (q \Rightarrow p)$ is true.
+
+To prove $p \Rightarrow (q \Rightarrow p)$, we apply \Cref{strProvingImplicationsDirect} and assume $p$ is true and show that $q \Rightarrow p$ is true. 
+Then we apply \Cref{strProvingImplicationsDirect} again, and assume $q$ is true, and show that $p$ is true.
+Since $p$ is already assumed, $p$ is true. Therefore, $q \Rightarrow p$ is true. Thus, $p \Rightarrow (q \Rightarrow p)$ is true.
+\end{example}
 
 \begin{proposition}
 \label{propRationalTwoOfThree}
@@ -635,13 +678,27 @@ Let $p(x)$ be a polynomial over $\mathbb{C}$. Prove that if $\alpha$ is a root o
 
 The elimination rule for implication \elimrule{\Rightarrow} is more commonly known by the Latin name \textit{modus ponens}.
 
+\begin{exercise}
+Let $r$ and $s$ be propositions. Prove that $r \Rightarrow (s \Rightarrow s)$ is true. Write your proof using the strategies discussed for implications.
+\end{exercise}
+
+\begin{exercise}
+Let $a$, $b$, and $c$ be propositions. Prove that $a \vee b \Rightarrow c \Rightarrow (c \wedge a) \vee b$ is true. Structure your proof by using the appropriate strategies you have learned so far.
+\end{exercise}
+
 \begin{strategy}[Assuming implications---modus ponens]
 \label{strAssumingImplicationsDirect}
 \index{modus ponens}
 If an assumption in a proof has the form $p \Rightarrow q$, and $p$ is also assumed to be true, then we may deduce that $q$ is true.
 \end{strategy}
 
-\Cref{strAssumingDisjunctionsDirect} is frequently used to reduce a more complicated goal to a simpler one. Indeed, if we know that $p \Rightarrow q$ is true, and if $p$ is easy to verify, then it allows us to prove $q$ by proving $p$ instead.
+\begin{example}
+Let $p$, $q$, and $r$ be propositions. We are required to prove the proposition: $((p \vee q) \Rightarrow r) \wedge p \Rightarrow r$.
+
+Assume $((p \vee q) \Rightarrow r)$ and $p$. Since $p$ is true, $p \vee q$ is true by \Cref{strProvingDisjunctionsDirect}. Then, since $((p \vee q) \Rightarrow r)$ is true and $p \vee q$ is true, we may apply \Cref{strAssumingImplicationsDirect} (modus ponens) to deduce that $r$ is true.
+\end{example}
+
+\Cref{strAssumingImplicationsDirect} is frequently used to reduce a more complicated goal to a simpler one. Indeed, if we know that $p \Rightarrow q$ is true, and if $p$ is easy to verify, then it allows us to prove $q$ by proving $p$ instead.
 
 \begin{example}
 Let $f(x) = x^2+ax+b$ be a polynomial with $a,b \in \mathbb{R}$, and let $\Delta = a^2-4b$ be its discriminant. We can assume that:
@@ -652,6 +709,21 @@ Let $f(x) = x^2+ax+b$ be a polynomial with $a,b \in \mathbb{R}$, and let $\Delta
 \end{enumerate}
 Given the polynomial $f(x) = x^2-68x+1156$, it would be a pain to go through the process of solving the equation $f(x)=0$ in order to determine how many real roots $f$ has. However, each of the propositions (i), (ii) and (iii) take the form $p \Rightarrow q$, so \Cref{strAssumingImplicationsDirect} reduces the problem of finding how many real roots $f$ has to that of evaluating $\Delta$ and comparing it with $0$. And indeed, $(-68)^2 - 4 \times 1156 = 0$, so the implication (ii) together with \elimrule{\Rightarrow} tell us that $f$ has one real root.
 \end{example}
+
+\begin{exercise}
+Let $p$, $q$, and $r$ be propositions. Prove that $(p \Rightarrow q \Rightarrow r) \Rightarrow q \Rightarrow p \Rightarrow r$ is true.
+\hintlabel{exStrategy1_1_25_easy}{
+First use $p$ and $q$ as assumptions, then apply the implication.
+}
+\end{exercise}
+
+\begin{exercise}
+Let $p$, $q$, and $r$ be propositions. Prove that if $(p \Rightarrow p \wedge q) \Rightarrow (p \vee q) \Rightarrow q$ is true.
+\hintlabel{exStrategy1_1_25_mixed}{
+Consider cases for $p \vee q$ and use the implication appropriately.
+}
+\end{exercise}
+
 
 A common task faced by mathematicians is to prove that two conditions are equivalent. For example, given a polynomial $f(x) = x^2+ax+b$ with $a,b \in \mathbb{R}$, we know that \textit{if} $a^2-4b>0$ \textit{then} $f$ has two real roots, but is it also true that if $f$ has two real roots then $a^2-4b>0$? (The answer is `yes'.) The relationship between these two implications is that each is the \textit{converse} of the other.
 
@@ -680,6 +752,30 @@ We so often encounter the problem of proving both an implication and its convers
 \nindex{biconditional}{$\Leftrightarrow$}{biconditional}
 The \textbf{biconditional} operator is the logical operator $\Leftrightarrow$ \inlatex{Leftrightarrow}\lindexmmc{Leftrightarrow}{$\Leftrightarrow$}, defined by declaring $p \Leftrightarrow q$ to mean $(p \Rightarrow q) \wedge (q \Rightarrow p)$. The expression $p \Leftrightarrow q$ represents `$p$ if and only if $q$'.
 \end{definition}
+
+We first look at the use of the biconditional operator in the abstract logical context.
+
+\begin{example}
+Let $p$ and $q$ be propositions. We prove that $(p \Leftrightarrow q) \Rightarrow (q \Rightarrow p)$ is true.
+
+Assume $p \Leftrightarrow q$ and $q$. By definition, $p \Leftrightarrow q$ means $(p \Rightarrow q) \wedge (q \Rightarrow p)$. In particular, $q \Rightarrow p$ is true. Since $q$ is true, we may conclude that $p$ is true.
+\end{example}
+
+\begin{example}
+Let $p$ and $q$ be propositions. We prove that $p \Rightarrow (q \Rightarrow (p \Leftrightarrow q))$ is true.
+
+Assume $p$ and $q$. We show both directions.
+\begin{itemize}
+  \item To show $p \Rightarrow q$: Assume $p$. Then $q$ is true by assumption.
+  \item To show $q \Rightarrow p$: Assume $q$. Then $p$ is true by assumption.
+\end{itemize}
+Therefore, $p \Leftrightarrow q$ is true.
+\end{example}
+
+\begin{exercise}
+Let $p$ and $q$ be propositions. We prove that $(p \Leftrightarrow q) \Leftrightarrow (q \Leftrightarrow p)$ is true.
+
+\end{exercise}
 
 Many examples of biconditional statements come from solving equations; indeed, to say that the values $\alpha_1,\dots,\alpha_n$ are the solutions to a particular equation is precisely to say that
 \[
@@ -894,6 +990,13 @@ The introduction rule for negation \introrule{\neg} gives rise to a proof strate
 In order to prove a proposition $p$ is false (that is, that $\neg p$ is true), it suffices to assume that $p$ is true and derive a contradiction.
 \end{strategy}
 
+The following example illustrates how \Cref{strProvingNegationsDirect} can be used in a proof.
+\begin{example}
+Let $p$ and $q$ be propositions. We prove that $(p \Rightarrow q) \Rightarrow (\neg q \Rightarrow \neg p)$ is true.
+
+Assume $p \Rightarrow q$ and $\neg q$. To prove $\neg p$, assume $p$. Then $q$ follows by modus ponens. But this contradicts the assumption $\neg q$. Therefore, $\neg p$ is true.
+\end{example}
+
 The following proposition has a classic proof by contradiction.
 
 \begin{proposition}
@@ -911,6 +1014,16 @@ This contradicts the assumption that $a$ is irrational. It follows that $r+a$ is
 \end{cproof}
 
 Now you can try proving some elementary facts by contradiction.
+
+\begin{exercise}
+Let $p$ and $q$ be propositions. Prove that $(p \Rightarrow \neg q) \Rightarrow (q \Rightarrow \neg p)$ is true.
+
+\end{exercise}
+
+\begin{exercise}
+Let $p$ and $q$ be propositions. Prove that $\neg p \Rightarrow \neg q \Rightarrow \neg(p \vee q)$ is true.
+
+\end{exercise}
 
 \begin{exercise}
 \label{exNegationAndReciprocalOfIrrationalNumbers}
@@ -970,6 +1083,24 @@ The law of excluded middle can be represented diagrammatically as follows; there
 In order to prove a proposition $q$ is true, it suffices to split into cases based on whether some other proposition $p$ is true or false, and prove that $q$ is true in each case.
 \end{strategy}
 
+\begin{example}
+Let $p$ and $q$ be propositions. If $\neg(p \wedge q)$ is true, then $\neg p \vee \neg q$ is true.
+
+Suppose $\neg(p \wedge q)$ is true. By the law of excluded middle (\Cref{axLEM}), either $p$ is true or $\neg p$ is true.
+\begin{itemize}
+  \item \textbf{Case 1.} Suppose $p$ is true. By the law of excluded middle, either $q$ is true or $\neg q$ is true.
+  \begin{itemize}
+    \item \textbf{Subcase 1.} Suppose $q$ is true. Then $p \wedge q$ is true, which contradicts the assumption that $\neg(p \wedge q)$ is true.
+    \item \textbf{Subcase 2.} Suppose $\neg q$ is true. Then $\neg p \vee \neg q$ is true.
+  \end{itemize}
+  \item \textbf{Case 2.} Suppose $\neg p$ is true. Then $\neg p \vee \neg q$ is true.
+\end{itemize}
+In all cases, $\neg p \vee \neg q$ is true.
+\end{example}
+
+
+
+
 The proof of \Cref{propIfProductEvenThenSomeFactorEven} below makes use of the law of excluded middle---note that we defined `odd' to mean `not even' (\Cref{defEvenOdd}).
 
 \begin{proposition}
@@ -995,6 +1126,10 @@ In both cases, either $a$ or $b$ is even.
 
 \begin{exercise}
 Reflect on the proof of \Cref{propIfProductEvenThenSomeFactorEven}. Where in the proof did we use the law of excluded middle? Where in the proof did we use proof by contradiction? What was the contradiction in this case? Prove \Cref{propIfProductEvenThenSomeFactorEven} twice more, once using contradiction and not using the law of excluded middle, and once using the law of excluded middle and not using contradiction.
+\end{exercise}
+
+\begin{exercise}
+Let $p$ and $q$ be propositions. Prove that $(\neg q \Rightarrow \neg p) \Rightarrow (p \Rightarrow q)$ is true.
 \end{exercise}
 
 \begin{exercise}
