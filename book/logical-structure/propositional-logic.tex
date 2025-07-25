@@ -688,7 +688,7 @@ Let $r$ and $s$ be propositions. Prove that $r \Rightarrow (s \Rightarrow s)$ is
 \end{exercise}
 
 \begin{exercise}
-Let $a$, $b$, and $c$ be propositions. Prove that $a \vee b \Rightarrow c \Rightarrow (c \wedge a) \vee b$ is true. Structure your proof by using the appropriate strategies you have learned so far.
+Let $a$, $b$, and $c$ be propositions. Prove that $(a \vee b) \Rightarrow (c \Rightarrow ((c \wedge a) \vee b))$ is true. Structure your proof by using the appropriate strategies you have learned so far.
 \end{exercise}
 
 \begin{strategy}[Assuming implications---modus ponens]
@@ -716,14 +716,14 @@ Given the polynomial $f(x) = x^2-68x+1156$, it would be a pain to go through the
 \end{example}
 
 \begin{exercise}
-Let $p$, $q$, and $r$ be propositions. Prove that $(p \Rightarrow q \Rightarrow r) \Rightarrow q \Rightarrow p \Rightarrow r$ is true.
+Let $p$, $q$, and $r$ be propositions. Prove that $(p \Rightarrow q \Rightarrow r) \Rightarrow (q \Rightarrow (p \Rightarrow r))$ is true.
 \hintlabel{exStrategy1_1_25_easy}{
 First use $p$ and $q$ as assumptions, then apply the implication.
 }
 \end{exercise}
 
 \begin{exercise}
-Let $p$, $q$, and $r$ be propositions. Prove that if $(p \Rightarrow p \wedge q) \Rightarrow (p \vee q) \Rightarrow q$ is true.
+Let $p$, $q$, and $r$ be propositions. Prove that $(p \Rightarrow p \wedge q) \Rightarrow ((p \vee q) \Rightarrow q)$ is true.
 \hintlabel{exStrategy1_1_25_mixed}{
 Consider cases for $p \vee q$ and use the implication appropriately.
 }
@@ -757,7 +757,7 @@ We so often encounter the problem of proving both an implication and its convers
 \nindex{biconditional}{$\Leftrightarrow$}{biconditional}
 The \textbf{biconditional} operator is the logical operator $\Leftrightarrow$ \inlatex{Leftrightarrow}\lindexmmc{Leftrightarrow}{$\Leftrightarrow$}, defined by declaring $p \Leftrightarrow q$ to mean $(p \Rightarrow q) \wedge (q \Rightarrow p)$. The expression $p \Leftrightarrow q$ represents `$p$ if and only if $q$'.
 \end{definition}
-
+)
 We first look at the use of the biconditional operator in the abstract logical context.
 
 \begin{example}
@@ -1026,7 +1026,7 @@ Let $p$ and $q$ be propositions. Prove that $(p \Rightarrow \neg q) \Rightarrow 
 \end{exercise}
 
 \begin{exercise}
-Let $p$ and $q$ be propositions. Prove that $\neg p \Rightarrow \neg q \Rightarrow \neg(p \vee q)$ is true.
+Let $p$ and $q$ be propositions. Prove that $\neg p \Rightarrow (\neg q \Rightarrow \neg(p \vee q))$ is true.
 
 \end{exercise}
 
