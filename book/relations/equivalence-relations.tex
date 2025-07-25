@@ -258,7 +258,7 @@ A few remarks about the definition of a partition are in order:
 \label{exPartitionOfZIntoEvenAndOdd}
 Let $E$ be the set of all even integers and $O$ be the set of all odd integers. Then $\{ E, O \}$ is a partition of $\mathbb{Z}$:
 \begin{itemize}
-\item (\textbf{Inhabitation}) $E$ and $O$ are non-empty, since for example $0 \in E$ and $1 \in O$.
+\item (\textbf{Non-emptiness}) $E$ and $O$ are non-empty, since for example $0 \in E$ and $1 \in O$.
 \item (\textbf{Covering}) Every integer $n$ is either even (so $n \in E$) or odd (so $n \in O$), and hence $\{ E, O \}$ is a cover of $\mathbb{Z}$.
 \item (\textbf{Pairwise disjointness}) The family $\{ E, O \}$ is pairwise disjoint if and only if $E \cap O$ is empty; and it is, since no integer can be both even and odd.
 \end{itemize}
@@ -268,7 +268,7 @@ Let $E$ be the set of all even integers and $O$ be the set of all odd integers. 
 \label{exPartitionOfNIntoPairs}
 Let $\mathcal{A} = \{ \{ 2n, 2n+1 \} \mid n \in \mathbb{N} \}$. Then $\mathcal{A}$ is a partition of $\mathbb{N}$:
 \begin{itemize}
-\item (\textbf{Inhabitation}) Let $A \in \mathcal{A}$. Then $A = \{ 2n, 2n+1 \}$ for some $n \in \mathbb{N}$, and so $2n \in A$. Hence $A$ is non-empty.
+\item (\textbf{Non-emptiness}) Let $A \in \mathcal{A}$. Then $A = \{ 2n, 2n+1 \}$ for some $n \in \mathbb{N}$, and so $2n \in A$. Hence $A$ is non-empty.
 \item (\textbf{Covering}) Let $x \in \mathbb{N}$. If $x$ is even, then $x=2n$ for some $n \in \mathbb{N}$, and if $x$ is odd, then $x=2n+1$ for some $n \in \mathbb{N}$. In both cases there is a natural number $n$ such that $x \in \{ 2n, 2n+1 \}$, and $\{ 2n, 2n+1 \} \in \mathcal{A}$. So $\mathcal{A}$ is a cover of $\mathbb{N}$.
 \item (\textbf{Pairwise disjointness}) Let $A,B \in \mathcal{A}$ and assume that $A \cap B$ is non-empty. Let $m,n \in \mathbb{N}$ be such that $A = \{ 2m, 2m+1 \}$ and $B = \{ 2n, 2n+1 \}$, and let $x \in A \cap B$, which exists since $A \cap B$ is non-empty. Since $A$ and $B$ each have a unique even element and a unique odd element, we must either have $x=2m=2n$ or $x=2m+1=2n+1$ depending on whether $x$ is even or odd. But in both cases we have $m=n$, so that $A=B$ as required. So $\mathcal{A}$ is pairwise disjoint.
 \end{itemize}

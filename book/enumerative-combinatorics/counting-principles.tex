@@ -395,7 +395,7 @@ We will count the number of non-empty subsets of $[7]$ which either contain only
 
 Let $E$ denote the set of non-empty subsets of $[7]$ containing only even numbers, and let $O$ denote the set of non-empty subsets of $[7]$ containing only odd numbers. Note that $\{ E, O \}$ forms a partition of the set we are counting, and so our set has $|E|+|O|$ elements.
 \begin{itemize}
-\item An element of $E$ must be a subset of $\{0,2,4,6\}$. By \Cref{exNumSubsetsOfFiniteSet} there are $2^4=16$ such subsets. Thus the number of \textit{inhabited} subsets of $[7]$ containing only odd numbers is $15$, since we must exclude the empty set. That is, $|E|=15$.
+\item An element of $E$ must be a subset of $\{0,2,4,6\}$. By \Cref{exNumSubsetsOfFiniteSet} there are $2^4=16$ such subsets. Thus the number of \textit{non-empty} subsets of $[7]$ containing only odd numbers is $15$, since we must exclude the empty set. That is, $|E|=15$.
 \item An element of $O$ must be a subset of $\{1,3,5\}$. Again by \Cref{exNumSubsetsOfFiniteSet} there are $2^3=8$ such subsets. Hence there are $7$ non-empty subsets of $[7]$ containing only even numbers. That is, $|O|=7$.
 \end{itemize}
 Hence there are $15+7=22$ non-empty subsets of $[7]$ containing only even or only odd numbers. And here they are:
