@@ -226,6 +226,25 @@ Hence the final digit of $n^2$ is equal to the final digit of $d_0^2$. But the p
 all of which end in one of the digits $0$, $1$, $4$, $5$, $6$ or $9$.
 \end{cproof}
 
+\begin{example}
+We prove that for every real number $x$, we have $x \le 0$ or $x \ge 0$.
+
+Take $x \in \mathbb{R}$. Either $x \le 0$ or $x > 0$. 
+\begin{itemize}
+\item If $x \le 0$, then clearly $x \le 0 \vee x \ge 0$.
+\item If $x > 0$, then $x \ge 0$, so $x \le 0 \vee x \ge 0$.
+\end{itemize}
+In both cases, we have $x \le 0 \vee x \ge 0$, as required.
+\end{example}
+
+\begin{exercise}
+Prove that for every real number $x$, we have $x = x$.
+\end{exercise}
+
+\begin{exercise}
+  Prove that for every integer $n$, we have $n$ is even if and only if $n^2$ is even.
+\end{exercise}
+
 \begin{exercise}
 \label{exEveryIntegerIsRational}
 Prove that every integer is rational.
@@ -234,6 +253,7 @@ Prove that every integer is rational.
 \begin{exercise}
 Prove that every linear polynomial over $\mathbb{Q}$ has a rational root.
 \end{exercise}
+
 
 \begin{exercise}
 Prove that, for all real numbers $x$ and $y$, if $x$ is irrational, then $x+y$ and $x-y$ are not both rational.
@@ -266,6 +286,21 @@ The strategy suggested by the elimination rule for the universal quantifier is o
 \label{strAssumingUniversal}
 If an assumption in a proof has the form $\forall x \in X,\, p(x)$, then we may assume that $p(a)$ is true whenever $a$ is an element of $X$.
 \end{strategy}
+
+\begin{example}
+We show how to use a universally quantified assumption. Suppose that $P(x)$ is some predicate with free variable $x \in \mathbb{R}$, and we are given that $\forall x \in \mathbb{R}, P(x)$. We can then conclude that $P(0)$.
+
+Indeed, assume that $\forall x \in \mathbb{R}, P(x)$. Since $0 \in \mathbb{R}$, we can apply the universal quantifier elimination rule to conclude that $P(0)$.
+\end{example}
+
+\begin{exercise}
+Suppose that $P(x)$ is some predicate with free variable $x \in \mathbb{R}$, and we are given that $\forall x \in \mathbb{R}, P(x)$. Show that we can conclude $P(21)$.
+\end{exercise}
+
+\begin{exercise}
+Let $P(x)$ and $Q(x)$ be predicates with free variable $x \in \mathbb{R}$. Prove that 
+\[(\forall x \in \mathbb{R}, P(x) \Rightarrow Q(x)) \Rightarrow (\forall x \in \mathbb{R}, P(x)) \Rightarrow (\forall x \in \mathbb{R}, Q(x))\]
+\end{exercise}
 
 \subsubsection*{Existential quantification (`there exists', $\exists$)}
 
@@ -429,6 +464,29 @@ For each of the propositions, write it out as a logical formula involving the $\
 \item There is a unique natural number with exactly one positive divisor.
 \end{enumerate}
 \end{exercise}
+
+\begin{proposition}[Alternative characterisation of unique existence]
+\label{propAlternativeCharUniqueExists}
+Let $p(x)$ be a logical formula with free variable $x$ with range $X$. Then
+\[(\exists ! x \in X,\, p(x)) \Leftrightarrow (\exists x \in X,\, p(x) \wedge \forall y \in X,\, p(y) \Rightarrow y = x)\]
+\end{proposition}
+
+\begin{cproof}
+We prove both directions of the equivalence.
+
+($\Rightarrow$) Suppose $\exists ! x \in X,\, p(x)$. By definition of the unique existential quantifier, we have
+\[(\exists x \in X,\, p(x)) \wedge (\forall a \in X,\, \forall b \in X,\, [(p(a) \wedge p(b)) \Rightarrow a=b])\]
+In particular, $\exists x \in X,\, p(x)$. Choose such an element $x \in X$ with $p(x)$ true. We claim that $p(x) \wedge \forall y \in X,\, p(y) \Rightarrow y = x$.
+
+Since $p(x)$ is true, it remains to prove $\forall y \in X,\, p(y) \Rightarrow y = x$. Let $y \in X$ and suppose $p(y)$. From the uniqueness part of our assumption, taking $a = y$ and $b = x$, we have $(p(y) \wedge p(x)) \Rightarrow y = x$. Since both $p(y)$ and $p(x)$ are true, we conclude $y = x$.
+
+($\Leftarrow$) Suppose $\exists x \in X,\, p(x) \wedge \forall y \in X,\, p(y) \Rightarrow y = x$. Choose such an element $x \in X$. We need to prove
+\[(\exists x \in X,\, p(x)) \wedge (\forall a \in X,\, \forall b \in X,\, [(p(a) \wedge p(b)) \Rightarrow a=b])\]
+
+For existence: Since $p(x)$ is true and $x \in X$, we have $\exists x \in X,\, p(x)$.
+
+For uniqueness: Let $a, b \in X$ and suppose $p(a) \wedge p(b)$. From our assumption, $\forall y \in X,\, p(y) \Rightarrow y = x$. Applying this with $y = a$, we get $a = x$. Similarly, applying this with $y = b$, we get $b = x$. Therefore $a = b$.
+\end{cproof}
 
 The unique existential quantifier will play a large role when we study functions in \Cref{secFunctions}.
 

@@ -365,6 +365,19 @@ Let $X$ be a set. Show that $\varnothing \in \mathcal{P}(X)$ and $X \in \mathcal
 Write out the elements of $\mathcal{P}(\varnothing)$, $\mathcal{P}(\mathcal{P}(\varnothing))$ and $\mathcal{P}(\mathcal{P}(\mathcal{P}(\varnothing)))$.
 \end{exercise}
 
+\begin{example}
+\label{exSubsetImpliesPowerSetMembership}
+Let $X$ and $Y$ be sets. If $X \subseteq Y$, then $X \in \mathcal{P}(Y)$.
+
+\begin{proof}
+Assume that $X \subseteq Y$. By the definition of power set (\Cref{defPowerSet}), we have $\mathcal{P}(Y) = \{U \mid U \subseteq Y\}$. Since $X \subseteq Y$, it follows that $X \in \mathcal{P}(Y)$.
+\end{proof}
+\end{example}
+
+\begin{exercise}
+Let $X$ and $Y$ be sets. Prove that if $X \subseteq Y$, then $\mathcal{P}(X) \subseteq \mathcal{P}(Y)$.
+\end{exercise}
+
 Power sets are often a point of confusion because they bring the property of being a \textit{subset} of one set to that of being an \textit{element} of another, in the sense that for all sets $U$ and $X$ we have
 \[ U \subseteq X \quad \Leftrightarrow \quad U \in \mathcal{P}(X) \]
 This distinction looks easy to grasp, but when the sets $U$ and $X$ look alike, it's easy to fall into various traps. Here's a simple example.
