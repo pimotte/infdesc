@@ -357,17 +357,52 @@
   \immediate\openout\solutionsfile=\jobname-solutions.cll
 }
 
+% Buffer for hints and exercises
+\gdef\sectionbackhints{}
+\gdef\sectionbacksolutions{}
+\gdef\backhintssectionname{}
+\gdef\backsolutionssectionname{}
+
+\newbool{sechasbackhints}
+\newbool{sechasbacksolutions}
+
 \NewEnviron{backhint}{
-  \immediate\write\hintsfile{%
+  \global\booltrue{sechasbackhints}
+  \xdef\sectionbackhints{%
+    \unexpanded\expandafter{\sectionbackhints}^^J%
     \expandafter\unexpanded\expandafter{\BODY}^^J%
   }%
 }
 
 \NewEnviron{backsolution}{
-  \immediate\write\solutionsfile{%
+  \global\booltrue{sechasbacksolutions}
+  \xdef\sectionbacksolutions{%
+    \unexpanded\expandafter{\sectionbacksolutions}^^J%
     \expandafter\unexpanded\expandafter{\BODY}^^J%
   }%
 }
+
+\newcommand{\flushhints}{%
+  \ifbool{sechasbackhints}{%
+  \immediate\write\hintsfile{%
+    \expandafter\unexpanded\expandafter{\backhintssectionname}^^J%
+    \expandafter\unexpanded\expandafter{\sectionbackhints}%
+  }%
+  \gdef\sectionbackhints{}}{}%
+  \global\boolfalse{sechasbackhints}
+}
+
+
+\newcommand{\flushsolutions}{%
+  \ifbool{sechasbacksolutions}{%
+  \immediate\write\solutionsfile{%
+    \expandafter\unexpanded\expandafter{\backsolutionssectionname}^^J%
+    \expandafter\unexpanded\expandafter{\sectionbacksolutions}%
+  }%
+  \gdef\sectionbacksolutions{}}{}%
+  \global\boolfalse{sechasbacksolutions}
+}
+
 
 \newcommand{\printhints}{%
   % Closing the file
@@ -396,13 +431,11 @@
 }
 
 \newcommand{\hintsection}[1]{%
-\begin{backhint}
-\subsection*{#1}
-\end{backhint}%
+\flushhints%
+\gdef\backhintssectionname{\subsection*{#1}}
 }
 
 \newcommand{\solutionsection}[1]{%
-\begin{backsolution}
-\subsection*{#1}
-\end{backsolution}%
+\flushsolutions%
+\gdef\backsolutionssectionname{\subsection*{#1}}
 }
