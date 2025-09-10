@@ -188,16 +188,18 @@ The integers have such a fascinating structure that a whole chapter of this book
 
 One of the properties of integers that is useful in proofs is that there is always a \textit{next} one: given any integer $n$, the next integer is $n+1$, meaning that $n+1>n$ and there are no integers $k$ that satisfy the inequality $n<k<n+1$. Sometimes it is useful to be able to round a real number $x$ up or down to the next integer; this is what the \textit{floor} and \textit{ceiling} operations do.
 
-\todo{To do: add LaTeX code for floor and ceiling}
-
 \begin{definition}[Floor and ceiling]
+\label{defFloorCeiling}
 \index{floor}
 \index{ceiling}
 Let $x$ be a real number.
 \begin{itemize}
-\item The \textbf{floor} of $x$ is the integer $n$ such that $n \le x < n+1$; we write $\floor{x}$ to denote the floor of $x$. Intuitively, $\floor{x}$ is the result of rounding $x$ \textit{down} to the next integer.
-\item The \textbf{ceiling} of $x$ is the integer $n$ such that $n-1 < x \le n$; we write $\ceil{x}$ to denote the ceiling of $x$. Intuitively, $\ceil{x}$ is the result of rounding $x$ \textit{up} to the next integer.
+\item The \textbf{floor} of $x$ is the integer $n$ such that $n \le x < n+1$; we write $\floor{x}$ to denote the floor of $x$ \inlatexnb{\textbackslash{}lfloor,~\textbackslash{}rfloor}\lindexmmc{lfloor~\dots{}~\textbackslash{}rfloor}{$\lfloor \dots{} \rfloor$}\nindex{floor}{$\left\lfloor \dots{} \right\rfloor$}{floor operator}.
+
+\item The \textbf{ceiling} of $x$ is the integer $n$ such that $n-1 < x \le n$; we write $\ceil{x}$ to denote the ceiling of $x$ \inlatexnb{\textbackslash{}lceil,~\textbackslash{}rceil}\lindexmmc{lceil~\dots{}~\textbackslash{}rceil}{$\lceil \dots{} \rceil$}\nindex{ceiling}{$\left\lceil \dots{} \right\rceil$}{floor operator}.
 \end{itemize}
+
+Intuitively, $\floor{x}$ is the result of rounding $x$ \textit{down} to the next integer, and $\ceil{x}$ is the result of rounding $x$ \textit{up} to the next integer.
 
 The floor and ceiling operations are illustrated on the following number line diagram, with the notches representing the integers.
 \begin{center}
