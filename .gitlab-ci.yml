@@ -8,4 +8,4 @@ pages:
     paths:
     - stable
   only:
-  - main
+  - master
