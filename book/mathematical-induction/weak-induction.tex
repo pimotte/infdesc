@@ -224,7 +224,7 @@ We proceed by induction on $n \ge 0$.
 \item (\textbf{Base case}) We need to prove that $\displaystyle 0^3 = \frac{0^2(0+1)^2}{4}$. This is true since both sides of the equation are equal to $0$.
 \item (\textbf{Induction step}) Fix $n \in \mathbb{N}$ and suppose that $\displaystyle \sum_{k=0}^n k^3 = \frac{n^2(n+1)^2}{4}$. We need to prove that $\displaystyle \sum_{k=0}^{n+1} k^3 = \frac{(n+1)^2(n+2)^2}{4}$. This is true since:
 \begin{align*}
-\sum_{i=0}^{n+1} k^3 & = \sum_{i=0}^n k^3 + (n+1)^3 && \text{by definition of sum} \\
+\sum_{k=0}^{n+1} k^3 & = \sum_{k=0}^n k^3 + (n+1)^3 && \text{by definition of sum} \\
 &= \frac{n^2(n+1)^2}{4} + (n+1)^3 && \text{by induction hypothesis} \\
 &= \frac{n^2(n+1)^2 + 4(n+1)^3}{4} && \text{(\textit{algebra})} \\
 &= \frac{(n+1)^2(n^2 + 4(n+1))}{4} && \text{(\textit{algebra})} \\
@@ -388,7 +388,7 @@ since $k=\ell+1$.
 \end{align*}
 and $\frac{(n+1)!}{(n+1)!0!}=1$, so again the two quantities are equal.
 \item If $k>n+1$, then $k=\ell+1$ for some $\ell > n$, and so by \Cref{defBinomialCoefficientRecursive} and the induction hypothesis we have
-\[ \binom{n+1}{k} = \binom{n+1}{\ell+1} \overset{\text{IH}}{=} \binom{n}{\ell}+\binom{n}{\ell+1} = 0+0 = 0 \]
+\[ \binom{n+1}{k} = \binom{n+1}{\ell+1} = \binom{n}{\ell}+\binom{n}{\ell+1} \overset{\text{IH}}{=} 0+0 = 0 \]
 
 \end{enumerate}
 \end{itemize}
@@ -454,7 +454,7 @@ We need to show that $(1+x)^{n+1} = \sum_{k=0}^{n+1} \binom{n+1}{k} x^k$. Well,
 The step labelled $(*)$ holds because
 \[ \binom{n}{0} = 1 = \binom{n+1}{0} \qquad \text{and} \qquad \binom{n}{n} = 1 = \binom{n+1}{n+1} \]
 \end{itemize}
-By induction, we've shown that $(1+x)^n = \sum_{i=0}^n \binom{n}{k} x^k$ for all $n \in \mathbb{N}$.
+By induction, we've shown that $(1+x)^n = \sum_{k=0}^n \binom{n}{k} x^k$ for all $n \in \mathbb{N}$.
 
 When $y \ne 0$ is not necessarily equal to $1$, we have that
 \[ (x+y)^n = y^n \cdot \left( 1 + \frac{x}{y} \right)^n = y^n \cdot \sum_{k=0}^n \binom{n}{k} \left( \frac{x}{y} \right)^k = \sum_{k=0}^n \binom{n}{k} x^k y^{n-k} \]
