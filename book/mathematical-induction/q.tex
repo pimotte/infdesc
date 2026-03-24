@@ -53,25 +53,30 @@ Let $N$ be a set, let $z \in N$ and let $s : N \to N$. Prove that $(N, z, s)$ is
 \subsection*{Proofs by induction}
 
 \begin{chapex}
+\chplan{4.1}{Essentieel}
 \label{cqNPowerFiveLessThanFivePowerN}
 Find all natural numbers $n$ such that $n^5 < 5^n$.
 \end{chapex}
 
 \begin{chapex}
+\chplan{4.1}{Essentieel}
 Prove that $(1+x)^{123\;456\;789} \ge 1 + 123\;456\;789\;x$ for all real $x \ge -1$.
 \hintlabel{cqBernoullisInequality}{%
 Proving this by induction on $x$ only demonstrates that it is true for \textit{integers} $x \ge -1$, not \textit{real numbers} $x \ge -1$. Try proving a more general fact by induction on a different variable, and deducing this as a special case. (Do you \textit{really} think there is anything special about the natural number $123\;456\;789$?)}
 \end{chapex}
 
 \begin{chapex}
+\chplan{4.1}{Aanbevolen}
 Let $a \in \mathbb{N}$ and assume that the last digit in the decimal expansion of $a$ is $6$. Prove that the last digit in the decimal expansion of $a^n$ is $6$ for all $n \ge 1$.
 \end{chapex}
 
 \begin{chapex}
+\chplan{4.2}{Essentieel}
 Let $a,b \in \mathbb{R}$, and let $a_0, a_1, a_2, \dots$ be a sequence such that $a_0 = a$, $a_1=b$ and $a_n = \dfrac{a_{n-1} + a_{n+1}}{2}$ for all $n \ge 1$. Prove that $a_n = a + (b-a) n$ for all $n \in \mathbb{N}$.
 \end{chapex}
 
 \begin{chapex}
+\chplan{4.1}{Aanbevolen}
 Let $f : \mathbb{R} \to \mathbb{R}$ be a function such that $f(x+y) = f(x) + f(y)$ for all $x,y \in \mathbb{R}$.
 \begin{enumerate}[(a)]
 \item Prove by induction that there is a real number $a$ such that $f(n) = an$ for all $n \in \mathbb{N}$.
@@ -84,6 +89,7 @@ To find the value of $a$ in part (a), try substituting some small values of $x$ 
 \end{chapex}
 
 \begin{chapex}
+\chplan{4.1}{Aanbevolen}
 Let $f : \mathbb{R} \to \mathbb{R}$ be a function such that $f(0) > 0$ and $f(x+y)=f(x)f(y)$ for all $x,y \in \mathbb{R}$. Prove that there is some positive real number $a$ such that $f(x)=a^x$ for all \textit{rational} numbers $x$..
 \hintlabel{cqHomomorphismFromRPlusToRTimes}{%
 Like in \Cref{cqHomomorphismFromRPlusToRPlus}, prove this first for $x \in \mathbb{N}$ (by induction), then for $x \in \mathbb{Z}$, and finally for $x \in \mathbb{Q}$.
@@ -91,10 +97,12 @@ Like in \Cref{cqHomomorphismFromRPlusToRPlus}, prove this first for $x \in \math
 \end{chapex}
 
 \begin{chapex}
+\chplan{4.1}{Essentieel}
 Let $a,b \in \mathbb{Z}$. Prove that $b-a$ divides $b^n-a^n$ for all $n \in \mathbb{N}$.
 \end{chapex}
 
 \begin{chapex}
+\chplan{4.1}{Essentieel}
 Prove by induction that $7^n - 2 \cdot 4^n + 1$ is divisible by $18$ for all $n \in \mathbb{N}$.
 \hintlabel{cqInductionEmbeddedInIductionStep}{%
 Observe that $7^{n+1} - 2 \cdot 4^{n+1} + 1 = 4(7^n - 2 \cdot 4^n + 1) + 3(7^n - 1)$ for all $n \in \mathbb{N}$. You may need to do a separate proof by induction in your induction step.
@@ -106,21 +114,25 @@ Observe that $7^{n+1} - 2 \cdot 4^{n+1} + 1 = 4(7^n - 2 \cdot 4^n + 1) + 3(7^n -
 \Crefrange{cqCalculusBegin}{cqCalculusEnd} assume familiarity with the basic techniques of differential and integral calculus.
 
 \begin{chapex}
+\chplan{4.1}{Essentieel}
 \label{cqCalculusBegin}
 Prove that $\dfrac{d^n}{dx^n}(xe^x) = (n+x)e^x$ for all $n \in \mathbb{N}$.
 \end{chapex}
 
 \begin{chapex}
+\chplan{4.2}{Essentieel}
 Find and prove an expression for $\dfrac{d^n}{dx^n}(x^2e^x)$ for all $n \in \mathbb{N}$.
 \end{chapex}
 
 \begin{chapex}
+\chplan{4.1}{Essentieel}
 Let $f$ and $g$ be differentiable functions. Prove that
 \[ \dfrac{d^n}{dx^n}(f(x)g(x)) = \sum_{k=0}^n \dbinom{n}{k} f^{(k)}(x) g^{(n-k)}(x) \]
 for all $n \in \mathbb{N}$, where the notation $h^{(r)}$ denotes the $r^{\text{th}}$ derivative of $h$.
 \end{chapex}
 
 \begin{chapex}
+\chplan{4.1}{Aanbevolen}
 Find and prove an expression for the $n^{\text{th}}$ derivative of $\log(x)$ for all $n \in \mathbb{N}$.
 \end{chapex}
 
@@ -149,39 +161,48 @@ For (a) use integration by parts; you do not need induction. For parts (b) and (
 \tfquestiontext{cqInductionTFBegin}{cqInductionTFEnd}
 
 \begin{chapex} % True
+\chplan{4.1}{Aanbevolen}
 \label{cqInductionTFBegin}
 Every factorial is positive.
 \end{chapex}
 
 \begin{chapex} % False
+\chplan{4.1}{Essentieel}
 Every binomial coefficient is positive.
 \end{chapex}
 
 \begin{chapex} % False
+\chplan{4.2}{Essentieel}
 Every proof by strong induction can be turned into a proof by weak induction by changing only the induction hypothesis.
 \end{chapex}
 
 \begin{chapex} % True
+\chplan{4.2}{Essentieel}
 Every proof by weak induction can be turned into a proof by strong induction by changing only the induction hypothesis.
 \end{chapex}
 
 \begin{chapex} % True
+\chplan{4.2}{Aanbevolen}
 Given a set $X$, a surjection $f : \mathbb{N} \to X$ and a logical formula $p(x)$ with free variable $x \in X$, if $p(f(0))$ is true and $\forall n \in \mathbb{N},\, (p(f(n)) \Rightarrow p(f(n+1)))$ is true, then $\forall x \in X,\, p(x)$ is true.
 \end{chapex}
 
 \begin{chapex} % False
+\chplan{4.2}{Essentieel}
 Given some logical formula $p(x)$ with free variable $x \in \mathbb{N}$, if for all $x \in \mathbb{N}$ there exists some $y \le x$ such that $p(y)$ is false, then $p(x)$ is false for all $x \in \mathbb{N}$.
 \end{chapex}
 
 \begin{chapex} % False
+\chplan{4.2}{Essentieel}
 Every non-empty subset of the set $\mathbb{Q}^{\ge 0}$ of nonnegative rational numbers has a least element. 
 \end{chapex}
 
 \begin{chapex} % False
+\chplan{4.2}{Essentieel}
 Every non-empty subset of the set $\mathbb{Z}$ of integers has a least element.
 \end{chapex}
 
 \begin{chapex} % True
+\chplan{4.2}{Essentieel}
 \label{cqInductionTFEnd}
 Every non-empty subset of the set $\mathbb{Z}^{-}$ of negative integers has a greatest element.
 \end{chapex}
@@ -191,15 +212,18 @@ Every non-empty subset of the set $\mathbb{Z}^{-}$ of negative integers has a gr
 \asnquestiontext{cqInductionASNBegin}{cqInductionASNEnd}
 
 \begin{chapex} % Sometimes
+\chplan{4.1}{Aanbevolen}
 \label{cqInductionASNBegin}
 Let $n,k,\ell \in \mathbb{Z}$. Then $\dbinom{n}{k+\ell} = \dbinom{n}{k} + \dbinom{n}{\ell}$.
 \end{chapex}
 
 \begin{chapex} % Never
+\chplan{4.2}{Aanbevolen}
 Let $m,n \ge 2$. Then $(m+n)! = m!+n!$.
 \end{chapex}
 
 \begin{chapex} % Always
+\chplan{4.2}{Aanbevolen}
 \label{cqInductionASNEnd}
 Let $p(x)$ be a logical formula with free variable $x \in \mathbb{Z}$, and suppose that $p(0)$ is true and, for all $n \in \mathbb{Z}$, if $p(n)$ is true, then $p(n+1)$ and $p(n-2)$ are true. Then $\forall n \in \mathbb{Z},\, p(n)$ is true.
 \end{chapex}

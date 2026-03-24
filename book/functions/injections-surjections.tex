@@ -83,10 +83,12 @@ So assume $(g \circ f)(a) = (g \circ f)(b)$. By definition of function compositi
 \end{cproof}
 
 \begin{exercise}
+\plan{3.2}{Essentieel}
 Let $f : X \to Y$ and $g : Y \to Z$ be functions. Prove that if $g \circ f$ is injective, then $f$ is injective.
 \end{exercise}
 
 \begin{exercise}
+\plan{3.2}{Aanbevolen}
 Write out what it means to say a function $f : X \to Y$ is \textit{not} injective, and say how you would prove that a given function is not injective. Give an example of a function which is not injective, and use your proof technique to write a proof that it is not injective.
 \end{exercise}
 
@@ -100,6 +102,7 @@ For each of the following functions, determine whether it is injective or not in
 \end{exercise}
 
 \begin{exercise}
+\plan{3.2}{Essentieel}
 \label{exLinearPolynomialIsInjective}
 Let $a,b \in \mathbb{R}$ with $b \ne 0$, and define $f : \mathbb{R} \to \mathbb{R}$ by $f(t) = a+bt$ for all $t \in \mathbb{R}$. Prove that $f$ is injective.
 \end{exercise}
@@ -148,6 +151,7 @@ Fix $n \in \mathbb{N}$ with $n > 0$, and define a function $r : \mathbb{Z} \to [
 \end{example}
 
 \begin{exercise}
+\plan{3.2}{Essentieel}
 For each of the following pairs of sets $(X,Y)$, determine whether the function $f : X \to Y$ defined by $f(x)=2x+1$ is surjective.
 \begin{enumerate}[(a)]
 \item $X = \mathbb{Z}$ and $Y = \{ x \in \mathbb{Z} \mid x \text{ is odd} \}$;
@@ -165,6 +169,7 @@ Recall \Cref{defImage}.
 \end{exercise}
 
 \begin{exercise}
+\plan{3.2}{Essentieel}
 Let $f : X \to Y$ be a function. Prove that $f$ is surjective if and only if $Y=f[X]$
 \end{exercise}
 
@@ -180,6 +185,7 @@ If $Z$ were a subset of $Y$, then we could easily define an injection $i : Z \to
 \end{exercise}
 
 \begin{exercise}
+\plan{3.2}{Aanbevolen}
 Let $f : X \to \mathcal{P}(X)$ be a function. By considering the set $B = \{ x \in X \mid x \not\in f(x) \}$, prove that $f$ is not surjective.
 \hintlabel{exRussellSubset}{%
 Note that $B \in \mathcal{P}(X)$. Prove that there does not exist $a \in X$ such that $B = f(a)$.
@@ -221,6 +227,7 @@ Since $f$ is both injective and surjective, it is bijective.
 \end{example}
 
 \begin{exercise}
+\plan{3.2}{Aanbevolen}
 
 Let $X$ be a set. Prove that the identity function $\mathrm{id}_X : X \to X$ is a bijection.
 \hintlabel{exIdentityBijection}{%
@@ -237,6 +244,7 @@ Since $\mathrm{id}_X$ is both injective and surjective, it is bijective. \qed
 \end{exercise}
 
 \begin{exercise}
+\plan{3.2}{Essentieel}
 \label{exCompositeOfBijectionsIsBijection}
 Let $f : X \to Y$ and $g : Y \to Z$ be bijections. Prove that $g \circ f$ is a bijection.
 \end{exercise}
@@ -283,6 +291,7 @@ and so $d$ is a left inverse for $e$.
 \end{example}
 
 \begin{exercise}
+\plan{3.2}{Aanbevolen}
 \label{exIfHasLeftInverseThenInjective}
 Let $f : X \to Y$ be a function. Prove that if $f$ has a left inverse, then $f$ is injective.
 \end{exercise}
@@ -447,6 +456,7 @@ Since $g$ is a left inverse for $f$ and a right inverse for $f$, it is a two-sid
 \end{example}
 
 \begin{exercise}
+\plan{3.2}{Aanbevolen}
 \label{exFindTwoSidedInverses}
 The following functions have two-sided inverses. For each, find its inverse and prove that it is indeed an inverse.
 \begin{enumerate}[(a)]
@@ -463,6 +473,7 @@ For part (c), don't try to write a formula for the inverse of $h$; instead, use 
 In light of the correspondences between injections and left inverses, and surjections and right inverses, it may be unsurprising that there is a correspondence between \textit{bijections} and \textit{two-sided inverses}.
 
 \begin{exercise}
+\plan{3.2}{Essentieel}
 \label{exBijectiveIffHasInverse}
 Let $f : X \to Y$ be a function. Then $f$ is bijective if and only if $f$ has an inverse.
 \end{exercise}
@@ -520,6 +531,7 @@ So indeed $g$ is a right inverse for $f$.
 \end{cproof}
 
 \begin{exercise}
+\plan{3.2}{Aanbevolen}
 \label{exInverseBijection}
 Let $f : X \to Y$ be a bijection. Prove that $f^{-1} : Y \to X$ is a bijection.
 \begin{backhint}
@@ -529,11 +541,13 @@ Use \Cref{exBijectiveIffHasInverse}.
 \end{exercise}
 
 \begin{exercise}
+\plan{3.2}{Aanbevolen}
 \label{exCompositeBijection}
 Let $f : X \to Y$ and $g : Y \to Z$ be bijections. Prove that $g \circ f : X \to Z$ is a bijection, and write an expression for its inverse in terms of $f^{-1}$ and $g^{-1}$.
 \end{exercise}
 
 \begin{exercise}
+\plan{3.2}{Essentieel}
 Let $f : X \to A$ and $g : Y \to B$ be bijections. Prove that there is a bijection $X \times Y \to A \times B$, and describe its inverse.
 \hintlabel{exCartesianProductOfBijections}{%
 Define $h : X \times Y \to A \times B$ by $h(x,y) = (f(x), g(y))$ for all $x \in X$ and all $y \in Y$; find an inverse for $h$ in terms of the inverses of $f$ and $g$.

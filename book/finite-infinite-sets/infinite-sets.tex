@@ -52,11 +52,13 @@ which is exactly the list we presented earlier! The fact that $f$ is a bijection
 \end{example}
 
 \begin{exercise}
+\plan{7.1}{Aanbevolen}
 \label{exPositiveIntegersCountablyInfinite}
 Prove that the set of all positive integers is countably infinite.
 \end{exercise}
 
 \begin{exercise}
+\plan{7.1}{Essentieel}
 \label{exEvenOddNaturalNumbersCountablyInfinite}
 Prove that the set of all even natural numbers is countably infinite, and that the set of all odd natural numbers is countably infinite.
 \end{exercise}
@@ -64,6 +66,7 @@ Prove that the set of all even natural numbers is countably infinite, and that t
 Since the inverse of a bijection is a bijection, we may also prove that a set $X$ is countable by finding a bijection $X \to \mathbb{N}$.
 
 \begin{exercise}
+\plan{7.1}{Aanbevolen}
 Prove that the function $p : \mathbb{N} \times \mathbb{N} \to \mathbb{N}$ defined by $p(x,y) = 2^x(2y+1)-1$ is a bijection. Deduce that $\mathbb{N} \times \mathbb{N}$ is countable.
 \hintlabel{exNCrossNIsCountable}{%
 The fundamental theorem of arithmetic (\Cref{thmFTA}) implies that, for all $n \in \mathbb{N}$, we can express $n+1$ uniquely as a power of $2$ multiplied by an odd number. 
@@ -86,6 +89,7 @@ Conversely, suppose $Y$ is countably infinite. Then there is a bijection $h : \m
 \end{cproof}
 
 \begin{exercise}
+\plan{7.1}{Essentieel}
 Prove if $X$ and $Y$ are countably infinite sets, then $X \times Y$ is countably infinite.
 \hintlabel{exProductOfTwoCountableSetsIsCountable}{%
 Use \Cref{exCartesianProductOfBijections}, together with the definition of countably infinite sets, to construct a bijection $\mathbb{N} \times \mathbb{N} \to X \times Y$. Then apply \Cref{exNCrossNIsCountable} and \Cref{propCountablyInfiniteFromBijection}.
@@ -167,6 +171,7 @@ So $f$ is a bijection, as required.
 \end{cproof}
 
 \begin{exercise}
+\plan{7.1}{Aanbevolen}
 Let $X$ be a countably infinite set. In the proof of $\text{(iii)} \Rightarrow \text{(i)}$ in \Cref{thmCountableFromInjSurj}, we gave an explicit construction of a bijection $f : \mathbb{N} \to X$ using a surjection $h : \mathbb{N} \to X$. Prove $\text{(ii)} \Rightarrow \text{(i)}$ the same way---that is, explain how to construct a bijection $f : \mathbb{N} \to X$ using an injection $g : X \to \mathbb{N}$.
 \hintlabel{exConstructBijectionFromInjection}{%
 Intuitively, we should be able to define $f$ by listing the values of $g$ in increasing order and, for all $n \in \mathbb{N}$, defining $f(n)$ to be the element $x \in X$ for which $g(x)$ is the $n^{\text{th}}$ (counting from $0$) value in the list. Your task is to make this precise. Be sure to note where in your proof you use injectivity of $g$.}
@@ -175,6 +180,7 @@ Intuitively, we should be able to define $f$ by listing the values of $g$ in inc
 \Cref{thmCountableFromInjSurj} allows us to deduce that sets are countable by finding injections with codomain $\mathbb{N}$ or surjections with domain $\mathbb{N}$, and without needing to find a bijection explicitly. It turns out we can do even better: we can replace $\mathbb{N}$ in \Cref{thmCountableFromInjSurj} with any set that is already known to be countable.
 
 \begin{exercise}
+\plan{7.1}{Essentieel}
 \label{exCountabilityFromInjectionsAndSurjections}
 Let $X$ be an non-empty set. The following are equivalent:
 \begin{enumerate}[(i)]
@@ -209,6 +215,7 @@ By \Cref{exCountableFromInjSurjC}, it follows that $\mathbb{Q}$ is countable.
 % To do: concept used before introduced - define (X choose k) in Section 6.1
 
 \begin{exercise} \label{exFiniteSubsetsCountableFixedSize}
+\plan{7.1}{Essentieel}
 Let $X$ be a countable set. Prove that $\binom{X}{k}$ is countable for each $k \in \mathbb{N}$.
 \begin{backhint}
 \hintref{exFiniteSubsetsCountableFixedSize}
@@ -320,6 +327,7 @@ Hence $f$ is not surjective, so that $\mathbb{R}$ is uncountable.
 \end{cproof}
 
 \begin{exercise}
+\plan{7.2}{Essentieel}
 Use Cantor's diagonal argument to prove that the set $\mathbb{N}^{\mathbb{N}}$ of all functions $\mathbb{N} \to \mathbb{N}$ is uncountable.
 \end{exercise}
 
@@ -359,10 +367,12 @@ by \Cref{thmCharacteristicFunctionsCharacteriseSubsets}. But then $F$ is injecti
 It so happens that the function $F$ defined in the proof of \Cref{propBinarySequencesAreUncountable} is \textit{bijective}, not just injective; however, we did not prove this, since it was not needed in our proof.
 
 \begin{exercise}
+\plan{7.2}{Essentieel}
 Prove that if a set $X$ has an uncountable subset, then $X$ is uncountable.
 \end{exercise}
 
 \begin{exercise}
+\plan{7.2}{Aanbevolen}
 \label{exPowerSetFiniteOrUncountable}
 Let $X$ be a set. Prove that $\mathcal{P}(X)$ is either finite or uncountable.
 \begin{backhint}

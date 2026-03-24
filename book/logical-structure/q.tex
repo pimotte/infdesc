@@ -1,5 +1,6 @@
 % !TeX root = ../../infdesc.tex
 \begin{chapex}
+\chplan{1.2}{Essentieel}
 \label{cqTranslatePropositionalFormulaeToEnglish}
 For fixed $n \in \mathbb{N}$, let $p$ represent the proposition `$n$ is even', let $q$ represent the proposition `$n$ is prime' and let $r$ represent the proposition `$n = 2$'. For each of the following propositional formulae, translate it into plain English and determine whether it is true for all $n \in \mathbb{N}$, true for some values of $n$ and false for some values of $n$, or false for all $n \in \mathbb{N}$.
 
@@ -33,7 +34,6 @@ Let $p$ and $q$ be propositions, and assume that $p \Rightarrow (\neg q)$ is tru
 In \Crefrange{cqStructureProofBegin}{cqStructureProofEnd}, use the definitions of the logical operators in \Cref{secPropositionalLogic} to describe what steps should be followed in order to prove the propositional formula in the question; the letters $p$, $q$, $r$ and $s$ are propositional variables.
 
 \begin{chapex}
-\plan{week 1.2}{bonus}
 \label{cqStructureProofBegin}
 $(p \wedge q) \Rightarrow (\neg r)$
 \end{chapex}
@@ -54,6 +54,7 @@ $(p \wedge (\neg q)) \vee (q \wedge (\neg p))$
 % Variables and quantifiers %
 
 \begin{chapex}
+\chplan{1.2}{Aanbevolen}
 Find a statement in plain English, involving no variables at all, that is equivalent to the logical formula $\forall a \in \mathbb{Q},\, \forall b \in \mathbb{Q},\, (a < b \Rightarrow \exists c \in \mathbb{R},\, [a < c < b ~\wedge~ \neg (c \in \mathbb{Q})])$. Then prove this statement, using the structure of the logical formula as a guide.
 \end{chapex}
 
@@ -68,6 +69,7 @@ Let $X$ be a set and let $p(x)$ be a predicate. Find a logical formula represent
 % Logical equivalence %
 
 \begin{chapex}
+\chplan{2.1}{Aanbevolen}
 Prove that
 \[
 p \Leftrightarrow q \equiv (p \Rightarrow q) \wedge ((\neg p) \Rightarrow (\neg q))
@@ -148,6 +150,7 @@ This question explores this curious new logical operator.
 \end{chapex}
 
 \begin{chapex}
+\chplan{2.1}{Essentieel}
 Let $X$ be $\mathbb{Z}$ or $\mathbb{Q}$, and define a logical formula $p$ by:
 $$\forall x \in X,\, \exists y \in X,\, (x<y \wedge [\forall z \in X,\, \neg (x<z \wedge z<y)])$$
 Write out $\neg p$ as a maximally negated logical formula. Prove that $p$ is true when $X = \mathbb{Z}$, and $p$ is false when $X = \mathbb{Q}$.
@@ -195,14 +198,17 @@ The logical formulae $\neg \forall x \in X,\, \forall y \in Y,\, p(x,y)$ and $\e
 \end{chapex}
 
 \begin{chapex} % False
+\chplan{2.1}{Aanbevolen}
 $\neg \forall x \ge 0,\, \exists y \in \mathbb{R},\, y^2=x$ is logically equivalent to $\forall x < 0,\, \exists y \not\in \mathbb{R},\, y^2 \ne x$.
 \end{chapex}
 
 \begin{chapex} % True
+\chplan{2.1}{Aanbevolen}
 $\neg \forall x \ge 0,\, \exists y \in \mathbb{R},\, y^2=x$ is logically equivalent to $\exists x \ge 0,\, \forall y \in \mathbb{R},\, y^2 \ne x$.
 \end{chapex}
 
 \begin{chapex} % False
+\chplan{2.1}{Aanbevolen}
 \label{cqLogicTFEnd}
 $\neg \forall x \ge 0,\, \exists y \in \mathbb{R},\, y^2=x$ is logically equivalent to $\exists x < 0,\, \forall y \in \mathbb{R},\, y^2 = x$.
 \end{chapex}
@@ -212,11 +218,13 @@ $\neg \forall x \ge 0,\, \exists y \in \mathbb{R},\, y^2=x$ is logically equival
 \asnquestiontext{cqLogicASNBegin}{cqLogicASNEnd}
 
 \begin{chapex} % Sometimes
+\chplan{1.2}{Aanbevolen}
 \label{cqLogicASNBegin}
 Let $p$ and $q$ be propositions and assume that $p$ is true. Then $p \Rightarrow q$ is true.
 \end{chapex}
 
 \begin{chapex} % Always
+\chplan{1.2}{Aanbevolen}
 Let $p$ and $q$ be propositions and assume that $p$ is false. Then $p \Rightarrow q$ is true.
 \end{chapex}
 

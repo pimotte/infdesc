@@ -14,6 +14,7 @@ For each of the following equations, determine whether there exists a function $
 \end{chapex}
 
 \begin{chapex}
+\chplan{3.1}{Aanbevolen}
 Let $X$ be a set. Prove that
 \[ \forall a \in X,\, \exists ! U \in \mathcal{P}(X), (a \in U \wedge \exists ! x \in X,\, x \in U) \]
 Give an explicit description of the function $X \to \mathcal{P}(X)$ that is suggested by this logical formula.
@@ -90,6 +91,7 @@ $f : \mathbb{R} \to \mathbb{R}$; $f(x) = \sqrt{1+x^2}$ for all $x \in \mathbb{R}
 \end{chapex}
 
 \begin{chapex}
+\chplan{3.1}{Essentieel}
 $f : \mathbb{Z} \times \mathbb{Z} \to \mathbb{Z}$; $f(a,b) = a+2b$ for all $(a,b) \in \mathbb{Z} \times \mathbb{Z}$; $U = \{ 1 \} \times \mathbb{Z}$.
 \end{chapex}
 
@@ -112,6 +114,7 @@ $f : \mathbb{R} \to \mathbb{R}$; $f(x) = \sqrt{1+x^2}$ for all $x \in \mathbb{R}
 \end{chapex}
 
 \begin{chapex}
+\chplan{3.1}{Essentieel}
 $f : \mathbb{Z} \times \mathbb{Z} \to \mathbb{Z}$; $f(a,b) = a+2b$ for all $(a,b) \in \mathbb{Z} \times \mathbb{Z}$; $V = \{ n \in \mathbb{Z} \mid n \text{ is odd} \}$.
 \end{chapex}
 
@@ -121,6 +124,7 @@ $f : \mathcal{P}(\mathbb{N}) \times \mathcal{P}(\mathbb{N}) \to \mathcal{P}(\mat
 \end{chapex}
 
 \begin{chapex}
+\chplan{3.1}{Essentieel}
 Let $f : X \to Y$ be a function. For each of the following statements, either prove it is true or find a counterexample.
 \begin{multicols}{2}
 \begin{enumerate}[(a)]
@@ -175,6 +179,7 @@ Prove it by double containment, and carefully unpack the definitions of what it 
 \subsection*{Injections, surjections and bijections}
 
 \begin{chapex}
+\chplan{3.2}{Essentieel}
 \begin{enumerate}[(a)]
 \item Prove that, for all functions $f : X \to Y$ and $g : Y \to Z$, if $g \circ f$ is bijective, then $f$ is injective and $g$ is surjective.
 \item Find an example of a function $f : X \to Y$ and a function $g : Y \to Z$ such that $g \circ f$ is bijective, $f$ is not surjective and $g$ is not injective.
@@ -185,6 +190,8 @@ Avoid the temptation to prove either part of this question by contradiction. For
 \end{chapex}
 
 \begin{chapex}
+\chplan{3.2}{Essentieel}
+\chplan{7.2}{Aanbevolen}
 \label{cqInjectionSurjectionBijection}
 For each of the following pairs $(U,V)$ of subsets of $\mathbb{R}$, determine whether the specification `$f(x) = x^2-4x+7$ for all $x \in U$' defines a function $f : U \to V$ and, if it does, determine whether $f$ is injective and whether $f$ is surjective.
 \begin{multicols}{2}
@@ -200,6 +207,8 @@ For each of the following pairs $(U,V)$ of subsets of $\mathbb{R}$, determine wh
 \end{chapex}
 
 \begin{chapex}
+\chplan{7.2}{Aanbevolen}
+\chplan{7.2}{Bonus}
 For each of the following pairs of sets $X$ and $Y$, find (with proof) a bijection $f : X \to Y$.
 \begin{enumerate}[(a)]
 \item $X = \mathbb{Z}$ and $Y = \mathbb{N}$;
@@ -249,10 +258,12 @@ The image of a function is a subset of its domain.
 \end{chapex}
 
 \begin{chapex} % True
+\chplan{3.1}{Essentieel}
 Given a function $f : X \to Y$, the assignment $V \mapsto f^{-1}[V]$ defines a function $\mathcal{P}(Y) \to \mathcal{P}(X)$.
 \end{chapex}
 
 \begin{chapex} % True
+\chplan{3.2}{Aanbevolen}
 Let $f$, $g$ and $h$ be composable functions. If $h \circ g \circ f$ is injective, then $g$ is injective.
 \end{chapex}
 
@@ -266,11 +277,13 @@ Every left inverse is surjective and every right inverse is injective.
 \asnquestiontext{cqFunctionsASNBegin}{cqFunctionsASNEnd}
 
 \begin{chapex} % Always
+\chplan{3.1}{Aanbevolen}
 \label{cqFunctionsASNBegin}
 Let $f : X \to Y$ be a function and let $U \subseteq X$. Then there is a function $g : U \to Y$ defined by $g(x) = f(x)$ for all $x \in U$.
 \end{chapex}
 
 \begin{chapex} % Sometimes
+\chplan{3.1}{Aanbevolen}
 Let $f : X \to Y$ be a function and let $V \subseteq Y$. Then there is a function $g : X \to V$ defined by $g(x) = f(x)$ for all $x \in X$.
 \end{chapex}
 
@@ -283,6 +296,7 @@ Let $X$ be a set. Then there is a unique function $X \to \varnothing$.
 \end{chapex}
 
 \begin{chapex} % Sometimes
+\chplan{3.1}{Essentieel}
 Let $X$ and $Y$ be sets and let $G \subseteq X \times Y$. Then $G$ is the graph of a function $f : X \to Y$.
 \end{chapex}
 
@@ -307,6 +321,7 @@ Let $f : \{ 1, 2 \} \to \{ 1, 2, 3 \}$ be a function. Then $f$ is surjective.
 \end{chapex}
 
 \begin{chapex} % Always
+\chplan{3.2}{Aanbevolen}
 Let $a,b,c,d \in \mathbb{R}$ and define $f : \mathbb{R}^2 \to \mathbb{R}^2$ by $f(x,y) = (ax+by,cx+dy)$ for all $(x,y) \in \mathbb{R}^2$. Then $f$ is injective if and only if $f$ is surjective.
 \hintlabel{cqLinearMapInjectiveIffSurjective}{%
 First prove that $f$ is bijective if and only if $ad \ne bc$.
@@ -314,6 +329,7 @@ First prove that $f$ is bijective if and only if $ad \ne bc$.
 \end{chapex}
 
 \begin{chapex} % Sometimes
+\chplan{3.2}{Essentieel}
 \label{cqFunctionsASNEnd}
 Let $U, V \subseteq \mathbb{R}$ and suppose that $x^2 \in V$ for all $x \in U$. The function $f : U \to V$ defined by $f(x) = x^2$ is injective.
 \end{chapex}
