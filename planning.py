@@ -70,5 +70,7 @@ with open('planning_processed.csv', 'w', newline='') as file:
                 lines.append(f"in {section}: {nums}")
             row.append('\n'.join(lines))
         writer.writerow(row)
+    for _ in range(3):
+        writer.writerow(['', '', '', ''])
 
 print("planning_processed.csv has been created successfully!")

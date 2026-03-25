@@ -75,9 +75,44 @@ def test_multiline_cells():
     assert '\n' in cell
 
 
+def test_subparts_exercise():
+    run_script()
+    rows = read_processed()
+    # 1.2.37ab -> in 1.2: ..., 37ab, ...
+    cell = rows['1.2']['Aanbevolen']
+    assert '37ab' in cell, f"Expected '37ab' in 1.2 Aanbevolen, got: {cell!r}"
+
+
+def test_subparts_exercise_multi():
+    run_script()
+    rows = read_processed()
+    # 1.3.44ace -> in 1.3: ..., 44ace, ...
+    cell = rows['2.1']['Essentieel']
+    assert '44ace' in cell, f"Expected '44ace' in 2.1 Essentieel, got: {cell!r}"
+    # 3.1.15abc
+    cell = rows['3.1']['Essentieel']
+    assert '15abc' in cell, f"Expected '15abc' in 3.1 Essentieel, got: {cell!r}"
+    # 3.2.39ab
+    cell = rows['3.2']['Aanbevolen']
+    assert '39ab' in cell, f"Expected '39ab' in 3.2 Aanbevolen, got: {cell!r}"
+
+
+def test_subparts_chapex():
+    run_script()
+    rows = read_processed()
+    # 3.24e and 3.25b (chapex) -> in 3.E: 24e, 25b
+    cell = rows['7.2']['Aanbevolen']
+    assert '24e' in cell, f"Expected '24e' in 7.2 Aanbevolen, got: {cell!r}"
+    assert '25b' in cell, f"Expected '25b' in 7.2 Aanbevolen, got: {cell!r}"
+    # 3.25cd (bonus chapex) -> in 3.E: 25cd
+    cell = rows['7.2']['Bonus']
+    assert '25cd' in cell, f"Expected '25cd' in 7.2 Bonus, got: {cell!r}"
+
+
 if __name__ == '__main__':
     tests = [test_header, test_week_1_1_essentieel, test_week_1_2_essentieel,
-             test_week_7_2_essentieel, test_b_section, test_multiline_cells]
+             test_week_7_2_essentieel, test_b_section, test_multiline_cells,
+             test_subparts_exercise, test_subparts_exercise_multi, test_subparts_chapex]
     failed = 0
     for t in tests:
         try:

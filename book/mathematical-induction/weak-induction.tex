@@ -138,6 +138,7 @@ The result follows by induction.
 \end{cproof}
 
 \begin{exercise}
+\plan{4.1}{Essentieel}
 \label{exSumOfPowersOf2}
 Prove by induction that $\displaystyle \sum_{k=0}^n 2^k = 2^{n+1} - 1$ for all $n \in \mathbb{N}$.
 \end{exercise}
@@ -145,7 +146,6 @@ Prove by induction that $\displaystyle \sum_{k=0}^n 2^k = 2^{n+1} - 1$ for all $
 The following proposition has a proof by induction in which the base case is not zero.
 
 \begin{proposition}
-\plan{4.1}{Essentieel}
 \label{propWeakInductionNonzeroBaseCaseExample}
 For all $n \ge 4$, we have $3n < 2^n$.
 \end{proposition}
@@ -191,6 +191,7 @@ By induction, we're done.
 \end{example}
 
 \begin{exercise}
+\plan{4.1}{Aanbevolen}
 Write down the statement $p(n)$ that \Cref{exHorseInductionFail} attempted to prove for all $n \ge 1$. Convince yourself that the proof of the base case is correct, then write down---with quantifiers---exactly the proposition that the induction step is meant to prove. Explain why the argument in the induction step failed to prove this proposition.
 \end{exercise}
 
@@ -212,7 +213,6 @@ We may have spotted the error in what was to come.
 What follows are a couple more examples of proofs by weak induction.
 
 \begin{proposition}
-\plan{4.1}{Aanbevolen}
 For all $n \in \mathbb{N}$, we have $\displaystyle \sum_{k=0}^n k^3 = \left( \sum_{k=0}^n k \right)^2$.
 \end{proposition}
 
@@ -270,6 +270,7 @@ By induction, the result follows.
 The following exercises generalises \Cref{exSumOfPowersOf2} to prove the correctness of a formula for the sum of a \textit{geometric progression} of real numbers.
 
 \begin{exercise}
+\plan{4.1}{Essentieel}
 \label{exFormulaForGeometricProgression}
 Let $a,r \in \mathbb{R}$ with $r \ne 1$. Then
 \[ \sum_{k=0}^n ar^k = \frac{a(1-r^{n+1})}{1-r} \]
@@ -279,7 +280,6 @@ for all $n \in \mathbb{N}$.
 So far in this section most of the results that we have proved by induction have concerned numbers, and particularly identities involving natural numbers. But the scope of proof by induction is not limited to such results---the next exercise, for example, concerns sets and bijections.
 
 \begin{exercise}
-\plan{4.1}{Essentieel}
 Let $n \in \mathbb{N}$ and for each $k \in [n+1]$ let $X_k$ be a set. Prove by induction on $n$ that there is a bijection $\displaystyle \prod_{k \in [n+1]} X_k \to \left( \prod_{k \in [n]} X_k \right) \times X_n$.
 \hintlabel{exProductOfSuccNSets}{%
 To define the bijection, think about what the elements of the two sets look like: The elements of $\prod_{k \in [n+1]} X_k$ look like $(a_0, a_1, \dots, a_{n-1}, a_n)$, where $a_k \in X_k$ for each $k \in [n+1]$. On the other hand, the elements of $\left( \prod_{k \in [n]} X_k \right) \times X_n$ look like $((a_0, a_1, \dots, a_{n-1}), a_n)$.
@@ -417,13 +417,13 @@ Indeed:
 \end{example}
 
 \begin{exercise}
+\plan{4.1}{Aanbevolen}
 Prove that $\dbinom{n}{k} = \dbinom{n}{n-k}$ for all $n,k \in \mathbb{N}$ with $k \le n$.
 \end{exercise}
 
 A very useful application of binomial coefficients in elementary algebra is to the binomial theorem.
 
 \begin{theorem}[Binomial theorem]
-\plan{4.1}{Aanbevolen}
 \label{thmBinomialTheorem}
 Let $n \in \mathbb{N}$ and $x,y \in \mathbb{R}$. Then
 \[ (x+y)^n = \sum_{k=0}^n \binom{n}{k} x^k y^{n-k} \]
@@ -478,6 +478,7 @@ Both of these identities can be proved much more elegantly, quickly and easily u
 \end{example}
 
 \begin{exercise}
+\plan{4.1}{Aanbevolen}
 Use the binomial theorem to prove that
 \[ \sum_{i=0}^n (-1)^i \binom{n}{i} = 0 \]
 \hintlabel{exAlternatingSumOfBinomialCoefficientsIsZero}{%
