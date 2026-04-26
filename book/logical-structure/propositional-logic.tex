@@ -216,6 +216,7 @@ We can express the proposition `$7$ is a prime factor of $28$' in the form $p \w
 \end{example}
 
 \begin{exercise}
+\plan{1.1}{Aanbevolen}
 \label{exJohnMathematicianPittsburgh}
 Express the proposition `John is a mathematician who lives in Pittsburgh' in the form $p \wedge q$, for propositions $p$ and $q$.
 \end{exercise}
@@ -267,6 +268,7 @@ Suppose that, somewhere in the process of proving a proposition, we arrive at th
 \end{example}
 
 \begin{exercise}
+\plan{1.1}{Aanbevolen}
 Suppose we are given three propositions $p$, $q$ and $r$ and we are given that $(p \wedge q) \wedge r$ is true.
 Use \Cref{strAssumingConjunctionsDirect} to prove that $q$ is true. 
 \end{exercise}
@@ -352,6 +354,7 @@ In addition to its clean and compact nature, this way of writing rules of infere
 From this proof tree, we obtain a strategy for proving a proposition of the form $(p \wedge q) \wedge r$. Namely, first prove $p$ and prove $q$, to conclude $p \wedge q$; and then prove $r$, to conclude $(p \wedge q) \wedge r$. This illustrates that the logical structure of a proposition informs how we may structure a proof of the proposition.
 
 \begin{exercise}
+\plan{1.1}{Aanbevolen}
 Write a proof tree whose conclusion is the propositional formula $(p \wedge q) \wedge (r \wedge s)$, where $p,q,r,s$ are propositional variables. Express `$2$ is an even prime number and $3$ is an odd prime number' in the form $(p \wedge q) \wedge (r \wedge s)$, for appropriate propositions $p$, $q$, $r$ and $s$, and describe how your proof tree suggests what a proof might look like.
 \end{exercise}
 
@@ -527,6 +530,7 @@ In both cases, $p \vee (q \wedge r)$ is true.
 \end{example}
 
 \begin{exercise}
+\plan{1.1}{Essentieel}
 Let $p$, $q$, and $r$ be propositions, and suppose $q \vee r$ is true. Prove that $(p \vee q) \vee (p \vee r)$ is true, using \Cref{strAssumingDisjunctionsDirect} and \Cref{strProvingDisjunctionsDirect}.
 \end{exercise}
 
@@ -554,6 +558,7 @@ Notice that in both Case 1 and Case 2, we did not explicitly mention that we had
 \end{example}
 
 \begin{exercise}
+\plan{1.1}{Aanbevolen}
   Let $n$ be either the number 8 or 9. Prove that $n$ is even or a perfect square.
 \end{exercise}
 
@@ -594,6 +599,7 @@ Note that in the proof of \Cref{propRemainderOfSquaresModulo3}, unlike in \Cref{
 When completing the following exercises, try to keep track of exactly where you use the introduction and elimination rules that we have seen so far.
 
 \begin{exercise}
+\plan{1.1}{Essentieel}
 Let $n$ be an integer. Prove that $n^2$ leaves a remainder of $0$, $1$ or $4$ when divided by $5$.
 \hintlabel{exSquareRemainderModuloFive}{
 Mimic the proof of \Cref{propRemainderOfSquaresModulo3}.
@@ -684,10 +690,12 @@ Let $p(x)$ be a polynomial over $\mathbb{C}$. Prove that if $\alpha$ is a root o
 The elimination rule for implication \elimrule{\Rightarrow} is more commonly known by the Latin name \textit{modus ponens}.
 
 \begin{exercise}
+\plan{1.2}{Essentieel}
 Let $r$ and $s$ be propositions. Prove that $r \Rightarrow (s \Rightarrow s)$ is true. Write your proof using the strategies discussed for implications.
 \end{exercise}
 
 \begin{exercise}
+\plan{1.2}{Essentieel}
 Let $a$, $b$, and $c$ be propositions. Prove that $(a \vee b) \Rightarrow (c \Rightarrow ((c \wedge a) \vee b))$ is true. Structure your proof by using the appropriate strategies you have learned so far.
 \end{exercise}
 
@@ -716,6 +724,7 @@ Given the polynomial $f(x) = x^2-68x+1156$, it would be a pain to go through the
 \end{example}
 
 \begin{exercise}
+\plan{1.2}{Aanbevolen}
 Let $p$, $q$, and $r$ be propositions. Prove that $(p \Rightarrow q \Rightarrow r) \Rightarrow (q \Rightarrow (p \Rightarrow r))$ is true.
 \hintlabel{exStrategy1_1_25_easy}{
 First use $p$ and $q$ as assumptions, then apply the implication.
@@ -723,6 +732,7 @@ First use $p$ and $q$ as assumptions, then apply the implication.
 \end{exercise}
 
 \begin{exercise}
+\plan{1.2}{Essentieel}
 Let $p$, $q$, and $r$ be propositions. Prove that $(p \Rightarrow p \wedge q) \Rightarrow ((p \vee q) \Rightarrow q)$ is true.
 \hintlabel{exStrategy1_1_25_mixed}{
 Consider cases for $p \vee q$ and use the implication appropriately.
@@ -778,6 +788,7 @@ Therefore, $p \Leftrightarrow q$ is true.
 \end{example}
 
 \begin{exercise}
+\plan{1.2}{Aanbevolen}
 Let $p$ and $q$ be propositions. We prove that $(p \Leftrightarrow q) \Leftrightarrow (q \Leftrightarrow p)$ is true.
 
 \end{exercise}
@@ -923,6 +934,7 @@ so indeed $8$ divides $n$, as required.
 \end{example}
 
 \begin{exercise}
+\plan{1.2}{Essentieel}
 Prove that a natural number $n$ is divisible by $3$ if and only if the sum of its base-$10$ digits is divisible by $3$.
 \hintlabel{exSumOfDigitsDivisibleByThree}{%
 Suppose $n = d_r \cdot 10^r + \cdots + d_1 \cdot 10 + d_0$ and let $s = d_r + \cdots + d_1 + d_0$. Start by proving that $3 \mid n-s$.
@@ -1021,21 +1033,25 @@ This contradicts the assumption that $a$ is irrational. It follows that $r+a$ is
 Now you can try proving some elementary facts by contradiction.
 
 \begin{exercise}
+\plan{1.2}{Aanbevolen}
 Let $p$ and $q$ be propositions. Prove that $(p \Rightarrow \neg q) \Rightarrow (q \Rightarrow \neg p)$ is true.
 
 \end{exercise}
 
 \begin{exercise}
+\plan{1.2}{Aanbevolen}
 Let $p$ and $q$ be propositions. Prove that $\neg p \Rightarrow (\neg q \Rightarrow \neg(p \vee q))$ is true.
 
 \end{exercise}
 
 \begin{exercise}
+\plan{1.2}{Essentieel}
 \label{exNegationAndReciprocalOfIrrationalNumbers}
 Let $x \in \mathbb{R}$. Prove by contradiction that if $x$ is irrational then $-x$ and $\frac{1}{x}$ are irrational.
 \end{exercise}
 
 \begin{exercise}
+\plan{1.2}{Essentieel}
 \label{exNoLeastPositiveReal}
 Prove by contradiction that there is no least positive real number. That is, prove that there is not a positive real number $a$ such that $a \le b$ for all positive real numbers $b$.
 \end{exercise}
@@ -1134,10 +1150,12 @@ Reflect on the proof of \Cref{propIfProductEvenThenSomeFactorEven}. Where in the
 \end{exercise}
 
 \begin{exercise}
+\plan{1.2}{Aanbevolen}
 Let $p$ and $q$ be propositions. Prove that $(\neg q \Rightarrow \neg p) \Rightarrow (p \Rightarrow q)$ is true.
 \end{exercise}
 
 \begin{exercise}
+\plan{1.2}{Aanbevolen}
 Let $a$ and $b$ be irrational numbers. By considering the number $\sqrt{2}^{\sqrt{2}}$, prove that it is possible that $a^b$ be rational.
 \hintlabel{exIrrationalExpIrrationalCanBeRational}{%
 Use the law of excluded middle according to whether the proposition `$\sqrt{2}^{\sqrt{2}}$ is rational' is true or false.}

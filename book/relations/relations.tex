@@ -55,6 +55,7 @@ Recall the relation $R$ on $\mathbb{R}$ that we defined above for $a,b \in \math
 \end{example}
 
 \begin{exercise}
+\plan{5.1}{Essentieel}
 Let $R$ and $S$ be relations on $\mathbb{R}$ defined for $a,b \in \mathbb{R}$ by letting
 \[ a \mathrel{R} b ~ \Leftrightarrow ~ b-a \in \mathbb{Q} \quad \text{and} \quad a \mathrel{S} b ~ \Leftrightarrow ~ \exists n \in \mathbb{Z},~ (n \ne 0) \wedge n(b-a) \in \mathbb{Z} \]
 Prove that $R=S$.
@@ -97,10 +98,12 @@ Note that $\mathrm{Gr}(C)$ is \textit{not} the graph of a function $f : [0,1] \t
 \end{example}
 
 \begin{exercise}
+\plan{5.1}{Aanbevolen}
 Let $R$ be the relation on $\mathbb{Z}$ defined for $x,y \in \mathbb{Z}$ by letting $x \mathrel{R} y$ if and only if $x^2=y^2$. Describe its graph $\mathrm{Gr}(R) \subseteq \mathbb{Z} \times \mathbb{Z}$.
 \end{exercise}
 
 \begin{exercise}
+\plan{5.1}{Aanbevolen}
 Let $f : X \to Y$ be a function, and define the relation $R_f$ from $X$ to $Y$ as in \Cref{exRelationExamples}. Prove that $\mathrm{Gr}(R_f) = \mathrm{Gr}(f)$---that is, the graph of the \textit{relation} $R_f$ is equal to the graph of the \textit{function} $f$.
 \end{exercise}
 
@@ -117,6 +120,7 @@ The \textbf{empty relation} from a set $X$ to a set $Y$ is the relation $\varnot
 \end{definition}
 
 \begin{exercise}
+\plan{5.1}{Essentieel}
 \label{exGraphOfEmptyAndDiscreteRelations}
 Let $X$ and $Y$ be sets. Describe the graphs $\mathrm{Gr}(D_{X,Y})$ and $\mathrm{Gr}(\varnothing_{X,Y})$.
 \end{exercise}
@@ -161,6 +165,7 @@ Let $X$ be a set. The \textbf{diagonal subset} of $X \times X$ is the set $\Delt
 To see why $\Delta_X$ is called the `diagonal' subset, try plotting $\Delta_{\mathbb{R}} \subseteq \mathbb{R} \times \mathbb{R}$ on a standard pair of axes (like in \Cref{exCircleRelation}).
 
 \begin{exercise}
+\plan{5.1}{Aanbevolen}
 Let $X$ be a set. Prove that $\Delta_X = \mathrm{Gr}(=)$.
 \end{exercise}
 
@@ -208,11 +213,13 @@ Let $R$ be the relation on $\mathbb{R}$ defined for $a,b \in \mathbb{R}$ by $a \
 \end{example}
 
 \begin{exercise}
+\plan{5.1}{Essentieel}
 \label{exSubsetIsReflexive}
 Let $X$ be a set. Prove that $\subseteq$ is a reflexive relation on $\mathcal{P}(X)$, but $\subsetneqq$ is not.
 \end{exercise}
 
 \begin{exercise}
+\plan{5.1}{Essentieel}
 \label{exDivisibilityIsReflexive}
 Prove that the relation `$x$ divides $y$' on $\mathbb{Z}$ is reflexive.
 \end{exercise}
@@ -220,6 +227,7 @@ Prove that the relation `$x$ divides $y$' on $\mathbb{Z}$ is reflexive.
 The next exercise demonstrates that when determining if a relation is reflexive, we must be careful to specify its domain.
 
 \begin{exercise}
+\plan{5.1}{Aanbevolen}
 \label{exReflexivitySensitiveToDomainOfRelation}
 Let $G = \{ (0,0), (1,1), (2,2) \}$. Let $R$ be the relation on $[3]$ whose graph is $G$, and let $S$ be the relation on $[4]$ whose graph is $G$. Prove that $R$ is reflexive, but $S$ is not.
 \end{exercise}
@@ -257,12 +265,14 @@ so that $a-b \in \mathbb{Q}$. Hence $b \mathrel{R} a$, as required.
 \end{example}
 
 \begin{exercise}
+\plan{5.1}{Essentieel}
 Find all subsets $U \subseteq \mathbb{Z}$ such that the relation `$x$ divides $y$' on $U$ is symmetric.
 \end{exercise}
 
 We showed in \Cref{exReflexivitySensitiveToDomainOfRelation} that reflexivity of a relation is sensitive to its domain. The next exercise demonstrates that symmetry is \textit{not} sensitive to the domain---that is, it is an \textit{intrinsic} property of the relation.
 
 \begin{exercise}
+\plan{5.1}{Aanbevolen}
 \label{exSymmetryNotSensitiveToDomainOfRelation}
 Let $R$ and $S$ be relations such that $\mathrm{Gr}(R) = \mathrm{Gr}(S)$. Note that the domain of $R$ might be different from the domain of $S$. Prove that $R$ is symmetric if and only if $S$ is symmetric.
 \end{exercise}
@@ -297,11 +307,13 @@ The order relation $\le$ on $\mathbb{R}$ is antisymmetric, since for all $a,b \i
 \end{example}
 
 \begin{exercise}
+\plan{5.1}{Aanbevolen}
 \label{exDivisibilityIsOrIsNotAntisymmetric}
 Prove that the relation `$x$ divides $y$' on $\mathbb{N}$ is antisymmetric, but not on $\mathbb{Z}$.
 \end{exercise}
 
 \begin{exercise}
+\plan{5.1}{Aanbevolen}
 Let $X$ be a set. Prove that $\subseteq$ is an antisymmetric relation on $\mathcal{P}(X)$.
 \end{exercise}
 
@@ -346,10 +358,12 @@ so that $c-a \in \mathbb{Q}$. Hence $a \mathrel{R} c$, as required.
 \end{example}
 
 \begin{exercise}
+\plan{5.1}{Essentieel}
 Let $X$ be a set. Prove that $\subseteq$ is a transitive relation on $\mathcal{P}(X)$.
 \end{exercise}
 
 \begin{exercise}
+\plan{5.1}{Essentieel}
 \label{exDivisibilityIsTransitive}
 Prove that the relation `$x$ divides $y$' on $\mathbb{Z}$ is transitive.
 \end{exercise}
@@ -357,6 +371,7 @@ Prove that the relation `$x$ divides $y$' on $\mathbb{Z}$ is transitive.
 Like symmetry, transitive is an intrinsic property of relations---that is, transitivity is not sensitive to the domain of the relation---as the next exercise demonstrates.
 
 \begin{exercise}
+\plan{5.1}{Essentieel}
 \label{exTransitivityNotSensitiveToDomainOfRelation}
 Let $R$ and $S$ be relations such that $\mathrm{Gr}(R) = \mathrm{Gr}(S)$. Note that the domain of $R$ might be different from the domain of $S$. Prove that $R$ is transitive if and only if $S$ is transitive.
 \end{exercise}

@@ -45,6 +45,7 @@ The function $f$ is evidently a bijection, since each element of $X$ can be expr
 \end{example}
 
 \begin{exercise}
+\plan{7.1}{Essentieel}
 \label{exBracketNIsFinite}
 Prove that $[n]$ is finite for each $n \in \mathbb{N}$.
 \solution{exBracketNIsFinite}{%
@@ -123,6 +124,7 @@ The result now follows by induction.
 \end{cproof}
 
 \begin{exercise}
+\plan{7.1}{Aanbevolen}
 Prove parts (b) and (c) of \Cref{thmJectionsAndSizeOfNaturalNumbers}.
 \hintlabel{exFinishProofOfJectionsAndSizeOfNaturalNumbers}{%
 Part (b) has a proof by induction that looks much like the one in part (a). In the induction step, given a surjection $g : [m+1] \to [n]$, observe that we must have $n \ge 1$, and construct a surjection $g^- : [m+1] \setminus \{ a \} \to [n-1]$ for some suitable $a \in [m+1]$. Then invoke \Cref{lemRemoveElementFromSet}, now using the fact that $[m] = [m+1] \setminus \{m+1\}$.
@@ -172,6 +174,7 @@ Since $f$ is a bijection, we have $|X| = 2n+1$ by \Cref{defSize}.
 \end{example}
 
 \begin{exercise}
+\plan{7.1}{Essentieel}
 \label{exAddRemoveElementsOfFiniteSets}
 Let $X$ be a finite set.
 \begin{enumerate}[(a)]
@@ -222,6 +225,7 @@ The result now follows by induction.
 \end{cproof}
 
 \begin{exercise}
+\plan{7.1}{Aanbevolen}
 Prove parts (b) and (c) of \Cref{thmFiniteSetsAndJections}.
 \end{exercise}
 
@@ -244,6 +248,7 @@ Strategy \ref{strBijectiveProof} is commonly known as \textbf{bijective proof}.
 We now use \Cref{strComparingSizesOfFiniteSets} to prove some \textit{closure properties} of finite sets---that is, operations we can perform on finite sets to ensure that the result remains finite.
 
 \begin{exercise}
+\plan{7.1}{Essentieel}
 Let $X$ be a finite set. Prove that every subset $A \subseteq X$ is finite and $|A| \le |X|$.
 \hintlabel{exSubsetOfFiniteSetIsFinite}{%
 Given $A \subseteq X$, find an injection $A \to X$ and apply \Cref{thmFiniteSetsAndJections}\ref{itmFiniteSetFromInjection}.
@@ -254,6 +259,7 @@ Let $i : A \to X$ be the \textit{inclusion function}, defined by $i(x)=x$ for al
 \end{exercise}
 
 \begin{exercise}
+\plan{7.1}{Essentieel}
 Let $X$ and $Y$ be finite sets. Prove that $X \cap Y$ is finite.
 \hintlabel{exIntersectionOfFiniteSetsIsFinite}{%
 Recall that $X \cap Y \subseteq X$ for all sets $X$ and $Y$.
@@ -283,6 +289,7 @@ Hence $|X \cup Y| = m+n = |X| + |Y|$, which is as required since $|X \cap Y| = 0
 \end{cproof}
 
 \begin{exercise}
+\plan{7.1}{Aanbevolen}
 \label{exSizeOfUnion}
 The following steps complete the proof of \Cref{propUnionOfFiniteSetsIsFinite}:
 \begin{enumerate}[(a)]
@@ -297,6 +304,7 @@ The following steps complete the proof of \Cref{propUnionOfFiniteSetsIsFinite}:
 \end{exercise}
 
 \begin{exercise}
+\plan{7.1}{Essentieel}
 Let $X$ be a finite set and let $U \subseteq X$. Prove that $X \setminus U$ is finite, and moreover $|X \setminus U| = |X| - |U|$. How does this result change if $U$ is not required to be a subset of $X$?
 \hintlabel{exSizeOfRelativeComplement}{%
 Apply \Cref{propUnionOfFiniteSetsIsFinite} with $Y=U$.
@@ -304,6 +312,7 @@ Apply \Cref{propUnionOfFiniteSetsIsFinite} with $Y=U$.
 \end{exercise}
 
 \begin{exercise}
+\plan{7.1}{Aanbevolen}
 \label{exSizeOfCartesianProduct}
 Let $m,n \in \mathbb{N}$. Prove that $|[m] \times [n]| = mn$.
 \hintlabel{exBijectionBetweenProductOfBracketSets}{%

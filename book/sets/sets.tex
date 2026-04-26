@@ -147,6 +147,7 @@ so that $[c,d] \subseteq (a,b)$, as required.
 \end{example}
 
 \begin{exercise}
+\plan{2.1}{Essentieel}
 Let $a,b,c,d \in \mathbb{R}$ with $a<b$ and $c<d$. Prove that $[a,b) \subseteq (c,d]$ if and only if $a > c$ and $b \le d$.
 \solution{exIntervalContainment}{%
 $(\Rightarrow)$ Assume $[a,b) \subseteq (c,d]$.
@@ -227,6 +228,7 @@ So we must have $a \in [-1,1]$, as required.
 \end{example}
 
 \begin{exercise}
+\plan{2.1}{Aanbevolen}
 Prove that $\{ x \in \mathbb{R} \mid x^2 < x \} = (0,1)$.
 \hintlabel{exXSquaredLessThanXAsInterval}{%
 Resist the temptation to draw a graph and claim that you're done: use a proof by double containment, unpacking what it means to be an element of each set using its definition.
@@ -244,6 +246,7 @@ By double containment, we have $A = (0,1)$. \qed
 The set extensionality axiom has the consequence that sets are independent of the order in which their elements appear in list notation, and they are independent of how many times a single element is written---that is, an element of a set is only `counted' once, even if it appears multiple times in list notation. This is illustrated in the following exercise.
 
 \begin{exercise}
+\plan{2.1}{Aanbevolen}
 Prove by double containment that $\{ 0, 1 \} = \{ 1, 0 \}$ and $\{ 0, 0 \} = \{ 0 \}$.
 \hintlabel{exDoubleContainmentListNotation}{%
 If you feel like you're not proving anything, you're probably doing it correctly.
@@ -298,12 +301,14 @@ We observed in \Cref{exBracketN} that the set $[0]$ is empty; here's a more form
 \end{example}
 
 \begin{exercise}
+\plan{2.1}{Aanbevolen}
 Let $a,b \in \mathbb{R}$. Prove that $[a,b]$ is empty if and only if $a > b$, and that $(a,b)$ is empty if and only if $a \ge b$.
 \end{exercise}
 
 The next exercise is a logical technicality, which is counterintuitive for the same reason that makes the principle of explosion (\Cref{axPrincipleOfExplosion}) difficult to grasp. However, it is extremely useful for proving facts about the empty set, as we will see soon in \Cref{thmEmptySetIsUnique}.
 
 \begin{exercise}
+\plan{2.1}{Aanbevolen}
 Let $E$ be an empty set and let $p(x)$ be a predicate with one free variable $x$ with domain of discourse $E$. Show that the proposition $\forall x \in E,\, p(x)$ is true, and that the proposition $\exists x \in E,\, p(x)$ is false. What does the proposition $\forall x \in E,\, x \ne x$ mean in English? Is it true?
 \hintlabel{exEverythingIsTrueOfElementsOfEmptySet}{%
 Recall from the beginning of \Cref{secSets} that $\forall x \in X,\, p(x)$ is equivalent to $\forall x,\, (x \in X \Rightarrow p(x))$ and $\exists x \in X,\, p(x)$ is equivalent to $\exists x,\, (x \in X \wedge p(x))$. What can be said about the truth value of $x \in E$ when $E$ is empty?
@@ -335,6 +340,7 @@ The \textbf{empty set} (also known as the \textbf{null set}) is the set with no 
 Some authors write $\{ \}$ instead of $\varnothing$, since $\{ \}$ is simply the empty set expressed in list notation.
 
 \begin{exercise}
+\plan{2.1}{Essentieel}
 \label{exEmptySetSubsetOfEverySet}
 Let $X$ be a set. Prove that $\varnothing \subseteq X$.
 \end{exercise}
@@ -354,10 +360,12 @@ so $\mathcal{P}(X) = \{\varnothing, \{ 1 \}, \{ 2 \}, \{ 1, 2 \}\}$.
 \end{example}
 
 \begin{exercise}
+\plan{2.1}{Essentieel}
 Write out the elements of $\mathcal{P}(\{1, 2, 3\})$.
 \end{exercise}
 
 \begin{exercise}
+\plan{2.1}{Aanbevolen}
 Let $X$ be a set. Show that $\varnothing \in \mathcal{P}(X)$ and $X \in \mathcal{P}(X)$.
 \end{exercise}
 
@@ -375,6 +383,7 @@ Assume that $X \subseteq Y$. By the definition of power set (\Cref{defPowerSet})
 \end{example}
 
 \begin{exercise}
+\plan{2.1}{Essentieel}
 Let $X$ and $Y$ be sets. Prove that if $X \subseteq Y$, then $\mathcal{P}(X) \subseteq \mathcal{P}(Y)$.
 \end{exercise}
 
@@ -391,6 +400,7 @@ It is true that $\varnothing \subseteq \varnothing$, but false that $\varnothing
 \end{example}
 
 \begin{exercise}
+\plan{2.1}{Aanbevolen}
 Determine, with proof, whether or not each of the following statements is true.
 \begin{enumerate}[(a)]
 \item $\mathcal{P}(\varnothing) \in \mathcal{P}(\mathcal{P}(\varnothing))$;

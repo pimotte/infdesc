@@ -7,20 +7,20 @@
 }
 
 
-\newcommand{\plan}[2]{
+\newcommand{\plan}[3][]{
     \immediate\write\exerciseplanning{%
-        #1;%
         #2;%
+        #3;%
         exercise;%
-        \theexercise
+        \theexercise#1
     }
 }
-\newcommand{\chplan}[2]{
+\newcommand{\chplan}[3][]{
     \immediate\write\exerciseplanning{%
-        #1;%
         #2;%
+        #3;%
         chapex;%
-        \thechapex
+        \thechapex#1
     }
 }
 
